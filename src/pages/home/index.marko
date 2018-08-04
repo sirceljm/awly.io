@@ -1,0 +1,142 @@
+<include("src/layouts/default")>
+    <@title>
+        Awly.io - easiest serverless framework for web applications
+    </@title>
+    <@nav>
+        <navigation adjust-logo={marginTop: '-33px', marginLeft: '17px'} />
+    </@nav>
+    <@banner>
+        <banner />
+    </@banner>
+    <@message>
+        <message />
+    </@message>
+    <@body>
+        <div.awly-features>
+            <div.fun.awly-feature>
+                <h2.awly-feature-title>easy & fun</h2>
+                <p.awly-feature-desc>
+                    Awly bootstraps:<br/>
+                     - deployment process onto scalable & fully managed AWS cloud services<br/>
+                     - awesomely easy & fast MarkoJS templating engine<br/>
+                     - descriptive GraphQL for easy management of your data<br/>
+                     - CLI tools for streamlined local development & deploys to the cloud<br/>
+                </p>
+            </div>
+
+            <div.fastImg>
+                <img.circleImg src="/assets/img/awly-performance.png" />
+            </div>
+
+            <div.fast.awly-feature>
+                <h2.awly-feature-title>lean & fast</h2>
+                <p.awly-feature-desc>
+                    Speed & size of web pages and applications are getting more important each day.
+                    On the other hand it is very easy to make you web page a couple of MB or more
+                    with all the libraries and frameworks that are available today.
+                    <br />
+                    <br />
+                    <strong>Awly does not sacrifice performance for the luxury of working with a framework.</strong>
+                    Its templating engine compiles each of your web pages for server side rendering and
+                    inclusion of only components that that page requires.
+                </p>
+            </div>
+
+            <div.iso.awly-feature>
+                <h2.awly-feature-title>isomorphic</h2>
+                <p.awly-feature-desc>
+                    Awly is an idea of isomorphic development - where you develop web components for FE and BE as one coherent unit. This way you can awoid
+                    writing code for FE and BE and decrease potential points of failure, for example form validation. If you want to know more on how this
+                    is achieved <a href="#">read here</a>.
+                </p>
+            </div>
+
+            <div.isoImg>
+                <img.circleImg src="/assets/img/awly-isomorphic.png" />
+            </div>
+
+
+            <!-- <h2>Awly is a tool for building microservice oriented web apps on AWS cloud infrastructure.</h2>
+            <div>It enables fast and easy development and deploy of webapps to AWS Lambda and AWS Lambda@Edge.</div>
+            <div>It is a framework with which you can make scalable, cheap & performant websites.</div>-->
+        </div>
+    </@body>
+    <@footer>
+        <footer />
+    </@footer>
+</include>
+
+style.scss {
+    .awly-features{
+        display: grid;
+        grid-column-gap: 40px;
+        grid-row-gap: 100px;
+
+        @media (min-width: 900px){
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas:
+                ". ."
+                "fun fun"
+                "fast-img fast"
+                "iso iso-img"
+                ". .";
+        }
+
+        .fun {
+          grid-area: fun;
+          // text-align: right;
+        }
+
+        .funImg {
+          grid-area: fun-img;
+        }
+
+        .fast {
+          grid-area: fast;
+        }
+
+        .fastImg {
+          grid-area: fast-img;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .iso {
+          grid-area: iso;
+          text-align: right;
+        }
+
+        .isoImg {
+          grid-area: iso-img;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .awly-feature {
+            .awly-feature-title{
+                font-size: 44px;
+                line-height: 1.5;
+                font-weight: 600;
+                color: purple;
+                margin-top: 0px;
+                margin-bottom: 30px
+            }
+
+            .awly-feature-desc{
+                font-size: 20px;
+                line-height: 1.5;
+                font-weight: 300;
+                color: #2b2b2b;
+            }
+        }
+    }
+
+    .circleImg {
+        border-radius: 100%;
+        border: 1px solid hsla(0,0,0,0.2);
+        box-shadow: 0px 0px 1px hsla(0,0,0,0.4);
+    }
+}

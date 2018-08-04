@@ -1,0 +1,71 @@
+static {
+    let exportsJSON;
+
+    function importExports(component){
+        return component.getEl().dataset.exports;
+    }
+
+    let state = {
+        myVar: null
+    }
+}
+
+server-static {
+    const runGraphQL = require('src/services/graphql'); // load static libraries here
+}
+
+server {
+    // run data query
+    let postsPromise = new Promise((resolve, reject) => {
+         runGraphQL(
+             `query P{
+               Posts {
+                 postId
+                 text
+                 author
+                 date
+               }
+             }`, function(err, result){
+                 if(err) {
+                     console.log(err);
+                     resolve({
+                         error: err
+                     });
+                 }
+                 resolve(result.data.Profile);
+             }
+         );
+    });
+
+    state.myVar = "myVar";
+    exportsJSON = JSON.stringify(state);
+}
+
+class {
+    onCreate() { // happens on server
+        this.state = state;
+    }
+
+    onMount() { // happens on client
+        const self = this;
+        this.state = JSON.parse(this.el.getAttribute("data-exports"));
+    }
+}
+
+<div id:scoped data-exports=(exportsJSON ? exportsJSON : importExports(component))> <!-- data-exports <- import data from server rendered component -->
+    <await(posts from postsPromise)>
+        <for(post in posts)>
+            <div>${post.text}</div>
+        </for>
+    </await>
+
+    ${state.myVar}
+</div>
+
+style.sass {
+
+}
+
+style {
+
+}

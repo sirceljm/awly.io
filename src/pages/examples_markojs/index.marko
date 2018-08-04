@@ -1,0 +1,118 @@
+<include("src/layouts/compact-sidebar")>
+    <@title>
+        Awly.io - easiest serverless framework for web applications
+    </@title>
+    <@nav>
+        <navigation adjust-logo={scale: 0.6, marginTop: '-33px', marginLeft: '20px'} />
+    </@nav>
+    <@banner>
+        <banner />
+    </@banner>
+    <@message>
+        <message />
+    </@message>
+    <@sideBar>
+        <examples-menu />
+    </@sideBar>
+    <@body>
+        <app />
+    </@body>
+    <@footer>
+        <footer />
+    </@footer>
+</include>
+
+style.scss {
+    .anchor {
+        background-color: #f0f1f4;
+        display: block;
+        border-radius: 4px;
+
+        margin-bottom: 10px;
+
+        font-family: monospace, monospace;
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+            margin-top: 45px;
+        }
+
+        .hash{
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 32px;
+          color: #dddddd;
+          display: inline-block;
+        }
+
+        .comp-title {
+          font-size: 24px;
+          color: #2e333e;
+          display: inline-block;
+        }
+    }
+
+    .awly-features{
+        .awly-feature {
+            margin-bottom: 100px;
+
+            .awly-feature-title{
+                font-size: 44px;
+                line-height: 1.5;
+                font-weight: 600;
+                color: purple;
+            }
+
+            .awly-feature-desc{
+                font-size: 20px;
+                line-height: 1.5;
+                font-weight: 300;
+                color: #2b2b2b;
+            }
+        }
+    }
+
+    .flex {
+        display: flex;
+        justify-items: space-between;
+    }
+
+    .img-wrap {
+        flex: 1;
+        display: inline-block;
+    }
+
+    .flex-center {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .example-desc {
+      line-height: 1.6;
+      margin: 20px 0px 40px 0px;
+      font-size: 18px;
+      // border-left: 1px solid purple;
+      border-left: 1px dotted rgba(128, 0, 128, 0.23);
+      padding-left: 10px;
+      margin-left: 2px;
+    }
+
+    .vertical-text {
+      text-align: center;
+      word-wrap: break-word;
+      width: 0.5em;
+      cursor: vertical-text;
+      float: left;
+      shape-outside:inset(0.5em);
+      font-family: monospace;
+    }
+
+    .scroll-to-line {
+      border-bottom: 1px solid red;
+      width: 100px;
+    }
+}

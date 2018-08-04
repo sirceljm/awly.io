@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <google-analytics tracking-id="UA-115954060-1" show-only-in-env("prod") />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><include(data.title)/></title>
+
+    <style inline-css="/assets/css/normalize.css"></style>
+    <style inline-css="/assets/css/system-fonts.css"></style>
+
+    $!{out.global.injectCSS}
+</head>
+<body.grid-layout>
+    <div.header-bg></div>
+    <div.title-bg></div>
+    <div.message-bg></div>
+    <div.footer-bg></div>
+
+    <div.nav><include(data.nav)/></div>
+    <div.banner><include(data.banner)/></div>
+    <div.message><include(data.message)/></div>
+    <div.body><include(data.body)/></div>
+    <div.footer><include(data.footer)/></div>
+
+    $!{out.global.injectJS}
+
+    <awly-hot-reload show-only-in-env("dev") />
+</body>
+</html>
+
+style.scss {
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .grid-layout {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 10px auto 10px;
+        grid-template-rows: auto auto auto auto 50px;
+        grid-template-areas:
+            ". nav ."
+            ". banner ."
+            ". message ."
+            ". body ."
+            ". footer .";
+    }
+
+    @media (min-width: 900px){
+        .grid-layout {
+            grid-template-columns: 1fr 400px 400px 1fr;
+            grid-template-rows: auto auto auto auto 50px;
+            grid-template-areas:
+                ". nav nav ."
+                ". banner banner ."
+                ". message message ."
+                ". body body ."
+                ". footer footer .";
+        }
+    }
+
+    @media (min-width: 1300px){
+        .grid-layout {
+            grid-template-columns: 1fr 600px 600px 1fr;
+            grid-template-rows: auto auto auto auto 50px;
+            grid-template-areas:
+                ". nav nav ."
+                ". banner banner ."
+                ". message message ."
+                ". body body ."
+                ". footer footer .";
+        }
+    }
+
+    .header-bg {
+        grid-area: nav-start / 1 / banner-end / end;
+        background-image: -webkit-linear-gradient(hsla(289, 61%, 17%, 1) 0%, hsla(266, 66%, 11%, 1) 100%);
+    }
+
+    .message-bg {
+        grid-area: message-start / 1 / message-end / end;
+        background-color: rgba(255, 187, 0, 0.3);
+    }
+
+    .footer-bg {
+        grid-area: footer-start / 1 / footer-end / end;
+        background-color: hsla(289, 61%, 17%, 1);
+    }
+
+    .nav {
+        grid-area: nav;
+        margin: 50px 0px 0px 0px;
+    }
+
+    .message {
+        grid-area: message;
+    }
+
+    .banner {
+        grid-area: banner;
+    }
+
+    .body {
+        grid-area: body;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+}

@@ -1,0 +1,60 @@
+static {
+    let exportsJSON;
+
+
+    function importExports(component){
+        return component.getEl().dataset.exports;
+    }
+
+    let state = {
+        onFontLoadedClass: ""
+    }
+}
+
+server-static {
+
+}
+
+server {
+    exportsJSON = JSON.stringify(state);
+}
+
+class {
+    onCreate() {
+        this.state = state;
+    }
+
+    onMount() {
+        const self = this;
+        let component = this;
+        // this.state = JSON.parse(component.getEl().dataset.exports);
+        // this.state = JSON.parse(this.getEl().dataset.exports);
+
+        let fontsToWaitFor = [];
+
+        let fontParams = self.input.font;
+
+        console.log('FONT', self.input, fontParams);
+
+        let fontObj = self.parseFontParams(fontParams);
+        new window.FontFaceObserver(fontObj.font, fontObj).load().then(() => {
+            console.log('FONT LOADED');
+            self.state.onFontLoadedClass = self.input.onFontLoadedClass;
+        })
+    }
+
+    parseFontParams(paramsStr){
+        let params = paramsStr.split('|');
+        let fontObj = {
+            font: params[0]
+        }
+        if (params[1]) fontObj.weight = params[1];
+        if (params[2]) fontObj.style = params[2];
+
+        return fontObj;
+    }
+}
+
+<span id:scoped:no-update data-exports=(exportsJSON ? exportsJSON : false) class=[input.class, state.onFontLoadedClass]>
+    <include(input.renderBody) />
+</span>

@@ -1,0 +1,105 @@
+static {
+  let exportsJSON;
+  let bgSvgData;
+
+  function importExports(component){
+      return component.getEl().children[0].dataset.exports;
+  }
+
+  let isServer = false;
+
+  let state = {
+    token: "",
+    firstName: "",
+    lastName: ""
+  }
+}
+
+server-static {
+    const jwtServer = require('jsonwebtoken');
+}
+
+server {
+    isServer = true;
+
+    if(out && out.global && out.global.req){
+        state.token = out.global.req.cookies.auth_example; // get cookie from request object
+    }
+
+    if(state.token){
+        const decoded = jwtServer.verify(state.token, 'secret'); // TODO secret -> environment or stage variables
+        state.firstName = decoded.firstName;
+        state.lastName = decoded.lastName;
+    }
+
+    let exportsPromise = state;
+}
+
+class {
+  onCreate(){
+    this.state = state;
+  }
+
+  onMount(){
+    const component = this;
+    this.state = JSON.parse(this.getEl().dataset.exports);
+
+    this.jwtClient = require('jwt-client');
+    this.loadUserData();
+
+    // LISTEN ON LOCAL STORAGE EVENT - fires if local storage changes in other tab
+    if (window.addEventListener) {
+      window.addEventListener("storage", onStorage, false);
+    } else {
+      window.attachEvent("onstorage", onStorage);
+    };
+
+    function onStorage(data) {
+      component.loadUserData();
+    }
+
+    // LISTEN ON WINDOW EVENT
+    this.subscribeTo(document).on('example_user_change', () => {
+        component.loadUserData();
+    });
+  }
+
+  loadUserData(){
+    const session = this.jwtClient.remember();
+
+    if(session){
+        this.state.firstName = session.claim.firstName;
+        this.state.lastName = session.claim.lastName;
+    }else{
+        this.state.firstName = "";
+        this.state.lastName = "";
+    }
+  }
+}
+
+<div.awly-user-badge id:scoped data-exports=(!isServer ? importExports(component) : null)>
+  <span data-exports:no-update=JSON.stringify((isServer ? exportsPromise : state))></span>
+  <span>
+    <if(state.firstName || state.lastName)>
+      ${state.firstName.substr(0,1).toUpperCase()}
+      ${state.lastName.substr(0,1).toUpperCase()}
+    </if>
+    <else>
+      👤
+    </else>
+  </span>
+</div>
+
+style.scss {
+    .awly-user-badge {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: #eeeeee;
+        color: #888888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+    }
+}

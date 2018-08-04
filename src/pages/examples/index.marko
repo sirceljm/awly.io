@@ -1,0 +1,305 @@
+<include("src/layouts/compact-sidebar")>
+    <@title>
+        Awly.io - easiest serverless framework for web applications
+    </@title>
+    <@nav>
+        <navigation adjust-logo={scale: 0.6, marginTop: '-33px', marginLeft: '20px'} />
+    </@nav>
+    <@banner>
+        <banner />
+    </@banner>
+    <@message>
+        <message />
+    </@message>
+    <@sideBar>
+        <examples-menu />
+    </@sideBar>
+    <@body>
+        <a#awly-load-more-list.anchor>
+          <div.hash>#</div>
+          <div.comp-title>&#x3C;awly-list&#x3E;</div>
+        </a>
+
+        <div.example-desc>
+          <p>
+              This component uses Apollo GraphQL connection to obtain the data from database. It is also the perfect example of how
+              server side rendering, hydration and client UI work together.
+          </p>
+
+          <awly-list />
+        </div>
+
+        <a#awly-progressive-images.anchor>
+          <div.hash>#</div>
+          <div.comp-title>&#x3C;awly-progressive-image&#x3E;</div>
+        </a>
+
+        <div.example-desc>
+          <p>This component renders the image progressively. This means that it first displays the blurred placeholder image that is
+          in place until the original image is shown. This method increases page performance for user and reduces bandwidth usage.
+          <br /><br />
+          The original image can be loaded automatically or on request.</p>
+
+          <h4>Load on button click</h4>
+          <div.flex>
+              <div.img-wrap>
+                  <awly-progressive-image
+                      img-src="/assets/img/beach-clouds.jpg"
+                      preview-svg="/assets/img/beach-clouds--preview.svg" trigger="loadImg1" />
+              </div>
+              <div.flex-center>
+                  <awly-button emit-on-click="loadImg1">
+                    <@text>LOAD IMAGE</@text>
+                  </awly-button>
+              </div>
+          </div>
+        </div>
+
+        <a#awly-on-scroll-to-view.anchor>
+          <div.hash>#</div>
+          <div.comp-title>&#x3C;awly-on-scroll-to-view&#x3E;</div>
+        </a>
+
+        <div.example-desc>
+            <p>
+              There are two components that are talking to each other via events.
+              <br /><br />
+            </p>
+
+            <div.flex>
+                <div.img-wrap>
+                    <awly-progressive-image
+                        img-src="/assets/img/surf-black-and-white.jpg"
+                        preview-svg="/assets/img/surf-black-and-white--preview.svg" trigger="loadImg2" />
+                </div>
+                <div.flex-center>
+                    <span.vertical-text>SCROLL&nbsp;TO&nbsp;▼&nbsp;</span>
+                    <awly-on-scroll-to-view emit-on-scroll-into-view="loadImg2" observe="scrollableBody"/>
+                    <span.scroll-to-line></span>
+                </div>
+            </div>
+        </div>
+
+        <a#awly-user-badge.anchor>
+          <div.hash>#</div>
+          <div.comp-title>&#x3C;awly-user-badge&#x3E;</div>
+        </a>
+
+        <div.example-desc>
+            <p>
+              This component renders the image progressively. This means that it first displays the blurred placeholder image that is
+              in place until the original image is shown. This method increases page performance for user and reduces bandwidth usage.
+              <br /><br />
+              The original image can be loaded automatically or on request.
+              <br /><br />
+            </p>
+
+            <div.flex>
+                <div.flex-center>
+                    <login-example />
+                </div>
+                <div.flex-center>
+                    <awly-user-badge />
+                </div>
+            </div>
+        </div>
+
+        <!-- <a#awly-highlightjs.anchor>
+          <div.hash>#</div>
+          <div.comp-title>&#x3C;highlightjs&#x3E;</div>
+        </a>
+        <awly-highlightjs /> -->
+
+      <a#awly-button.anchor>
+        <div.hash>#</div>
+        <div.comp-title>&#x3C;awly-button&#x3E;</div>
+      </a>
+      <div.example-desc>
+        <div.buttons.flex.space-between>
+            <awly-button color="blue">
+              <@text>BLUE BUTTON</@text>
+            </awly-button>
+            <awly-button color="green">
+              <@text>GREEN BUTTON</@text>
+            </awly-button>
+            <awly-button color="paleGreen">
+              <@text>PALE GREEN BUTTON</@text>
+            </awly-button>
+            <awly-button color="paleYellow">
+              <@text>PALE YELLOW BUTTON</@text>
+            </awly-button>
+            <awly-button color="red">
+              <@text>RED BUTTON</@text>
+            </awly-button>
+            <awly-button color="black">
+              <@text>BLACK BUTTON</@text>
+            </awly-button>
+            <awly-button color="gray">
+              <@text>GRAY BUTTON</@text>
+            </awly-button>
+            <awly-button color="lightGray">
+              <@text>LIGHT GRAY BUTTON</@text>
+            </awly-button>
+            <awly-button color="white">
+              <@text>WHITE BUTTON</@text>
+            </awly-button>
+            <awly-button>
+              <@text>VANILLA BUTTON</@text>
+            </awly-button>
+        </div>
+        <hr />
+        <div.buttons>
+          <awly-button size="xs">
+            <@text>XS BUTTON</@text>
+          </awly-button>
+          <awly-button size="sm">
+            <@text>SMALL BUTTON</@text>
+          </awly-button>
+          <awly-button size="md">
+            <@text>STANDARD BUTTON</@text>
+          </awly-button>
+          <awly-button size="lg">
+            <@text>LARGE BUTTON</@text>
+          </awly-button>
+          <awly-button size="xl">
+            <@text>XL BUTTON</@text>
+          </awly-button>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <a#awly-input.anchor>
+        <div.hash>#</div>
+        <div.comp-title>&#x3C;awly-input&#x3E;</div>
+      </a>
+      <div.example-desc>
+        <div.flex>
+          <div.flex-center>
+              <awly-input validate-inline />
+          </div>
+        </div>
+      </div>
+
+      <!-- <a.anchor>
+        <div.hash>#</div>
+        <div.comp-title>&#x3C;awly-form-field-error&#x3E;</div>
+      </a> -->
+
+      <a#awly-textarea.anchor>
+        <div.hash>#</div>
+        <div.comp-title>&#x3C;awly-textarea&#x3E;</div>
+      </a>
+      <div.example-desc>
+        <div.flex>
+          <div.flex-center>
+              <awly-textarea validate-inline />
+          </div>
+        </div>
+      </div>
+    </@body>
+
+    <@footer>
+        <footer />
+    </@footer>
+</include>
+
+style.scss {
+    .anchor {
+        background-color: #f0f1f4;
+        display: block;
+        border-radius: 4px;
+
+        margin-bottom: 10px;
+
+        font-family: monospace, monospace;
+        display: flex;
+        align-items: center;
+
+        &:not(:first-child) {
+            margin-top: 45px;
+        }
+
+        .hash{
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 32px;
+          color: #dddddd;
+          display: inline-block;
+        }
+
+        .comp-title {
+          font-size: 24px;
+          color: #2e333e;
+          display: inline-block;
+        }
+    }
+
+    .awly-features{
+        .awly-feature {
+            margin-bottom: 100px;
+
+            .awly-feature-title{
+                font-size: 44px;
+                line-height: 1.5;
+                font-weight: 600;
+                color: purple;
+            }
+
+            .awly-feature-desc{
+                font-size: 20px;
+                line-height: 1.5;
+                font-weight: 300;
+                color: #2b2b2b;
+            }
+        }
+    }
+
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .img-wrap {
+        flex: 1;
+        display: inline-block;
+    }
+
+    .flex-center {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .example-desc {
+      line-height: 1.6;
+      margin: 20px 0px 40px 0px;
+      font-size: 18px;
+      // border-left: 1px solid purple;
+      border-left: 1px dotted rgba(128, 0, 128, 0.23);
+      padding-left: 10px;
+      margin-left: 2px;
+    }
+
+    .vertical-text {
+      text-align: center;
+      word-wrap: break-word;
+      width: 0.5em;
+      cursor: vertical-text;
+      float: left;
+      shape-outside:inset(0.5em);
+      font-family: monospace;
+    }
+
+    .scroll-to-line {
+      border-bottom: 1px solid red;
+      width: 100px;
+    }
+
+    .buttons .btn-wrap {
+        margin-bottom: 3px;
+        margin-right: 3px;
+    }
+}

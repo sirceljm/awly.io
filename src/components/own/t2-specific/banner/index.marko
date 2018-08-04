@@ -1,0 +1,121 @@
+<div.banner-grid>
+    <div.title>
+        <div>
+            <!-- <h1.awly-title>AWLY</h1> -->
+            <h2.awly-tagline>
+                <a.nowrap href="#">Code locally & deploy serverless</a> <br />
+                <a.nowrap href="#">web pages in seconds</a>.
+                <!-- <a href="#">Deploy it to the AWS cloud in minutes</a> and <a href="#">have it hosted for almost no cost*</a> <br /> -->
+            </h2>
+
+            <!-- <h5.awly-tagline>
+                Develop <a.nowrap href="#">fast web apps fast.</a>
+            </h5> -->
+        </div>
+    </div>
+    <div.get-started>
+        <div.getStartedButton>
+            <div.getStartedTitle>GET STARTED</div>
+            <div.getStartedDetails>
+                <div>npm instal awly -g</div>
+                <div>awly init my-app</div>
+                <div>cd my-app</div>
+                <div>awly serve</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+style.scss {
+    .banner-grid {
+        margin: 40px 0px 0px 0px;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+        grid-template-areas:
+            "title"
+            "get-started";
+    }
+
+    .title {
+        grid-area: title;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    @media (min-width: 900px){
+        .banner-grid {
+            margin: 40px 0px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "title get-started";
+        }
+
+        .title {
+            margin-bottom: 0px;
+            text-align: left;
+        }
+    }
+
+    .get-started{
+        grid-area: get-started;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .awly-title{
+		font-size: 50px;
+		font-weight: 800;
+		color: white;
+        margin: 0 0;
+	}
+
+	.awly-tagline {
+    font-size: 27px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: white;
+
+		a {
+			color: white;
+			text-decoration: underline;
+		}
+	}
+
+    .getStartedButton {
+        cursor: pointer;
+        border-radius: 6px;
+        box-shadow: 0 2px 1px rgba(0,0,0,.8);
+        background: #EAAF00;
+        background-image: -webkit-linear-gradient(#ffbf00 0%, #ff7102 100%);
+        font-size: 1.3rem;
+        color: white;
+        max-width: 300px;
+        width: 100%;
+    }
+    .getStartedButton:hover {
+        background: #EAAF00;
+    }
+
+    .getStartedTitle {
+        color: white;
+        margin-top: 10px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .getStartedDetails {
+        font-family: monospace;
+        background-color: #333333;
+        border-radius: 6px;
+        color: white;
+        margin: 10px;
+        padding: 10px;
+        pointer: cursor;
+    }
+}

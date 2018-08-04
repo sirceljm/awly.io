@@ -1,0 +1,25 @@
+class {
+    onMount(){
+        var slider = tns({
+          container: '.carousel',
+          items: 1,
+          slideBy: 'page',
+          autoplay: true
+        });
+    }
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/tiny-slider.css">
+
+<!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.6.0/min/tiny-slider.js"></script>
+
+<div.carousel>
+    <div><include(data.slide1)/></div>
+    <div><include(data.slide2)/></div>
+    <div><include(data.slide3)/></div>
+</div>
+
+style.scss {
+    
+}

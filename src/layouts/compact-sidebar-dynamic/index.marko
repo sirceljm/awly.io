@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+    <google-analytics tracking-id="UA-115954060-1" show-only-in-env("prod") />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><include(data.title)/></title>
+
+    <style inline-css="/assets/css/normalize.css"></style>
+    <style inline-css="/assets/css/system-fonts.css"></style>
+
+    $!{out.global.injectCSS}
+</head>
+<body.grid-layout>
+    <div.header-bg></div>
+    <div.title-bg></div>
+    <div.footer-bg></div>
+    <div.sideBar-bg></div>
+
+    <div.nav><include(data.nav)/></div>
+    <div.sideBar><include(data.sideBar)/></div>
+    <div.body><include(data.body)/></div>
+    <div.footer><include(data.footer)/></div>
+
+    $!{out.global.injectJS}
+
+    <awly-hot-reload show-only-in-env("dev") />
+</body>
+</html>
+
+style.scss {
+    html, body {
+        height: 100%;
+    }
+
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .grid-layout {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 10px 1fr 10px;
+        grid-template-rows: 100px auto auto 50px;
+        grid-template-areas:
+            ". nav ."
+            ". body ."
+            ". sideBar ."
+            ". footer .";
+    }
+
+    @media (min-width: 900px){
+        .grid-layout {
+            grid-template-columns: 1fr 230px 285px 285px 1fr;
+            grid-template-rows: 100px 1fr 50px;
+            grid-template-areas:
+                ". nav nav nav ."
+                ". sideBar body body ."
+                ". footer footer footer .";
+            height: 100%;
+        }
+    }
+
+    @media (min-width: 1100px){
+        .grid-layout {
+            grid-template-columns: 1fr 230px 385px 385px 1fr;
+            grid-template-rows: 100px 1fr 50px;
+            grid-template-areas:
+                ". nav nav nav ."
+                ". sideBar body body ."
+                ". footer footer footer .";
+            height: 100%;
+        }
+    }
+
+    @media (min-width: 1300px){
+        .grid-layout {
+            grid-template-columns: 1fr 230px 485px 485px 1fr;
+            grid-template-rows: 100px 1fr 50px;
+            grid-template-areas:
+                ". nav nav nav ."
+                ". sideBar body body ."
+                ". footer footer .";
+            height: 100%;
+        }
+    }
+
+    .header-bg {
+        grid-area: nav-start / 1 / nav-end / end;
+        background-image: -webkit-linear-gradient(#80059E 0%, #550486 100%);
+        // margin-bottom: 3px;
+        // box-shadow: 0px 2px 1px black;
+        // border-bottom: 7px solid rgb(136, 80, 171);
+
+        //background-color: #a5c5b5;
+        border-bottom: 1px solid #999999;
+    }
+
+    .footer-bg {
+        grid-area: footer-start / 1 / footer-end / end;
+        background-image: -webkit-linear-gradient(#80059E 0%, #550486 100%);
+    }
+
+    .sideBar-bg {
+        grid-area: sideBar-start / sideBar-start / sideBar-end / sideBar-end;
+        // background-color: #eeeeee;
+    }
+
+    .nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        // margin-top: 30px;
+    }
+
+    @media (min-width: 900px){
+        .sideBar {
+            grid-area: sideBar;
+        }
+    }
+
+    @media (max-width: 899px){
+        .sideBar {
+            display: none;
+        }
+    }
+
+    .body {
+        grid-area: body;
+        padding: 20px 0px;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+}

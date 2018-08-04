@@ -1,0 +1,118 @@
+<div.navigation>
+	<a.logo-position href="/">
+		<awly-logo adjust=input.adjustLogo />
+	</a>
+	<!-- <input id="open" type="checkbox" name=""> -->
+	<div.awly-title2>
+		<a.homeLink href="/">awly.io</a>
+	</div>
+	<nav>
+		<span.hsm>
+			<a.menuLink href="/examples">Examples</a>
+			<a.menuLink href="/getting-started">Get Started</a>
+			<a.menuLink href="/features">Features</a>
+			<a.menuLink href="/docs">Docs</a>
+		</span>
+		<span.ssm>
+			<a.menuIcon href="#">
+				<svg.icon.icon-th-menu>
+					<use xlink:href="/assets/svg/th-menu.svg#icon-th-menu"></use>
+				</svg>
+			</a>
+		</span>
+	</nav>
+</div>
+
+style.scss {
+	.logo-position {
+		position: absolute;
+	}
+
+	.awly-title2 {
+			font-size: 30px;
+			margin-left: 100px;
+			line-height: 55px;
+			font-weight: bold;
+			color: #fe5f03;
+	}
+
+    #open{
+    	display: none;
+    }
+
+	.icon {
+	  display: inline-block;
+	  width: 2em;
+	  height: 2em;
+	  stroke-width: 0;
+	  stroke: currentColor;
+	  fill: #550486;
+	}
+
+	.navigation{
+		width: 100%;
+		height: 55px;
+		background-color: white;
+		box-shadow: 0px 2px 2px rgba(0,0,0,.4);
+		border-radius: 4px;
+		overflow: hidden;
+		display: flex;
+	}
+	nav{
+		display: inline-block;
+		text-align: right;
+		flex: 1;
+		align-self: center;
+	}
+
+	@media(max-width: 900px){
+		.hsm {
+			display: none;
+		}
+	}
+
+	@media(min-width: 900px){
+		.ssm {
+			display: none;
+		}
+	}
+
+		a.homeLink{
+				text-decoration: none;
+				color: inherit;
+
+				&:hover, :active, :visited {
+					color: inherit;
+				}
+		}
+
+    a.menuLink{
+			color: purple;
+			text-decoration: none;
+    	position: relative;
+    	display: inline-block;
+    	font-size: 20px;
+    	padding: 1rem 2rem;
+			vertical-align: middle;
+
+			&:hover, :active, :visited {
+				color: inherit;
+			}
+    }
+
+    a.menuLink:hover{
+    	background: rgba(255,255,255,.9);
+    	color: black;
+    }
+
+	a.menuIcon{
+		height: 36px;
+		text-decoration: none;
+		position: relative;
+		display: inline-block;
+		font-size: 18px;
+		vertical-align: middle;
+		padding: 0rem 1rem 0rem 0rem;
+		vertical-align: middle;
+	}
+}

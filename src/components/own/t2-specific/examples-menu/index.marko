@@ -1,0 +1,185 @@
+class {
+    onCreate(){
+      // TODO get header height form input
+      this.state = {
+        examplesMenuMarginTop: null,
+        examplesMenuHeight: null,
+        count: 0,
+        previousMarginTop: null,
+        previousMarginBottom: null,
+        currentScrollTop: null
+      }
+    }
+    onMount(){
+        // this.previousMarginTop = 180;
+        // this.previousMarginBottom = 0;
+        // this.previousScrollTop = this.getDocumentScrollTopPos();
+        // this.count = 0;
+        //
+        // const rect = this.getEl().getBoundingClientRect();
+        // const docHeight = (window.innerHeight || document.documentElement.clientHeight);
+        // // console.log(rect, docHeight, (docHeight - rect.bottom), (rect.top - (docHeight - rect.bottom)));
+        //
+        // // let adjustHeight = (-rect.top + (docHeight - rect.bottom));
+        // let adjustHeight = -rect.top;
+        //
+        // this.state.examplesMenuMarginTop = adjustHeight + "px";
+        // this.state.examplesMenuHeight = "calc(" + adjustHeight + "px + 100vh)";
+        //
+        // this.subscribeTo(window).on('scroll', (event) => {
+        //     this.adjustSidebarHeight();
+        // });
+    }
+
+    getDocumentScrollTopPos(){
+      const doc = document.documentElement;
+      return (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+    }
+
+    adjustSidebarHeight() {
+        // TODO test & improve
+        const scrollTop = this.getDocumentScrollTopPos();
+        const scrollDelta = this.previousScrollTop - scrollTop;
+        const scrollDirection = (scrollDelta > 0 ? 'up' : 'down');
+        this.previousScrollTop = scrollTop;
+
+        const rect = this.getEl().getBoundingClientRect();
+        const docHeight = (window.innerHeight || document.documentElement.clientHeight);
+        // console.log(rect.top, rect.bottom, docHeight, (rect.top + (docHeight - rect.bottom)));
+
+        let adjustHeight = 0;
+
+        if((rect.top >= 0 && this.previousMarginTop >= 0)){
+          // if(scrollDirection === 'down'){
+            adjustHeight = rect.top;
+          // }
+          this.state.examplesMenuMarginTop = adjustHeight + "px";
+          this.state.examplesMenuHeight = "calc(100vh - " + adjustHeight + "px)";
+        } else if(rect.bottom <= docHeight && this.previousMarginBottom >= 0){
+          //if(scrollDirection === 'down'){
+            adjustHeight = (docHeight - rect.bottom);
+          //}
+          this.state.examplesMenuHeight = "calc(100vh - " + adjustHeight + "px)";
+        }
+
+        this.state.previousMarginTop = rect.top;
+        this.state.previousMarginBottom = docHeight - rect.bottom;
+    }
+}
+
+<div.examples-menu style={ height: state.examplesMenuHeight }>
+  <h2>Highlighted</h2>
+  <div.group>
+    <a href="/examples#awly-load-more-list">Expandable List</a>
+    <a href="/examples#awly-progressive-images">Progressive Images</a>
+    <a href="/examples#awly-on-scroll-to-view">On Scroll To View</a>
+    <a href="/examples#awly-user-badge">Auth With JWT</a>
+    <a href="/examples#awly-highlightjs">Highlight.js</a>
+  </div>
+  <h2>Awly</h2>
+  <h3>Display</h3>
+  <div.group>
+    <!-- <a.not-done href="/examples#">Link</a> -->
+    <a href="/examples#awly-button">Button</a>
+    <a.not-done href="/examples#awly-card">Card</a>
+    <a.not-done href="/examples#awly-carousel">Carousel</a>
+    <a.not-done href="/examples#awly-pagination">Pagination</a>
+    <a.not-done href="/examples#awly-loading">Loading</a>
+  </div>
+
+  <h3>Forms</h3>
+  <div.group>
+    <a href="/examples#awly-input">Input</a>
+    <a href="/examples#awly-textarea">Textarea</a>
+    <a.not-done href="/examples#awly-checkbox">Checkbox</a>
+    <a.not-done href="/examples#awly-radion-button">Radio button</a>
+    <a.not-done href="/examples#awly-slider">Slider</a>
+    <a.not-done href="/examples#awly-toggle-button">Toggle button</a>
+  </div>
+
+  <h2>Hooks</h2>
+  <div.group>
+    <a.not-done href="#">Inline IMG</a>
+    <a.not-done href="#">Inline SVG</a>
+    <a.not-done href="#">Inline CSS</a>
+    <a.not-done href="#">Inline JS</a>
+  </div>
+
+  <h2>MarkoJS</h2>
+  <div.group>
+    <a href="/examples/markojs#app-button">Buttons</a>
+    <a href="/examples/markojs#app-checkbox">Checkboxes</a>
+    <a href="/examples/markojs#app-notifications">Notifications</a>
+    <a href="/examples/markojs#app-overlay">Overlay</a>
+    <a href="/examples/markojs#app-tabs">Tabs</a>
+    <a href="/examples/markojs#app-progress-bar">Progress bar</a>
+    <a href="/examples/markojs#app-number-spinner">Number spinner</a>
+    <a href="/examples/markojs#app-state-select">State select</a>
+    <a href="/examples/markojs#client-side-rendering">Client side rendering</a>
+    <a href="/examples/markojs#app-map">Map</a>
+    <a href="/examples/markojs#app-markdown">Markdown</a>
+  </div>
+</div>
+
+style.scss {
+    .not-done{
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+      color: #aaaaaa !important;
+    }
+
+    .examples-menu {
+      box-sizing: border-box;
+      color: #2e333e;
+      min-height: calc(100vh - 280px);
+      overflow: auto;
+      // position: sticky;
+      padding: 0px 10px 60px 10px;
+      // margin: 0px 10px 0px 0px;
+      background-color: #f9f9f9;
+      top: 0px;
+
+      h2 {
+          font-size: 20px;
+      }
+      h2:not(:first-child) {
+          margin-top: 45px;
+      }
+
+      .group {
+          margin: -10px 0px 0 0;
+          padding: 0;
+          text-indent: 0;
+          display: table;
+          border-spacing: 0px 0px;
+          list-style-type: none;
+          width: 100%;
+          border-collapse:collapse;
+      }
+
+      a {
+          // display: table-row;
+          display: block;
+          padding-left: 10px;
+          color: #2e333e;
+          text-decoration: none;
+          width: 100%;
+          line-height: 30px;
+
+          /*&:before {
+              width: 10px;
+              padding-left: 10px;
+              color: #aaaaaa;
+              display: table-cell;
+              content: "●";
+              content: "";
+          }*/
+      }
+
+      a:hover {
+          border-left: 2px solid #08579f;
+          padding-left: 8px;
+      }
+    }
+}

@@ -1,0 +1,43 @@
+class {
+    onInput(input){
+      this.state = {
+        observe: input.observe || false
+      };
+    }
+    onMount(){
+      this.dispatchEventIfElementInViewPort(true);
+
+      let observe = this.state.observe && document.getElementById(this.state.observe) ? document.getElementById(this.state.observe) : window;
+      this.subscribeTo(observe).on('scroll', () => {
+          this.dispatchEventIfElementInViewPort(false);
+      });
+    }
+
+    dispatchEventIfElementInViewPort(pageJustLoaded) {
+      if(!pageJustLoaded) {
+        dispatchEvent(this);
+      } else {
+        setTimeout(() => { // this handles the case when window is already scrolled on page load TODO find a better way than timeout
+          dispatchEvent(this);
+        });
+      }
+
+      function dispatchEvent(component){
+        if(component.isElementInViewport()){
+          document.dispatchEvent(new Event(component.input.emitOnScrollIntoView)); // TODO rename to this.input.eventName
+        }
+      }
+    }
+
+    isElementInViewport() {
+        const rect = this.getEl().getBoundingClientRect();
+
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+}
+<span></span>

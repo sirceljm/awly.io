@@ -1,0 +1,316 @@
+static {
+    let exportsJSON;
+
+    function importExports(component){
+        return component.getEl().children[0].dataset.exports;
+    }
+
+    const { createHttpLink } = require("apollo-link-http");
+    const { ApolloClient } = require("apollo-client");
+    const { InMemoryCache } = require("apollo-cache-inmemory");
+
+    let isServer = false;
+    let state = {
+        profiles: null,
+        nextRecordId: null,
+        showMore: false
+    }
+}
+
+server-static {
+    var schema = require('src/services/graphql/schema.js');
+
+    const { LocalLink } = require("apollo-link-local");
+    var gql = require('graphql-tag');
+
+    const QUERY = gql`
+        query P($cursor: String, $limit: Int) {
+            profiles(cursor: $cursor, limit: $limit) {
+                lastCursor
+                items {
+                    profileId
+                    firstName
+                    lastName
+                    position
+                    city
+                    country
+                    avatarImgUrl
+                    bofStatus
+                }
+            }
+        }
+    `;
+
+    const serverClient = new ApolloClient({
+        link: new LocalLink({ schema }),
+        cache: new InMemoryCache()
+    });
+}
+
+server {
+    isServer = true;
+
+    let profilesPromise = new Promise((resolve, reject) => {
+        serverClient.query({
+            query: QUERY,
+            variables: {
+                cursor: null,
+                limit: 3,
+            },
+            fetchPolicy: 'network-only',
+        }).then(data => {
+            resolve(data.data);
+        });
+    });
+
+
+    state.profiles = profilesPromise;
+
+    var exportsPromise = new Promise((resolve, reject) => {
+        Promise.all([profilesPromise]).then((values) => {
+            resolve({
+                profiles: values[0].profiles.items,
+                nextRecordId: values[0].profiles.lastCursor,
+                showMore: values[0].profiles.lastCursor ? true : false,
+                QUERY: QUERY // to pass the query here saves couple of KB in browser js bundle
+            });
+        });
+    });
+}
+
+class {
+    onCreate(){
+        this.state = state;
+    }
+
+    onMount(){
+        function objectifyQueryString(url) {
+          let _url = new URL(url);
+          let _params = new URLSearchParams(_url.search);
+          let query = Array.from(_params.keys()).reduce((sum, value)=>{
+            return Object.assign({[value]: _params.get(value)}, sum);
+          }, {});
+          return query;
+        }
+
+        function objectToQuery(obj, prefix) {
+          var str = [], p;
+          for(p in obj) {
+            if (obj.hasOwnProperty(p)) {
+              var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+              str.push((v !== null && typeof v === "object") ?
+                objectToQuery(v, k) :
+                encodeURIComponent(k) + "=" + encodeURIComponent(v));
+            }
+          }
+          return str.join("&");
+        }
+
+        function customFetch(uri, options) {
+            const body = options.body;
+            delete options.body;
+            const queryString = objectToQuery(JSON.parse(body));
+            const requestedString = uri + "?" + queryString;
+            return fetch(requestedString, options);
+        };
+
+        this.browserClient = new ApolloClient({
+            link: new createHttpLink({
+                uri: "/gql",
+                fetchOptions: { method: "GET" },
+                fetch: customFetch
+            }),
+            cache: new InMemoryCache()
+        });
+
+        this.state = JSON.parse(this.getEl().dataset.exports);
+    }
+
+    loadMore(increaseBy){
+        let profilesPromise = new Promise((resolve, reject) => {
+            this.browserClient.query({
+                query: this.state.QUERY,
+                variables: {
+                    cursor: this.state.nextRecordId,
+                    limit: increaseBy,
+                },
+                fetchPolicy: 'network-only',
+            }).then(data => {
+                resolve(data.data);
+            });
+        });
+
+        profilesPromise.then((data) => {
+            this.state.profiles = this.state.profiles.concat(data.profiles.items);
+            this.state.nextRecordId = data.profiles.lastCursor;
+            this.state.showMore = data.profiles.lastCursor ? true : false;
+        });
+    }
+}
+
+<div id:scoped data-exports=(!isServer ? importExports(component) : null)>
+    <await(exports from (isServer ? exportsPromise : state))>
+        <span data-exports:no-update=JSON.stringify(exports)></span>
+
+        <div.componentTitleLineThrough>
+            <span.componentTitle.fcd>People List</span>
+        </div>
+
+        <div.profileCards>
+            <for(i from 0 to exports.profiles.length-1)>
+                <if(exports.profiles[i])>
+                    $ let profile = exports.profiles[i];
+                    <div.profileCard>
+                        <div.imageWrap>
+                            <img.image src=profile.avatarImgUrl />
+                        </div>
+
+                        <div.description>
+                            <div.name.fcd>${profile.firstName} ${profile.lastName}</div>
+                            <div.position>${profile.position}</div>
+                            <div.location>${profile.city} ${profile.country}</div>
+                        </div>
+                    </div>
+                </if>
+            </for>
+
+        </div>
+
+        <if(state.showMore)>
+            <div.showMore>
+                <button on-click("loadMore", 5)>SEE ALL EMPLOYEES & ALUMNI</button>
+            </div>
+        </if>
+    </await>
+    <div.placeholder></div>
+</div>
+
+style.sass {
+    @import "src/styles/sass/variables.scss";
+
+    .pretty {
+        color: $pretty-color !important;
+    }
+
+    .componentTitleLineThrough {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            border-top: 1px solid #dfdfdf;
+            content:"";
+            margin: 0 15px; /* this centers the line to the full width specified */
+            position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+            top: 50%; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+        }
+
+        .componentTitle {
+            font-size: 24px;
+            text-align: center;
+            // font-weight: 600;
+            color: #5f5f5f;
+            background: #fff;
+            padding: 0 25px;
+        }
+    }
+}
+
+style {
+    .profileCards{
+        margin-top: 10px;
+    }
+
+    .profileCard{
+        display: flex;
+        margin: 0px 14px;
+
+        border-top: 1px solid #dfdfdf;
+        padding: 10px 0px;
+    }
+
+    .profileCard:first-child{
+        border-top: none;
+    }
+
+    .imageWrap{
+        flex: 0 0 88px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image{
+        width: 88px;
+        height: 88px;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+    }
+
+    .blackText{
+        color: black;
+    }
+
+    .italicText{
+        font-style: italic;
+    }
+
+    .badgeSmall{
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        height: 18px;
+        width: 88px;
+        color: white;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 18px;
+        text-align: center;
+    }
+    .badgeBof500{
+        background-color: #AE936F;
+    }
+
+    .badgePro{
+        background-color: #FFBF15;
+    }
+
+    .description{
+        flex: 1;
+        margin-left: 10px;
+    }
+
+    .name{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+
+    .position{
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 19px;
+    }
+
+    .location{
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 19px;
+    }
+
+    .showMore{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .showMore button{
+        background-color: #710021;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        width: 300px;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: 600;
+        box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+    }
+}

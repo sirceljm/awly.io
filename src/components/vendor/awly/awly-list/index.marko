@@ -1,0 +1,291 @@
+static {
+    function importExports(component){
+        return component.getEl().children[0].dataset.exports;
+    }
+
+    const { createHttpLink } = require("apollo-link-http");
+    const { ApolloClient } = require("apollo-client");
+    const { InMemoryCache } = require("apollo-cache-inmemory");
+
+    let isServer = false;
+    let state = {
+        profiles: null,
+        nextProfileId: null,
+        showMore: false
+    }
+}
+
+server-static {
+    var schema = require('src/services/graphql/schema.js');
+
+    const { LocalLink } = require("apollo-link-local");
+    var gql = require('graphql-tag');
+
+    const QUERY = gql`
+        query P($cursor: String, $limit: Int) {
+            profiles(cursor: $cursor, limit: $limit) {
+                lastCursor
+                items {
+                    profileId
+                    firstName
+                    lastName
+                    city
+                    country
+                    avatarImgUrl
+                }
+            }
+        }
+    `;
+
+    const serverClient = new ApolloClient({
+        link: new LocalLink({ schema }),
+        cache: new InMemoryCache()
+    });
+}
+
+server {
+    let profilesPromise = new Promise((resolve, reject) => {
+        serverClient.query({
+            query: QUERY,
+            variables: {
+                cursor: null,
+                limit: 5,
+            },
+            fetchPolicy: 'no-cache', // network-only has a bug in ApolloClient: https://github.com/apollographql/react-apollo/issues/1314
+        }).then(response => {
+            resolve(response.data);
+        }).catch(err => {
+            console.log('ERR', err);
+            reject(err);
+        });
+    });
+
+    isServer = true;
+    state.profiles = profilesPromise;
+
+    let exportsPromise = new Promise((resolve, reject) => {
+        Promise.all([profilesPromise]).then((values) => {
+            resolve({
+                profiles: values[0].profiles.items,
+                nextProfileId: values[0].profiles.lastCursor,
+                showMore: values[0].profiles.lastCursor ? true : false,
+                QUERY: QUERY
+            });
+        }).catch(err => {
+            resolve({ "error": err });
+        });
+    });
+}
+
+class {
+    onCreate(){
+        this.state = state;
+    }
+
+    onMount(){
+        function objectifyQueryString(url) {
+          let _url = new URL(url);
+          let _params = new URLSearchParams(_url.search);
+          let query = Array.from(_params.keys()).reduce((sum, value)=>{
+            return Object.assign({[value]: _params.get(value)}, sum);
+          }, {});
+          return query;
+        }
+
+        function objectToQuery(obj, prefix) {
+          var str = [], p;
+          for(p in obj) {
+            if (obj.hasOwnProperty(p)) {
+              var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+              str.push((v !== null && typeof v === "object") ?
+                objectToQuery(v, k) :
+                encodeURIComponent(k) + "=" + encodeURIComponent(v));
+            }
+          }
+          return str.join("&");
+        }
+
+        function customFetch(uri, options) {
+            // const body = options.body || "";
+            // delete options.body;
+            // console.log('O', options.body, body);
+            // let queryString = "";
+            // if(body){
+            //     queryString = objectToQuery(JSON.parse(body));
+            //     console.log(JSON.parse(body));
+            // }
+
+            const requestedString = uri;
+            return fetch(requestedString, options);
+        };
+
+        this.browserClient = new ApolloClient({
+            link: new createHttpLink({
+                uri: "/gql",
+                fetchOptions: { method: "POST" },
+                // fetch: customFetch
+            }),
+            cache: new InMemoryCache()
+        });
+
+        this.state = JSON.parse(this.getEl().dataset.exports);
+    }
+
+    loadMoreKeyPeople(increaseBy){
+        console.log(this.state.QUERY);
+        let profilesPromise = new Promise((resolve, reject) => {
+            this.browserClient.query({
+                query: this.state.QUERY,
+                variables: {
+                    cursor: this.state.nextProfileId,
+                    limit: increaseBy,
+                },
+                fetchPolicy: 'network-only',
+            }).then(data => {
+                resolve(data.data);
+            });
+        });
+
+        profilesPromise.then((data) => {
+            this.state.profiles = this.state.profiles.concat(data.profiles.items);
+            this.state.nextProfileId = data.profiles.lastCursor;
+            this.state.showMore = data.profiles.lastCursor ? true : false;
+        });
+    }
+}
+
+<div id:scoped data-exports=(!isServer ? importExports(component) : null)>
+    <await(exports from (isServer ? exportsPromise : state))>
+        <span data-exports:no-update=JSON.stringify(exports)></span>
+<!-- <pre>${JSON.stringify(exports, null, 4)}</pre> -->
+        <!-- <div.componentTitleLineThrough>
+            <span.componentTitle>list</span>
+        </div> -->
+        <if(exports.error)>
+          <pre>${JSON.stringify(exports.error, null, 4)}</pre>
+        </if>
+        <else>
+          <div.profileCards>
+              <for(i from 0 to exports.profiles.length-1)>
+                  <if(exports.profiles[i])>
+                      $ let profile = exports.profiles[i];
+                      <div.profileCard>
+                          <div.imageWrap>
+                              <img.image src=profile.avatarImgUrl />
+                          </div>
+
+                          <div.description>
+                              <div.name>${profile.firstName} ${profile.lastName}</div>
+                              <div.location>${profile.city} ${profile.country}</div>
+                          </div>
+                      </div>
+                  </if>
+              </for>
+          </div>
+
+          <if(state.showMore)>
+              <button.showMoreBtn on-click("loadMoreKeyPeople", 5)>SEE MORE</button>
+          </if>
+        </else>
+    </await>
+</div>
+
+style.scss {
+    .profileCards{
+        margin-top: 10px;
+    }
+
+    .profileCard{
+        display: flex;
+        margin: 0px 14px;
+
+        border-top: 1px solid #dfdfdf;
+        padding: 10px 0px;
+
+        align-items: center;
+    }
+
+    .profileCard:first-child{
+        border-top: none;
+    }
+
+    .imageWrap{
+        flex: 0 0 88px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image{
+        width: 88px;
+        height: 88px;
+        border-radius: 100%;
+    }
+
+    .blackText{
+        color: black;
+    }
+
+    .italicText{
+        font-style: italic;
+    }
+
+    .description{
+        flex: 1;
+        margin-left: 10px;
+    }
+
+    .name{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 22px;
+    }
+
+    .location{
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 19px;
+    }
+
+    .showMoreBtn{
+      background: #fafafa;
+      border: 1px solid #a1a9ba;
+      border-radius: 2px;
+      color: #2e333e;
+      cursor: pointer;
+      display: flex;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      user-select: none;
+      vertical-align: middle;
+      align-content: center;
+      display: flex;
+      justify-content: center;
+      height: 40px;
+      min-width: 180px;
+      white-space: nowrap;
+      box-shadow: 0px 1px 0px #c3c3c3, inset 0px -1px 0px 1px #e0e0e0;
+      padding: 0px 10px;
+
+      &:focus {
+        background: #ffffff;
+        text-decoration: none;
+        outline: none;
+      }
+
+      &:hover {
+        background: #ffffff;
+        text-decoration: none;
+        outline: none;
+      }
+
+      &:active {
+        background: #efefef;
+        text-decoration: none;
+        margin-top: 1px;
+        margin-bottom: -1px;
+        outline: none;
+        box-shadow: inset 0px -1px 0px 1px #e0e0e0;
+      }
+    }
+}

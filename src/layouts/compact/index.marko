@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <google-analytics tracking-id="UA-115954060-1" show-only-in-env("prod") />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><include(data.title)/></title>
+
+    <style inline-css="/assets/css/normalize.css"></style>
+    <style inline-css="/assets/css/system-fonts.css"></style>
+
+    $!{out.global.injectCSS}
+</head>
+<body.grid-layout>
+    <div.header-bg></div>
+    <div.title-bg></div>
+    <div.footer-bg></div>
+
+    <div.nav><include(data.nav)/></div>
+    <div.body><include(data.body)/></div>
+    <div.footer><include(data.footer)/></div>
+
+    $!{out.global.injectJS}
+
+    <awly-hot-reload show-only-in-env("dev") />
+</body>
+</html>
+
+style.scss {
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .grid-layout {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 10px auto 10px;
+        grid-template-rows: 100px auto 50px;
+        grid-template-areas:
+            ". nav ."
+            ". body ."
+            ". footer .";
+    }
+
+    @media (min-width: 900px){
+        .grid-layout {
+            grid-template-columns: 1fr 400px 400px 1fr;
+            grid-template-rows: 100px auto 50px;
+            grid-template-areas:
+                ". nav nav ."
+                ". body body ."
+                ". footer footer .";
+        }
+    }
+
+    @media (min-width: 1300px){
+        .grid-layout {
+            grid-template-columns: 1fr 600px 600px 1fr;
+            grid-template-rows: 100px auto 50px;
+            grid-template-areas:
+                ". nav nav ."
+                ". body body ."
+                ". footer footer .";
+        }
+    }
+
+
+
+    .header-bg {
+        grid-area: nav-start / 1 / nav-end / end;
+        background-color: hsla(289, 61%, 17%, 1);
+    }
+
+    .footer-bg {
+        grid-area: footer-start / 1 / footer-end / end;
+        background-color: hsla(289, 61%, 17%, 1);
+    }
+
+    .nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+    }
+
+    .body {
+        grid-area: body;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+}

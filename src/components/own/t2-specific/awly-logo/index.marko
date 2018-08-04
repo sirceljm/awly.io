@@ -1,0 +1,124 @@
+class {
+  onInput(input){
+    this.state = {
+      scale: input.adjust && input.adjust.scale || 1,
+      marginTop: input.adjust && input.adjust.marginTop || '0px',
+      marginLeft: input.adjust && input.adjust.marginLeft || '0px'
+    }
+  }
+}
+<div.awly-logo style="transform: scale(${state.scale}); margin-top: ${state.marginTop}; margin-left: ${state.marginLeft};">
+    <div.awly-logo__head>
+        <div.awly-logo__eye.awly-logo__eye-left>
+            <div.awly-logo__eye-retina></div>
+        </div>
+        <div.awly-logo__eye.awly-logo__eye-right>
+            <div.awly-logo__eye-retina></div>
+        </div>
+        <div.awly-logo__beak></div>
+    </div>
+    <div.awly-logo__body-window>
+        <div.awly-logo__body>
+            <div.awly-logo__body-right></div>
+        </div>
+    </div>
+</div>
+
+style.scss {
+    $logo_headColor: #3B85C8;
+    $logo_bodyColor: #1871C0;
+    $logo_wingColor: #08579F;
+
+    $logo_beakColor: #FF6000;
+
+    $logo_borderThickness: 0px;
+    $logo_borderColor: white;
+
+    $logo_height: 65px;
+
+    .awly-logo {
+        display: inline-block;
+    }
+
+    .awly-logo__head {
+        position: relative;
+        z-index: 2;
+        height: 65px;
+        width: 65px;
+        background-color: $logo_headColor;
+        border-radius: 100%;
+        box-shadow: 1px 1px 0px hsla(209, 56%, 65%, 1);
+        border-top-left-radius: 2px;
+    }
+
+    .awly-logo__eye-left {
+        top: 19px;
+        left: 4px;
+    }
+
+    .awly-logo__eye-right {
+        top: 19px;
+        left: 31px;
+    }
+
+    .awly-logo__eye {
+        position: absolute;
+        z-index: 3;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 100%;
+        box-shadow: 1px 1px 1px #666;
+    }
+
+    .awly-logo__eye-retina {
+        position: absolute;
+        z-index: 5;
+        top: 9px;
+        left: 5px;
+        width: 11px;
+        height: 11px;
+        background-color: #333;
+        border-radius: 100%;
+    }
+
+    .awly-logo__beak {
+        position: absolute;
+        z-index: 1;
+        top: 40px;
+        left: 32px;
+        width: 21px;
+        height: 21px;
+        background: radial-gradient(circle at bottom right, transparent 21px, $logo_beakColor 0) bottom right;
+    }
+
+    .awly-logo__body-window {
+        margin-top: -34px;
+        margin-left: 3px;
+        overflow: hidden;
+        width: 62px;
+        height: 94px;
+    }
+
+    .awly-logo__body {
+        position: relative;
+        z-index: 1;
+        height: 90px;
+        width: 100px;
+        background-color: $logo_bodyColor;
+        border-bottom-left-radius: 88%;
+        box-shadow: 1px 1px 1px #f7f7f7;
+    }
+
+    .awly-logo__body-right {
+        position: relative;
+        z-index: 2;
+        height: 88px;
+        width: 43px;
+        background-color: $logo_wingColor;
+        border-bottom-left-radius: 187%;
+        border-top-left-radius: 100%;
+        margin-left: 32px;
+        filter: drop-shadow(0px 6px 0px rgba(255, 255, 255, 0.6));
+    }
+}

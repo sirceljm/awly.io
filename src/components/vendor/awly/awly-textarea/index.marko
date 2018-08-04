@@ -1,0 +1,102 @@
+import { registerSchema, validate } from "class-validator";
+
+class {
+    onCreate(){
+      this.state = {
+        value: null,
+        validationErrors: []
+      };
+    }
+
+    onInput(input){
+
+    }
+
+    onMount(){
+      registerSchema({
+          name: this.id, // get id for each component separately from id:scoped in html
+          properties: {
+              text: [{
+                  type: "minLength",
+                  constraints: [100],
+                  message: function(args){
+                    console.log(args);
+                    if(!args.value){
+                      return "Text is missing.";
+                    } else {
+                      return "Text is only " + args.value.length + " characters long. Is must be at least " + args.constraints + " characters."
+                    }
+                  }
+              }]
+          }
+      });
+    }
+
+    onFieldInput(event, el){
+        let value = {text: event.target.value};
+        this.state.value = event.target.value;
+
+        validate(this.id, value).then((errors) => {
+            this.state.validationErrors = errors;
+            this.emit('validated', errors);
+        });
+    }
+}
+
+<div.awly-textarea id:scoped>
+  <label>
+    <div.awly-textarea__label>Insert text at least 100 characters long:</div>
+    <textarea.awly-textarea__textarea on-input("onFieldInput") placeholder="Insert text here">${state.value}</textarea>
+
+    <if(input.validateInline && state.validationErrors.length)>
+        <div.awly-textarea__message.awly-textarea__message--error>${state.validationErrors[0].constraints.minLength}</div>
+    </if>
+    <else>
+        <div.awly-textarea__message>&nbsp;</div>
+    </else>
+  </label>
+</div>
+
+style.scss {
+  .awly-textarea {
+    display: flex;
+    width: 100%;
+
+    textarea {
+      outline: none;
+    }
+
+    label {
+      width: 100%;
+    }
+
+    &__textarea {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #a1a9ba;
+        border-radius: 2px;
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    &__message {
+        padding: 4px 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        color: grey;
+        font-size: 0.8rem;
+
+        &--error {
+          color: red;
+        }
+
+        &--success {
+          color: green;
+        }
+    }
+  }
+}

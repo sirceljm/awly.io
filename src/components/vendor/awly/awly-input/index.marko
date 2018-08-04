@@ -1,0 +1,112 @@
+static {
+  // require { registerSchema, validate } from "class-validator";
+
+  const registerSchema = require("class-validator").registerSchema;
+  const validate = require("class-validator").validate;
+}
+
+class {
+    onCreate(){
+      this.state = {
+        value: null,
+        validationErrors: []
+      };
+    }
+
+    onInput(input){
+      if(input.color){
+        this.state.btnClass += " btn-" + input.color;
+      }
+    }
+
+    onMount(){
+      registerSchema({
+          name: this.id, // get id for each component separately from id:scoped in html
+          properties: {
+              email: [{
+                  type: "isEmail",
+                  constraints: [],
+                  message: function(args){
+                    if(!args.value){
+                      return "Email is missing.";
+                    } else {
+                      return "Email " + args.value + " is invalid."
+                    }
+                  }
+              }]
+          }
+      });
+    }
+
+    onFieldInput(event, el){
+        let value = {email: event.target.value};
+        this.state.value = event.target.value;
+
+        validate(this.id, value).then((errors) => {
+            this.state.validationErrors = errors;
+            this.emit('validated', errors);
+        });
+    }
+}
+
+<div.awly-input id:scoped>
+  <label>
+    <div.awly-input__label>Email address:</div>
+    <input.awly-input__input on-input("onFieldInput") placeholder="Insert email here" value=state.value/>
+
+    <if(input.validateInline && state.validationErrors.length)>
+        <div.awly-input__message.awly-input__message--error>${state.validationErrors[0].constraints.isEmail}</div>
+    </if>
+    <else-if(input.validateInline && !state.validationErrors.length && state.value)>
+        <div.awly-input__message.awly-input__message--success>Email ${state.value} is valid.</div>
+    </else-if>
+    <else>
+        <div.awly-input__message>&nbsp;</div>
+    </else>
+  </label>
+</div>
+
+style.scss {
+  .awly-input {
+    display: flex;
+    width: 100%;
+
+    input {
+      outline: none;
+    }
+
+    label {
+      width: 100%;
+    }
+
+    &__input {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #a1a9ba;
+        border-radius: 2px;
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    &__message {
+        padding: 4px 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        color: grey;
+        font-size: 0.8rem;
+        // background-color: #ffe5e5;
+
+        &--error {
+          color: red;
+        }
+
+        &--success {
+          color: green;
+        }
+    }
+  }
+}

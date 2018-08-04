@@ -1,0 +1,101 @@
+static {
+    let exportsJSON;
+
+    function importExports(component){
+        return component.getEl().dataset.exports;
+    }
+
+    let state = {
+    }
+}
+
+server-static {
+}
+
+server {
+    exportsJSON = JSON.stringify(state);
+}
+
+class {
+    onCreate() { // happens on server
+        this.state = state;
+    }
+
+    onMount() { // happens on client
+        const self = this;
+        this.state = JSON.parse(this.el.getAttribute("data-exports"));
+
+        var options = {
+            strings: ['npm install -g awly^1000\nawly init myApp^1000\ncd myApp^1000\nawly server start'],
+            backSpeed: 0,
+            cursorChar: "|",
+            contentType: 'html',
+            //stringsElement: '#typed-strings',
+            typeSpeed: 40
+        }
+
+        var typed = new Typed(".element", options);
+    }
+}
+
+<div id:scoped data-exports=(exportsJSON ? exportsJSON : importExports(component))> <!-- data-exports <- import data from server rendered component -->
+    <!-- <div id="typed-strings">
+
+        <div>npm install -g awly</div>
+        Local
+        <div>awly init awly-app</div>
+        <div>awly server start</div>
+
+        <br />
+        <br />
+        Show me how to deploy to AWS
+        <div>awly link aws</div>
+        <div>awly deploy-all</div>
+    </div> -->
+
+    <div.type-wrap>
+        <span.element style="white-space: pre;"></span>
+    </div>
+
+    <script inline-js="/assets/js/typed.min.js"></script>
+</div>
+
+style.sass {
+
+}
+
+style {
+    .bg{
+        background-color: #5e2b97;
+    }
+
+    .type-wrap {
+        margin: 10px auto;
+        padding: 20px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        border: #CCC 1px solid;
+    }
+
+    .typed-cursor{
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    @keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+    @-webkit-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+    @-moz-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+    }
+}

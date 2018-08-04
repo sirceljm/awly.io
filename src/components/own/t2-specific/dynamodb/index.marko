@@ -1,0 +1,39 @@
+server-static {
+    // var apollo = require("apollo-server-lambda");
+    var runGraphQL = require('src/services/graphql');
+}
+
+server {
+    var postsPromise = [];
+    var test = 'PANDEMIC - On the brink - out of stock';
+
+    var postsPromise = new Promise((resolve, reject) => {
+         runGraphQL(
+             `query P{
+               posts {
+                 id, title, bodyContent
+               }
+             }`, function(err, result){
+                 if(err) throw err;
+                 resolve(result.data.posts);
+             }
+         );
+    });
+}
+
+style {
+    .count {
+        color:#09c;
+        font-size:3em;
+    }
+}
+
+<div.count>
+    dynamodb<br />
+    ${test}
+    <await(posts from postsPromise)>
+        <for(post in posts)>
+            <div>${post.id} - ${post.title} - ${post.bodyContent}</div>
+        </for>
+    </await>
+</div>

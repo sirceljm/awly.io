@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <google-analytics tracking-id="UA-115954060-1"></google-analytics>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title><include(data.title)/></title>
+
+    <style inline-css="/assets/css/normalize.css"></style>
+    <style inline-css="/assets/css/system-fonts.css"></style>
+
+    $!{out.global.injectCSS}
+</head>
+<body.grid-layout>
+    <div.header-bg></div>
+    <div.title-bg></div>
+    <div.footer-bg></div>
+
+<banner />
+<message />
+
+<div>
+  <h1>COMING SOON!</h1>
+  <h2>Awly CLI</h2>
+  <ul>
+    <li>Installation</li>
+    <li>Creating a new project</li>
+    <li>CLI commands</li>
+  </ul>
+
+  <h2>Awly serverless architecture</h2>
+  <ul>
+    <li>Basic overwiew</li>
+    <li>Serving web pages with AWS Lambda</li>
+    <li>MarkoJS isomorphic templates</li>
+    <li>JS & CSS assets</li>
+    <li>Performance</li>
+    <li>GraphQL & DynamoDB</li>
+    <li>Costs</li>
+  </ul>
+
+  <h2>Development environment</h2>
+  <ul>
+    <li>Running a local express server</li>
+    <li>Local DynamoDB Admin</li>
+  </ul>
+
+
+  <h2>Deploying to AWS</h2>
+
+  <h2></h2>
+</div>
+
+    $!{out.global.injectJS}
+
+    <script>
+        var poll = function () {
+            var oReq = new XMLHttpRequest();
+            oReq.timeout = 60000; // time in milliseconds
+
+            oReq.onload = function (data) {
+                location.reload();
+                poll();
+            };
+
+            oReq.ontimeout = function (e) {
+                poll();
+            };
+
+            oReq.open("GET", "https://localhost:8443/__hotReload");
+            oReq.send();
+        };
+
+        // Make sure to call it once first,
+        poll();
+    </script>
+</body>
+</html>
+
+style.scss {
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .grid-layout {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 10px auto 10px;
+        grid-template-rows: 100px auto 50px;
+        grid-template-areas:
+            ". nav ."
+            ". body ."
+            ". footer .";
+    }
+
+    @media (min-width: 900px){
+        .grid-layout {
+            grid-template-columns: 1fr 400px 400px 1fr;
+            grid-template-rows: 100px auto 50px;
+            grid-template-areas:
+                ". nav nav ."
+                ". body body ."
+                ". footer footer .";
+        }
+    }
+
+    @media (min-width: 1300px){
+        .grid-layout {
+            grid-template-columns: 1fr 600px 600px 1fr;
+            grid-template-rows: 100px auto 50px;
+            grid-template-areas:
+                ". nav nav ."
+                ". body body ."
+                ". footer footer .";
+        }
+    }
+
+
+
+    .header-bg {
+        grid-area: nav-start / 1 / nav-end / end;
+        background-image: -webkit-linear-gradient(#80059E 0%, #550486 100%);
+        margin-bottom: 3px;
+        box-shadow: 0px 2px 1px black;
+        // border-bottom: 7px solid rgb(136, 80, 171);
+    }
+
+    .footer-bg {
+        grid-area: footer-start / 1 / footer-end / end;
+        background-image: -webkit-linear-gradient(#80059E 0%, #550486 100%);
+    }
+
+    .nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        // margin-top: 30px;
+    }
+
+    .body {
+        grid-area: body;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+}

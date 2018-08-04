@@ -1,0 +1,11 @@
+<svg viewBox="0 0 930 620"
+     preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+     <filter id="blur" x="0" y="0">
+       <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+     </filter>
+  </defs>
+  <image xlink:href="data:image/gif;base64,R0lGODdhCgAHAMZEACEmHigtJjIvISg1ODBASTRBQE5LPkJPTDhSX1ZSPjxebVlbTVpcVmNjSXFhQG9lTHJlSEJxim9qTGVtYGxycmd7hnp+fGyJlJWGYI6LdKyQY6KVcIaerpucjpGfqZ6fkZqgnYeltZujo62ljqiqqZ6vu52wvbmtlZ6yw6W3v6u6wre/vbjAvrbEzrLH1b7Lyr/Lyb/My87Jv8HNzMHNzcnNycPP18TQ0MfT0tLSz9XU0cnX4tjX1c/a49jZ19nZ19rZ19vb2dXe5N3d3P///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ywAAAAACgAHAAAHSIAkKBUZGA8GAgAEOy4XEA4JCwEDCD02HxINEwcFChFCMhobHSAMFBwhLScjKSoiFh4mJTg1My8wLCs3NDFDQTw5Oj9APz4/gQA7" width="100%" filter="url(#blur)"/>
+</svg>

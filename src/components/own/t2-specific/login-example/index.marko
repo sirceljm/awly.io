@@ -1,0 +1,164 @@
+static {
+  let exportsJSON;
+  let bgSvgData;
+
+  function importExports(component){
+      return component.getEl().children[0].dataset.exports;
+  }
+
+  let isServer = false;
+
+  let state = {
+    token: "",
+    firstName: "",
+    lastName: ""
+  }
+}
+
+server-static {
+    const jwtServer = require('jsonwebtoken');
+}
+
+server {
+    isServer = true;
+
+    if(out && out.global && out.global.req){
+        state.token = out.global.req.cookies.auth_example; // get cookie from request object
+    }
+
+    if(state.token){
+        const decoded = jwtServer.verify(state.token, 'secret');
+        state.firstName = decoded.firstName;
+        state.lastName = decoded.lastName;
+    }
+
+    let exportsPromise = state;
+}
+
+class {
+  onCreate(){
+    this.state = state;
+  }
+
+  onMount(){
+    const component = this;
+    this.state = JSON.parse(this.getEl().dataset.exports);
+
+    this.jwtClient = require('jwt-client');
+    this.loadUserData();
+
+    // LISTEN ON LOCAL STORAGE EVENT - fires if local storage changes in other tab
+    if (window.addEventListener) {
+      window.addEventListener("storage", onStorage, false);
+    } else {
+      window.attachEvent("onstorage", onStorage);
+    };
+
+    function onStorage(data) {
+      component.loadUserData();
+    }
+
+    // LISTEN ON WINDOW EVENT
+    this.subscribeTo(document).on('example_user_change', () => {
+        component.loadUserData(component.jwtClient1);
+    });
+
+  }
+
+  login(){
+      const component = this;
+      function reqListener () {
+        const token = JSON.parse(this.responseText).token;
+        if (component.jwtClient.validate(token)) {
+            component.jwtClient.keep(token);
+            document.dispatchEvent(new Event('example_user_change'));
+        }
+      }
+
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", reqListener);
+      oReq.open("POST", "/api/auth/example-login", true);
+      oReq.setRequestHeader("Content-Type", "application/json");
+      oReq.send(JSON.stringify({
+        firstName: this.state.firstName,
+        lastName: this.state.lastName
+      }));
+  }
+
+  logout(){
+      const component = this;
+
+      function reqListener () {
+        component.jwtClient.forget();
+        document.dispatchEvent(new Event('example_user_change'));
+      }
+
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", reqListener);
+      oReq.open("POST", "/api/auth/example-logout", true);
+      oReq.setRequestHeader("Content-Type", "application/json");
+      oReq.send();
+  }
+
+  loadUserData(){
+    const session = this.jwtClient.remember();
+
+    if(session){
+        this.state.firstName = session.claim.firstName;
+        this.state.lastName = session.claim.lastName;
+    }else{
+        this.state.firstName = "";
+        this.state.lastName = "";
+    }
+  }
+
+  onFirstNameInput (input) {
+     this.state.firstName = input.target.value;
+  }
+
+  onLastNameInput (input) {
+     this.state.lastName = input.target.value;
+  }
+
+}
+
+<div.awly-login-example id:scoped data-exports=(!isServer ? importExports(component) : null)>
+  <span data-exports:no-update=JSON.stringify((isServer ? exportsPromise : state))></span>
+  <div>
+    <label>
+      <div>First Name:</div>
+      <input.awly-login-example__input on-input('onFirstNameInput') value=state.firstName />
+    </label>
+  </div>
+  <div>
+    <label>
+      <div>Last Name:</div>
+      <input.awly-login-example__input on-input('onLastNameInput') value=state.lastName />
+    </label>
+  </div>
+  <div.awly-login-example__buttons>
+    <awly-button on-click('login')>
+      <@text>LOGIN</@text>
+    </awly-button>
+    <span>&nbsp;</span>
+    <awly-button on-click('logout')>
+      <@text>LOGOUT</@text>
+    </awly-button>
+  </div>
+</div>
+
+style.scss {
+  .awly-login-example {
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    &__input {
+      width: 100%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+  }
+}

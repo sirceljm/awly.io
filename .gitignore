@@ -57,14 +57,14 @@ typings/
 # dotenv environment variables file
 .env
 
-lambdas
-static
-.cache
-certs
-project-config/cloudfront/cloudfront-distribution.config.js
-project-config/iam
-project-config/main.config.js
-cfdist.json
-browser.json
+/lambdas
+/static
+/.cache
+/certs
+/project-config/cloudfront/cloudfront-distribution.config.js
+/project-config/iam
+/project-config/main.config.js
+/cfdist.json
+/browser.json
 
 *.marko.js

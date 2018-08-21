@@ -1,0 +1,144 @@
+class {
+    onCreate(){
+      // TODO get header height form input
+      this.state = {
+        examplesMenuMarginTop: null,
+        examplesMenuHeight: null,
+        count: 0,
+        previousMarginTop: null,
+        previousMarginBottom: null,
+        currentScrollTop: null
+      }
+    }
+    onMount(){
+        // this.previousMarginTop = 180;
+        // this.previousMarginBottom = 0;
+        // this.previousScrollTop = this.getDocumentScrollTopPos();
+        // this.count = 0;
+        //
+        // const rect = this.getEl().getBoundingClientRect();
+        // const docHeight = (window.innerHeight || document.documentElement.clientHeight);
+        // // console.log(rect, docHeight, (docHeight - rect.bottom), (rect.top - (docHeight - rect.bottom)));
+        //
+        // // let adjustHeight = (-rect.top + (docHeight - rect.bottom));
+        // let adjustHeight = -rect.top;
+        //
+        // this.state.examplesMenuMarginTop = adjustHeight + "px";
+        // this.state.examplesMenuHeight = "calc(" + adjustHeight + "px + 100vh)";
+        //
+        // this.subscribeTo(window).on('scroll', (event) => {
+        //     this.adjustSidebarHeight();
+        // });
+    }
+
+    getDocumentScrollTopPos(){
+      const doc = document.documentElement;
+      return (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+    }
+
+    adjustSidebarHeight() {
+        // TODO test & improve
+        const scrollTop = this.getDocumentScrollTopPos();
+        const scrollDelta = this.previousScrollTop - scrollTop;
+        const scrollDirection = (scrollDelta > 0 ? 'up' : 'down');
+        this.previousScrollTop = scrollTop;
+
+        const rect = this.getEl().getBoundingClientRect();
+        const docHeight = (window.innerHeight || document.documentElement.clientHeight);
+        // console.log(rect.top, rect.bottom, docHeight, (rect.top + (docHeight - rect.bottom)));
+
+        let adjustHeight = 0;
+
+        if((rect.top >= 0 && this.previousMarginTop >= 0)){
+          // if(scrollDirection === 'down'){
+            adjustHeight = rect.top;
+          // }
+          this.state.examplesMenuMarginTop = adjustHeight + "px";
+          this.state.examplesMenuHeight = "calc(100vh - " + adjustHeight + "px)";
+        } else if(rect.bottom <= docHeight && this.previousMarginBottom >= 0){
+          //if(scrollDirection === 'down'){
+            adjustHeight = (docHeight - rect.bottom);
+          //}
+          this.state.examplesMenuHeight = "calc(100vh - " + adjustHeight + "px)";
+        }
+
+        this.state.previousMarginTop = rect.top;
+        this.state.previousMarginBottom = docHeight - rect.bottom;
+    }
+}
+
+<div.get-started-menu style={ height: state.examplesMenuHeight }>
+  <!-- <h2>What is Awly?</h2>
+  <div.group>
+    <a href="/getting-started#about">About Awly framework</a>
+    <a.not-done href="/getting-started#why">Why use it?</a>
+  </div> -->
+
+  <h2>Getting started</h2>
+  <div.group>
+    <a href="/getting-started#start-project">Start your local project</a>
+  </div>
+</div>
+
+style.scss {
+    .not-done{
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+      color: #aaaaaa !important;
+    }
+
+    .get-started-menu {
+      box-sizing: border-box;
+      color: #2e333e;
+      min-height: calc(100vh - 280px);
+      overflow: auto;
+      // position: sticky;
+      padding: 0px 10px 60px 10px;
+      // margin: 0px 10px 0px 0px;
+      background-color: #f9f9f9;
+      top: 0px;
+
+      h2 {
+          font-size: 20px;
+      }
+      h2:not(:first-child) {
+          margin-top: 45px;
+      }
+
+      .group {
+          margin: -10px 0px 0 0;
+          padding: 0;
+          text-indent: 0;
+          display: table;
+          border-spacing: 0px 0px;
+          list-style-type: none;
+          width: 100%;
+          border-collapse:collapse;
+      }
+
+      a {
+          // display: table-row;
+          display: block;
+          padding-left: 10px;
+          color: #2e333e;
+          text-decoration: none;
+          width: 100%;
+          line-height: 30px;
+
+          /*&:before {
+              width: 10px;
+              padding-left: 10px;
+              color: #aaaaaa;
+              display: table-cell;
+              content: "●";
+              content: "";
+          }*/
+      }
+
+      a:hover {
+          border-left: 2px solid #08579f;
+          padding-left: 8px;
+      }
+    }
+}

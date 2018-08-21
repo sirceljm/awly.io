@@ -12,29 +12,23 @@
         <message />
     </@message>
     <@sideBar>
-      <ul>
-        <li>Setup your local environment</li>
-        <li>Make your first page</li>
-        <li>Deploy to cloud</li>
-        <li>Create a component</li>
-        <li>Connect your data</li>
-
-      </ul>
+      <get-started-menu />
     </@sideBar>
     <@body>
         <div>
-          <a#awly-load-more-list.anchor>
+          <!-- <a#about.anchor>
             <div.hash>#</div>
             <div.comp-title>What is Awly?</div>
           </a>
 
           <div.example-desc>
             <p>
-                The easiest way to create your Awly project is to
+                Awly is a framework for developing & creating serverless web applications. Right now you can
+                develop your web pages on your localhost machine and deploy them to AWS cloud infrastructure.
             </p>
-          </div>
+          </div> -->
 
-          <a#awly-load-more-list.anchor>
+          <a#start-project.anchor>
             <div.hash>#</div>
             <div.comp-title>Start your local project</div>
           </a>
@@ -45,7 +39,7 @@
             <code>npx awly init</code>
             <p>This will install the awly-cli locally with npm, download the default bootstrap awly project and start the localhost server.</p>
             <p><i>Note that you will then have to run every <a href="/docs#cli-commands">awly cli command</a> prefixed with npx.</i></p>
-            
+
             <br />
             <h2>Option 2: Install Awly as a global npm module</h2>
             <p>To use Awly as a global npm module you have to use the <span>--unsafe-perm</span> when installing like so:</p>

@@ -11,7 +11,6 @@ function runGraphQL(query, cb) {
     graphql
         .graphql(Schema, query)
         .then( function(result) {
-            console.log("R", JSON.stringify(result, null, 4));
             return cb(null, result);
         })
         .catch( function(error) {

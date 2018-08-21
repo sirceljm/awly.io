@@ -26,5 +26,17 @@ module.exports = {
     "/logo": {
         "type": "lambda",
         "localEndpoint": "src/pages/logo"
+    },
+    "/gql": {
+        "type": "lambda",
+        "localEndpoint": "src/api/vendor/awly/gql/index.js"
+    },
+    "/api/auth/example-login": {
+        "type": "lambda",
+        "localEndpoint": "src/api/vendor/awly/auth/example-login.js"
+    },
+    "/api/auth/example-logout": {
+        "type": "lambda",
+        "localEndpoint": "src/api/vendor/awly/auth/example-logout.js"
     }
 };

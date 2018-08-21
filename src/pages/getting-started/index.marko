@@ -1,4 +1,4 @@
-<include("src/layouts/compact")>
+<include("src/layouts/compact-sidebar")>
     <@title>
         Awly.io - easiest serverless framework for web applications
     </@title>
@@ -11,19 +11,50 @@
     <@message>
         <message />
     </@message>
+    <@sideBar>
+      <ul>
+        <li>Setup your local environment</li>
+        <li>Make your first page</li>
+        <li>Deploy to cloud</li>
+        <li>Create a component</li>
+        <li>Connect your data</li>
+
+      </ul>
+    </@sideBar>
     <@body>
         <div>
-          <div>
-            <h1>COMING SOON!</h1>
-            <p>In the meantime you can look at the <a href="/examples">component examples</a></p>
+          <a#awly-load-more-list.anchor>
+            <div.hash>#</div>
+            <div.comp-title>What is Awly?</div>
+          </a>
+
+          <div.example-desc>
+            <p>
+                The easiest way to create your Awly project is to
+            </p>
           </div>
-          <ul>
-            <li>Setup your local environment</li>
-            <li>Make your first page</li>
-            <li>Create a component</li>
-            <li>Connect your data</li>
-            <li>Deploy to cloud</li>
-          </ul>
+
+          <a#awly-load-more-list.anchor>
+            <div.hash>#</div>
+            <div.comp-title>Start your local project</div>
+          </a>
+
+          <div.example-desc>
+            <h2>Option 1: Run Awly with <a href="https://www.npmjs.com/package/npx">npx</a></h2>
+            <p>The easiest way to create your Awly project is to create an empty folder and inside run the command:</p>
+            <code>npx awly init</code>
+            <p>This will install the awly-cli locally with npm, download the default bootstrap awly project and start the localhost server.</p>
+            <p><i>Note that you will then have to run every <a href="/docs#cli-commands">awly cli command</a> prefixed with npx.</i></p>
+            
+            <br />
+            <h2>Option 2: Install Awly as a global npm module</h2>
+            <p>To use Awly as a global npm module you have to use the <span>--unsafe-perm</span> when installing like so:</p>
+            <code>sudo npm i awly -g --unsafe-perm</code>
+            <p>This will make the awly-cli commands available without the use of npx and you can invoke them for example like this:</p>
+            <code>awly serve</code>
+            <p>To create a new awly project make an empty directory and run: <code>awly init</code> inside.</p>
+
+          </div>
         </div>
     </@body>
     <@footer>
@@ -32,5 +63,55 @@
 </include>
 
 style.scss {
+  p {
+    font-size: 15px;
+    margin: 10px 0px;
+  }
 
+  code {
+    font-size: 15px;
+    background-color: #eeeeee;
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .anchor {
+      background-color: #f0f1f4;
+      display: block;
+      border-radius: 4px;
+
+      margin-bottom: 10px;
+
+      font-family: monospace, monospace;
+      display: flex;
+      align-items: center;
+
+      &:not(:first-child) {
+          margin-top: 45px;
+      }
+
+      .hash{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 32px;
+        color: #dddddd;
+        display: inline-block;
+      }
+
+      .comp-title {
+        font-size: 24px;
+        color: #2e333e;
+        display: inline-block;
+      }
+  }
+
+  .example-desc {
+    line-height: 1.6;
+    margin: 20px 0px 40px 0px;
+    font-size: 18px;
+    // border-left: 1px solid purple;
+    border-left: 1px dotted rgba(128, 0, 128, 0.23);
+    padding-left: 10px;
+    margin-left: 2px;
+  }
 }

@@ -2,30 +2,37 @@
     <div.title>
         <div>
             <!-- <h1.awly-title>AWLY</h1> -->
-            <h2.awly-tagline>
-                <a.nowrap href="/getting-started">Code & deploy serverlessweb pages</a>.
-                <!-- <a href="#">Deploy it to the AWS cloud in minutes</a> and <a href="#">have it hosted for almost no cost*</a> <br /> -->
-            </h2>
-
-            <!-- <h5.awly-tagline>
-                Develop <a.nowrap href="#">fast web apps fast.</a>
-            </h5> -->
+            <h1.awly-tagline>
+                <a.nowrap href="/getting-started">Develop & deploy <br/>serverless web apps</a>.
+            </h1>
         </div>
     </div>
     <div.get-started>
         <div.getStartedButton>
             <div.getStartedTitle>GET STARTED</div>
+            <div.getStartedRequirements>
+              <div>npm version > 5.2</div>
+              <div>cd to empty folder</div>
+            </div>
             <div.getStartedDetails>
-                <div>npm instal awly -g</div>
+                <div>npx awly init</div>
+                <!-- <div>npm instal awly -g</div>
                 <div>awly init my-app</div>
                 <div>cd my-app</div>
-                <div>awly serve</div>
+                <div>awly serve</div> -->
             </div>
+            <a href="/getting-started#install-awly-globally">
+              <div.getStartedOtherOptions>See other options</div>
+            </a>
         </div>
     </div>
 </div>
 
 style.scss {
+    a {
+      color: inherit;
+    }
+
     .banner-grid {
         margin: 40px 0px 0px 0px;
         display: grid;
@@ -52,6 +59,7 @@ style.scss {
             grid-template-columns: 1fr 1fr;
             grid-template-areas:
                 "title get-started";
+            grid-column-gap: 40px;
         }
 
         .title {
@@ -79,7 +87,6 @@ style.scss {
     line-height: 1.5;
     font-weight: 300;
     color: white;
-    margin-right: 30px;
 
 		a {
 			color: white;
@@ -88,7 +95,7 @@ style.scss {
 	}
 
     .getStartedButton {
-        cursor: pointer;
+        // cursor: pointer;
         border-radius: 6px;
         box-shadow: 0 2px 1px rgba(0,0,0,.8);
         background: #EAAF00;
@@ -98,9 +105,9 @@ style.scss {
         max-width: 300px;
         width: 100%;
     }
-    .getStartedButton:hover {
+    /*.getStartedButton:hover {
         background: #EAAF00;
-    }
+    }*/
 
     .getStartedTitle {
         color: white;
@@ -110,12 +117,25 @@ style.scss {
     }
 
     .getStartedDetails {
+        text-align: center;
         font-family: monospace;
         background-color: #333333;
         border-radius: 6px;
         color: white;
         margin: 10px;
         padding: 10px;
-        pointer: cursor;
+        cursor: text;
+    }
+
+    .getStartedRequirements {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+    .getStartedOtherOptions {
+        text-align: center;
+        font-size: 12px;
+        margin: 0px 0px 10px 0px;
     }
 }

@@ -16,7 +16,7 @@ static {
 }
 
 server-static {
-    var schema = require('src/services/graphql/schema.js');
+    var schema = require('src/services/vendor/awly/graphql/schema.js');
 
     const { LocalLink } = require("apollo-link-local");
     var gql = require('graphql-tag');
@@ -83,41 +83,41 @@ class {
     }
 
     onMount(){
-        function objectifyQueryString(url) {
-          let _url = new URL(url);
-          let _params = new URLSearchParams(_url.search);
-          let query = Array.from(_params.keys()).reduce((sum, value)=>{
-            return Object.assign({[value]: _params.get(value)}, sum);
-          }, {});
-          return query;
-        }
+        // function objectifyQueryString(url) {
+        //   let _url = new URL(url);
+        //   let _params = new URLSearchParams(_url.search);
+        //   let query = Array.from(_params.keys()).reduce((sum, value)=>{
+        //     return Object.assign({[value]: _params.get(value)}, sum);
+        //   }, {});
+        //   return query;
+        // }
+        //
+        // function objectToQuery(obj, prefix) {
+        //   var str = [], p;
+        //   for(p in obj) {
+        //     if (obj.hasOwnProperty(p)) {
+        //       var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+        //       str.push((v !== null && typeof v === "object") ?
+        //         objectToQuery(v, k) :
+        //         encodeURIComponent(k) + "=" + encodeURIComponent(v));
+        //     }
+        //   }
+        //   return str.join("&");
+        // }
 
-        function objectToQuery(obj, prefix) {
-          var str = [], p;
-          for(p in obj) {
-            if (obj.hasOwnProperty(p)) {
-              var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
-              str.push((v !== null && typeof v === "object") ?
-                objectToQuery(v, k) :
-                encodeURIComponent(k) + "=" + encodeURIComponent(v));
-            }
-          }
-          return str.join("&");
-        }
-
-        function customFetch(uri, options) {
-            // const body = options.body || "";
-            // delete options.body;
-            // console.log('O', options.body, body);
-            // let queryString = "";
-            // if(body){
-            //     queryString = objectToQuery(JSON.parse(body));
-            //     console.log(JSON.parse(body));
-            // }
-
-            const requestedString = uri;
-            return fetch(requestedString, options);
-        };
+        // function customFetch(uri, options) {
+        //     // const body = options.body || "";
+        //     // delete options.body;
+        //     // console.log('O', options.body, body);
+        //     // let queryString = "";
+        //     // if(body){
+        //     //     queryString = objectToQuery(JSON.parse(body));
+        //     //     console.log(JSON.parse(body));
+        //     // }
+        //
+        //     const requestedString = uri;
+        //     return fetch(requestedString, options);
+        // };
 
         this.browserClient = new ApolloClient({
             link: new createHttpLink({

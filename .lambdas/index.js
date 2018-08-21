@@ -106,7 +106,7 @@ Object.defineProperty(exports, 'GraphQLError', {
   }
 });
 
-var _syntaxError = __webpack_require__(248);
+var _syntaxError = __webpack_require__(250);
 
 Object.defineProperty(exports, 'syntaxError', {
   enumerable: true,
@@ -124,7 +124,7 @@ Object.defineProperty(exports, 'locatedError', {
   }
 });
 
-var _formatError = __webpack_require__(249);
+var _formatError = __webpack_require__(251);
 
 Object.defineProperty(exports, 'formatError', {
   enumerable: true,
@@ -1363,7 +1363,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _graphql = __webpack_require__(247);
+var _graphql = __webpack_require__(249);
 
 Object.defineProperty(exports, 'graphql', {
   enumerable: true,
@@ -1372,7 +1372,7 @@ Object.defineProperty(exports, 'graphql', {
   }
 });
 
-var _type = __webpack_require__(250);
+var _type = __webpack_require__(252);
 
 Object.defineProperty(exports, 'GraphQLSchema', {
   enumerable: true,
@@ -1669,7 +1669,7 @@ Object.defineProperty(exports, 'getNamedType', {
   }
 });
 
-var _language = __webpack_require__(251);
+var _language = __webpack_require__(253);
 
 Object.defineProperty(exports, 'Source', {
   enumerable: true,
@@ -1750,7 +1750,7 @@ Object.defineProperty(exports, 'BREAK', {
   }
 });
 
-var _execution = __webpack_require__(252);
+var _execution = __webpack_require__(254);
 
 Object.defineProperty(exports, 'execute', {
   enumerable: true,
@@ -1777,7 +1777,7 @@ Object.defineProperty(exports, 'getDirectiveValues', {
   }
 });
 
-var _subscription = __webpack_require__(253);
+var _subscription = __webpack_require__(255);
 
 Object.defineProperty(exports, 'subscribe', {
   enumerable: true,
@@ -1792,7 +1792,7 @@ Object.defineProperty(exports, 'createSourceEventStream', {
   }
 });
 
-var _validation = __webpack_require__(256);
+var _validation = __webpack_require__(258);
 
 Object.defineProperty(exports, 'validate', {
   enumerable: true,
@@ -1984,7 +1984,7 @@ Object.defineProperty(exports, 'formatError', {
   }
 });
 
-var _utilities = __webpack_require__(257);
+var _utilities = __webpack_require__(259);
 
 Object.defineProperty(exports, 'introspectionQuery', {
   enumerable: true,
@@ -2145,69 +2145,6 @@ Object.defineProperty(exports, 'findDeprecatedUsages', {
 
 /***/ }),
 /* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives__ = __webpack_require__(212);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fragments__ = __webpack_require__(213);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_1__fragments__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__getFromAST__ = __webpack_require__(90);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["c"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["e"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["f"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["g"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["i"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["j"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transform__ = __webpack_require__(214);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__transform__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_3__transform__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storeUtils__ = __webpack_require__(52);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["c"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["d"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["e"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["f"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["g"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["h"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["i"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_assign__ = __webpack_require__(91);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__util_assign__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_cloneDeep__ = __webpack_require__(92);
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_environment__ = __webpack_require__(53);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_7__util_environment__["b"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_7__util_environment__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util_errorHandling__ = __webpack_require__(215);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_8__util_errorHandling__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_8__util_errorHandling__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__util_isEqual__ = __webpack_require__(216);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_9__util_isEqual__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__util_maybeDeepFreeze__ = __webpack_require__(217);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_10__util_maybeDeepFreeze__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__util_warnOnce__ = __webpack_require__(218);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "E", function() { return __WEBPACK_IMPORTED_MODULE_11__util_warnOnce__["a"]; });
-
-
-
-
-
-
-
-
-
-
-
-
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2414,6 +2351,71 @@ exports.p = function propsForPreviousNode(props, out) {
     out.w('ap_(' + escapeScript(JSON.stringify(props)) + ');</script>');
 };
 
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives__ = __webpack_require__(212);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "A", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["c"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__fragments__ = __webpack_require__(214);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_1__fragments__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__getFromAST__ = __webpack_require__(90);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["c"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["d"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["e"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["f"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["g"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["i"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_2__getFromAST__["j"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__transform__ = __webpack_require__(215);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__transform__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "y", function() { return __WEBPACK_IMPORTED_MODULE_3__transform__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storeUtils__ = __webpack_require__(52);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["c"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["d"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["e"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["f"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "z", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["g"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "B", function() { return __WEBPACK_IMPORTED_MODULE_4__storeUtils__["h"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_assign__ = __webpack_require__(91);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_5__util_assign__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_cloneDeep__ = __webpack_require__(92);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_environment__ = __webpack_require__(53);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_7__util_environment__["b"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_7__util_environment__["c"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util_errorHandling__ = __webpack_require__(216);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_8__util_errorHandling__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "C", function() { return __WEBPACK_IMPORTED_MODULE_8__util_errorHandling__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__util_isEqual__ = __webpack_require__(217);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_9__util_isEqual__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__util_maybeDeepFreeze__ = __webpack_require__(218);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "x", function() { return __WEBPACK_IMPORTED_MODULE_10__util_maybeDeepFreeze__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__util_warnOnce__ = __webpack_require__(219);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "D", function() { return __WEBPACK_IMPORTED_MODULE_11__util_warnOnce__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__util_stripSymbols__ = __webpack_require__(220);
+/* unused harmony namespace reexport */
+
+
+
+
+
+
+
+
+
+
+
+
+
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 /* 11 */
@@ -5210,51 +5212,16 @@ function getVisitFn(visitor, kind, isLeaving) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkStatus; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = isNetworkRequestInFlight;
-/**
- * The current status of a query’s execution in our system.
- */
 var NetworkStatus;
 (function (NetworkStatus) {
-    /**
-     * The query has never been run before and the query is now currently running. A query will still
-     * have this network status even if a partial data result was returned from the cache, but a
-     * query was dispatched anyway.
-     */
     NetworkStatus[NetworkStatus["loading"] = 1] = "loading";
-    /**
-     * If `setVariables` was called and a query was fired because of that then the network status
-     * will be `setVariables` until the result of that query comes back.
-     */
     NetworkStatus[NetworkStatus["setVariables"] = 2] = "setVariables";
-    /**
-     * Indicates that `fetchMore` was called on this query and that the query created is currently in
-     * flight.
-     */
     NetworkStatus[NetworkStatus["fetchMore"] = 3] = "fetchMore";
-    /**
-     * Similar to the `setVariables` network status. It means that `refetch` was called on a query
-     * and the refetch request is currently in flight.
-     */
     NetworkStatus[NetworkStatus["refetch"] = 4] = "refetch";
-    /**
-     * Indicates that a polling query is currently in flight. So for example if you are polling a
-     * query every 10 seconds then the network status will switch to `poll` every 10 seconds whenever
-     * a poll request has been sent but not resolved.
-     */
     NetworkStatus[NetworkStatus["poll"] = 6] = "poll";
-    /**
-     * No request is in flight for this query, and no errors happened. Everything is OK.
-     */
     NetworkStatus[NetworkStatus["ready"] = 7] = "ready";
-    /**
-     * No request is in flight for this query, but one or more errors were detected.
-     */
     NetworkStatus[NetworkStatus["error"] = 8] = "error";
 })(NetworkStatus || (NetworkStatus = {}));
-/**
- * Returns true if there is currently a network request in flight according to a given network
- * status.
- */
 function isNetworkRequestInFlight(networkStatus) {
     return networkStatus < 7;
 }
@@ -6500,15 +6467,21 @@ function isMissingVariable(valueNode, variables) {
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* eslint-disable node/no-deprecated-api */
 var buffer = __webpack_require__(43)
+var Buffer = buffer.Buffer
 
+// alternative to using Object.keys for old browsers
+function copyProps (src, dst) {
+  for (var key in src) {
+    dst[key] = src[key]
+  }
+}
 if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
   module.exports = buffer
 } else {
   // Copy properties from require('buffer')
-  Object.keys(buffer).forEach(function (prop) {
-    exports[prop] = buffer[prop]
-  })
+  copyProps(buffer, exports)
   exports.Buffer = SafeBuffer
 }
 
@@ -6517,9 +6490,7 @@ function SafeBuffer (arg, encodingOrOffset, length) {
 }
 
 // Copy static methods from Buffer
-Object.keys(Buffer).forEach(function (prop) {
-  SafeBuffer[prop] = Buffer[prop]
-})
+copyProps(Buffer, SafeBuffer)
 
 SafeBuffer.from = function (arg, encodingOrOffset, length) {
   if (typeof arg === 'number') {
@@ -6567,7 +6538,7 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ValidationSchemaToMetadataTransformer_1 = __webpack_require__(302);
+var ValidationSchemaToMetadataTransformer_1 = __webpack_require__(304);
 /**
  * Storage all metadatas.
  */
@@ -6844,7 +6815,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // a bunch of utility functions into a separate utitlities folder, one file per function.
 var graphql_1 = __webpack_require__(8);
 var schemaVisitor_1 = __webpack_require__(131);
-var deprecated_decorator_1 = __webpack_require__(267);
+var deprecated_decorator_1 = __webpack_require__(269);
 var mergeDeep_1 = __webpack_require__(132);
 // @schemaDefinition: A GraphQL type schema in shorthand
 // @resolvers: Definitions for resolvers to be merged with schema
@@ -8185,7 +8156,7 @@ module.exports = includeTag;
 "use strict";
 /* unused harmony export isScalarValue */
 /* unused harmony export isNumberValue */
-/* harmony export (immutable) */ __webpack_exports__["j"] = valueToObjectRepresentation;
+/* harmony export (immutable) */ __webpack_exports__["i"] = valueToObjectRepresentation;
 /* harmony export (immutable) */ __webpack_exports__["h"] = storeKeyNameFromField;
 /* harmony export (immutable) */ __webpack_exports__["b"] = getStoreKeyName;
 /* harmony export (immutable) */ __webpack_exports__["a"] = argumentsObjectFromField;
@@ -8193,9 +8164,23 @@ module.exports = includeTag;
 /* harmony export (immutable) */ __webpack_exports__["c"] = isField;
 /* harmony export (immutable) */ __webpack_exports__["e"] = isInlineFragment;
 /* harmony export (immutable) */ __webpack_exports__["d"] = isIdValue;
-/* harmony export (immutable) */ __webpack_exports__["i"] = toIdValue;
+/* unused harmony export toIdValue */
 /* harmony export (immutable) */ __webpack_exports__["f"] = isJsonValue;
 /* unused harmony export valueFromNode */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fast_json_stable_stringify__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_fast_json_stable_stringify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_fast_json_stable_stringify__);
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
 function isScalarValue(value) {
     return ['StringValue', 'BooleanValue', 'EnumValue'].indexOf(value.kind) > -1;
 }
@@ -8261,7 +8246,9 @@ function valueToObjectRepresentation(argObj, name, value, variables) {
         argObj[name.value] = null;
     }
     else {
-        throw new Error("The inline argument \"" + name.value + "\" of kind \"" + value.kind + "\" is not supported.\n                    Use variables instead of inline arguments to overcome this limitation.");
+        throw new Error("The inline argument \"" + name.value + "\" of kind \"" + value.kind + "\"" +
+            'is not supported. Use variables instead of inline arguments to ' +
+            'overcome this limitation.');
     }
 }
 function storeKeyNameFromField(field, variables) {
@@ -8319,7 +8306,10 @@ function getStoreKeyName(fieldName, args, directives) {
     }
     var completeFieldName = fieldName;
     if (args) {
-        var stringifiedArgs = JSON.stringify(args);
+        // We can't use `JSON.stringify` here since it's non-deterministic,
+        // and can lead to different store key names being created even though
+        // the `args` object used during creation has the same properties/values.
+        var stringifiedArgs = __WEBPACK_IMPORTED_MODULE_0_fast_json_stable_stringify___default()(args);
         completeFieldName += "(" + stringifiedArgs + ")";
     }
     if (directives) {
@@ -8359,13 +8349,11 @@ function isInlineFragment(selection) {
 function isIdValue(idObject) {
     return idObject && idObject.type === 'id';
 }
-function toIdValue(id, generated) {
+function toIdValue(idConfig, generated) {
     if (generated === void 0) { generated = false; }
-    return {
-        type: 'id',
-        id: id,
-        generated: generated,
-    };
+    return __assign({ type: 'id', generated: generated }, (typeof idConfig === 'string'
+        ? { id: idConfig, typename: undefined }
+        : idConfig));
 }
 function isJsonValue(jsonObject) {
     return (jsonObject != null &&
@@ -8375,6 +8363,9 @@ function isJsonValue(jsonObject) {
 function defaultValueFromVariable(node) {
     throw new Error("Variable nodes are not supported by valueFromNode");
 }
+/**
+ * Evaluate a ValueNode and yield its value in its natural JS form.
+ */
 function valueFromNode(node, onVariable) {
     if (onVariable === void 0) { onVariable = defaultValueFromVariable; }
     switch (node.kind) {
@@ -8383,7 +8374,7 @@ function valueFromNode(node, onVariable) {
         case 'NullValue':
             return null;
         case 'IntValue':
-            return parseInt(node.value);
+            return parseInt(node.value, 10);
         case 'FloatValue':
             return parseFloat(node.value);
         case 'ListValue':
@@ -8416,6 +8407,7 @@ function getEnv() {
     if (typeof process !== 'undefined' && process.env.NODE_ENV) {
         return process.env.NODE_ENV;
     }
+    // default environment
     return 'development';
 }
 function isEnv(env) {
@@ -8439,7 +8431,7 @@ function isTest() {
 "use strict";
 /* unused harmony export hasError */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ObservableQuery; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__networkStatus__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_Observable__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__errors_ApolloError__ = __webpack_require__(55);
@@ -8475,25 +8467,21 @@ var hasError = function (storeValue, policy) {
             policy === 'none') ||
             storeValue.networkError);
 };
-var ObservableQuery = /** @class */ (function (_super) {
+var ObservableQuery = (function (_super) {
     __extends(ObservableQuery, _super);
     function ObservableQuery(_a) {
         var scheduler = _a.scheduler, options = _a.options, _b = _a.shouldSubscribe, shouldSubscribe = _b === void 0 ? true : _b;
         var _this = _super.call(this, function (observer) {
             return _this.onSubscribe(observer);
         }) || this;
-        // active state
         _this.isCurrentlyPolling = false;
         _this.isTornDown = false;
-        // query information
         _this.options = options;
         _this.variables = options.variables || {};
         _this.queryId = scheduler.queryManager.generateQueryId();
         _this.shouldSubscribe = shouldSubscribe;
-        // related classes
         _this.scheduler = scheduler;
         _this.queryManager = scheduler.queryManager;
-        // interal data stores
         _this.observers = [];
         _this.subscriptionHandles = [];
         return _this;
@@ -8505,16 +8493,6 @@ var ObservableQuery = /** @class */ (function (_super) {
             var observer = {
                 next: function (result) {
                     resolve(result);
-                    // Stop the query within the QueryManager if we can before
-                    // this function returns.
-                    //
-                    // We do this in order to prevent observers piling up within
-                    // the QueryManager. Notice that we only fully unsubscribe
-                    // from the subscription in a setTimeout(..., 0)  call. This call can
-                    // actually be handled by the browser at a much later time. If queries
-                    // are fired in the meantime, observers that should have been removed
-                    // from the QueryManager will continue to fire, causing an unnecessary
-                    // performance hit.
                     if (!that.observers.some(function (obs) { return obs !== observer; })) {
                         that.queryManager.removeQuery(that.queryId);
                     }
@@ -8529,12 +8507,6 @@ var ObservableQuery = /** @class */ (function (_super) {
             subscription = that.subscribe(observer);
         });
     };
-    /**
-     * Return the result of the query from the local cache as well as some fetching status
-     * `loading` and `networkStatus` allow to know if a request is in flight
-     * `partial` lets you know if the result from the local cache is complete or partial
-     * @return {result: Object, loading: boolean, networkStatus: number, partial: boolean}
-     */
     ObservableQuery.prototype.currentResult = function () {
         if (this.isTornDown) {
             return {
@@ -8559,16 +8531,8 @@ var ObservableQuery = /** @class */ (function (_super) {
         var _a = this.queryManager.getCurrentQueryResult(this), data = _a.data, partial = _a.partial;
         var queryLoading = !queryStoreValue ||
             queryStoreValue.networkStatus === __WEBPACK_IMPORTED_MODULE_1__networkStatus__["a" /* NetworkStatus */].loading;
-        // We need to be careful about the loading state we show to the user, to try
-        // and be vaguely in line with what the user would have seen from .subscribe()
-        // but to still provide useful information synchronously when the query
-        // will not end up hitting the server.
-        // See more: https://github.com/apollostack/apollo-client/issues/707
-        // Basically: is there a query in flight right now (modolo the next tick)?
         var loading = (this.options.fetchPolicy === 'network-only' && queryLoading) ||
             (partial && this.options.fetchPolicy !== 'cache-only');
-        // if there is nothing in the query store, it means this query hasn't fired yet or it has been cleaned up. Therefore the
-        // network status is dependent on queryLoading.
         var networkStatus;
         if (queryStoreValue) {
             networkStatus = queryStoreValue.networkStatus;
@@ -8592,8 +8556,6 @@ var ObservableQuery = /** @class */ (function (_super) {
         }
         return __assign({}, result, { partial: partial });
     };
-    // Returns the last result that observer.next was called with. This is not the same as
-    // currentResult! If you're not sure which you need, then you probably need currentResult.
     ObservableQuery.prototype.getLastResult = function () {
         return this.lastResult;
     };
@@ -8606,61 +8568,49 @@ var ObservableQuery = /** @class */ (function (_super) {
         this.isTornDown = false;
     };
     ObservableQuery.prototype.refetch = function (variables) {
-        var fetchPolicy = this.options.fetchPolicy;
-        // early return if trying to read from cache during refetch
-        if (fetchPolicy === 'cache-only') {
+        if (this.options.fetchPolicy === 'cache-only') {
             return Promise.reject(new Error('cache-only fetchPolicy option should not be used together with query refetch.'));
         }
         if (!Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["q" /* isEqual */])(this.variables, variables)) {
-            // update observable variables
-            this.variables = Object.assign({}, this.variables, variables);
+            this.variables = __assign({}, this.variables, variables);
         }
         if (!Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["q" /* isEqual */])(this.options.variables, this.variables)) {
-            // Update the existing options with new variables
-            this.options.variables = Object.assign({}, this.options.variables, this.variables);
+            this.options.variables = __assign({}, this.options.variables, this.variables);
         }
-        // Override fetchPolicy for this call only
-        // only network-only and no-cache are safe to use
-        var isNetworkFetchPolicy = fetchPolicy === 'network-only' || fetchPolicy === 'no-cache';
-        var combinedOptions = __assign({}, this.options, { fetchPolicy: isNetworkFetchPolicy ? fetchPolicy : 'network-only' });
+        var combinedOptions = __assign({}, this.options, { fetchPolicy: 'network-only' });
         return this.queryManager
             .fetchQuery(this.queryId, combinedOptions, __WEBPACK_IMPORTED_MODULE_4__types__["a" /* FetchType */].refetch)
             .then(function (result) { return Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["x" /* maybeDeepFreeze */])(result); });
     };
     ObservableQuery.prototype.fetchMore = function (fetchMoreOptions) {
         var _this = this;
-        // early return if no update Query
         if (!fetchMoreOptions.updateQuery) {
             throw new Error('updateQuery option is required. This function defines how to update the query data with the new results.');
         }
-        var combinedOptions;
         return Promise.resolve()
             .then(function () {
             var qid = _this.queryManager.generateQueryId();
+            var combinedOptions;
             if (fetchMoreOptions.query) {
-                // fetch a new query
                 combinedOptions = fetchMoreOptions;
             }
             else {
-                // fetch the same query with a possibly new variables
-                combinedOptions = __assign({}, _this.options, fetchMoreOptions, { variables: Object.assign({}, _this.variables, fetchMoreOptions.variables) });
+                combinedOptions = __assign({}, _this.options, fetchMoreOptions, { variables: __assign({}, _this.variables, fetchMoreOptions.variables) });
             }
             combinedOptions.fetchPolicy = 'network-only';
             return _this.queryManager.fetchQuery(qid, combinedOptions, __WEBPACK_IMPORTED_MODULE_4__types__["a" /* FetchType */].normal, _this.queryId);
         })
             .then(function (fetchMoreResult) {
-            _this.updateQuery(function (previousResult) {
+            _this.updateQuery(function (previousResult, _a) {
+                var variables = _a.variables;
                 return fetchMoreOptions.updateQuery(previousResult, {
                     fetchMoreResult: fetchMoreResult.data,
-                    variables: combinedOptions.variables,
+                    variables: variables,
                 });
             });
             return fetchMoreResult;
         });
     };
-    // XXX the subscription variables are separate from the query variables.
-    // if you want to update subscription variables, right now you have to do that separately,
-    // and you can only do it by stopping the subscription and then subscribing again with new variables.
     ObservableQuery.prototype.subscribeToMore = function (options) {
         var _this = this;
         var subscription = this.queryManager
@@ -8697,18 +8647,15 @@ var ObservableQuery = /** @class */ (function (_super) {
             }
         };
     };
-    // Note: if the query is not active (there are no subscribers), the promise
-    // will return null immediately.
     ObservableQuery.prototype.setOptions = function (opts) {
         var oldOptions = this.options;
-        this.options = Object.assign({}, this.options, opts);
+        this.options = __assign({}, this.options, opts);
         if (opts.pollInterval) {
             this.startPolling(opts.pollInterval);
         }
         else if (opts.pollInterval === 0) {
             this.stopPolling();
         }
-        // If fetchPolicy went from cache-only to something else, or from something else to network-only
         var tryFetch = (oldOptions.fetchPolicy !== 'network-only' &&
             opts.fetchPolicy === 'network-only') ||
             (oldOptions.fetchPolicy === 'cache-only' &&
@@ -8718,49 +8665,24 @@ var ObservableQuery = /** @class */ (function (_super) {
             false;
         return this.setVariables(this.options.variables, tryFetch, opts.fetchResults);
     };
-    /**
-     * Update the variables of this observable query, and fetch the new results
-     * if they've changed. If you want to force new results, use `refetch`.
-     *
-     * Note: if the variables have not changed, the promise will return the old
-     * results immediately, and the `next` callback will *not* fire.
-     *
-     * Note: if the query is not active (there are no subscribers), the promise
-     * will return null immediately.
-     *
-     * @param variables: The new set of variables. If there are missing variables,
-     * the previous values of those variables will be used.
-     *
-     * @param tryFetch: Try and fetch new results even if the variables haven't
-     * changed (we may still just hit the store, but if there's nothing in there
-     * this will refetch)
-     *
-     * @param fetchResults: Option to ignore fetching results when updating variables
-     *
-     */
     ObservableQuery.prototype.setVariables = function (variables, tryFetch, fetchResults) {
         if (tryFetch === void 0) { tryFetch = false; }
         if (fetchResults === void 0) { fetchResults = true; }
-        // since setVariables restarts the subscription, we reset the tornDown status
         this.isTornDown = false;
-        var newVariables = variables ? variables : this.variables;
+        var newVariables = __assign({}, this.variables, variables);
         if (Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["q" /* isEqual */])(newVariables, this.variables) && !tryFetch) {
-            // If we have no observers, then we don't actually want to make a network
-            // request. As soon as someone observes the query, the request will kick
-            // off. For now, we just store any changes. (See #1077)
             if (this.observers.length === 0 || !fetchResults) {
                 return new Promise(function (resolve) { return resolve(); });
             }
             return this.result();
         }
         else {
+            this.lastVariables = this.variables;
             this.variables = newVariables;
             this.options.variables = newVariables;
-            // See comment above
             if (this.observers.length === 0) {
                 return new Promise(function (resolve) { return resolve(); });
             }
-            // Use the same options as before, but with new variables
             return this.queryManager
                 .fetchQuery(this.queryId, __assign({}, this.options, { variables: this.variables }))
                 .then(function (result) { return Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["x" /* maybeDeepFreeze */])(result); });
@@ -8768,7 +8690,7 @@ var ObservableQuery = /** @class */ (function (_super) {
     };
     ObservableQuery.prototype.updateQuery = function (mapFn) {
         var _a = this.queryManager.getQueryWithPreviousResult(this.queryId), previousResult = _a.previousResult, variables = _a.variables, document = _a.document;
-        var newResult = Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["D" /* tryFunctionOrLogError */])(function () {
+        var newResult = Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["C" /* tryFunctionOrLogError */])(function () {
             return mapFn(previousResult, { variables: variables });
         });
         if (newResult) {
@@ -8798,8 +8720,6 @@ var ObservableQuery = /** @class */ (function (_super) {
     };
     ObservableQuery.prototype.onSubscribe = function (observer) {
         var _this = this;
-        // Zen Observable has its own error function, in order to log correctly
-        // we need to declare a custom error if nothing is passed
         if (observer._subscription &&
             observer._subscription._observer &&
             !observer._subscription._observer.error) {
@@ -8808,12 +8728,10 @@ var ObservableQuery = /** @class */ (function (_super) {
             };
         }
         this.observers.push(observer);
-        // Deliver initial result
         if (observer.next && this.lastResult)
             observer.next(this.lastResult);
         if (observer.error && this.lastError)
             observer.error(this.lastError);
-        // setup the query if it hasn't been done before
         if (this.observers.length === 1)
             this.setUpQuery();
         return function () {
@@ -8854,7 +8772,6 @@ var ObservableQuery = /** @class */ (function (_super) {
             this.scheduler.stopPollingQuery(this.queryId);
             this.isCurrentlyPolling = false;
         }
-        // stop all active GraphQL subscriptions
         this.subscriptionHandles.forEach(function (sub) { return sub.unsubscribe(); });
         this.subscriptionHandles = [];
         this.queryManager.removeObservableQuery(this.queryId);
@@ -8886,13 +8803,8 @@ var __extends = (this && this.__extends) || (function () {
 function isApolloError(err) {
     return err.hasOwnProperty('graphQLErrors');
 }
-// Sets the error message on this error according to the
-// the GraphQL and network errors that are present.
-// If the error message has already been set through the
-// constructor or otherwise, this function is a nop.
 var generateErrorMessage = function (err) {
     var message = '';
-    // If we have GraphQL errors present, add that to the error message.
     if (Array.isArray(err.graphQLErrors) && err.graphQLErrors.length !== 0) {
         err.graphQLErrors.forEach(function (graphQLError) {
             var errorMessage = graphQLError
@@ -8904,15 +8816,11 @@ var generateErrorMessage = function (err) {
     if (err.networkError) {
         message += 'Network error: ' + err.networkError.message + '\n';
     }
-    // strip newline from the end of the message
     message = message.replace(/\n$/, '');
     return message;
 };
-var ApolloError = /** @class */ (function (_super) {
+var ApolloError = (function (_super) {
     __extends(ApolloError, _super);
-    // Constructs an instance of ApolloError given a GraphQLError
-    // or a network error. Note that one of these has to be a valid
-    // value or the constructed error will be meaningless.
     function ApolloError(_a) {
         var graphQLErrors = _a.graphQLErrors, networkError = _a.networkError, errorMessage = _a.errorMessage, extraInfo = _a.extraInfo;
         var _this = _super.call(this, errorMessage) || this;
@@ -8925,9 +8833,6 @@ var ApolloError = /** @class */ (function (_super) {
             _this.message = errorMessage;
         }
         _this.extraInfo = extraInfo;
-        // We're not using `Object.setPrototypeOf` here as it isn't fully
-        // supported on Android (see issue #3236).
-        _this.__proto__ = ApolloError.prototype;
         return _this;
     }
     return ApolloError;
@@ -8942,9 +8847,9 @@ var ApolloError = /** @class */ (function (_super) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ObjectCache; });
 /* harmony export (immutable) */ __webpack_exports__["b"] = defaultNormalizedCacheFactory;
-var ObjectCache = /** @class */ (function () {
+var ObjectCache = (function () {
     function ObjectCache(data) {
-        if (data === void 0) { data = Object.create(null); }
+        if (data === void 0) { data = {}; }
         this.data = data;
     }
     ObjectCache.prototype.toObject = function () {
@@ -8960,10 +8865,10 @@ var ObjectCache = /** @class */ (function () {
         this.data[dataId] = undefined;
     };
     ObjectCache.prototype.clear = function () {
-        this.data = Object.create(null);
+        this.data = {};
     };
     ObjectCache.prototype.replace = function (newData) {
-        this.data = newData || Object.create(null);
+        this.data = newData || {};
     };
     return ObjectCache;
 }());
@@ -11186,8 +11091,8 @@ function hasResult(error) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global exports*/
-var SignStream = __webpack_require__(285);
-var VerifyStream = __webpack_require__(289);
+var SignStream = __webpack_require__(287);
+var VerifyStream = __webpack_require__(291);
 
 var ALGORITHMS = [
   'HS256', 'HS384', 'HS512',
@@ -11225,11 +11130,11 @@ var container_1 = __webpack_require__(24);
 // Export everything api users needs
 // -------------------------------------------------------------------------
 __export(__webpack_require__(24));
-__export(__webpack_require__(360));
+__export(__webpack_require__(362));
 __export(__webpack_require__(150));
 __export(__webpack_require__(23));
 __export(__webpack_require__(149));
-__export(__webpack_require__(361));
+__export(__webpack_require__(363));
 __export(__webpack_require__(33));
 /**
  * Validates given object by object's decorators or given validation schema.
@@ -12687,7 +12592,10 @@ exports.getCode = function() {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Observable; });
-var Observable = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_zen_observable__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_zen_observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_zen_observable__);
+
+var Observable = __WEBPACK_IMPORTED_MODULE_0_zen_observable___default.a;
 //# sourceMappingURL=zenObservable.js.map
 
 /***/ }),
@@ -12705,7 +12613,7 @@ var Observable = __webpack_require__(209);
 /* harmony export (immutable) */ __webpack_exports__["h"] = transformOperation;
 /* harmony export (immutable) */ __webpack_exports__["b"] = createOperation;
 /* unused harmony export getKey */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_zen_observable_ts__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_language_printer__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_graphql_language_printer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_graphql_language_printer__);
@@ -12746,7 +12654,7 @@ function validateOperation(operation) {
     }
     return operation;
 }
-var LinkError = (function (_super) {
+var LinkError = /** @class */ (function (_super) {
     __extends(LinkError, _super);
     function LinkError(message, link) {
         var _this = _super.call(this, message) || this;
@@ -12776,6 +12684,7 @@ function toPromise(observable) {
         });
     });
 }
+// backwards compat
 var makePromise = toPromise;
 function fromPromise(promise) {
     return new __WEBPACK_IMPORTED_MODULE_1_zen_observable_ts__["a" /* default */](function (observer) {
@@ -12799,6 +12708,7 @@ function transformOperation(operation) {
         operationName: operation.operationName,
         query: operation.query,
     };
+    // best guess at an operation name
     if (!transformedOperation.operationName) {
         transformedOperation.operationName =
             typeof transformedOperation.query !== 'string'
@@ -12833,6 +12743,8 @@ function createOperation(starting, operation) {
     return operation;
 }
 function getKey(operation) {
+    // XXX we're assuming here that variables will be serialized in the same order.
+    // that might not always be true
     return Object(__WEBPACK_IMPORTED_MODULE_2_graphql_language_printer__["print"])(operation.query) + "|" + JSON.stringify(operation.variables) + "|" + operation.operationName;
 }
 //# sourceMappingURL=linkUtils.js.map
@@ -12869,6 +12781,7 @@ function getMutationDefinition(doc) {
     }
     return mutationDef;
 }
+// Checks the document for errors and throws an exception if there is an error.
 function checkDocument(doc) {
     if (doc.kind !== 'Document') {
         throw new Error("Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
@@ -12903,6 +12816,7 @@ function getOperationName(doc) {
     })
         .map(function (x) { return x.name.value; })[0] || null);
 }
+// Returns the FragmentDefinitions from a particular document as an array
 function getFragmentDefinitions(doc) {
     return doc.definitions.filter(function (definition) { return definition.kind === 'FragmentDefinition'; });
 }
@@ -12926,6 +12840,11 @@ function getFragmentDefinition(doc) {
     }
     return fragmentDef;
 }
+/**
+ * Returns the first operation definition found in this document.
+ * If no operation definition is found, the first fragment definition will be returned.
+ * If no definitions are found, an error will be thrown.
+ */
 function getMainDefinition(queryDoc) {
     checkDocument(queryDoc);
     var fragmentDefinition;
@@ -12940,6 +12859,8 @@ function getMainDefinition(queryDoc) {
             }
         }
         if (definition.kind === 'FragmentDefinition' && !fragmentDefinition) {
+            // we do this because we want to allow multiple fragment definitions
+            // to precede an operation definition.
             fragmentDefinition = definition;
         }
     }
@@ -12948,6 +12869,8 @@ function getMainDefinition(queryDoc) {
     }
     throw new Error('Expected a parsed GraphQL query with a query, mutation, subscription, or a fragment.');
 }
+// Utility function that takes a list of fragment definitions and makes a hash out of them
+// that maps the name of the fragment to the fragment definition.
 function createFragmentMap(fragments) {
     if (fragments === void 0) { fragments = []; }
     var symTable = {};
@@ -12968,13 +12891,16 @@ function getDefaultValues(definition) {
             .map(function (_a) {
             var variable = _a.variable, defaultValue = _a.defaultValue;
             var defaultValueObj = {};
-            Object(__WEBPACK_IMPORTED_MODULE_1__storeUtils__["j" /* valueToObjectRepresentation */])(defaultValueObj, variable.name, defaultValue);
+            Object(__WEBPACK_IMPORTED_MODULE_1__storeUtils__["i" /* valueToObjectRepresentation */])(defaultValueObj, variable.name, defaultValue);
             return defaultValueObj;
         });
         return __WEBPACK_IMPORTED_MODULE_0__util_assign__["a" /* assign */].apply(void 0, [{}].concat(defaultValues));
     }
     return {};
 }
+/**
+ * Returns the names of all variables declared by the operation.
+ */
 function variablesInOperation(operation) {
     var names = new Set();
     if (operation.variableDefinitions) {
@@ -13016,10 +12942,16 @@ function assign(target) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = cloneDeep;
+/**
+ * Deeply clones a value to create a new instance.
+ */
 function cloneDeep(value) {
+    // If the value is an array, create a new array where every item has been cloned.
     if (Array.isArray(value)) {
         return value.map(function (item) { return cloneDeep(item); });
     }
+    // If the value is an object, go through all of the object’s properties and add them to a new
+    // object.
     if (value !== null && typeof value === 'object') {
         var nextValue = {};
         for (var key in value) {
@@ -13029,6 +12961,8 @@ function cloneDeep(value) {
         }
         return nextValue;
     }
+    // Otherwise this is some primitive value and it is therefore immutable so we can just return it
+    // directly.
     return value;
 }
 //# sourceMappingURL=cloneDeep.js.map
@@ -13040,7 +12974,7 @@ function cloneDeep(value) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Observable; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_link__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(223);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -13051,20 +12985,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-// This simplified polyfill attempts to follow the ECMAScript Observable proposal.
-// See https://github.com/zenparsing/es-observable
 
 
-// rxjs interopt
-var Observable = /** @class */ (function (_super) {
+var Observable = (function (_super) {
     __extends(Observable, _super);
     function Observable() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Observable.prototype[__WEBPACK_IMPORTED_MODULE_1_symbol_observable__["a" /* default */]] = function () {
-        return this;
-    };
-    Observable.prototype['@@observable'] = function () {
         return this;
     };
     return Observable;
@@ -13079,27 +13007,20 @@ var Observable = /** @class */ (function (_super) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HeuristicFragmentMatcher; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return IntrospectionFragmentMatcher; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
 
 var haveWarned = false;
-/**
- * This fragment matcher is very basic and unable to match union or interface type conditions
- */
-var HeuristicFragmentMatcher = /** @class */ (function () {
+var HeuristicFragmentMatcher = (function () {
     function HeuristicFragmentMatcher() {
-        // do nothing
     }
     HeuristicFragmentMatcher.prototype.ensureReady = function () {
         return Promise.resolve();
     };
     HeuristicFragmentMatcher.prototype.canBypassInit = function () {
-        return true; // we don't need to initialize this fragment matcher.
+        return true;
     };
     HeuristicFragmentMatcher.prototype.match = function (idValue, typeCondition, context) {
         var obj = context.store.get(idValue.id);
-        if (!obj && idValue.id === 'ROOT_QUERY') {
-            return true;
-        }
         if (!obj) {
             return false;
         }
@@ -13109,9 +13030,7 @@ var HeuristicFragmentMatcher = /** @class */ (function () {
                 console.warn('Could not find __typename on Fragment ', typeCondition, obj);
                 console.warn("DEPRECATION WARNING: using fragments without __typename is unsupported behavior " +
                     "and will be removed in future versions of Apollo client. You should fix this and set addTypename to true now.");
-                /* istanbul ignore if */
                 if (!Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["w" /* isTest */])()) {
-                    // When running tests, we want to print the warning every time
                     haveWarned = true;
                 }
             }
@@ -13121,21 +13040,16 @@ var HeuristicFragmentMatcher = /** @class */ (function () {
         if (obj.__typename === typeCondition) {
             return true;
         }
-        // XXX here we reach an issue - we don't know if this fragment should match or not. It's either:
-        // 1. A fragment on a non-matching concrete type or interface or union
-        // 2. A fragment on a matching interface or union
-        // If it's 1, we don't want to return anything, if it's 2 we want to match. We can't tell the
-        // difference, so we warn the user, but still try to match it (backcompat).
-        Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["E" /* warnOnceInDevelopment */])("You are using the simple (heuristic) fragment matcher, but your queries contain union or interface types.\n     Apollo Client will not be able to able to accurately map fragments." +
+        Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["D" /* warnOnceInDevelopment */])("You are using the simple (heuristic) fragment matcher, but your queries contain union or interface types.\n     Apollo Client will not be able to able to accurately map fragments." +
             "To make this error go away, use the IntrospectionFragmentMatcher as described in the docs: " +
-            "https://www.apollographql.com/docs/react/recipes/fragment-matching.html", 'error');
+            "http://dev.apollodata.com/react/initialization.html#fragment-matcher", 'error');
         context.returnPartialData = true;
         return true;
     };
     return HeuristicFragmentMatcher;
 }());
 
-var IntrospectionFragmentMatcher = /** @class */ (function () {
+var IntrospectionFragmentMatcher = (function () {
     function IntrospectionFragmentMatcher(options) {
         if (options && options.introspectionQueryResultData) {
             this.possibleTypesMap = this.parseIntrospectionResult(options.introspectionQueryResultData);
@@ -13148,7 +13062,6 @@ var IntrospectionFragmentMatcher = /** @class */ (function () {
     }
     IntrospectionFragmentMatcher.prototype.match = function (idValue, typeCondition, context) {
         if (!this.isReady) {
-            // this should basically never happen in proper use.
             throw new Error('FragmentMatcher.match() was called before FragmentMatcher.init()');
         }
         var obj = context.store.get(idValue.id);
@@ -13193,7 +13106,7 @@ var IntrospectionFragmentMatcher = /** @class */ (function () {
 /* harmony export (immutable) */ __webpack_exports__["e"] = writeSelectionSetToStore;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_language_printer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectCache__ = __webpack_require__(56);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -13216,7 +13129,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 
 
 
-var WriteError = /** @class */ (function (_super) {
+var WriteError = (function (_super) {
     __extends(WriteError, _super);
     function WriteError() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -13227,32 +13140,11 @@ var WriteError = /** @class */ (function (_super) {
 }(Error));
 
 function enhanceErrorWithDocument(error, document) {
-    // XXX A bit hacky maybe ...
     var enhancedError = new WriteError("Error writing result to store for query:\n " + Object(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__["print"])(document));
     enhancedError.message += '\n' + error.message;
     enhancedError.stack = error.stack;
     return enhancedError;
 }
-/**
- * Writes the result of a query to the store.
- *
- * @param result The result object returned for the query document.
- *
- * @param query The query document whose result we are writing to the store.
- *
- * @param store The {@link NormalizedCache} used by Apollo for the `data` portion of the store.
- *
- * @param variables A map from the name of a variable to its value. These variables can be
- * referenced by the query document.
- *
- * @param dataIdFromObject A function that returns an object identifier given a particular result
- * object. See the store documentation for details and an example of this function.
- *
- * @param fragmentMap A map from the name of a fragment to its fragment definition. These fragments
- * can be referenced within the query document.
- *
- * @param fragmentMatcherFunction A function to use for matching fragment conditions in GraphQL documents
- */
 function writeQueryToStore(_a) {
     var result = _a.result, query = _a.query, _b = _a.storeFactory, storeFactory = _b === void 0 ? __WEBPACK_IMPORTED_MODULE_2__objectCache__["b" /* defaultNormalizedCacheFactory */] : _b, _c = _a.store, store = _c === void 0 ? storeFactory() : _c, variables = _a.variables, dataIdFromObject = _a.dataIdFromObject, _d = _a.fragmentMap, fragmentMap = _d === void 0 ? {} : _d, fragmentMatcherFunction = _a.fragmentMatcherFunction;
     var queryDefinition = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["m" /* getQueryDefinition */])(query);
@@ -13279,7 +13171,6 @@ function writeQueryToStore(_a) {
 }
 function writeResultToStore(_a) {
     var dataId = _a.dataId, result = _a.result, document = _a.document, _b = _a.storeFactory, storeFactory = _b === void 0 ? __WEBPACK_IMPORTED_MODULE_2__objectCache__["b" /* defaultNormalizedCacheFactory */] : _b, _c = _a.store, store = _c === void 0 ? storeFactory() : _c, variables = _a.variables, dataIdFromObject = _a.dataIdFromObject, fragmentMatcherFunction = _a.fragmentMatcherFunction;
-    // XXX TODO REFACTOR: this is a temporary workaround until query normalization is made to work with documents.
     var operationDefinition = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["k" /* getOperationDefinition */])(document);
     var selectionSet = operationDefinition.selectionSet;
     var fragmentMap = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["d" /* createFragmentMap */])(Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["g" /* getFragmentDefinitions */])(document));
@@ -13322,14 +13213,10 @@ function writeSelectionSetToStore(_a) {
                     });
                 }
                 else {
-                    // if this is a defered field we don't need to throw / warn
                     var isDefered = selection.directives &&
                         selection.directives.length &&
                         selection.directives.some(function (directive) { return directive.name && directive.name.value === 'defer'; });
                     if (!isDefered && context.fragmentMatcherFunction) {
-                        // XXX We'd like to throw an error, but for backwards compatibility's sake
-                        // we just print a warning for the time being.
-                        //throw new WriteError(`Missing field ${resultFieldKey} in ${JSON.stringify(result, null, 2).substring(0, 100)}`);
                         if (!Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["v" /* isProduction */])()) {
                             console.warn("Missing field " + resultFieldKey + " in " + JSON.stringify(result, null, 2).substring(0, 100));
                         }
@@ -13338,13 +13225,11 @@ function writeSelectionSetToStore(_a) {
             }
         }
         else {
-            // This is not a field, so it must be a fragment, either inline or named
             var fragment = void 0;
             if (Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["t" /* isInlineFragment */])(selection)) {
                 fragment = selection;
             }
             else {
-                // Named fragment
                 fragment = (fragmentMap || {})[selection.name.value];
                 if (!fragment) {
                     throw new Error("No fragment named " + selection.name.value + ".");
@@ -13352,17 +13237,12 @@ function writeSelectionSetToStore(_a) {
             }
             var matches = true;
             if (context.fragmentMatcherFunction && fragment.typeCondition) {
-                // TODO we need to rewrite the fragment matchers for this to work properly and efficiently
-                // Right now we have to pretend that we're passing in an idValue and that there's a store
-                // on the context.
-                var idValue = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["C" /* toIdValue */])({ id: 'self', typename: undefined });
+                var idValue = { type: 'id', id: 'self', generated: false };
                 var fakeContext = {
-                    // NOTE: fakeContext always uses ObjectCache
-                    // since this is only to ensure the return value of 'matches'
                     store: new __WEBPACK_IMPORTED_MODULE_2__objectCache__["a" /* ObjectCache */]({ self: result }),
                     returnPartialData: false,
                     hasMissingField: false,
-                    cacheRedirects: {},
+                    cacheResolvers: {},
                 };
                 matches = context.fragmentMatcherFunction(idValue, fragment.typeCondition.name.value, fakeContext);
                 if (!Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["v" /* isProduction */])() && fakeContext.returnPartialData) {
@@ -13381,8 +13261,6 @@ function writeSelectionSetToStore(_a) {
     });
     return store;
 }
-// Checks if the id given is an id that was generated by Apollo
-// rather than by dataIdFromObject.
 function isGeneratedId(id) {
     return id[0] === '$';
 }
@@ -13422,18 +13300,14 @@ function writeFieldToStore(_a) {
     var storeValue;
     var storeObject;
     var storeFieldName = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["B" /* storeKeyNameFromField */])(field, variables);
-    // specifies if we need to merge existing keys in the store
     var shouldMerge = false;
-    // If we merge, this will be the generatedKey
     var generatedKey = '';
-    // If this is a scalar value...
     if (!field.selectionSet || value === null) {
         storeValue =
             value != null && typeof value === 'object'
-                ? // If the scalar value is a JSON blob, we have to "escape" it so it can’t pretend to be
-                    // an id.
+                ?
                     { type: 'json', json: value }
-                : // Otherwise, just store the scalar directly in the store.
+                :
                     value;
     }
     else if (Array.isArray(value)) {
@@ -13441,20 +13315,13 @@ function writeFieldToStore(_a) {
         storeValue = processArrayValue(value, generatedId, field.selectionSet, context);
     }
     else {
-        // It's an object
         var valueDataId = dataId + "." + storeFieldName;
         var generated = true;
-        // We only prepend the '$' if the valueDataId isn't already a generated
-        // id.
         if (!isGeneratedId(valueDataId)) {
             valueDataId = '$' + valueDataId;
         }
         if (dataIdFromObject) {
             var semanticId = dataIdFromObject(value);
-            // We throw an error if the first character of the id is '$. This is
-            // because we use that character to designate an Apollo-generated id
-            // and we use the distinction between user-desiginated and application-provided
-            // ids when managing overwrites.
             if (semanticId && isGeneratedId(semanticId)) {
                 throw new Error('IDs returned by dataIdFromObject cannot begin with the "$" character.');
             }
@@ -13471,52 +13338,26 @@ function writeFieldToStore(_a) {
                 context: context,
             });
         }
-        // We take the id and escape it (i.e. wrap it with an enclosing object).
-        // This allows us to distinguish IDs from normal scalars.
-        var typename = value.__typename;
-        storeValue = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["C" /* toIdValue */])({ id: valueDataId, typename: typename }, generated);
-        // check if there was a generated id at the location where we're
-        // about to place this new id. If there was, we have to merge the
-        // data from that id with the data we're about to write in the store.
+        storeValue = {
+            type: 'id',
+            id: valueDataId,
+            generated: generated,
+        };
         storeObject = store.get(dataId);
-        var escapedId = storeObject && storeObject[storeFieldName];
-        if (escapedId !== storeValue && Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["s" /* isIdValue */])(escapedId)) {
-            var hadTypename = escapedId.typename !== undefined;
-            var hasTypename = typename !== undefined;
-            var typenameChanged = hadTypename && hasTypename && escapedId.typename !== typename;
-            // If there is already a real id in the store and the current id we
-            // are dealing with is generated, we throw an error.
-            // One exception we allow is when the typename has changed, which occurs
-            // when schema defines a union, both with and without an ID in the same place.
-            // checks if we "lost" the read id
-            if (generated && !escapedId.generated && !typenameChanged) {
+        if (storeObject && storeObject[storeFieldName] !== storeValue) {
+            var escapedId = storeObject[storeFieldName];
+            if (Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["s" /* isIdValue */])(storeValue) &&
+                storeValue.generated &&
+                Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["s" /* isIdValue */])(escapedId) &&
+                !escapedId.generated) {
                 throw new Error("Store error: the application attempted to write an object with no provided id" +
                     (" but the store already contains an id of " + escapedId.id + " for this object. The selectionSet") +
                     " that was trying to be written is:\n" +
                     Object(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__["print"])(field));
             }
-            // checks if we "lost" the typename
-            if (hadTypename && !hasTypename) {
-                throw new Error("Store error: the application attempted to write an object with no provided typename" +
-                    (" but the store already contains an object with typename of " + escapedId.typename + " for the object of id " + escapedId.id + ". The selectionSet") +
-                    " that was trying to be written is:\n" +
-                    Object(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__["print"])(field));
-            }
-            if (escapedId.generated) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["s" /* isIdValue */])(escapedId) && escapedId.generated) {
                 generatedKey = escapedId.id;
-                // We should only merge if it's an object of the same type,
-                // otherwise we should delete the generated object
-                if (typenameChanged) {
-                    // Only delete the generated object when the old object was
-                    // inlined, and the new object is not. This is indicated by
-                    // the old id being generated, and the new id being real.
-                    if (!generated) {
-                        store.delete(generatedKey);
-                    }
-                }
-                else {
-                    shouldMerge = true;
-                }
+                shouldMerge = true;
             }
         }
     }
@@ -13555,7 +13396,12 @@ function processArrayValue(value, generatedId, selectionSet, context) {
                 context: context,
             });
         }
-        return Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["C" /* toIdValue */])({ id: itemDataId, typename: item.__typename }, generated);
+        var idStoreValue = {
+            type: 'id',
+            id: itemDataId,
+            generated: generated,
+        };
+        return idStoreValue;
     });
 }
 //# sourceMappingURL=writeToStore.js.map
@@ -13569,8 +13415,8 @@ function processArrayValue(value, generatedId, selectionSet, context) {
 /* harmony export (immutable) */ __webpack_exports__["d"] = readQueryFromStore;
 /* harmony export (immutable) */ __webpack_exports__["c"] = diffQueryAgainstStore;
 /* harmony export (immutable) */ __webpack_exports__["b"] = assertIdValue;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_anywhere__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_anywhere__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(10);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -13581,30 +13427,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 
 
-/**
- * The key which the cache id for a given value is stored in the result object. This key is private
- * and should not be used by Apollo client users.
- *
- * Uses a symbol if available in the environment.
- *
- * @private
- */
 var ID_KEY = typeof Symbol !== 'undefined' ? Symbol('id') : '@@id';
-/**
- * Resolves the result of a query solely from the store (i.e. never hits the server).
- *
- * @param {Store} store The {@link NormalizedCache} used by Apollo for the `data` portion of the
- * store.
- *
- * @param {DocumentNode} query The query document to resolve from the data available in the store.
- *
- * @param {Object} [variables] A map from the name of a variable to its value. These variables can
- * be referenced by the query document.
- *
- * @param {any} previousResult The previous result returned by this function for the same query.
- * If nothing in the store changed since that previous result then values from the previous result
- * will be returned to preserve referential equality.
- */
 function readQueryFromStore(options) {
     var optsPatch = { returnPartialData: false };
     return diffQueryAgainstStore(__assign({}, options, optsPatch)).result;
@@ -13614,35 +13437,18 @@ var readStoreResolver = function (fieldName, idValue, args, context, _a) {
     assertIdValue(idValue);
     var objId = idValue.id;
     var obj = context.store.get(objId);
-    var storeKeyName = fieldName;
-    if (args || directives) {
-        // We happen to know here that getStoreKeyName returns its first
-        // argument unmodified if there are no args or directives, so we can
-        // avoid calling the function at all in that case, as a small but
-        // important optimization to this frequently executed code.
-        storeKeyName = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["n" /* getStoreKeyName */])(storeKeyName, args, directives);
-    }
-    var fieldValue = void 0;
-    if (obj) {
-        fieldValue = obj[storeKeyName];
-        if (typeof fieldValue === 'undefined' &&
-            context.cacheRedirects &&
+    var storeKeyName = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["n" /* getStoreKeyName */])(fieldName, args, directives);
+    var fieldValue = (obj || {})[storeKeyName];
+    if (typeof fieldValue === 'undefined') {
+        if (context.cacheResolvers &&
+            obj &&
             (obj.__typename || objId === 'ROOT_QUERY')) {
             var typename = obj.__typename || 'Query';
-            // Look for the type in the custom resolver map
-            var type = context.cacheRedirects[typename];
+            var type = context.cacheResolvers[typename];
             if (type) {
-                // Look for the field in the custom resolver map
                 var resolver = type[fieldName];
                 if (resolver) {
-                    fieldValue = resolver(obj, args, {
-                        getCacheKey: function (storeObj) {
-                            return Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["C" /* toIdValue */])({
-                                id: context.dataIdFromObject(storeObj),
-                                typename: storeObj.__typename,
-                            });
-                        },
-                    });
+                    fieldValue = resolver(obj, args);
                 }
             }
         }
@@ -13654,47 +13460,26 @@ var readStoreResolver = function (fieldName, idValue, args, context, _a) {
         context.hasMissingField = true;
         return fieldValue;
     }
-    // if this is an object scalar, it must be a json blob and we have to unescape it
     if (Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["u" /* isJsonValue */])(fieldValue)) {
-        // If the JSON blob is the same now as in the previous result, return the previous result to
-        // maintain referential equality.
-        //
-        // `isEqual` will first perform a referential equality check (with `===`) in case the JSON
-        // value has not changed in the store, and then a deep equality check if that fails in case a
-        // new JSON object was returned by the API but that object may still be the same.
         if (idValue.previousResult &&
             Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["q" /* isEqual */])(idValue.previousResult[resultKey], fieldValue.json)) {
             return idValue.previousResult[resultKey];
         }
         return fieldValue.json;
     }
-    // If we had a previous result, try adding that previous result value for this field to our field
-    // value. This will create a new value without mutating the old one.
     if (idValue.previousResult) {
         fieldValue = addPreviousResultToIdValues(fieldValue, idValue.previousResult[resultKey]);
     }
     return fieldValue;
 };
-/**
- * Given a store and a query, return as much of the result as possible and
- * identify if any data was missing from the store.
- * @param  {DocumentNode} query A parsed GraphQL query document
- * @param  {Store} store The Apollo Client store object
- * @param  {any} previousResult The previous result returned by this function for the same query
- * @return {result: Object, complete: [boolean]}
- */
 function diffQueryAgainstStore(_a) {
     var store = _a.store, query = _a.query, variables = _a.variables, previousResult = _a.previousResult, _b = _a.returnPartialData, returnPartialData = _b === void 0 ? true : _b, _c = _a.rootId, rootId = _c === void 0 ? 'ROOT_QUERY' : _c, fragmentMatcherFunction = _a.fragmentMatcherFunction, config = _a.config;
-    // Throw the right validation error by trying to find a query in the document
     var queryDefinition = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["m" /* getQueryDefinition */])(query);
     variables = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["c" /* assign */])({}, Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["e" /* getDefaultValues */])(queryDefinition), variables);
     var context = {
-        // Global settings
         store: store,
         returnPartialData: returnPartialData,
-        dataIdFromObject: (config && config.dataIdFromObject) || null,
-        cacheRedirects: (config && config.cacheRedirects) || {},
-        // Flag set during execution
+        cacheResolvers: (config && config.cacheResolvers) || {},
         hasMissingField: false,
     };
     var rootIdValue = {
@@ -13716,46 +13501,21 @@ function assertIdValue(idValue) {
         throw new Error("Encountered a sub-selection on the query, but the store doesn't have an object reference. This should never happen during normal use unless you have custom code that is directly manipulating the store; please file an issue.");
     }
 }
-/**
- * Adds a previous result value to id values in a nested array. For a single id value and a single
- * previous result then the previous value is added directly.
- *
- * For arrays we put all of the ids from the previous result array in a map and add them to id
- * values with the same id.
- *
- * This function does not mutate. Instead it returns new instances of modified values.
- *
- * @private
- */
 function addPreviousResultToIdValues(value, previousResult) {
-    // If the value is an `IdValue`, add the previous result to it whether or not that
-    // `previousResult` is undefined.
-    //
-    // If the value is an array, recurse over each item trying to add the `previousResult` for that
-    // item.
     if (Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["s" /* isIdValue */])(value)) {
         return __assign({}, value, { previousResult: previousResult });
     }
     else if (Array.isArray(value)) {
         var idToPreviousResult_1 = new Map();
-        // If the previous result was an array, we want to build up our map of ids to previous results
-        // using the private `ID_KEY` property that is added in `resultMapper`.
         if (Array.isArray(previousResult)) {
             previousResult.forEach(function (item) {
-                // item can be null
                 if (item && item[ID_KEY]) {
                     idToPreviousResult_1.set(item[ID_KEY], item);
-                    // idToPreviousResult[item[ID_KEY]] = item;
                 }
             });
         }
-        // For every value we want to add the previous result.
         return value.map(function (item, i) {
-            // By default the previous result for this item will be in the same array position as this
-            // item.
             var itemPreviousResult = previousResult && previousResult[i];
-            // If the item is an id value, we should check to see if there is a previous result for this
-            // specific id. If there is, that will be the value for `itemPreviousResult`.
             if (Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["s" /* isIdValue */])(item)) {
                 itemPreviousResult =
                     idToPreviousResult_1.get(item.id) || itemPreviousResult;
@@ -13763,31 +13523,12 @@ function addPreviousResultToIdValues(value, previousResult) {
             return addPreviousResultToIdValues(item, itemPreviousResult);
         });
     }
-    // Return the value, nothing changed.
     return value;
 }
-/**
- * Maps a result from `graphql-anywhere` to a final result value.
- *
- * If the result and the previous result from the `idValue` pass a shallow equality test, we just
- * return the `previousResult` to maintain referential equality.
- *
- * We also add a private id property to the result that we can use later on.
- *
- * @private
- */
 function resultMapper(resultFields, idValue) {
-    // If we had a previous result, we may be able to return that and preserve referential equality
     if (idValue.previousResult) {
         var currentResultKeys_1 = Object.keys(resultFields);
-        var sameAsPreviousResult = 
-        // Confirm that we have the same keys in both the current result and the previous result.
-        Object.keys(idValue.previousResult).every(function (key) { return currentResultKeys_1.indexOf(key) > -1; }) &&
-            // Perform a shallow comparison of the result fields with the previous result. If all of
-            // the shallow fields are referentially equal to the fields of the previous result we can
-            // just return the previous result.
-            //
-            // While we do a shallow comparison of objects, but we do a deep comparison of arrays.
+        var sameAsPreviousResult = Object.keys(idValue.previousResult).reduce(function (sameKeys, key) { return sameKeys && currentResultKeys_1.indexOf(key) > -1; }, true) &&
             currentResultKeys_1.every(function (key) {
                 return areNestedArrayItemsStrictlyEqual(resultFields[key], idValue.previousResult[key]);
             });
@@ -13797,30 +13538,19 @@ function resultMapper(resultFields, idValue) {
     }
     Object.defineProperty(resultFields, ID_KEY, {
         enumerable: false,
-        configurable: true,
+        configurable: false,
         writable: false,
         value: idValue.id,
     });
     return resultFields;
 }
-/**
- * Compare all the items to see if they are all referentially equal in two arrays no matter how
- * deeply nested the arrays are.
- *
- * @private
- */
 function areNestedArrayItemsStrictlyEqual(a, b) {
-    // If `a` and `b` are referentially equal, return true.
     if (a === b) {
         return true;
     }
-    // If either `a` or `b` are not an array or not of the same length return false. `a` and `b` are
-    // known to not be equal here, we checked above.
     if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) {
         return false;
     }
-    // Otherwise let us compare all of the array items (which are potentially nested arrays!) to see
-    // if they are equal.
     return a.every(function (item, i) { return areNestedArrayItemsStrictlyEqual(item, b[i]); });
 }
 //# sourceMappingURL=readFromStore.js.map
@@ -13832,7 +13562,7 @@ function areNestedArrayItemsStrictlyEqual(a, b) {
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = graphql;
 /* unused harmony export merge */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
 
 /* Based on graphql function from graphql-js:
  *
@@ -13849,7 +13579,6 @@ function areNestedArrayItemsStrictlyEqual(a, b) {
  * but below is an exported alternative that is async.
  * In the 5.0 version, this will be the only export again
  * and it will be async
- *
  */
 function graphql(resolver, document, rootValue, contextValue, variableValues, execOptions) {
     if (execOptions === void 0) { execOptions = {}; }
@@ -13984,7 +13713,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     }
     return t;
 };
-var RecordingCache = /** @class */ (function () {
+var RecordingCache = (function () {
     function RecordingCache(data) {
         if (data === void 0) { data = {}; }
         this.data = data;
@@ -14001,7 +13730,6 @@ var RecordingCache = /** @class */ (function () {
     };
     RecordingCache.prototype.get = function (dataId) {
         if (this.recordedData.hasOwnProperty(dataId)) {
-            // recording always takes precedence:
             return this.recordedData[dataId];
         }
         return this.data[dataId];
@@ -18002,13 +17730,11 @@ function isObject(item) {
 // Unique ID creation requires a high quality random # generator.  In node.js
 // this is pretty straight-forward - we use the crypto API.
 
-var rb = __webpack_require__(134).randomBytes;
+var crypto = __webpack_require__(134);
 
-function rng() {
-  return rb(16);
-}
-
-module.exports = rng;
+module.exports = function nodeRNG() {
+  return crypto.randomBytes(16);
+};
 
 
 /***/ }),
@@ -18033,14 +17759,15 @@ for (var i = 0; i < 256; ++i) {
 function bytesToUuid(buf, offset) {
   var i = offset || 0;
   var bth = byteToHex;
-  return bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] + '-' +
-          bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]] +
-          bth[buf[i++]] + bth[buf[i++]];
+  // join used to fix memory issue caused by concatenation: https://bugs.chromium.org/p/v8/issues/detail?id=3175#c4
+  return ([bth[buf[i++]], bth[buf[i++]], 
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]], '-',
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]],
+	bth[buf[i++]], bth[buf[i++]]]).join('');
 }
 
 module.exports = bytesToUuid;
@@ -18585,12 +18312,12 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-button/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-button/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_loadTag = marko_helpers.t,
     include_tag = marko_loadTag(__webpack_require__(50)),
     marko_classAttr = marko_helpers.ca,
@@ -18654,8 +18381,8 @@ throw new Error('JWT Client does not support Node.js yet. PR welcome.');
 
 module.exports = {
   decode: __webpack_require__(142),
-  verify: __webpack_require__(290),
-  sign: __webpack_require__(292),
+  verify: __webpack_require__(292),
+  sign: __webpack_require__(294),
   JsonWebTokenError: __webpack_require__(45),
   NotBeforeError: __webpack_require__(146),
   TokenExpiredError: __webpack_require__(147),
@@ -18763,10 +18490,10 @@ module.exports = DataStream;
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var bufferEqual = __webpack_require__(286);
+var bufferEqual = __webpack_require__(288);
 var Buffer = __webpack_require__(32).Buffer;
 var crypto = __webpack_require__(134);
-var formatEcdsa = __webpack_require__(287);
+var formatEcdsa = __webpack_require__(289);
 var util = __webpack_require__(44);
 
 var MSG_INVALID_ALGORITHM = '"%s" is not a valid algorithm.\n  Supported algorithms are:\n  "HS256", "HS384", "HS512", "RS256", "RS384", "RS512" and "none".'
@@ -18967,7 +18694,7 @@ module.exports = TokenExpiredError;
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ms = __webpack_require__(291);
+var ms = __webpack_require__(293);
 
 module.exports = function (time, iat) {
   var timestamp = iat || Math.floor(Date.now() / 1000);
@@ -19029,7 +18756,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ValidationTypes_1 = __webpack_require__(23);
-var ValidationExecutor_1 = __webpack_require__(303);
+var ValidationExecutor_1 = __webpack_require__(305);
 /**
  * Validator performs validation of the given object based on its metadata.
  */
@@ -19038,7 +18765,7 @@ var Validator = /** @class */ (function () {
         // -------------------------------------------------------------------------
         // Private Properties
         // -------------------------------------------------------------------------
-        this.validatorJs = __webpack_require__(305);
+        this.validatorJs = __webpack_require__(307);
     }
     /**
      * Performs validation of the given object based on decorators or validation schema.
@@ -20179,7 +19906,7 @@ exports.ConstraintMetadata = ConstraintMetadata;
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/pages/examples/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/pages/examples/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
@@ -20187,7 +19914,7 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
     compact_sidebar_template = __webpack_require__(187),
     hasRenderBodyKey = Symbol.for("hasRenderBody"),
     navigation_template = __webpack_require__(193),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_loadTag = marko_helpers.t,
     navigation_tag = marko_loadTag(navigation_template),
     banner_template = __webpack_require__(195),
@@ -20198,21 +19925,21 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
     examples_menu_tag = marko_loadTag(examples_menu_template),
     awly_list_template = __webpack_require__(198),
     awly_list_tag = marko_loadTag(awly_list_template),
-    awly_progressive_image_template = __webpack_require__(282),
+    awly_progressive_image_template = __webpack_require__(284),
     awly_progressive_image_tag = marko_loadTag(awly_progressive_image_template),
     awly_button_template = __webpack_require__(139),
     awly_button_tag = marko_loadTag(awly_button_template),
-    awly_on_scroll_to_view_template = __webpack_require__(283),
+    awly_on_scroll_to_view_template = __webpack_require__(285),
     awly_on_scroll_to_view_tag = marko_loadTag(awly_on_scroll_to_view_template),
-    login_example_template = __webpack_require__(284),
+    login_example_template = __webpack_require__(286),
     login_example_tag = marko_loadTag(login_example_template),
-    awly_user_badge_template = __webpack_require__(300),
+    awly_user_badge_template = __webpack_require__(302),
     awly_user_badge_tag = marko_loadTag(awly_user_badge_template),
-    awly_input_template = __webpack_require__(301),
+    awly_input_template = __webpack_require__(303),
     awly_input_tag = marko_loadTag(awly_input_template),
-    awly_textarea_template = __webpack_require__(362),
+    awly_textarea_template = __webpack_require__(364),
     awly_textarea_tag = marko_loadTag(awly_textarea_template),
-    footer_template = __webpack_require__(363),
+    footer_template = __webpack_require__(365),
     footer_tag = marko_loadTag(footer_template),
     include_tag = marko_loadTag(__webpack_require__(50));
 
@@ -20558,7 +20285,7 @@ function renderToString(template, data, callback) {
     return safeRender(render, localData, out, true);
 }
 
-renderToString(marko_template, {"$global":{"injectCSS":"<style>.anchor{background-color:#f0f1f4;display:block;border-radius:4px;margin-bottom:10px;font-family:monospace,monospace;display:flex;align-items:center}.anchor:not(:first-child){margin-top:45px}.anchor .hash{padding-left:10px;padding-right:10px;font-size:32px;color:#ddd;display:inline-block}.anchor .comp-title{font-size:24px;color:#2e333e;display:inline-block}.awly-features .awly-feature{margin-bottom:100px}.awly-features .awly-feature .awly-feature-title{font-size:44px;line-height:1.5;font-weight:600;color:purple}.awly-features .awly-feature .awly-feature-desc{font-size:20px;line-height:1.5;font-weight:300;color:#2b2b2b}.flex{display:flex;flex-wrap:wrap}.img-wrap{flex:1;display:inline-block}.flex-center{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column}.example-desc{line-height:1.6;margin:20px 0 40px 0;font-size:18px;border-left:1px dotted rgba(128,0,128,.23);padding-left:10px;margin-left:2px}.vertical-text{text-align:center;word-wrap:break-word;width:.5em;cursor:vertical-text;float:left;shape-outside:inset(.5em);font-family:monospace}.scroll-to-line{border-bottom:1px solid red;width:100px}.buttons .btn-wrap{margin-bottom:3px;margin-right:3px}\nbody,html{height:100%}.nowrap{white-space:nowrap}.grid-layout{display:grid;min-height:100vh;grid-template-columns:10px 1fr 10px;grid-template-rows:100px auto auto 50px;grid-template-areas:\". nav .\" \"body body body\" \". sideBar .\" \". footer .\"}@media (min-width:900px){.grid-layout{grid-template-columns:1fr 230px 285px 285px 1fr;grid-template-rows:100px calc(100% - 150px) 50px;grid-template-areas:\". nav nav nav .\" \". sideBar body body .\" \". footer footer footer .\";height:100%}}@media (min-width:1100px){.grid-layout{grid-template-columns:1fr 230px 385px 385px 1fr;grid-template-rows:100px calc(100% - 150px) 50px;grid-template-areas:\". nav nav nav .\" \". sideBar body body .\" \". footer footer footer .\";height:100%}}@media (min-width:1300px){.grid-layout{grid-template-columns:1fr 230px 485px 485px 1fr;grid-template-rows:100px calc(100% - 150px) 50px;grid-template-areas:\". nav nav nav .\" \". sideBar body body .\" \". footer footer .\";height:100%}}.header-bg{grid-area:nav-start/1/nav-end/end;background-color:#3c1146}.footer-bg{grid-area:footer-start/1/footer-end/end;background-color:#3c1146}.sideBar-bg{grid-area:sideBar-start/sideBar-start/sideBar-end/sideBar-end}.nav{grid-area:nav;display:flex;align-items:center}@media (min-width:900px){.sideBar{grid-area:sideBar;overflow:auto}}@media (max-width:899px){.sideBar{display:none}}.body{grid-area:body;padding:20px 10px;overflow:auto}.footer{grid-area:footer}\n.logo-position{position:absolute}.awly-title2{font-size:30px;margin-left:100px;line-height:55px;font-weight:700;color:#fe5f03}#open{display:none}.icon{display:inline-block;width:2em;height:2em;stroke-width:0;stroke:currentColor;fill:#550486}.navigation{width:100%;height:55px;background-color:#fff;box-shadow:0 2px 2px rgba(0,0,0,.4);border-radius:4px;overflow:hidden;display:flex}nav{display:inline-block;text-align:right;flex:1;align-self:center}@media (max-width:900px){.hsm{display:none}}@media (min-width:900px){.ssm{display:none}}a.homeLink{text-decoration:none;color:inherit}a.homeLink :active,a.homeLink :visited,a.homeLink:hover{color:inherit}a.menuLink{color:purple;text-decoration:none;position:relative;display:inline-block;font-size:20px;padding:1rem 2rem;vertical-align:middle}a.menuLink :active,a.menuLink :visited,a.menuLink:hover{color:inherit}a.menuLink:hover{background:rgba(255,255,255,.9);color:#000}a.menuIcon{height:36px;text-decoration:none;position:relative;display:inline-block;font-size:18px;vertical-align:middle;padding:0 1rem 0 0;vertical-align:middle}\n.awly-logo{display:inline-block}.awly-logo__head{position:relative;z-index:2;height:65px;width:65px;background-color:#3b85c8;border-radius:100%;box-shadow:1px 1px 0 #74a7d8;border-top-left-radius:2px}.awly-logo__eye-left{top:19px;left:4px}.awly-logo__eye-right{top:19px;left:31px}.awly-logo__eye{position:absolute;z-index:3;width:30px;height:30px;background-color:#fff;border-radius:100%;box-shadow:1px 1px 1px #666}.awly-logo__eye-retina{position:absolute;z-index:5;top:9px;left:5px;width:11px;height:11px;background-color:#333;border-radius:100%}.awly-logo__beak{position:absolute;z-index:1;top:40px;left:32px;width:21px;height:21px;background:radial-gradient(circle at bottom right,transparent 21px,#ff6000 0) bottom right}.awly-logo__body-window{margin-top:-34px;margin-left:3px;overflow:hidden;width:62px;height:94px}.awly-logo__body{position:relative;z-index:1;height:90px;width:100px;background-color:#1871c0;border-bottom-left-radius:88%;box-shadow:1px 1px 1px #f7f7f7}.awly-logo__body-right{position:relative;z-index:2;height:88px;width:43px;background-color:#08579f;border-bottom-left-radius:187%;border-top-left-radius:100%;margin-left:32px;filter:drop-shadow(0 6px 0 rgba(255, 255, 255, .6))}\na{color:inherit}.banner-grid{margin:40px 0 0 0;display:grid;grid-template-rows:auto auto;grid-template-columns:auto;grid-template-areas:\"title\" \"get-started\"}.title{grid-area:title;display:flex;align-items:center;justify-content:center;flex-direction:column;margin-bottom:40px;text-align:center}@media (min-width:900px){.banner-grid{margin:40px 0;grid-template-columns:1fr 1fr;grid-template-areas:\"title get-started\";grid-column-gap:40px}.title{margin-bottom:0;text-align:left}}.get-started{grid-area:get-started;display:flex;align-items:center;justify-content:center}.awly-title{font-size:50px;font-weight:800;color:#fff;margin:0 0}.awly-tagline{font-size:32px;line-height:1.5;font-weight:300;color:#fff}.awly-tagline a{color:#fff;text-decoration:none}.getStartedButton{border-radius:6px;box-shadow:0 2px 1px rgba(0,0,0,.8);background:#eaaf00;background-image:-webkit-linear-gradient(#ffbf00 0,#ff7102 100%);font-size:1.3rem;color:#fff;max-width:300px;width:100%}.getStartedTitle{color:#fff;margin-top:10px;text-align:center;font-weight:600}.getStartedDetails{text-align:center;font-family:monospace;background-color:#333;border-radius:6px;color:#fff;margin:10px;padding:10px;cursor:text}.getStartedRequirements{text-align:center;font-size:12px;margin-top:6px}.getStartedOtherOptions{text-align:center;font-size:12px;margin:0 0 10px 0}\n.disclaimer{line-height:1.3rem;margin-top:-2px;text-align:center}.disclaimer .text-is-in-alpha{margin:15px 0 8px 0;font-size:20px}.disclaimer .text-is-in-alpha .alphaBadge{color:#ff5454;font-style:italic;font-weight:700;font-size:24px}.disclaimer .text-join{margin:0 0 15px 0}\n@charset \"UTF-8\";.not-done{pointer-events:none;cursor:default;text-decoration:none;color:#aaa!important}.examples-menu{box-sizing:border-box;color:#2e333e;min-height:calc(100vh - 280px);overflow:auto;padding:0 10px 60px 10px;background-color:#f9f9f9;top:0}.examples-menu h2{font-size:20px}.examples-menu h2:not(:first-child){margin-top:45px}.examples-menu .group{margin:-10px 0 0 0;padding:0;text-indent:0;display:table;border-spacing:0 0;list-style-type:none;width:100%;border-collapse:collapse}.examples-menu a{display:block;padding-left:10px;color:#2e333e;text-decoration:none;width:100%;line-height:30px}.examples-menu a:hover{border-left:2px solid #08579f;padding-left:8px}\n.profileCards{margin-top:10px}.profileCard{display:flex;margin:0 14px;border-top:1px solid #dfdfdf;padding:10px 0;align-items:center}.profileCard:first-child{border-top:none}.imageWrap{flex:0 0 88px;display:flex;flex-direction:column}.image{width:88px;height:88px;border-radius:100%}.blackText{color:#000}.italicText{font-style:italic}.description{flex:1;margin-left:10px}.name{font-size:18px;font-weight:300;line-height:22px}.location{font-size:14px;font-weight:300;line-height:19px}.showMoreBtn{background:#fafafa;border:1px solid #a1a9ba;border-radius:2px;color:#2e333e;cursor:pointer;display:flex;font-size:1rem;text-align:center;text-decoration:none;user-select:none;vertical-align:middle;align-content:center;display:flex;justify-content:center;height:40px;min-width:180px;white-space:nowrap;box-shadow:0 1px 0 #c3c3c3,inset 0 -1px 0 1px #e0e0e0;padding:0 10px}.showMoreBtn:focus{background:#fff;text-decoration:none;outline:0}.showMoreBtn:hover{background:#fff;text-decoration:none;outline:0}.showMoreBtn:active{background:#efefef;text-decoration:none;margin-top:1px;margin-bottom:-1px;outline:0;box-shadow:inset 0 -1px 0 1px #e0e0e0}\n.progressive-image-wrap{background-color:#f6f6f6;background-size:cover;background-repeat:no-repeat;position:relative;overflow:hidden;font-size:0}.progressive-image-preview{width:930px;height:620px;position:relative;top:0;left:0;width:100%;filter:blur(20px);transform:scale(1)}.progressive-image-full{transition:opacity .6s linear;position:absolute;top:0;left:0;width:100%;opacity:0}.progressive-image-full.loaded{opacity:1}.progressive-image-full img{width:100%}\n.btn-wrap{display:flex}.btn{background:#fafafa;border:1px solid #a1a9ba;border-radius:2px;color:#2e333e;cursor:pointer;display:flex;font-size:1rem;text-align:center;text-decoration:none;user-select:none;vertical-align:middle;align-content:center;display:flex;justify-content:center;height:40px;min-width:180px;white-space:nowrap;box-shadow:0 1px 0 #c3c3c3,inset 0 -1px 0 1px #e0e0e0;padding:0 10px}.btn:focus,.btn:hover{background:#fff;text-decoration:none;outline:0}.btn.active,.btn:active{background:#efefef;text-decoration:none;margin-top:1px;margin-bottom:-1px;outline:0;box-shadow:inset 0 -1px 0 1px #e0e0e0}.btn-white{background-color:#fefefe;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-white:focus,.btn-white:hover{background-color:#fff}.btn-white:active{background-color:#fbfbfb;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #fefefe}.btn-red{background-color:#ff1654;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-red:focus,.btn-red:hover{background-color:#ff3067}.btn-red:active{background-color:#ff1150;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #ff1654}.btn-blue{background-color:#247ba0;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-blue:focus,.btn-blue:hover{background-color:#298bb5}.btn-blue:active{background-color:#23789c;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #1f7da5}.btn-paleYellow{background-color:#f3ffbd;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-paleYellow:focus,.btn-paleYellow:hover{background-color:#f8ffd7}.btn-paleYellow:active{background-color:#f2ffb8;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #f3ffbd}.btn-paleGreen{background-color:#b2dbbf;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-paleGreen:focus,.btn-paleGreen:hover{background-color:#c3e3cd}.btn-paleGreen:active{background-color:#afd9bc;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #afdebe}.btn-green{background-color:#70c1b3;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-green:focus,.btn-green:hover{background-color:#82c9bc}.btn-green:active{background-color:#6cbfb1;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #6bc6b6}.btn-lightGray{background-color:#ccc;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-lightGray:focus,.btn-lightGray:hover{background-color:#d9d9d9}.btn-lightGray:active{background-color:#c9c9c9;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #cfc9c9}.btn-gray{background-color:#888;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-gray:focus,.btn-gray:hover{background-color:#959595}.btn-gray:active{background-color:#858585;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #8e8282}.btn-black{background-color:#000;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-black:focus,.btn-black:hover{background-color:#0d0d0d}.btn-black:active{background-color:#000;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #000}.btn-bold{font-weight:700}.btn-xs{font-size:.6rem;height:20px;min-width:100px}.btn-sm{font-size:.8rem;height:30px;min-width:140px}.btn-md{font-size:1rem;height:40px;min-width:180px}.btn-lg{font-size:1.2rem;height:50px;min-width:220px}.btn-xl{font-size:1.4rem;height:60px;min-width:260px}\n.awly-login-example__buttons{display:flex;justify-content:space-between;box-sizing:border-box}.awly-login-example__input{width:100%;margin-bottom:10px;box-sizing:border-box}\n.awly-user-badge{width:100px;height:100px;border-radius:100%;background-color:#eee;color:#888;display:flex;align-items:center;justify-content:center;font-size:48px}\n.awly-input{display:flex;width:100%}.awly-input input{outline:0}.awly-input label{width:100%}.awly-input__input{padding:10px;width:100%;box-sizing:border-box;border:1px solid #a1a9ba;border-radius:2px}.awly-input__label{font-size:1.2rem;margin-bottom:5px}.awly-input__message{padding:4px 2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;color:grey;font-size:.8rem}.awly-input__message--error{color:red}.awly-input__message--success{color:green}\n.awly-textarea{display:flex;width:100%}.awly-textarea textarea{outline:0}.awly-textarea label{width:100%}.awly-textarea__textarea{padding:10px;width:100%;box-sizing:border-box;border:1px solid #a1a9ba;border-radius:2px}.awly-textarea__label{font-size:1.2rem;margin-bottom:5px}.awly-textarea__message{padding:4px 2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;color:grey;font-size:.8rem}.awly-textarea__message--error{color:red}.awly-textarea__message--success{color:green}\n.awly-footer{color:#fff;display:flex;height:100%;align-items:center}</style>","injectJS":"<script ...data.externalScriptAttrs src=\"/static/bundle-d3000b4e.js\"></script>\n<script ...data.inlineScriptAttrs>$_mod.ready();</script>"}}, function(res, html, out) {
+renderToString(marko_template, {"$global":{"injectCSS":"<style>.anchor{background-color:#f0f1f4;display:block;border-radius:4px;margin-bottom:10px;font-family:monospace,monospace;display:flex;align-items:center}.anchor:not(:first-child){margin-top:45px}.anchor .hash{padding-left:10px;padding-right:10px;font-size:32px;color:#ddd;display:inline-block}.anchor .comp-title{font-size:24px;color:#2e333e;display:inline-block}.awly-features .awly-feature{margin-bottom:100px}.awly-features .awly-feature .awly-feature-title{font-size:44px;line-height:1.5;font-weight:600;color:purple}.awly-features .awly-feature .awly-feature-desc{font-size:20px;line-height:1.5;font-weight:300;color:#2b2b2b}.flex{display:flex;flex-wrap:wrap}.img-wrap{flex:1;display:inline-block}.flex-center{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column}.example-desc{line-height:1.6;margin:20px 0 40px 0;font-size:18px;border-left:1px dotted rgba(128,0,128,.23);padding-left:10px;margin-left:2px}.vertical-text{text-align:center;word-wrap:break-word;width:.5em;cursor:vertical-text;float:left;shape-outside:inset(.5em);font-family:monospace}.scroll-to-line{border-bottom:1px solid red;width:100px}.buttons .btn-wrap{margin-bottom:3px;margin-right:3px}\nbody,html{height:100%}.nowrap{white-space:nowrap}.grid-layout{display:grid;min-height:100vh;grid-template-columns:10px 1fr 10px;grid-template-rows:100px auto auto 50px;grid-template-areas:\". nav .\" \"body body body\" \". sideBar .\" \". footer .\"}@media (min-width:900px){.grid-layout{grid-template-columns:1fr 230px 285px 285px 1fr;grid-template-rows:100px calc(100% - 150px) 50px;grid-template-areas:\". nav nav nav .\" \". sideBar body body .\" \". footer footer footer .\";height:100%}}@media (min-width:1100px){.grid-layout{grid-template-columns:1fr 230px 385px 385px 1fr;grid-template-rows:100px calc(100% - 150px) 50px;grid-template-areas:\". nav nav nav .\" \". sideBar body body .\" \". footer footer footer .\";height:100%}}@media (min-width:1300px){.grid-layout{grid-template-columns:1fr 230px 485px 485px 1fr;grid-template-rows:100px calc(100% - 150px) 50px;grid-template-areas:\". nav nav nav .\" \". sideBar body body .\" \". footer footer .\";height:100%}}.header-bg{grid-area:nav-start/1/nav-end/end;background-color:#3c1146}.footer-bg{grid-area:footer-start/1/footer-end/end;background-color:#3c1146}.sideBar-bg{grid-area:sideBar-start/sideBar-start/sideBar-end/sideBar-end}.nav{grid-area:nav;display:flex;align-items:center}@media (min-width:900px){.sideBar{grid-area:sideBar;overflow:auto}}@media (max-width:899px){.sideBar{display:none}}.body{grid-area:body;padding:20px 10px;overflow:auto}.footer{grid-area:footer}\n.logo-position{position:absolute}.awly-title2{font-size:30px;margin-left:100px;line-height:55px;font-weight:700;color:#fe5f03}#open{display:none}.icon{display:inline-block;width:2em;height:2em;stroke-width:0;stroke:currentColor;fill:#550486}.navigation{width:100%;height:55px;background-color:#fff;box-shadow:0 2px 2px rgba(0,0,0,.4);border-radius:4px;overflow:hidden;display:flex}nav{display:inline-block;text-align:right;flex:1;align-self:center}@media (max-width:900px){.hsm{display:none}}@media (min-width:900px){.ssm{display:none}}a.homeLink{text-decoration:none;color:inherit}a.homeLink :active,a.homeLink :visited,a.homeLink:hover{color:inherit}a.menuLink{color:purple;text-decoration:none;position:relative;display:inline-block;font-size:20px;padding:1rem 2rem;vertical-align:middle}a.menuLink :active,a.menuLink :visited,a.menuLink:hover{color:inherit}a.menuLink:hover{background:rgba(255,255,255,.9);color:#000}a.menuIcon{height:36px;text-decoration:none;position:relative;display:inline-block;font-size:18px;vertical-align:middle;padding:0 1rem 0 0;vertical-align:middle}\n.awly-logo{display:inline-block}.awly-logo__head{position:relative;z-index:2;height:65px;width:65px;background-color:#3b85c8;border-radius:100%;box-shadow:1px 1px 0 #74a7d8;border-top-left-radius:2px}.awly-logo__eye-left{top:19px;left:4px}.awly-logo__eye-right{top:19px;left:31px}.awly-logo__eye{position:absolute;z-index:3;width:30px;height:30px;background-color:#fff;border-radius:100%;box-shadow:1px 1px 1px #666}.awly-logo__eye-retina{position:absolute;z-index:5;top:9px;left:5px;width:11px;height:11px;background-color:#333;border-radius:100%}.awly-logo__beak{position:absolute;z-index:1;top:40px;left:32px;width:21px;height:21px;background:radial-gradient(circle at bottom right,transparent 21px,#ff6000 0) bottom right}.awly-logo__body-window{margin-top:-34px;margin-left:3px;overflow:hidden;width:62px;height:94px}.awly-logo__body{position:relative;z-index:1;height:90px;width:100px;background-color:#1871c0;border-bottom-left-radius:88%;box-shadow:1px 1px 1px #f7f7f7}.awly-logo__body-right{position:relative;z-index:2;height:88px;width:43px;background-color:#08579f;border-bottom-left-radius:187%;border-top-left-radius:100%;margin-left:32px;filter:drop-shadow(0 6px 0 rgba(255, 255, 255, .6))}\na{color:inherit}.banner-grid{margin:40px 0 0 0;display:grid;grid-template-rows:auto auto;grid-template-columns:auto;grid-template-areas:\"title\" \"get-started\"}.title{grid-area:title;display:flex;align-items:center;justify-content:center;flex-direction:column;margin-bottom:40px;text-align:center}@media (min-width:900px){.banner-grid{margin:40px 0;grid-template-columns:1fr 1fr;grid-template-areas:\"title get-started\";grid-column-gap:40px}.title{margin-bottom:0;text-align:left}}.get-started{grid-area:get-started;display:flex;align-items:center;justify-content:center}.awly-title{font-size:50px;font-weight:800;color:#fff;margin:0 0}.awly-tagline{font-size:32px;line-height:1.5;font-weight:300;color:#fff}.awly-tagline a{color:#fff;text-decoration:none}.getStartedButton{border-radius:6px;box-shadow:0 2px 1px rgba(0,0,0,.8);background:#eaaf00;background-image:-webkit-linear-gradient(#ffbf00 0,#ff7102 100%);font-size:1.3rem;color:#fff;max-width:300px;width:100%}.getStartedTitle{color:#fff;margin-top:10px;text-align:center;font-weight:600}.getStartedDetails{text-align:center;font-family:monospace;background-color:#333;border-radius:6px;color:#fff;margin:10px;padding:10px;cursor:text}.getStartedRequirements{text-align:center;font-size:12px;margin-top:6px}.getStartedOtherOptions{text-align:center;font-size:12px;margin:0 0 10px 0}\n.disclaimer{line-height:1.3rem;margin-top:-2px;text-align:center}.disclaimer .text-is-in-alpha{margin:15px 0 8px 0;font-size:20px}.disclaimer .text-is-in-alpha .alphaBadge{color:#ff5454;font-style:italic;font-weight:700;font-size:24px}.disclaimer .text-join{margin:0 0 15px 0}\n@charset \"UTF-8\";.not-done{pointer-events:none;cursor:default;text-decoration:none;color:#aaa!important}.examples-menu{box-sizing:border-box;color:#2e333e;min-height:calc(100vh - 280px);overflow:auto;padding:0 10px 60px 10px;background-color:#f9f9f9;top:0}.examples-menu h2{font-size:20px}.examples-menu h2:not(:first-child){margin-top:45px}.examples-menu .group{margin:-10px 0 0 0;padding:0;text-indent:0;display:table;border-spacing:0 0;list-style-type:none;width:100%;border-collapse:collapse}.examples-menu a{display:block;padding-left:10px;color:#2e333e;text-decoration:none;width:100%;line-height:30px}.examples-menu a:hover{border-left:2px solid #08579f;padding-left:8px}\n.profileCards{margin-top:10px}.profileCard{display:flex;margin:0 14px;border-top:1px solid #dfdfdf;padding:10px 0;align-items:center}.profileCard:first-child{border-top:none}.imageWrap{flex:0 0 88px;display:flex;flex-direction:column}.image{width:88px;height:88px;border-radius:100%}.blackText{color:#000}.italicText{font-style:italic}.description{flex:1;margin-left:10px}.name{font-size:18px;font-weight:300;line-height:22px}.location{font-size:14px;font-weight:300;line-height:19px}.showMoreBtn{background:#fafafa;border:1px solid #a1a9ba;border-radius:2px;color:#2e333e;cursor:pointer;display:flex;font-size:1rem;text-align:center;text-decoration:none;user-select:none;vertical-align:middle;align-content:center;display:flex;justify-content:center;height:40px;min-width:180px;white-space:nowrap;box-shadow:0 1px 0 #c3c3c3,inset 0 -1px 0 1px #e0e0e0;padding:0 10px}.showMoreBtn:focus{background:#fff;text-decoration:none;outline:0}.showMoreBtn:hover{background:#fff;text-decoration:none;outline:0}.showMoreBtn:active{background:#efefef;text-decoration:none;margin-top:1px;margin-bottom:-1px;outline:0;box-shadow:inset 0 -1px 0 1px #e0e0e0}\n.progressive-image-wrap{background-color:#f6f6f6;background-size:cover;background-repeat:no-repeat;position:relative;overflow:hidden;font-size:0}.progressive-image-preview{width:930px;height:620px;position:relative;top:0;left:0;width:100%;filter:blur(20px);transform:scale(1)}.progressive-image-full{transition:opacity .6s linear;position:absolute;top:0;left:0;width:100%;opacity:0}.progressive-image-full.loaded{opacity:1}.progressive-image-full img{width:100%}\n.btn-wrap{display:flex}.btn{background:#fafafa;border:1px solid #a1a9ba;border-radius:2px;color:#2e333e;cursor:pointer;display:flex;font-size:1rem;text-align:center;text-decoration:none;user-select:none;vertical-align:middle;align-content:center;display:flex;justify-content:center;height:40px;min-width:180px;white-space:nowrap;box-shadow:0 1px 0 #c3c3c3,inset 0 -1px 0 1px #e0e0e0;padding:0 10px}.btn:focus,.btn:hover{background:#fff;text-decoration:none;outline:0}.btn.active,.btn:active{background:#efefef;text-decoration:none;margin-top:1px;margin-bottom:-1px;outline:0;box-shadow:inset 0 -1px 0 1px #e0e0e0}.btn-white{background-color:#fefefe;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-white:focus,.btn-white:hover{background-color:#fff}.btn-white:active{background-color:#fbfbfb;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #fefefe}.btn-red{background-color:#ff1654;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-red:focus,.btn-red:hover{background-color:#ff3067}.btn-red:active{background-color:#ff1150;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #ff1654}.btn-blue{background-color:#247ba0;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-blue:focus,.btn-blue:hover{background-color:#298bb5}.btn-blue:active{background-color:#23789c;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #1f7da5}.btn-paleYellow{background-color:#f3ffbd;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-paleYellow:focus,.btn-paleYellow:hover{background-color:#f8ffd7}.btn-paleYellow:active{background-color:#f2ffb8;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #f3ffbd}.btn-paleGreen{background-color:#b2dbbf;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-paleGreen:focus,.btn-paleGreen:hover{background-color:#c3e3cd}.btn-paleGreen:active{background-color:#afd9bc;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #afdebe}.btn-green{background-color:#70c1b3;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-green:focus,.btn-green:hover{background-color:#82c9bc}.btn-green:active{background-color:#6cbfb1;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #6bc6b6}.btn-lightGray{background-color:#ccc;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#2e333e}.btn-lightGray:focus,.btn-lightGray:hover{background-color:#d9d9d9}.btn-lightGray:active{background-color:#c9c9c9;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #cfc9c9}.btn-gray{background-color:#888;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-gray:focus,.btn-gray:hover{background-color:#959595}.btn-gray:active{background-color:#858585;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #8e8282}.btn-black{background-color:#000;border:1px solid rgba(0,0,0,.3);box-shadow:0 1px 0 rgba(0,0,0,.13),inset 0 -1px 0 1px rgba(0,0,0,.13);color:#fff}.btn-black:focus,.btn-black:hover{background-color:#0d0d0d}.btn-black:active{background-color:#000;box-shadow:0 1px 0 transparent,inset 0 -1px 0 1px #000}.btn-bold{font-weight:700}.btn-xs{font-size:.6rem;height:20px;min-width:100px}.btn-sm{font-size:.8rem;height:30px;min-width:140px}.btn-md{font-size:1rem;height:40px;min-width:180px}.btn-lg{font-size:1.2rem;height:50px;min-width:220px}.btn-xl{font-size:1.4rem;height:60px;min-width:260px}\n.awly-login-example__buttons{display:flex;justify-content:space-between;box-sizing:border-box}.awly-login-example__input{width:100%;margin-bottom:10px;box-sizing:border-box}\n.awly-user-badge{width:100px;height:100px;border-radius:100%;background-color:#eee;color:#888;display:flex;align-items:center;justify-content:center;font-size:48px}\n.awly-input{display:flex;width:100%}.awly-input input{outline:0}.awly-input label{width:100%}.awly-input__input{padding:10px;width:100%;box-sizing:border-box;border:1px solid #a1a9ba;border-radius:2px}.awly-input__label{font-size:1.2rem;margin-bottom:5px}.awly-input__message{padding:4px 2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;color:grey;font-size:.8rem}.awly-input__message--error{color:red}.awly-input__message--success{color:green}\n.awly-textarea{display:flex;width:100%}.awly-textarea textarea{outline:0}.awly-textarea label{width:100%}.awly-textarea__textarea{padding:10px;width:100%;box-sizing:border-box;border:1px solid #a1a9ba;border-radius:2px}.awly-textarea__label{font-size:1.2rem;margin-bottom:5px}.awly-textarea__message{padding:4px 2px;border-bottom-left-radius:2px;border-bottom-right-radius:2px;color:grey;font-size:.8rem}.awly-textarea__message--error{color:red}.awly-textarea__message--success{color:green}\n.awly-footer{color:#fff;display:flex;height:100%;align-items:center}</style>","injectJS":"<script ...data.externalScriptAttrs src=\"/static/bundle-aeb6e83f.js\"></script>\n<script ...data.inlineScriptAttrs>$_mod.ready();</script>"}}, function(res, html, out) {
     resolve(html);
 });
 
@@ -22245,12 +21972,12 @@ module.exports = function endComponent(out, componentDef) {
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/layouts/compact-sidebar/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/layouts/compact-sidebar/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_loadTag = marko_helpers.t,
     include_tag = marko_loadTag(__webpack_require__(50)),
     marko_str = marko_helpers.s,
@@ -22673,13 +22400,13 @@ function $af(d,a,e,l,g,h,k,b,f,c){c=$af;if(a&&!c[a])(c[a+="$"]||(c[a]=[])).push(
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/navigation/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/navigation/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
     awly_logo_template = __webpack_require__(194),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_loadTag = marko_helpers.t,
     awly_logo_tag = marko_loadTag(awly_logo_template);
 
@@ -22740,12 +22467,12 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
       },
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/awly-logo/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/awly-logo/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_escapeXmlAttr = marko_helpers.xa;
 
 var marko_template = module.exports = __webpack_require__(2).t(__filename);
@@ -22796,7 +22523,7 @@ marko_template.meta = {
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/banner/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/banner/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
@@ -22841,7 +22568,7 @@ marko_template.meta = {
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/message/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/message/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
@@ -22923,12 +22650,12 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/examples-menu/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/examples-menu/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_styleAttr = marko_helpers.sa;
 
 var marko_template = module.exports = __webpack_require__(2).t(__filename);
@@ -23012,13 +22739,13 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-list/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-list/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
     marko_keyAttr = __webpack_require__(19),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_attr = marko_helpers.a,
     marko_escapeXml = marko_helpers.x,
     marko_forRange = __webpack_require__(199),
@@ -23032,8 +22759,8 @@ function importExports(component){
 }
 
 const { createHttpLink } = __webpack_require__(206);
-const { ApolloClient } = __webpack_require__(220);
-const { InMemoryCache } = __webpack_require__(233);
+const { ApolloClient } = __webpack_require__(222);
+const { InMemoryCache } = __webpack_require__(235);
 
 let isServer = false;
 let state = {
@@ -23044,10 +22771,10 @@ let state = {
 
 var marko_template = module.exports = __webpack_require__(2).t(__filename);
 
-var schema = __webpack_require__(242);
+var schema = __webpack_require__(244);
 
-const { LocalLink } = __webpack_require__(280);
-var gql = __webpack_require__(281);
+const { LocalLink } = __webpack_require__(282);
+var gql = __webpack_require__(283);
 
 const QUERY = gql`
     query P($cursor: String, $limit: Int) {
@@ -24137,7 +23864,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createHttpLink; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HttpLink; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_link__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_link_http_common__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_link_http_common__ = __webpack_require__(221);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -24389,6 +24116,7 @@ var split = function (test, left, right) {
         });
     }
 };
+// join two Links together
 var concat = function (first, second) {
     var firstLink = toLink(first);
     if (Object(__WEBPACK_IMPORTED_MODULE_1__linkUtils__["e" /* isTerminating */])(firstLink)) {
@@ -24409,7 +24137,7 @@ var concat = function (first, second) {
         });
     }
 };
-var ApolloLink = (function () {
+var ApolloLink = /** @class */ (function () {
     function ApolloLink(request) {
         if (request)
             this.request = request;
@@ -24951,9 +24679,12 @@ function shouldInclude(selection, variables) {
     }
     var res = true;
     selection.directives.forEach(function (directive) {
+        // TODO should move this validation to GraphQL validation once that's implemented.
         if (directive.name.value !== 'skip' && directive.name.value !== 'include') {
+            // Just don't worry about directives we don't understand
             return;
         }
+        //evaluate the "if" argument and skip (i.e. return undefined) if it evaluates to true.
         var directiveArguments = directive.arguments || [];
         var directiveName = directive.name.value;
         if (directiveArguments.length !== 1) {
@@ -24966,6 +24697,7 @@ function shouldInclude(selection, variables) {
         var ifValue = directiveArguments[0].value;
         var evaledValue = false;
         if (!ifValue || ifValue.kind !== 'BooleanValue') {
+            // means it has to be a variable value if this is a valid @skip or @include directive
             if (ifValue.kind !== 'Variable') {
                 throw new Error("Argument for the @" + directiveName + " directive must be a variable or a boolean value.");
             }
@@ -24998,25 +24730,27 @@ function flattenSelections(selection) {
     })
         .reduce(function (selections, selected) { return selections.concat(selected); }, []));
 }
-var added = new Map();
 function getDirectiveNames(doc) {
-    var cached = added.get(doc);
-    if (cached)
-        return cached;
-    var directives = doc.definitions
+    // operation => [names of directives];
+    var directiveNames = doc.definitions
         .filter(function (definition) {
         return definition.selectionSet && definition.selectionSet.selections;
     })
+        // operation => [[Selection]]
         .map(function (x) { return flattenSelections(x); })
+        // [[Selection]] => [Selection]
         .reduce(function (selections, selected) { return selections.concat(selected); }, [])
+        // [Selection] => [Selection with Directives]
         .filter(function (selection) {
         return selection.directives && selection.directives.length > 0;
     })
+        // [Selection with Directives] => [[Directives]]
         .map(function (selection) { return selection.directives; })
+        // [[Directives]] => [Directives]
         .reduce(function (directives, directive) { return directives.concat(directive); }, [])
+        // [Directives] => [Name]
         .map(function (directive) { return directive.name.value; });
-    added.set(doc, directives);
-    return directives;
+    return directiveNames;
 }
 function hasDirectives(names, doc) {
     return getDirectiveNames(doc).some(function (name) { return names.indexOf(name) > -1; });
@@ -25025,36 +24759,138 @@ function hasDirectives(names, doc) {
 
 /***/ }),
 /* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (data, opts) {
+    if (!opts) opts = {};
+    if (typeof opts === 'function') opts = { cmp: opts };
+    var cycles = (typeof opts.cycles === 'boolean') ? opts.cycles : false;
+
+    var cmp = opts.cmp && (function (f) {
+        return function (node) {
+            return function (a, b) {
+                var aobj = { key: a, value: node[a] };
+                var bobj = { key: b, value: node[b] };
+                return f(aobj, bobj);
+            };
+        };
+    })(opts.cmp);
+
+    var seen = [];
+    return (function stringify (node) {
+        if (node && node.toJSON && typeof node.toJSON === 'function') {
+            node = node.toJSON();
+        }
+
+        if (node === undefined) return;
+        if (typeof node == 'number') return isFinite(node) ? '' + node : 'null';
+        if (typeof node !== 'object') return JSON.stringify(node);
+
+        var i, out;
+        if (Array.isArray(node)) {
+            out = '[';
+            for (i = 0; i < node.length; i++) {
+                if (i) out += ',';
+                out += stringify(node[i]) || 'null';
+            }
+            return out + ']';
+        }
+
+        if (node === null) return 'null';
+
+        if (seen.indexOf(node) !== -1) {
+            if (cycles) return JSON.stringify('__cycle__');
+            throw new TypeError('Converting circular structure to JSON');
+        }
+
+        var seenIndex = seen.push(node) - 1;
+        var keys = Object.keys(node).sort(cmp && cmp(node));
+        out = '';
+        for (i = 0; i < keys.length; i++) {
+            var key = keys[i];
+            var value = stringify(node[key]);
+
+            if (!value) continue;
+            if (out) out += ',';
+            out += JSON.stringify(key) + ':' + value;
+        }
+        seen.splice(seenIndex, 1);
+        return '{' + out + '}';
+    })(data);
+};
+
+
+/***/ }),
+/* 214 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = getFragmentQueryDocument;
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
+/**
+ * Returns a query document which adds a single query operation that only
+ * spreads the target fragment inside of it.
+ *
+ * So for example a document of:
+ *
+ * ```graphql
+ * fragment foo on Foo { a b c }
+ * ```
+ *
+ * Turns into:
+ *
+ * ```graphql
+ * { ...foo }
+ *
+ * fragment foo on Foo { a b c }
+ * ```
+ *
+ * The target fragment will either be the only fragment in the document, or a
+ * fragment specified by the provided `fragmentName`. If there is more then one
+ * fragment, but a `fragmentName` was not defined then an error will be thrown.
+ */
 function getFragmentQueryDocument(document, fragmentName) {
     var actualFragmentName = fragmentName;
+    // Build an array of all our fragment definitions that will be used for
+    // validations. We also do some validations on the other definitions in the
+    // document while building this list.
     var fragments = [];
     document.definitions.forEach(function (definition) {
+        // Throw an error if we encounter an operation definition because we will
+        // define our own operation definition later on.
         if (definition.kind === 'OperationDefinition') {
             throw new Error("Found a " + definition.operation + " operation" + (definition.name ? " named '" + definition.name.value + "'" : '') + ". " +
                 'No operations are allowed when using a fragment as a query. Only fragments are allowed.');
         }
+        // Add our definition to the fragments array if it is a fragment
+        // definition.
         if (definition.kind === 'FragmentDefinition') {
             fragments.push(definition);
         }
     });
+    // If the user did not give us a fragment name then let us try to get a
+    // name from a single fragment in the definition.
     if (typeof actualFragmentName === 'undefined') {
         if (fragments.length !== 1) {
             throw new Error("Found " + fragments.length + " fragments. `fragmentName` must be provided when there is not exactly 1 fragment.");
         }
         actualFragmentName = fragments[0].name.value;
     }
+    // Generate a query document with an operation that simply spreads the
+    // fragment inside of it.
     var query = __assign({}, document, { definitions: [
             {
                 kind: 'OperationDefinition',
@@ -25078,7 +24914,7 @@ function getFragmentQueryDocument(document, fragmentName) {
 //# sourceMappingURL=fragments.js.map
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25098,9 +24934,13 @@ var TYPENAME_FIELD = {
     },
 };
 function isNotEmpty(op, fragments) {
+    // keep selections that are still valid
     return (op.selectionSet.selections.filter(function (selectionSet) {
+        // anything that doesn't match the compound filter is okay
         return !(selectionSet &&
+            // look into fragments to verify they should stay
             selectionSet.kind === 'FragmentSpread' &&
+            // see if the fragment in the map is valid (recursively)
             !isNotEmpty(fragments[selectionSet.name.value], fragments));
     }).length > 0);
 }
@@ -25128,6 +24968,7 @@ function addTypenameToSelectionSet(selectionSet, isRoot) {
             }
         }
         selectionSet.selections.forEach(function (selection) {
+            // Must not add __typename if we're inside an introspection query
             if (selection.kind === 'Field') {
                 if (selection.name.value.lastIndexOf('__', 0) !== 0 &&
                     selection.selectionSet) {
@@ -25145,6 +24986,7 @@ function addTypenameToSelectionSet(selectionSet, isRoot) {
 function removeDirectivesFromSelectionSet(directives, selectionSet) {
     if (!selectionSet.selections)
         return selectionSet;
+    // if any of the directives are set to remove this selectionSet, remove it
     var agressiveRemove = directives.some(function (dir) { return dir.remove; });
     selectionSet.selections = selectionSet.selections
         .map(function (selection) {
@@ -25180,18 +25022,13 @@ function removeDirectivesFromDocument(directives, doc) {
     var fragments = Object(__WEBPACK_IMPORTED_MODULE_1__getFromAST__["b" /* createFragmentMap */])(Object(__WEBPACK_IMPORTED_MODULE_1__getFromAST__["d" /* getFragmentDefinitions */])(docClone));
     return isNotEmpty(operation, fragments) ? docClone : null;
 }
-var added = new Map();
 function addTypenameToDocument(doc) {
     Object(__WEBPACK_IMPORTED_MODULE_1__getFromAST__["a" /* checkDocument */])(doc);
-    var cached = added.get(doc);
-    if (cached)
-        return cached;
     var docClone = Object(__WEBPACK_IMPORTED_MODULE_0__util_cloneDeep__["a" /* cloneDeep */])(doc);
     docClone.definitions.forEach(function (definition) {
         var isRoot = definition.kind === 'OperationDefinition';
         addTypenameToSelectionSet(definition.selectionSet, isRoot);
     });
-    added.set(doc, docClone);
     return docClone;
 }
 var connectionRemoveConfig = {
@@ -25207,15 +25044,9 @@ var connectionRemoveConfig = {
         return willRemove;
     },
 };
-var removed = new Map();
 function removeConnectionDirectiveFromDocument(doc) {
     Object(__WEBPACK_IMPORTED_MODULE_1__getFromAST__["a" /* checkDocument */])(doc);
-    var cached = removed.get(doc);
-    if (cached)
-        return cached;
-    var docClone = removeDirectivesFromDocument([connectionRemoveConfig], doc);
-    removed.set(doc, docClone);
-    return docClone;
+    return removeDirectivesFromDocument([connectionRemoveConfig], doc);
 }
 function hasDirectivesInSelectionSet(directives, selectionSet, nestedCheck) {
     if (nestedCheck === void 0) { nestedCheck = true; }
@@ -25258,12 +25089,13 @@ function getDirectivesFromSelectionSet(directives, selectionSet) {
     });
     return selectionSet;
 }
-function getDirectivesFromDocument(directives, doc) {
+function getDirectivesFromDocument(directives, doc, includeAllFragments) {
+    if (includeAllFragments === void 0) { includeAllFragments = false; }
     Object(__WEBPACK_IMPORTED_MODULE_1__getFromAST__["a" /* checkDocument */])(doc);
     var docClone = Object(__WEBPACK_IMPORTED_MODULE_0__util_cloneDeep__["a" /* cloneDeep */])(doc);
     docClone.definitions = docClone.definitions.map(function (definition) {
         if ((definition.kind === 'OperationDefinition' ||
-            definition.kind === 'FragmentDefinition') &&
+            (definition.kind === 'FragmentDefinition' && !includeAllFragments)) &&
             definition.selectionSet) {
             definition.selectionSet = getDirectivesFromSelectionSet(directives, definition.selectionSet);
         }
@@ -25276,7 +25108,7 @@ function getDirectivesFromDocument(directives, doc) {
 //# sourceMappingURL=transform.js.map
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25298,22 +25130,31 @@ function graphQLResultHasError(result) {
 //# sourceMappingURL=errorHandling.js.map
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = isEqual;
+/**
+ * Performs a deep equality check on two JavaScript values.
+ */
 function isEqual(a, b) {
+    // If the two values are strictly equal, we are good.
     if (a === b) {
         return true;
     }
+    // Dates are equivalent if their time values are equal.
     if (a instanceof Date && b instanceof Date) {
         return a.getTime() === b.getTime();
     }
+    // If a and b are both objects, we will compare their properties. This will compare arrays as
+    // well.
     if (a != null &&
         typeof a === 'object' &&
         b != null &&
         typeof b === 'object') {
+        // Compare all of the keys in `a`. If one of the keys has a different value, or that key does
+        // not exist in `b` return false immediately.
         for (var key in a) {
             if (Object.prototype.hasOwnProperty.call(a, key)) {
                 if (!Object.prototype.hasOwnProperty.call(b, key)) {
@@ -25324,30 +25165,34 @@ function isEqual(a, b) {
                 }
             }
         }
+        // Look through all the keys in `b`. If `b` has a key that `a` does not, return false.
         for (var key in b) {
             if (!Object.prototype.hasOwnProperty.call(a, key)) {
                 return false;
             }
         }
+        // If we made it this far the objects are equal!
         return true;
     }
+    // Otherwise the values are not equal.
     return false;
 }
 //# sourceMappingURL=isEqual.js.map
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = maybeDeepFreeze;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environment__ = __webpack_require__(53);
 
+// Taken (mostly) from https://github.com/substack/deep-freeze to avoid
+// import hassles with rollup.
 function deepFreeze(o) {
     Object.freeze(o);
     Object.getOwnPropertyNames(o).forEach(function (prop) {
-        if (o.hasOwnProperty(prop) &&
-            o[prop] !== null &&
+        if (o[prop] !== null &&
             (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
             !Object.isFrozen(o[prop])) {
             deepFreeze(o[prop]);
@@ -25357,14 +25202,19 @@ function deepFreeze(o) {
 }
 function maybeDeepFreeze(obj) {
     if (Object(__WEBPACK_IMPORTED_MODULE_0__environment__["a" /* isDevelopment */])() || Object(__WEBPACK_IMPORTED_MODULE_0__environment__["c" /* isTest */])()) {
-        return deepFreeze(obj);
+        // Polyfilled Symbols potentially cause infinite / very deep recursion while deep freezing
+        // which is known to crash IE11 (https://github.com/apollographql/apollo-client/issues/3043).
+        var symbolIsPolyfilled = typeof Symbol === 'function' && typeof Symbol('') === 'string';
+        if (!symbolIsPolyfilled) {
+            return deepFreeze(obj);
+        }
     }
     return obj;
 }
 //# sourceMappingURL=maybeDeepFreeze.js.map
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25372,6 +25222,14 @@ function maybeDeepFreeze(obj) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__environment__ = __webpack_require__(53);
 
 var haveWarned = Object.create({});
+/**
+ * Print a warning only once in development.
+ * In production no warnings are printed.
+ * In test all warnings are printed.
+ *
+ * @param msg The warning message
+ * @param type warn or error (will call console.warn or console.error)
+ */
 function warnOnceInDevelopment(msg, type) {
     if (type === void 0) { type = 'warn'; }
     if (Object(__WEBPACK_IMPORTED_MODULE_0__environment__["b" /* isProduction */])()) {
@@ -25393,7 +25251,29 @@ function warnOnceInDevelopment(msg, type) {
 //# sourceMappingURL=warnOnce.js.map
 
 /***/ }),
-/* 219 */
+/* 220 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export stripSymbols */
+/**
+ * In order to make assertions easier, this function strips `symbol`'s from
+ * the incoming data.
+ *
+ * This can be handy when running tests against `apollo-client` for example,
+ * since it adds `symbol`'s to the data in the store. Jest's `toEqual`
+ * function now covers `symbol`'s (https://github.com/facebook/jest/pull/3437),
+ * which means all test data used in a `toEqual` comparison would also have to
+ * include `symbol`'s, to pass. By stripping `symbol`'s from the cache data
+ * we can compare against more simplified test data.
+ */
+function stripSymbols(data) {
+    return JSON.parse(JSON.stringify(data));
+}
+//# sourceMappingURL=stripSymbols.js.map
+
+/***/ }),
+/* 221 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25548,7 +25428,7 @@ var selectURI = function (operation, fallbackURI) {
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25564,7 +25444,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "FetchType", function() { return __WEBPACK_IMPORTED_MODULE_3__core_types__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__errors_ApolloError__ = __webpack_require__(55);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ApolloError", function() { return __WEBPACK_IMPORTED_MODULE_4__errors_ApolloError__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ApolloClient__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ApolloClient__ = __webpack_require__(226);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ApolloClient", function() { return __WEBPACK_IMPORTED_MODULE_5__ApolloClient__["a"]; });
 
 
@@ -25572,17 +25452,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-// export the client as both default and named
 
 /* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_5__ApolloClient__["a" /* default */]);
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 221 */
+/* 223 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(223);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ponyfill_js__ = __webpack_require__(225);
 /* global window */
 
 
@@ -25603,10 +25482,10 @@ if (typeof self !== 'undefined') {
 var result = Object(__WEBPACK_IMPORTED_MODULE_0__ponyfill_js__["a" /* default */])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(222)(module)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(224)(module)))
 
 /***/ }),
-/* 222 */
+/* 224 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -25636,7 +25515,7 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 223 */
+/* 225 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25661,15 +25540,15 @@ function symbolObservablePonyfill(root) {
 
 
 /***/ }),
-/* 224 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_link__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_QueryManager__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_store__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__version__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_QueryManager__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_store__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__version__ = __webpack_require__(234);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__version___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__version__);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -25689,29 +25568,7 @@ var supportedDirectives = new __WEBPACK_IMPORTED_MODULE_0_apollo_link__["ApolloL
     operation.query = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["y" /* removeConnectionDirectiveFromDocument */])(operation.query);
     return forward(operation);
 });
-/**
- * This is the primary Apollo Client class. It is used to send GraphQL documents (i.e. queries
- * and mutations) to a GraphQL spec-compliant server over a {@link NetworkInterface} instance,
- * receive results from the server and cache the results in a store. It also delivers updates
- * to GraphQL queries through {@link Observable} instances.
- */
-var ApolloClient = /** @class */ (function () {
-    /**
-     * Constructs an instance of {@link ApolloClient}.
-     *
-     * @param link The {@link ApolloLink} over which GraphQL documents will be resolved into a response.
-     *
-     * @param cache The initial cache to use in the data store.
-     *
-     * @param ssrMode Determines whether this is being run in Server Side Rendering (SSR) mode.
-     *
-     * @param ssrForceFetchDelay Determines the time interval before we force fetch queries for a
-     * server side render.
-     *
-     * @param queryDeduplication If set to false, a query will still be sent to the server even if a query
-     * with identical parameters (query, variables, operationName) is already in flight.
-     *
-     */
+var ApolloClient = (function () {
     function ApolloClient(options) {
         var _this = this;
         this.defaultOptions = {};
@@ -25720,7 +25577,6 @@ var ApolloClient = /** @class */ (function () {
         if (!link || !cache) {
             throw new Error("\n        In order to initialize Apollo Client, you must specify link & cache properties on the config object.\n        This is part of the required upgrade when migrating from Apollo Client 1.0 to Apollo Client 2.0.\n        For more information, please visit:\n          https://www.apollographql.com/docs/react/basics/setup.html\n        to help you get started.\n      ");
         }
-        // remove apollo-client supported directives
         this.link = supportedDirectives.concat(link);
         this.cache = cache;
         this.store = new __WEBPACK_IMPORTED_MODULE_3__data_store__["a" /* DataStore */](cache);
@@ -25736,8 +25592,6 @@ var ApolloClient = /** @class */ (function () {
         this.mutate = this.mutate.bind(this);
         this.resetStore = this.resetStore.bind(this);
         this.reFetchObservableQueries = this.reFetchObservableQueries.bind(this);
-        // Attach the client instance to window to let us be found by chrome devtools, but only in
-        // development mode
         var defaultConnectToDevTools = !Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["v" /* isProduction */])() &&
             typeof window !== 'undefined' &&
             !window.__APOLLO_CLIENT__;
@@ -25746,20 +25600,13 @@ var ApolloClient = /** @class */ (function () {
             : connectToDevTools && typeof window !== 'undefined') {
             window.__APOLLO_CLIENT__ = this;
         }
-        /**
-         * Suggest installing the devtools for developers who don't have them
-         */
         if (!hasSuggestedDevtools && !Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["v" /* isProduction */])()) {
             hasSuggestedDevtools = true;
             if (typeof window !== 'undefined' &&
                 window.document &&
                 window.top === window.self) {
-                // First check if devtools is not installed
                 if (typeof window.__APOLLO_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
-                    // Only for Chrome
-                    if (window.navigator &&
-                        window.navigator.userAgent.indexOf('Chrome') > -1) {
-                        // tslint:disable-next-line
+                    if (navigator.userAgent.indexOf('Chrome') > -1) {
                         console.debug('Download the Apollo DevTools ' +
                             'for a better development experience: ' +
                             'https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm');
@@ -25769,46 +25616,16 @@ var ApolloClient = /** @class */ (function () {
         }
         this.version = __WEBPACK_IMPORTED_MODULE_4__version__["version"];
     }
-    /**
-     * This watches the results of the query according to the options specified and
-     * returns an {@link ObservableQuery}. We can subscribe to this {@link ObservableQuery} and
-     * receive updated results through a GraphQL observer.
-     * <p /><p />
-     * Note that this method is not an implementation of GraphQL subscriptions. Rather,
-     * it uses Apollo's store in order to reactively deliver updates to your query results.
-     * <p /><p />
-     * For example, suppose you call watchQuery on a GraphQL query that fetches an person's
-     * first name and last name and this person has a particular object identifer, provided by
-     * dataIdFromObject. Later, a different query fetches that same person's
-     * first and last name and his/her first name has now changed. Then, any observers associated
-     * with the results of the first query will be updated with a new result object.
-     * <p /><p />
-     * See [here](https://medium.com/apollo-stack/the-concepts-of-graphql-bc68bd819be3#.3mb0cbcmc) for
-     * a description of store reactivity.
-     *
-     */
     ApolloClient.prototype.watchQuery = function (options) {
         this.initQueryManager();
         if (this.defaultOptions.watchQuery) {
             options = __assign({}, this.defaultOptions.watchQuery, options);
         }
-        // XXX Overwriting options is probably not the best way to do this long term...
-        if (this.disableNetworkFetches &&
-            (options.fetchPolicy === 'network-only' ||
-                options.fetchPolicy === 'cache-and-network')) {
+        if (this.disableNetworkFetches && options.fetchPolicy === 'network-only') {
             options = __assign({}, options, { fetchPolicy: 'cache-first' });
         }
         return this.queryManager.watchQuery(options);
     };
-    /**
-     * This resolves a single query according to the options specified and
-     * returns a {@link Promise} which is either resolved with the resulting data
-     * or rejected with an error.
-     *
-     * @param options An object of type {@link QueryOptions} that allows us to
-     * describe how this query should be treated e.g. whether it should hit the
-     * server at all or just resolve from the cache, etc.
-     */
     ApolloClient.prototype.query = function (options) {
         this.initQueryManager();
         if (this.defaultOptions.query) {
@@ -25817,20 +25634,11 @@ var ApolloClient = /** @class */ (function () {
         if (options.fetchPolicy === 'cache-and-network') {
             throw new Error('cache-and-network fetchPolicy can only be used with watchQuery');
         }
-        // XXX Overwriting options is probably not the best way to do this long
-        // term...
         if (this.disableNetworkFetches && options.fetchPolicy === 'network-only') {
             options = __assign({}, options, { fetchPolicy: 'cache-first' });
         }
         return this.queryManager.query(options);
     };
-    /**
-     * This resolves a single mutation according to the options specified and returns a
-     * {@link Promise} which is either resolved with the resulting data or rejected with an
-     * error.
-     *
-     * It takes options as an object with the following keys and values:
-     */
     ApolloClient.prototype.mutate = function (options) {
         this.initQueryManager();
         if (this.defaultOptions.mutate) {
@@ -25838,73 +25646,26 @@ var ApolloClient = /** @class */ (function () {
         }
         return this.queryManager.mutate(options);
     };
-    /**
-     * This subscribes to a graphql subscription according to the options specified and returns an
-     * {@link Observable} which either emits received data or an error.
-     */
     ApolloClient.prototype.subscribe = function (options) {
         this.initQueryManager();
         return this.queryManager.startGraphQLSubscription(options);
     };
-    /**
-     * Tries to read some data from the store in the shape of the provided
-     * GraphQL query without making a network request. This method will start at
-     * the root query. To start at a specific id returned by `dataIdFromObject`
-     * use `readFragment`.
-     */
     ApolloClient.prototype.readQuery = function (options) {
         return this.initProxy().readQuery(options);
     };
-    /**
-     * Tries to read some data from the store in the shape of the provided
-     * GraphQL fragment without making a network request. This method will read a
-     * GraphQL fragment from any arbitrary id that is currently cached, unlike
-     * `readQuery` which will only read from the root query.
-     *
-     * You must pass in a GraphQL document with a single fragment or a document
-     * with multiple fragments that represent what you are reading. If you pass
-     * in a document with multiple fragments then you must also specify a
-     * `fragmentName`.
-     */
     ApolloClient.prototype.readFragment = function (options) {
         return this.initProxy().readFragment(options);
     };
-    /**
-     * Writes some data in the shape of the provided GraphQL query directly to
-     * the store. This method will start at the root query. To start at a a
-     * specific id returned by `dataIdFromObject` then use `writeFragment`.
-     */
     ApolloClient.prototype.writeQuery = function (options) {
         var result = this.initProxy().writeQuery(options);
         this.queryManager.broadcastQueries();
         return result;
     };
-    /**
-     * Writes some data in the shape of the provided GraphQL fragment directly to
-     * the store. This method will write to a GraphQL fragment from any arbitrary
-     * id that is currently cached, unlike `writeQuery` which will only write
-     * from the root query.
-     *
-     * You must pass in a GraphQL document with a single fragment or a document
-     * with multiple fragments that represent what you are writing. If you pass
-     * in a document with multiple fragments then you must also specify a
-     * `fragmentName`.
-     */
     ApolloClient.prototype.writeFragment = function (options) {
         var result = this.initProxy().writeFragment(options);
         this.queryManager.broadcastQueries();
         return result;
     };
-    /**
-     * Sugar for writeQuery & writeFragment
-     * This method will construct a query from the data object passed in.
-     * If no id is supplied, writeData will write the data to the root.
-     * If an id is supplied, writeData will write a fragment to the object
-     * specified by the id in the store.
-     *
-     * Since you aren't passing in a query to check the shape of the data,
-     * you must pass in an object that conforms to the shape of valid GraphQL data.
-     */
     ApolloClient.prototype.writeData = function (options) {
         var result = this.initProxy().writeData(options);
         this.queryManager.broadcastQueries();
@@ -25916,9 +25677,6 @@ var ApolloClient = /** @class */ (function () {
     ApolloClient.prototype.__requestRaw = function (payload) {
         return Object(__WEBPACK_IMPORTED_MODULE_0_apollo_link__["execute"])(this.link, payload);
     };
-    /**
-     * This initializes the query manager that tracks queries and the cache
-     */
     ApolloClient.prototype.initQueryManager = function () {
         var _this = this;
         if (this.queryManager)
@@ -25942,41 +25700,16 @@ var ApolloClient = /** @class */ (function () {
             },
         });
     };
-    /**
-     * Resets your entire store by clearing out your cache and then re-executing
-     * all of your active queries. This makes it so that you may guarantee that
-     * there is no data left in your store from a time before you called this
-     * method.
-     *
-     * `resetStore()` is useful when your user just logged out. You’ve removed the
-     * user session, and you now want to make sure that any references to data you
-     * might have fetched while the user session was active is gone.
-     *
-     * It is important to remember that `resetStore()` *will* refetch any active
-     * queries. This means that any components that might be mounted will execute
-     * their queries again using your network interface. If you do not want to
-     * re-execute any queries then you should make sure to stop watching any
-     * active queries.
-     */
     ApolloClient.prototype.resetStore = function () {
         var _this = this;
         return Promise.resolve()
             .then(function () {
-            return _this.queryManager
-                ? _this.queryManager.clearStore()
+            _this.queryManager
+                ? _this.queryManager.resetStore()
                 : Promise.resolve(null);
         })
-            .then(function () { return Promise.all(_this.resetStoreCallbacks.map(function (fn) { return fn(); })); })
-            .then(function () {
-            return _this.queryManager && _this.queryManager.reFetchObservableQueries
-                ? _this.queryManager.reFetchObservableQueries()
-                : Promise.resolve(null);
-        });
+            .then(function () { return Promise.all(_this.resetStoreCallbacks.map(function (fn) { return fn(); })); });
     };
-    /**
-     * Allows callbacks to be registered that are executed with the store is reset.
-     * onResetStore returns an unsubscribe function for removing your registered callbacks.
-     */
     ApolloClient.prototype.onResetStore = function (cb) {
         var _this = this;
         this.resetStoreCallbacks.push(cb);
@@ -25984,44 +25717,17 @@ var ApolloClient = /** @class */ (function () {
             _this.resetStoreCallbacks = _this.resetStoreCallbacks.filter(function (c) { return c !== cb; });
         };
     };
-    /**
-     * Refetches all of your active queries.
-     *
-     * `reFetchObservableQueries()` is useful if you want to bring the client back to proper state in case of a network outage
-     *
-     * It is important to remember that `reFetchObservableQueries()` *will* refetch any active
-     * queries. This means that any components that might be mounted will execute
-     * their queries again using your network interface. If you do not want to
-     * re-execute any queries then you should make sure to stop watching any
-     * active queries.
-     * Takes optional parameter `includeStandby` which will include queries in standby-mode when refetching.
-     */
-    ApolloClient.prototype.reFetchObservableQueries = function (includeStandby) {
+    ApolloClient.prototype.reFetchObservableQueries = function () {
         return this.queryManager
-            ? this.queryManager.reFetchObservableQueries(includeStandby)
+            ? this.queryManager.reFetchObservableQueries()
             : Promise.resolve(null);
     };
-    /**
-     * Exposes the cache's complete state, in a serializable format for later restoration.
-     */
     ApolloClient.prototype.extract = function (optimistic) {
         return this.initProxy().extract(optimistic);
     };
-    /**
-     * Replaces existing state in the cache (if any) with the values expressed by
-     * `serializedState`.
-     *
-     * Called when hydrating a cache (server side rendering, or offline storage),
-     * and also (potentially) during hot reloads.
-     */
     ApolloClient.prototype.restore = function (serializedState) {
         return this.initProxy().restore(serializedState);
     };
-    /**
-     * Initializes a data proxy for this client instance if one does not already
-     * exist and returns either a previously initialized proxy instance or the
-     * newly initialized instance.
-     */
     ApolloClient.prototype.initProxy = function () {
         if (!this.proxy) {
             this.initQueryManager();
@@ -26035,7 +25741,7 @@ var ApolloClient = /** @class */ (function () {
 //# sourceMappingURL=ApolloClient.js.map
 
 /***/ }),
-/* 225 */
+/* 227 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -26043,13 +25749,13 @@ var ApolloClient = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_link__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_graphql_language_printer__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_graphql_language_printer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_graphql_language_printer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_apollo_link_dedup__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_apollo_utilities__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scheduler_scheduler__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_apollo_link_dedup__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_apollo_utilities__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__scheduler_scheduler__ = __webpack_require__(230);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__errors_ApolloError__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_Observable__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_mutations__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__data_queries__ = __webpack_require__(230);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__data_mutations__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__data_queries__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ObservableQuery__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__networkStatus__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__types__ = __webpack_require__(38);
@@ -26073,7 +25779,6 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 
 
 
-
 var defaultQueryInfo = {
     listeners: [],
     invalidated: false,
@@ -26083,23 +25788,14 @@ var defaultQueryInfo = {
     observableQuery: null,
     subscriptions: [],
 };
-var QueryManager = /** @class */ (function () {
+var QueryManager = (function () {
     function QueryManager(_a) {
         var link = _a.link, _b = _a.queryDeduplication, queryDeduplication = _b === void 0 ? false : _b, store = _a.store, _c = _a.onBroadcast, onBroadcast = _c === void 0 ? function () { return undefined; } : _c, _d = _a.ssrMode, ssrMode = _d === void 0 ? false : _d;
         this.mutationStore = new __WEBPACK_IMPORTED_MODULE_7__data_mutations__["a" /* MutationStore */]();
         this.queryStore = new __WEBPACK_IMPORTED_MODULE_8__data_queries__["a" /* QueryStore */]();
-        // let's not start at zero to avoid pain with bad checks
         this.idCounter = 1;
-        // XXX merge with ObservableQuery but that needs to be expanded to support mutations and
-        // subscriptions as well
         this.queries = new Map();
-        // A map going from a requestId to a promise that has not yet been resolved. We use this to keep
-        // track of queries that are inflight and reject them in case some
-        // destabalizing action occurs (e.g. reset of the Apollo store).
         this.fetchQueryPromises = new Map();
-        // A map going from the name of a query to an observer issued for it by watchQuery. This is
-        // generally used to refetches for refetchQueries and to update mutation results through
-        // updateQueries.
         this.queryIdsByName = {};
         this.link = link;
         this.deduplicator = __WEBPACK_IMPORTED_MODULE_0_apollo_link__["ApolloLink"].from([new __WEBPACK_IMPORTED_MODULE_2_apollo_link_dedup__["a" /* DedupLink */](), link]);
@@ -26110,12 +25806,9 @@ var QueryManager = /** @class */ (function () {
     }
     QueryManager.prototype.mutate = function (_a) {
         var _this = this;
-        var mutation = _a.mutation, variables = _a.variables, optimisticResponse = _a.optimisticResponse, updateQueriesByName = _a.updateQueries, _b = _a.refetchQueries, refetchQueries = _b === void 0 ? [] : _b, updateWithProxyFn = _a.update, _c = _a.errorPolicy, errorPolicy = _c === void 0 ? 'none' : _c, fetchPolicy = _a.fetchPolicy, _d = _a.context, context = _d === void 0 ? {} : _d;
+        var mutation = _a.mutation, variables = _a.variables, optimisticResponse = _a.optimisticResponse, updateQueriesByName = _a.updateQueries, _b = _a.refetchQueries, refetchQueries = _b === void 0 ? [] : _b, updateWithProxyFn = _a.update, _c = _a.errorPolicy, errorPolicy = _c === void 0 ? 'none' : _c, _d = _a.context, context = _d === void 0 ? {} : _d;
         if (!mutation) {
             throw new Error('mutation option is required. You must specify your GraphQL document in the mutation option.');
-        }
-        if (fetchPolicy && fetchPolicy !== 'no-cache') {
-            throw new Error("fetchPolicy for mutations currently only supports the 'no-cache' policy");
         }
         var mutationId = this.generateQueryId();
         var cache = this.dataStore.getCache();
@@ -26123,7 +25816,6 @@ var QueryManager = /** @class */ (function () {
             (variables = Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["c" /* assign */])({}, Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["e" /* getDefaultValues */])(Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["j" /* getMutationDefinition */])(mutation)), variables));
         var mutationString = Object(__WEBPACK_IMPORTED_MODULE_1_graphql_language_printer__["print"])(mutation);
         this.setQuery(mutationId, function () { return ({ document: mutation }); });
-        // Create a map of update queries by id to the query instead of by name.
         var generateUpdateQueriesInfo = function () {
             var ret = {};
             if (updateQueriesByName) {
@@ -26154,23 +25846,21 @@ var QueryManager = /** @class */ (function () {
             var operation = _this.buildOperationForLink(mutation, variables, __assign({}, context, { optimisticResponse: optimisticResponse }));
             Object(__WEBPACK_IMPORTED_MODULE_0_apollo_link__["execute"])(_this.link, operation).subscribe({
                 next: function (result) {
-                    if (Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["o" /* graphQLResultHasError */])(result) && errorPolicy === 'none') {
+                    if (result.errors && errorPolicy === 'none') {
                         error = new __WEBPACK_IMPORTED_MODULE_5__errors_ApolloError__["a" /* ApolloError */]({
                             graphQLErrors: result.errors,
                         });
                         return;
                     }
                     _this.mutationStore.markMutationResult(mutationId);
-                    if (fetchPolicy !== 'no-cache') {
-                        _this.dataStore.markMutationResult({
-                            mutationId: mutationId,
-                            result: result,
-                            document: mutation,
-                            variables: variables || {},
-                            updateQueries: generateUpdateQueriesInfo(),
-                            update: updateWithProxyFn,
-                        });
-                    }
+                    _this.dataStore.markMutationResult({
+                        mutationId: mutationId,
+                        result: result,
+                        document: mutation,
+                        variables: variables || {},
+                        updateQueries: generateUpdateQueriesInfo(),
+                        update: updateWithProxyFn,
+                    });
                     storeResult = result;
                 },
                 error: function (err) {
@@ -26198,28 +25888,21 @@ var QueryManager = /** @class */ (function () {
                         reject(error);
                         return;
                     }
-                    // allow for conditional refetches
-                    // XXX do we want to make this the only API one day?
-                    if (typeof refetchQueries === 'function') {
+                    if (typeof refetchQueries === 'function')
                         refetchQueries = refetchQueries(storeResult);
-                    }
-                    if (refetchQueries) {
-                        refetchQueries.forEach(function (refetchQuery) {
-                            if (typeof refetchQuery === 'string') {
-                                _this.refetchQueryByName(refetchQuery);
-                                return;
-                            }
-                            _this.query({
-                                query: refetchQuery.query,
-                                variables: refetchQuery.variables,
-                                fetchPolicy: 'network-only',
-                            });
+                    refetchQueries.forEach(function (refetchQuery) {
+                        if (typeof refetchQuery === 'string') {
+                            _this.refetchQueryByName(refetchQuery);
+                            return;
+                        }
+                        _this.query({
+                            query: refetchQuery.query,
+                            variables: refetchQuery.variables,
+                            fetchPolicy: 'network-only',
                         });
-                    }
+                    });
                     _this.setQuery(mutationId, function () { return ({ document: undefined }); });
-                    if (errorPolicy === 'ignore' &&
-                        storeResult &&
-                        Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["o" /* graphQLResultHasError */])(storeResult)) {
+                    if (errorPolicy === 'ignore' && storeResult && storeResult.errors) {
                         delete storeResult.errors;
                     }
                     resolve(storeResult);
@@ -26227,41 +25910,28 @@ var QueryManager = /** @class */ (function () {
             });
         });
     };
-    QueryManager.prototype.fetchQuery = function (queryId, options, fetchType, 
-    // This allows us to track if this is a query spawned by a `fetchMore`
-    // call for another query. We need this data to compute the `fetchMore`
-    // network status for the query this is fetching for.
-    fetchMoreForQueryId) {
+    QueryManager.prototype.fetchQuery = function (queryId, options, fetchType, fetchMoreForQueryId) {
         var _this = this;
         var _a = options.variables, variables = _a === void 0 ? {} : _a, _b = options.metadata, metadata = _b === void 0 ? null : _b, _c = options.fetchPolicy, fetchPolicy = _c === void 0 ? 'cache-first' : _c;
         var cache = this.dataStore.getCache();
         var query = cache.transformDocument(options.query);
         var storeResult;
-        var needToFetch = fetchPolicy === 'network-only' || fetchPolicy === 'no-cache';
-        // If this is not a force fetch, we want to diff the query against the
-        // store before we fetch it from the network interface.
-        // TODO we hit the cache even if the policy is network-first. This could be unnecessary if the network is up.
-        if (fetchType !== __WEBPACK_IMPORTED_MODULE_11__types__["a" /* FetchType */].refetch &&
-            fetchPolicy !== 'network-only' &&
-            fetchPolicy !== 'no-cache') {
+        var needToFetch = fetchPolicy === 'network-only';
+        if (fetchType !== __WEBPACK_IMPORTED_MODULE_11__types__["a" /* FetchType */].refetch && fetchPolicy !== 'network-only') {
             var _d = this.dataStore.getCache().diff({
                 query: query,
                 variables: variables,
                 returnPartialData: true,
                 optimistic: false,
             }), complete = _d.complete, result = _d.result;
-            // If we're in here, only fetch if we have missing fields
             needToFetch = !complete || fetchPolicy === 'cache-and-network';
             storeResult = result;
         }
         var shouldFetch = needToFetch && fetchPolicy !== 'cache-only' && fetchPolicy !== 'standby';
-        // we need to check to see if this is an operation that uses the @live directive
         if (Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["p" /* hasDirectives */])(['live'], query))
             shouldFetch = true;
         var requestId = this.generateRequestId();
-        // set up a watcher to listen to cache updates
         var cancel = this.updateQueryWatch(queryId, query, options);
-        // Initialize query in store with unique requestId
         this.setQuery(queryId, function () { return ({
             document: query,
             lastRequestId: requestId,
@@ -26271,6 +25941,7 @@ var QueryManager = /** @class */ (function () {
         this.invalidate(true, fetchMoreForQueryId);
         this.queryStore.initQuery({
             queryId: queryId,
+            queryString: Object(__WEBPACK_IMPORTED_MODULE_1_graphql_language_printer__["print"])(query),
             document: query,
             storePreviousVariables: shouldFetch,
             variables: variables,
@@ -26280,8 +25951,6 @@ var QueryManager = /** @class */ (function () {
             fetchMoreForQueryId: fetchMoreForQueryId,
         });
         this.broadcastQueries();
-        // If there is no part of the query we need to fetch from the server (or,
-        // fetchPolicy is cache-only), we just write the store result as the final result.
         var shouldDispatchClientResult = !shouldFetch || fetchPolicy === 'cache-and-network';
         if (shouldDispatchClientResult) {
             this.queryStore.markQueryResultClient(queryId, !shouldFetch);
@@ -26296,8 +25965,6 @@ var QueryManager = /** @class */ (function () {
                 options: options,
                 fetchMoreForQueryId: fetchMoreForQueryId,
             }).catch(function (error) {
-                // This is for the benefit of `refetch` promises, which currently don't get their errors
-                // through the store like watchQuery observers do
                 if (Object(__WEBPACK_IMPORTED_MODULE_5__errors_ApolloError__["b" /* isApolloError */])(error)) {
                     throw error;
                 }
@@ -26312,38 +25979,26 @@ var QueryManager = /** @class */ (function () {
                     throw new __WEBPACK_IMPORTED_MODULE_5__errors_ApolloError__["a" /* ApolloError */]({ networkError: error });
                 }
             });
-            // we don't return the promise for cache-and-network since it is already
-            // returned below from the cache
             if (fetchPolicy !== 'cache-and-network') {
                 return networkResult;
             }
             else {
-                // however we need to catch the error so it isn't unhandled in case of
-                // network error
                 networkResult.catch(function () { });
             }
         }
-        // If we have no query to send to the server, we should return the result
-        // found within the store.
         return Promise.resolve({ data: storeResult });
     };
-    // Returns a query listener that will update the given observer based on the
-    // results (or lack thereof) for a particular query.
     QueryManager.prototype.queryListenerForObserver = function (queryId, options, observer) {
         var _this = this;
         var previouslyHadError = false;
         return function (queryStoreValue, newData) {
-            // we're going to take a look at the data, so the query is no longer invalidated
             _this.invalidate(false, queryId);
-            // The query store value can be undefined in the event of a store
-            // reset.
             if (!queryStoreValue)
                 return;
             var observableQuery = _this.getQuery(queryId).observableQuery;
             var fetchPolicy = observableQuery
                 ? observableQuery.options.fetchPolicy
                 : options.fetchPolicy;
-            // don't watch the store for queries on standby
             if (fetchPolicy === 'standby')
                 return;
             var errorPolicy = observableQuery
@@ -26356,14 +26011,6 @@ var QueryManager = /** @class */ (function () {
             var shouldNotifyIfLoading = (!newData && queryStoreValue.previousVariables != null) ||
                 fetchPolicy === 'cache-only' ||
                 fetchPolicy === 'cache-and-network';
-            // if this caused by a cache broadcast but the query is still in flight
-            // don't notify the observer
-            // if (
-            //   isCacheBroadcast &&
-            //   isNetworkRequestInFlight(queryStoreValue.networkStatus)
-            // ) {
-            //   shouldNotifyIfLoading = false;
-            // }
             var networkStatusChanged = Boolean(lastResult &&
                 queryStoreValue.networkStatus !== lastResult.networkStatus);
             var errorStatusChanged = errorPolicy &&
@@ -26373,8 +26020,6 @@ var QueryManager = /** @class */ (function () {
             if (!Object(__WEBPACK_IMPORTED_MODULE_10__networkStatus__["b" /* isNetworkRequestInFlight */])(queryStoreValue.networkStatus) ||
                 (networkStatusChanged && options.notifyOnNetworkStatusChange) ||
                 shouldNotifyIfLoading) {
-                // If we have either a GraphQL error or a network error, we create
-                // an error and tell the observer about it.
                 if (((!errorPolicy || errorPolicy === 'none') &&
                     queryStoreValue.graphQLErrors &&
                     queryStoreValue.graphQLErrors.length > 0) ||
@@ -26389,22 +26034,19 @@ var QueryManager = /** @class */ (function () {
                             observer.error(apolloError_1);
                         }
                         catch (e) {
-                            // Throw error outside this control flow to avoid breaking Apollo's state
                             setTimeout(function () {
                                 throw e;
                             }, 0);
                         }
                     }
                     else {
-                        // Throw error outside this control flow to avoid breaking Apollo's state
                         setTimeout(function () {
                             throw apolloError_1;
                         }, 0);
                         if (!Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["v" /* isProduction */])()) {
-                            /* tslint:disable-next-line */
                             console.info('An unhandled error was thrown because no error handler is registered ' +
                                 'for the query ' +
-                                Object(__WEBPACK_IMPORTED_MODULE_1_graphql_language_printer__["print"])(queryStoreValue.document));
+                                queryStoreValue.queryString);
                         }
                     }
                     return;
@@ -26413,10 +26055,9 @@ var QueryManager = /** @class */ (function () {
                     var data = void 0;
                     var isMissing = void 0;
                     if (newData) {
-                        // clear out the latest new data, since we're now using it
                         _this.setQuery(queryId, function () { return ({ newData: null }); });
                         data = newData.result;
-                        isMissing = !newData.complete || false;
+                        isMissing = !newData.complete ? !newData.complete : false;
                     }
                     else {
                         if (lastResult && lastResult.data && !errorStatusChanged) {
@@ -26436,9 +26077,6 @@ var QueryManager = /** @class */ (function () {
                         }
                     }
                     var resultFromStore = void 0;
-                    // If there is some data missing and the user has told us that they
-                    // do not tolerate partial data then we want to return the previous
-                    // result and mark it as stale.
                     if (isMissing && fetchPolicy !== 'cache-only') {
                         resultFromStore = {
                             data: lastResult && lastResult.data,
@@ -26455,7 +26093,6 @@ var QueryManager = /** @class */ (function () {
                             stale: false,
                         };
                     }
-                    // if the query wants updates on errors we need to add it to the result
                     if (errorPolicy === 'all' &&
                         queryStoreValue.graphQLErrors &&
                         queryStoreValue.graphQLErrors.length > 0) {
@@ -26466,16 +26103,12 @@ var QueryManager = /** @class */ (function () {
                             resultFromStore &&
                             lastResult.networkStatus === resultFromStore.networkStatus &&
                             lastResult.stale === resultFromStore.stale &&
-                            // We can do a strict equality check here because we include a `previousResult`
-                            // with `readQueryFromStore`. So if the results are the same they will be
-                            // referentially equal.
                             lastResult.data === resultFromStore.data);
                         if (isDifferentResult || previouslyHadError) {
                             try {
                                 observer.next(Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["x" /* maybeDeepFreeze */])(resultFromStore));
                             }
                             catch (e) {
-                                // Throw error outside this control flow to avoid breaking Apollo's state
                                 setTimeout(function () {
                                     throw e;
                                 }, 0);
@@ -26493,20 +26126,12 @@ var QueryManager = /** @class */ (function () {
             }
         };
     };
-    // The shouldSubscribe option is a temporary fix that tells us whether watchQuery was called
-    // directly (i.e. through ApolloClient) or through the query method within QueryManager.
-    // Currently, the query method uses watchQuery in order to handle non-network errors correctly
-    // but we don't want to keep track observables issued for the query method since those aren't
-    // supposed to be refetched in the event of a store reset. Once we unify error handling for
-    // network errors and non-network errors, the shouldSubscribe option will go away.
     QueryManager.prototype.watchQuery = function (options, shouldSubscribe) {
         if (shouldSubscribe === void 0) { shouldSubscribe = true; }
         if (options.fetchPolicy === 'standby') {
             throw new Error('client.watchQuery cannot be called with fetchPolicy set to "standby"');
         }
-        // get errors synchronously
         var queryDefinition = Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["m" /* getQueryDefinition */])(options.query);
-        // assign variable default values if supplied
         if (queryDefinition.variableDefinitions &&
             queryDefinition.variableDefinitions.length) {
             var defaultValues = Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["e" /* getDefaultValues */])(queryDefinition);
@@ -26525,8 +26150,7 @@ var QueryManager = /** @class */ (function () {
     QueryManager.prototype.query = function (options) {
         var _this = this;
         if (!options.query) {
-            throw new Error('query option is required. You must specify your GraphQL document ' +
-                'in the query option.');
+            throw new Error('query option is required. You must specify your GraphQL document in the query option.');
         }
         if (options.query.kind !== 'Document') {
             throw new Error('You must wrap the query string in a "gql" tag.');
@@ -26537,9 +26161,13 @@ var QueryManager = /** @class */ (function () {
         if (options.pollInterval) {
             throw new Error('pollInterval option only supported on watchQuery.');
         }
+        if (typeof options.notifyOnNetworkStatusChange !== 'undefined') {
+            throw new Error('Cannot call "query" with "notifyOnNetworkStatusChange" option. Only "watchQuery" has that option.');
+        }
+        options.notifyOnNetworkStatusChange = false;
         var requestId = this.idCounter;
-        return new Promise(function (resolve, reject) {
-            _this.addFetchQueryPromise(requestId, resolve, reject);
+        var resPromise = new Promise(function (resolve, reject) {
+            _this.addFetchQueryPromise(requestId, resPromise, resolve, reject);
             return _this.watchQuery(options, false)
                 .result()
                 .then(function (result) {
@@ -26551,6 +26179,7 @@ var QueryManager = /** @class */ (function () {
                 reject(error);
             });
         });
+        return resPromise;
     };
     QueryManager.prototype.generateQueryId = function () {
         var queryId = this.idCounter.toString();
@@ -26597,25 +26226,21 @@ var QueryManager = /** @class */ (function () {
             },
         });
     };
-    // Adds a promise to this.fetchQueryPromises for a given request ID.
-    QueryManager.prototype.addFetchQueryPromise = function (requestId, resolve, reject) {
+    QueryManager.prototype.addFetchQueryPromise = function (requestId, promise, resolve, reject) {
         this.fetchQueryPromises.set(requestId.toString(), {
+            promise: promise,
             resolve: resolve,
             reject: reject,
         });
     };
-    // Removes the promise in this.fetchQueryPromises for a particular request ID.
     QueryManager.prototype.removeFetchQueryPromise = function (requestId) {
         this.fetchQueryPromises.delete(requestId.toString());
     };
-    // Adds an ObservableQuery to this.observableQueries and to this.observableQueriesByName.
     QueryManager.prototype.addObservableQuery = function (queryId, observableQuery) {
         this.setQuery(queryId, function () { return ({ observableQuery: observableQuery }); });
-        // Insert the ObservableQuery into this.observableQueriesByName if the query has a name
         var queryDef = Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["m" /* getQueryDefinition */])(observableQuery.options.query);
         if (queryDef.name && queryDef.name.value) {
             var queryName = queryDef.name.value;
-            // XXX we may we want to warn the user about query name conflicts in the future
             this.queryIdsByName[queryName] = this.queryIdsByName[queryName] || [];
             this.queryIdsByName[queryName].push(observableQuery.queryId);
         }
@@ -26635,16 +26260,10 @@ var QueryManager = /** @class */ (function () {
             });
         }
     };
-    QueryManager.prototype.clearStore = function () {
-        // Before we have sent the reset action to the store,
-        // we can no longer rely on the results returned by in-flight
-        // requests since these may depend on values that previously existed
-        // in the data portion of the store. So, we cancel the promises and observers
-        // that we have issued so far and not yet resolved (in the case of
-        // queries).
+    QueryManager.prototype.resetStore = function () {
         this.fetchQueryPromises.forEach(function (_a) {
             var reject = _a.reject;
-            reject(new Error('Store reset while query was in flight(not completed in link chain)'));
+            reject(new Error('Store reset while query was in flight.'));
         });
         var resetIds = [];
         this.queries.forEach(function (_a, queryId) {
@@ -26654,23 +26273,12 @@ var QueryManager = /** @class */ (function () {
         });
         this.queryStore.reset(resetIds);
         this.mutationStore.reset();
-        // begin removing data from the store
-        var reset = this.dataStore.reset();
-        return reset;
+        var dataStoreReset = this.dataStore.reset();
+        var observableQueryPromises = this.getObservableQueryPromises();
+        this.broadcastQueries();
+        return dataStoreReset.then(function () { return Promise.all(observableQueryPromises); });
     };
-    QueryManager.prototype.resetStore = function () {
-        var _this = this;
-        // Similarly, we have to have to refetch each of the queries currently being
-        // observed. We refetch instead of error'ing on these since the assumption is that
-        // resetting the store doesn't eliminate the need for the queries currently being
-        // watched. If there is an existing query in flight when the store is reset,
-        // the promise for it will be rejected and its results will not be written to the
-        // store.
-        return this.clearStore().then(function () {
-            return _this.reFetchObservableQueries();
-        });
-    };
-    QueryManager.prototype.getObservableQueryPromises = function (includeStandby) {
+    QueryManager.prototype.getObservableQueryPromises = function () {
         var _this = this;
         var observableQueryPromises = [];
         this.queries.forEach(function (_a, queryId) {
@@ -26679,8 +26287,7 @@ var QueryManager = /** @class */ (function () {
                 return;
             var fetchPolicy = observableQuery.options.fetchPolicy;
             observableQuery.resetLastResults();
-            if (fetchPolicy !== 'cache-only' &&
-                (includeStandby || fetchPolicy !== 'standby')) {
+            if (fetchPolicy !== 'cache-only' && fetchPolicy !== 'standby') {
                 observableQueryPromises.push(observableQuery.refetch());
             }
             _this.setQuery(queryId, function () { return ({ newData: null }); });
@@ -26688,16 +26295,14 @@ var QueryManager = /** @class */ (function () {
         });
         return observableQueryPromises;
     };
-    QueryManager.prototype.reFetchObservableQueries = function (includeStandby) {
-        var observableQueryPromises = this.getObservableQueryPromises(includeStandby);
+    QueryManager.prototype.reFetchObservableQueries = function () {
+        var observableQueryPromises = this.getObservableQueryPromises();
         this.broadcastQueries();
         return Promise.all(observableQueryPromises);
     };
     QueryManager.prototype.startQuery = function (queryId, options, listener) {
         this.addQueryListener(queryId, listener);
         this.fetchQuery(queryId, options)
-            // `fetchQuery` returns a Promise. In case of a failure it should be caucht or else the
-            // console will show an `Uncaught (in promise)` message. Ignore the error for now.
             .catch(function () { return undefined; });
         return queryId;
     };
@@ -26711,15 +26316,12 @@ var QueryManager = /** @class */ (function () {
         var observers = [];
         return new __WEBPACK_IMPORTED_MODULE_6__util_Observable__["a" /* Observable */](function (observer) {
             observers.push(observer);
-            // If this is the first observer, actually initiate the network subscription
             if (observers.length === 1) {
                 var handler = {
                     next: function (result) {
                         _this.dataStore.markSubscriptionResult(result, transformedDoc, variables);
                         _this.broadcastQueries();
-                        // It's slightly awkward that the data for subscriptions doesn't come from the store.
                         observers.forEach(function (obs) {
-                            // XXX I'd prefer a different way to handle errors for subscriptions
                             if (obs.next)
                                 obs.next(result);
                         });
@@ -26731,14 +26333,11 @@ var QueryManager = /** @class */ (function () {
                         });
                     },
                 };
-                // TODO: Should subscriptions also accept a `context` option to pass
-                // through to links?
                 var operation = _this.buildOperationForLink(transformedDoc, variables);
                 sub = Object(__WEBPACK_IMPORTED_MODULE_0_apollo_link__["execute"])(_this.link, operation).subscribe(handler);
             }
             return function () {
                 observers = observers.filter(function (obs) { return obs !== observer; });
-                // If we removed the last observer, tear down the network subscription
                 if (observers.length === 0 && sub) {
                     sub.unsubscribe();
                 }
@@ -26746,32 +26345,28 @@ var QueryManager = /** @class */ (function () {
         });
     };
     QueryManager.prototype.stopQuery = function (queryId) {
-        this.stopQueryInStore(queryId);
         this.removeQuery(queryId);
+        this.stopQueryInStore(queryId);
     };
     QueryManager.prototype.removeQuery = function (queryId) {
         var subscriptions = this.getQuery(queryId).subscriptions;
-        // teardown all links
         subscriptions.forEach(function (x) { return x.unsubscribe(); });
         this.queries.delete(queryId);
     };
-    QueryManager.prototype.getCurrentQueryResult = function (observableQuery, optimistic) {
-        if (optimistic === void 0) { optimistic = true; }
+    QueryManager.prototype.getCurrentQueryResult = function (observableQuery) {
         var _a = observableQuery.options, variables = _a.variables, query = _a.query;
         var lastResult = observableQuery.getLastResult();
         var newData = this.getQuery(observableQuery.queryId).newData;
-        // XXX test this
         if (newData) {
             return Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["x" /* maybeDeepFreeze */])({ data: newData.result, partial: false });
         }
         else {
             try {
-                // the query is brand new, so we read from the store to see if anything is there
                 var data = this.dataStore.getCache().read({
                     query: query,
                     variables: variables,
                     previousResult: lastResult ? lastResult.data : undefined,
-                    optimistic: optimistic,
+                    optimistic: true,
                 });
                 return Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["x" /* maybeDeepFreeze */])({ data: data, partial: false });
             }
@@ -26793,7 +26388,7 @@ var QueryManager = /** @class */ (function () {
             observableQuery = queryIdOrObservable;
         }
         var _a = observableQuery.options, variables = _a.variables, query = _a.query;
-        var data = this.getCurrentQueryResult(observableQuery, false).data;
+        var data = this.getCurrentQueryResult(observableQuery).data;
         return {
             previousResult: data,
             variables: variables,
@@ -26807,47 +26402,31 @@ var QueryManager = /** @class */ (function () {
             if (!info.invalidated || !info.listeners)
                 return;
             info.listeners
-                // it's possible for the listener to be undefined if the query is being stopped
-                // See here for more detail: https://github.com/apollostack/apollo-client/issues/231
                 .filter(function (x) { return !!x; })
                 .forEach(function (listener) {
                 listener(_this.queryStore.get(id), info.newData);
             });
         });
     };
-    // Takes a request id, query id, a query document and information associated with the query
-    // and send it to the network interface. Returns
-    // a promise for the result associated with that request.
     QueryManager.prototype.fetchRequest = function (_a) {
         var _this = this;
         var requestId = _a.requestId, queryId = _a.queryId, document = _a.document, options = _a.options, fetchMoreForQueryId = _a.fetchMoreForQueryId;
-        var variables = options.variables, context = options.context, _b = options.errorPolicy, errorPolicy = _b === void 0 ? 'none' : _b, fetchPolicy = options.fetchPolicy;
-        var operation = this.buildOperationForLink(document, variables, __assign({}, context, { 
-            // TODO: Should this be included for all entry points via
-            // buildOperationForLink?
-            forceFetch: !this.queryDeduplication }));
+        var variables = options.variables, context = options.context, _b = options.errorPolicy, errorPolicy = _b === void 0 ? 'none' : _b;
+        var operation = this.buildOperationForLink(document, variables, __assign({}, context, { forceFetch: !this.queryDeduplication }));
         var resultFromStore;
         var errorsFromStore;
-        return new Promise(function (resolve, reject) {
-            _this.addFetchQueryPromise(requestId, resolve, reject);
+        var retPromise = new Promise(function (resolve, reject) {
+            _this.addFetchQueryPromise(requestId, retPromise, resolve, reject);
             var subscription = Object(__WEBPACK_IMPORTED_MODULE_0_apollo_link__["execute"])(_this.deduplicator, operation).subscribe({
                 next: function (result) {
-                    // default the lastRequestId to 1
                     var lastRequestId = _this.getQuery(queryId).lastRequestId;
                     if (requestId >= (lastRequestId || 1)) {
-                        if (fetchPolicy !== 'no-cache') {
-                            try {
-                                _this.dataStore.markQueryResult(result, document, variables, fetchMoreForQueryId, errorPolicy === 'ignore' || errorPolicy === 'all');
-                            }
-                            catch (e) {
-                                reject(e);
-                                return;
-                            }
+                        try {
+                            _this.dataStore.markQueryResult(result, document, variables, fetchMoreForQueryId, errorPolicy === 'ignore');
                         }
-                        else {
-                            _this.setQuery(queryId, function () { return ({
-                                newData: { result: result.data, complete: true },
-                            }); });
+                        catch (e) {
+                            reject(e);
+                            return;
                         }
                         _this.queryStore.markQueryResult(queryId, result, fetchMoreForQueryId);
                         _this.invalidate(true, queryId, fetchMoreForQueryId);
@@ -26862,22 +26441,16 @@ var QueryManager = /** @class */ (function () {
                     else if (errorPolicy === 'all') {
                         errorsFromStore = result.errors;
                     }
-                    if (fetchMoreForQueryId || fetchPolicy === 'no-cache') {
-                        // We don't write fetchMore results to the store because this would overwrite
-                        // the original result in case an @connection directive is used.
+                    if (fetchMoreForQueryId) {
                         resultFromStore = result.data;
                     }
                     else {
                         try {
-                            // ensure result is combined with data already in store
                             resultFromStore = _this.dataStore.getCache().read({
                                 variables: variables,
                                 query: document,
                                 optimistic: false,
                             });
-                            // this will throw an error if there are missing fields in
-                            // the results which can happen with errors from the server.
-                            // tslint:disable-next-line
                         }
                         catch (e) { }
                     }
@@ -26916,15 +26489,11 @@ var QueryManager = /** @class */ (function () {
                 });
             });
         });
+        return retPromise;
     };
-    // Refetches a query given that query's name. Refetches
-    // all ObservableQuery instances associated with the query name.
     QueryManager.prototype.refetchQueryByName = function (queryName) {
         var _this = this;
         var refetchedQueries = this.queryIdsByName[queryName];
-        // early return if the query named does not exist (not yet fetched)
-        // this used to warn but it may be inteneded behavoir to try and refetch
-        // un called queries because they could be on different routes
         if (refetchedQueries === undefined)
             return;
         return Promise.all(refetchedQueries
@@ -26960,17 +26529,7 @@ var QueryManager = /** @class */ (function () {
                 : document,
             variables: variables,
             operationName: Object(__WEBPACK_IMPORTED_MODULE_3_apollo_utilities__["l" /* getOperationName */])(document) || undefined,
-            context: __assign({}, extraContext, { cache: cache, 
-                // getting an entry's cache key is useful for cacheResolvers & state-link
-                getCacheKey: function (obj) {
-                    if (cache.config) {
-                        // on the link, we just want the id string, not the full id value from toIdValue
-                        return cache.config.dataIdFromObject(obj);
-                    }
-                    else {
-                        throw new Error('To use context.getCacheKey, you need to use a cache that has a configurable dataIdFromObject, like apollo-cache-inmemory.');
-                    }
-                } }),
+            context: __assign({}, extraContext, { cache: cache }),
         };
     };
     return QueryManager;
@@ -26979,17 +26538,17 @@ var QueryManager = /** @class */ (function () {
 //# sourceMappingURL=QueryManager.js.map
 
 /***/ }),
-/* 226 */
+/* 228 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dedupLink__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dedupLink__ = __webpack_require__(229);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__dedupLink__["a"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 227 */
+/* 229 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27080,7 +26639,7 @@ var DedupLink = /** @class */ (function (_super) {
 //# sourceMappingURL=dedupLink.js.map
 
 /***/ }),
-/* 228 */
+/* 230 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27088,12 +26647,6 @@ var DedupLink = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__core_types__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_ObservableQuery__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__ = __webpack_require__(28);
-// The QueryScheduler is supposed to be a mechanism that schedules polling queries such that
-// they are clustered into the time slots of the QueryBatcher and are batched together. It
-// also makes sure that for a given polling query, if one instance of the query is inflight,
-// another instance will not be fired until the query returns or times out. We do this because
-// another query fires while one is already in flight, the data will stay in the "loading" state
-// even after the first query has returned.
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -27105,18 +26658,12 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 
 
 
-var QueryScheduler = /** @class */ (function () {
+var QueryScheduler = (function () {
     function QueryScheduler(_a) {
         var queryManager = _a.queryManager, ssrMode = _a.ssrMode;
-        // Map going from queryIds to query options that are in flight.
         this.inFlightQueries = {};
-        // Map going from query ids to the query options associated with those queries. Contains all of
-        // the queries, both in flight and not in flight.
         this.registeredQueries = {};
-        // Map going from polling interval with to the query ids that fire on that interval.
-        // These query ids are associated with a set of options in the this.registeredQueries.
         this.intervalQueries = {};
-        // Map going from polling interval widths to polling timers.
         this.pollingTimers = {};
         this.ssrMode = false;
         this.queryManager = queryManager;
@@ -27145,7 +26692,6 @@ var QueryScheduler = /** @class */ (function () {
         if (!options.pollInterval) {
             throw new Error('Attempted to start a polling query without a polling interval.');
         }
-        // Do not poll in SSR mode
         if (this.ssrMode)
             return queryId;
         this.registeredQueries[queryId] = options;
@@ -27156,39 +26702,21 @@ var QueryScheduler = /** @class */ (function () {
         return queryId;
     };
     QueryScheduler.prototype.stopPollingQuery = function (queryId) {
-        // Remove the query options from one of the registered queries.
-        // The polling function will then take care of not firing it anymore.
         delete this.registeredQueries[queryId];
     };
-    // Fires the all of the queries on a particular interval. Called on a setInterval.
     QueryScheduler.prototype.fetchQueriesOnInterval = function (interval) {
         var _this = this;
-        // XXX this "filter" here is nasty, because it does two things at the same time.
-        // 1. remove queries that have stopped polling
-        // 2. call fetchQueries for queries that are polling and not in flight.
-        // TODO: refactor this to make it cleaner
         this.intervalQueries[interval] = this.intervalQueries[interval].filter(function (queryId) {
-            // If queryOptions can't be found from registeredQueries or if it has a
-            // different interval, it means that this queryId is no longer registered
-            // and should be removed from the list of queries firing on this interval.
-            //
-            // We don't remove queries from intervalQueries immediately in
-            // stopPollingQuery so that we can keep the timer consistent when queries
-            // are removed and replaced, and to avoid quadratic behavior when stopping
-            // many queries.
             if (!(_this.registeredQueries.hasOwnProperty(queryId) &&
                 _this.registeredQueries[queryId].pollInterval === interval)) {
                 return false;
             }
-            // Don't fire this instance of the polling query is one of the instances is already in
-            // flight.
             if (_this.checkInFlight(queryId)) {
                 return true;
             }
             var queryOptions = _this.registeredQueries[queryId];
             var pollingOptions = __assign({}, queryOptions);
             pollingOptions.fetchPolicy = 'network-only';
-            // don't let unhandled rejections happen
             _this.fetchQuery(queryId, pollingOptions, __WEBPACK_IMPORTED_MODULE_0__core_types__["a" /* FetchType */].poll).catch(function () { });
             return true;
         });
@@ -27197,30 +26725,23 @@ var QueryScheduler = /** @class */ (function () {
             delete this.intervalQueries[interval];
         }
     };
-    // Adds a query on a particular interval to this.intervalQueries and then fires
-    // that query with all the other queries executing on that interval. Note that the query id
-    // and query options must have been added to this.registeredQueries before this function is called.
     QueryScheduler.prototype.addQueryOnInterval = function (queryId, queryOptions) {
         var _this = this;
         var interval = queryOptions.pollInterval;
         if (!interval) {
             throw new Error("A poll interval is required to start polling query with id '" + queryId + "'.");
         }
-        // If there are other queries on this interval, this query will just fire with those
-        // and we don't need to create a new timer.
         if (this.intervalQueries.hasOwnProperty(interval.toString()) &&
             this.intervalQueries[interval].length > 0) {
             this.intervalQueries[interval].push(queryId);
         }
         else {
             this.intervalQueries[interval] = [queryId];
-            // set up the timer for the function that will handle this interval
             this.pollingTimers[interval] = setInterval(function () {
                 _this.fetchQueriesOnInterval(interval);
             }, interval);
         }
     };
-    // Used only for unit testing.
     QueryScheduler.prototype.registerPollingQuery = function (queryOptions) {
         if (!queryOptions.pollInterval) {
             throw new Error('Attempted to register a non-polling query with the scheduler.');
@@ -27236,12 +26757,12 @@ var QueryScheduler = /** @class */ (function () {
 //# sourceMappingURL=scheduler.js.map
 
 /***/ }),
-/* 229 */
+/* 231 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MutationStore; });
-var MutationStore = /** @class */ (function () {
+var MutationStore = (function () {
     function MutationStore() {
         this.store = {};
     }
@@ -27260,20 +26781,12 @@ var MutationStore = /** @class */ (function () {
         };
     };
     MutationStore.prototype.markMutationError = function (mutationId, error) {
-        var mutation = this.store[mutationId];
-        if (!mutation) {
-            return;
-        }
-        mutation.loading = false;
-        mutation.error = error;
+        this.store[mutationId].loading = false;
+        this.store[mutationId].error = error;
     };
     MutationStore.prototype.markMutationResult = function (mutationId) {
-        var mutation = this.store[mutationId];
-        if (!mutation) {
-            return;
-        }
-        mutation.loading = false;
-        mutation.error = null;
+        this.store[mutationId].loading = false;
+        this.store[mutationId].error = null;
     };
     MutationStore.prototype.reset = function () {
         this.store = {};
@@ -27284,15 +26797,13 @@ var MutationStore = /** @class */ (function () {
 //# sourceMappingURL=mutations.js.map
 
 /***/ }),
-/* 230 */
+/* 232 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QueryStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_graphql_language_printer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__ = __webpack_require__(28);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -27303,8 +26814,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 
 
-
-var QueryStore = /** @class */ (function () {
+var QueryStore = (function () {
     function QueryStore() {
         this.store = {};
     }
@@ -27316,49 +26826,38 @@ var QueryStore = /** @class */ (function () {
     };
     QueryStore.prototype.initQuery = function (query) {
         var previousQuery = this.store[query.queryId];
-        if (previousQuery &&
-            previousQuery.document !== query.document &&
-            Object(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__["print"])(previousQuery.document) !== Object(__WEBPACK_IMPORTED_MODULE_0_graphql_language_printer__["print"])(query.document)) {
-            // XXX we're throwing an error here to catch bugs where a query gets overwritten by a new one.
-            // we should implement a separate action for refetching so that QUERY_INIT may never overwrite
-            // an existing query (see also: https://github.com/apollostack/apollo-client/issues/732)
+        if (previousQuery && previousQuery.queryString !== query.queryString) {
             throw new Error('Internal Error: may not update existing query string in store');
         }
         var isSetVariables = false;
         var previousVariables = null;
         if (query.storePreviousVariables &&
             previousQuery &&
-            previousQuery.networkStatus !== __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].loading
-        // if the previous query was still loading, we don't want to remember it at all.
-        ) {
-            if (!Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["q" /* isEqual */])(previousQuery.variables, query.variables)) {
+            previousQuery.networkStatus !== __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].loading) {
+            if (!Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["q" /* isEqual */])(previousQuery.variables, query.variables)) {
                 isSetVariables = true;
                 previousVariables = previousQuery.variables;
             }
         }
-        // TODO break this out into a separate function
         var networkStatus;
         if (isSetVariables) {
-            networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].setVariables;
+            networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].setVariables;
         }
         else if (query.isPoll) {
-            networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].poll;
+            networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].poll;
         }
         else if (query.isRefetch) {
-            networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].refetch;
-            // TODO: can we determine setVariables here if it's a refetch and the variables have changed?
+            networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].refetch;
         }
         else {
-            networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].loading;
+            networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].loading;
         }
         var graphQLErrors = [];
         if (previousQuery && previousQuery.graphQLErrors) {
             graphQLErrors = previousQuery.graphQLErrors;
         }
-        // XXX right now if QUERY_INIT is fired twice, like in a refetch situation, we just overwrite
-        // the store. We probably want a refetch action instead, because I suspect that if you refetch
-        // before the initial fetch is done, you'll get an error.
         this.store[query.queryId] = {
+            queryString: query.queryString,
             document: query.document,
             variables: query.variables,
             previousVariables: previousVariables,
@@ -27367,17 +26866,9 @@ var QueryStore = /** @class */ (function () {
             networkStatus: networkStatus,
             metadata: query.metadata,
         };
-        // If the action had a `moreForQueryId` property then we need to set the
-        // network status on that query as well to `fetchMore`.
-        //
-        // We have a complement to this if statement in the query result and query
-        // error action branch, but importantly *not* in the client result branch.
-        // This is because the implementation of `fetchMore` *always* sets
-        // `fetchPolicy` to `network-only` so we would never have a client result.
-        if (typeof query.fetchMoreForQueryId === 'string' &&
-            this.store[query.fetchMoreForQueryId]) {
+        if (typeof query.fetchMoreForQueryId === 'string') {
             this.store[query.fetchMoreForQueryId].networkStatus =
-                __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].fetchMore;
+                __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].fetchMore;
         }
     };
     QueryStore.prototype.markQueryResult = function (queryId, result, fetchMoreForQueryId) {
@@ -27387,25 +26878,18 @@ var QueryStore = /** @class */ (function () {
         this.store[queryId].graphQLErrors =
             result.errors && result.errors.length ? result.errors : [];
         this.store[queryId].previousVariables = null;
-        this.store[queryId].networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].ready;
-        // If we have a `fetchMoreForQueryId` then we need to update the network
-        // status for that query. See the branch for query initialization for more
-        // explanation about this process.
-        if (typeof fetchMoreForQueryId === 'string' &&
-            this.store[fetchMoreForQueryId]) {
-            this.store[fetchMoreForQueryId].networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].ready;
+        this.store[queryId].networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].ready;
+        if (typeof fetchMoreForQueryId === 'string') {
+            this.store[fetchMoreForQueryId].networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].ready;
         }
     };
     QueryStore.prototype.markQueryError = function (queryId, error, fetchMoreForQueryId) {
         if (!this.store[queryId])
             return;
         this.store[queryId].networkError = error;
-        this.store[queryId].networkStatus = __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].error;
-        // If we have a `fetchMoreForQueryId` then we need to update the network
-        // status for that query. See the branch for query initialization for more
-        // explanation about this process.
+        this.store[queryId].networkStatus = __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].error;
         if (typeof fetchMoreForQueryId === 'string') {
-            this.markQueryResultClient(fetchMoreForQueryId, true);
+            this.markQueryError(fetchMoreForQueryId, error, undefined);
         }
     };
     QueryStore.prototype.markQueryResultClient = function (queryId, complete) {
@@ -27414,22 +26898,20 @@ var QueryStore = /** @class */ (function () {
         this.store[queryId].networkError = null;
         this.store[queryId].previousVariables = null;
         this.store[queryId].networkStatus = complete
-            ? __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].ready
-            : __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].loading;
+            ? __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].ready
+            : __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].loading;
     };
     QueryStore.prototype.stopQuery = function (queryId) {
         delete this.store[queryId];
     };
     QueryStore.prototype.reset = function (observableQueryIds) {
         var _this = this;
-        // keep only the queries with query ids that are associated with observables
         this.store = Object.keys(this.store)
             .filter(function (queryId) {
             return observableQueryIds.indexOf(queryId) > -1;
         })
             .reduce(function (res, key) {
-            // XXX set loading to true so listeners don't trigger unless they want results with partial data
-            res[key] = __assign({}, _this.store[key], { networkStatus: __WEBPACK_IMPORTED_MODULE_2__core_networkStatus__["a" /* NetworkStatus */].loading });
+            res[key] = __assign({}, _this.store[key], { networkStatus: __WEBPACK_IMPORTED_MODULE_1__core_networkStatus__["a" /* NetworkStatus */].loading });
             return res;
         }, {});
     };
@@ -27439,14 +26921,14 @@ var QueryStore = /** @class */ (function () {
 //# sourceMappingURL=queries.js.map
 
 /***/ }),
-/* 231 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
 
-var DataStore = /** @class */ (function () {
+var DataStore = (function () {
     function DataStore(initialCache) {
         this.cache = initialCache;
     }
@@ -27469,8 +26951,6 @@ var DataStore = /** @class */ (function () {
         }
     };
     DataStore.prototype.markSubscriptionResult = function (result, document, variables) {
-        // the subscription interface should handle not sending us results we no longer subscribe to.
-        // XXX I don't think we ever send in an object with errors, but we might in the future...
         if (!Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["o" /* graphQLResultHasError */])(result)) {
             this.cache.write({
                 result: result.data,
@@ -27514,7 +26994,6 @@ var DataStore = /** @class */ (function () {
     };
     DataStore.prototype.markMutationResult = function (mutation) {
         var _this = this;
-        // Incorporate the result from this mutation into the store
         if (!Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["o" /* graphQLResultHasError */])(mutation.result)) {
             var cacheWrites_1 = [];
             cacheWrites_1.push({
@@ -27528,7 +27007,6 @@ var DataStore = /** @class */ (function () {
                     .filter(function (id) { return mutation.updateQueries[id]; })
                     .forEach(function (queryId) {
                     var _a = mutation.updateQueries[queryId], query = _a.query, updater = _a.updater;
-                    // Read the current query result from the store.
                     var _b = _this.cache.diff({
                         query: query.document,
                         variables: query.variables,
@@ -27538,15 +27016,13 @@ var DataStore = /** @class */ (function () {
                     if (!complete) {
                         return;
                     }
-                    // Run our reducer using the current query result and the mutation result.
-                    var nextQueryResult = Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["D" /* tryFunctionOrLogError */])(function () {
+                    var nextQueryResult = Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["C" /* tryFunctionOrLogError */])(function () {
                         return updater(currentQueryResult, {
                             mutationResult: mutation.result,
                             queryName: Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["l" /* getOperationName */])(query.document) || undefined,
                             queryVariables: query.variables,
                         });
                     });
-                    // Write the modified result back into the store if we got a new result.
                     if (nextQueryResult) {
                         cacheWrites_1.push({
                             result: nextQueryResult,
@@ -27560,13 +27036,10 @@ var DataStore = /** @class */ (function () {
             this.cache.performTransaction(function (c) {
                 cacheWrites_1.forEach(function (write) { return c.write(write); });
             });
-            // If the mutation has some writes associated with it then we need to
-            // apply those writes to the store by running this reducer again with a
-            // write action.
             var update_1 = mutation.update;
             if (update_1) {
                 this.cache.performTransaction(function (c) {
-                    Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["D" /* tryFunctionOrLogError */])(function () { return update_1(c, mutation.result); });
+                    Object(__WEBPACK_IMPORTED_MODULE_0_apollo_utilities__["C" /* tryFunctionOrLogError */])(function () { return update_1(c, mutation.result); });
                 });
             }
         }
@@ -27594,18 +27067,18 @@ var DataStore = /** @class */ (function () {
 //# sourceMappingURL=store.js.map
 
 /***/ }),
-/* 232 */
+/* 234 */
 /***/ (function(module, exports) {
 
-exports.version = "2.3.5"
+exports.version = "2.2.0"
 
 /***/ }),
-/* 233 */
+/* 235 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__inMemoryCache__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__inMemoryCache__ = __webpack_require__(236);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "InMemoryCache", function() { return __WEBPACK_IMPORTED_MODULE_0__inMemoryCache__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "defaultDataIdFromObject", function() { return __WEBPACK_IMPORTED_MODULE_0__inMemoryCache__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__readFromStore__ = __webpack_require__(96);
@@ -27637,14 +27110,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 234 */
+/* 236 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["b"] = defaultDataIdFromObject;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InMemoryCache; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_cache__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_cache__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_apollo_utilities__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fragmentMatcher__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__writeToStore__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__readFromStore__ = __webpack_require__(96);
@@ -27692,28 +27165,18 @@ function defaultDataIdFromObject(result) {
     }
     return null;
 }
-var InMemoryCache = /** @class */ (function (_super) {
+var InMemoryCache = (function (_super) {
     __extends(InMemoryCache, _super);
     function InMemoryCache(config) {
         if (config === void 0) { config = {}; }
         var _this = _super.call(this) || this;
         _this.optimistic = [];
         _this.watches = [];
-        _this.typenameDocumentCache = new WeakMap();
-        // Set this while in a transaction to prevent broadcasts...
-        // don't forget to turn it back on!
         _this.silenceBroadcast = false;
         _this.config = __assign({}, defaultConfig, config);
-        // backwards compat
-        if (_this.config.customResolvers) {
-            console.warn('customResolvers have been renamed to cacheRedirects. Please update your config as we will be deprecating customResolvers in the next major version.');
-            _this.config.cacheRedirects = _this.config.customResolvers;
-        }
-        if (_this.config.cacheResolvers) {
-            console.warn('cacheResolvers have been renamed to cacheRedirects. Please update your config as we will be deprecating cacheResolvers in the next major version.');
-            _this.config.cacheRedirects = _this.config.cacheResolvers;
-        }
-        _this.addTypename = _this.config.addTypename;
+        if (_this.config.customResolvers)
+            _this.config.cacheResolvers = _this.config.customResolvers;
+        _this.addTypename = _this.config.addTypename ? true : false;
         _this.data = _this.config.storeFactory();
         return _this;
     }
@@ -27784,23 +27247,18 @@ var InMemoryCache = /** @class */ (function (_super) {
     };
     InMemoryCache.prototype.removeOptimistic = function (id) {
         var _this = this;
-        // Throw away optimistic changes of that particular mutation
         var toPerform = this.optimistic.filter(function (item) { return item.id !== id; });
         this.optimistic = [];
-        // Re-run all of our optimistic data actions on top of one another.
         toPerform.forEach(function (change) {
             _this.recordOptimisticTransaction(change.transaction, change.id);
         });
         this.broadcastWatches();
     };
     InMemoryCache.prototype.performTransaction = function (transaction) {
-        // TODO: does this need to be different, or is this okay for an in-memory cache?
         var alreadySilenced = this.silenceBroadcast;
         this.silenceBroadcast = true;
         transaction(this);
         if (!alreadySilenced) {
-            // Don't un-silence since this is a nested transaction
-            // (for example, a transaction inside an optimistic record)
             this.silenceBroadcast = false;
         }
         this.broadcastWatches();
@@ -27809,8 +27267,6 @@ var InMemoryCache = /** @class */ (function (_super) {
         var _this = this;
         this.silenceBroadcast = true;
         var patch = Object(__WEBPACK_IMPORTED_MODULE_6__recordingCache__["b" /* record */])(this.extract(true), function (recordingCache) {
-            // swapping data instance on 'this' is currently necessary
-            // because of the current architecture
             var dataCache = _this.data;
             _this.data = recordingCache;
             _this.performTransaction(transaction);
@@ -27825,13 +27281,8 @@ var InMemoryCache = /** @class */ (function (_super) {
         this.broadcastWatches();
     };
     InMemoryCache.prototype.transformDocument = function (document) {
-        if (this.addTypename) {
-            var result = this.typenameDocumentCache.get(document);
-            if (!result) {
-                this.typenameDocumentCache.set(document, (result = Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["a" /* addTypenameToDocument */])(document)));
-            }
-            return result;
-        }
+        if (this.addTypename)
+            return Object(__WEBPACK_IMPORTED_MODULE_1_apollo_utilities__["a" /* addTypenameToDocument */])(document);
         return document;
     };
     InMemoryCache.prototype.readQuery = function (options, optimistic) {
@@ -27869,16 +27320,12 @@ var InMemoryCache = /** @class */ (function (_super) {
     };
     InMemoryCache.prototype.broadcastWatches = function () {
         var _this = this;
-        // Skip this when silenced (like inside a transaction)
         if (this.silenceBroadcast)
             return;
-        // right now, we invalidate all queries whenever anything changes
         this.watches.forEach(function (c) {
             var newData = _this.diff({
                 query: c.query,
                 variables: c.variables,
-                // TODO: previousResult isn't in the types - this will only work
-                // with ObservableQuery which is in a different package
                 previousResult: c.previousResult && c.previousResult(),
                 optimistic: c.optimistic,
             });
@@ -27891,26 +27338,26 @@ var InMemoryCache = /** @class */ (function (_super) {
 //# sourceMappingURL=inMemoryCache.js.map
 
 /***/ }),
-/* 235 */
+/* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cache__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__cache__ = __webpack_require__(238);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__cache__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__types__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__types__ = __webpack_require__(240);
 /* unused harmony namespace reexport */
 
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 236 */
+/* 238 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ApolloCache; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_apollo_utilities__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(239);
 
 
 var ApolloCache = /** @class */ (function () {
@@ -28001,7 +27448,7 @@ var ApolloCache = /** @class */ (function () {
 //# sourceMappingURL=cache.js.map
 
 /***/ }),
-/* 237 */
+/* 239 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28113,17 +27560,17 @@ var justTypenameQuery = {
 //# sourceMappingURL=utils.js.map
 
 /***/ }),
-/* 238 */
+/* 240 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Cache__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Cache__ = __webpack_require__(241);
 /* unused harmony namespace reexport */
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 239 */
+/* 241 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28134,11 +27581,11 @@ var Cache;
 //# sourceMappingURL=Cache.js.map
 
 /***/ }),
-/* 240 */
+/* 242 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities__ = __webpack_require__(243);
 /* unused harmony reexport filter */
 /* unused harmony reexport check */
 /* unused harmony reexport propType */
@@ -28149,7 +27596,7 @@ var Cache;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 241 */
+/* 243 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28162,7 +27609,9 @@ function filter(doc, data) {
     var resolver = function (fieldName, root, args, context, info) {
         return root[info.resultKey];
     };
-    return Object(__WEBPACK_IMPORTED_MODULE_0__graphql__["a" /* graphql */])(resolver, doc, data);
+    return Array.isArray(data)
+        ? data.map(function (dataObj) { return Object(__WEBPACK_IMPORTED_MODULE_0__graphql__["a" /* graphql */])(resolver, doc, dataObj); })
+        : Object(__WEBPACK_IMPORTED_MODULE_0__graphql__["a" /* graphql */])(resolver, doc, data);
 }
 // TODO: we should probably make check call propType and then throw,
 // rather than the other way round, to avoid constructing stack traces
@@ -28171,7 +27620,7 @@ function filter(doc, data) {
 function check(doc, data) {
     var resolver = function (fieldName, root, args, context, info) {
         if (!{}.hasOwnProperty.call(root, info.resultKey)) {
-            throw new Error(info.resultKey + " missing on " + root);
+            throw new Error(info.resultKey + " missing on " + JSON.stringify(root));
         }
         return root[info.resultKey];
     };
@@ -28236,10 +27685,10 @@ function propType(doc) {
 //# sourceMappingURL=utilities.js.map
 
 /***/ }),
-/* 242 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const Profiles_DbModel = __webpack_require__(243);
+const Profiles_DbModel = __webpack_require__(245);
 
 const typeDefs = `
     type ProfileResults {
@@ -28275,7 +27724,7 @@ const resolvers = {
     }
 };
 
-let makeExecutableSchema = __webpack_require__(246).makeExecutableSchema;
+let makeExecutableSchema = __webpack_require__(248).makeExecutableSchema;
 
 const schema = makeExecutableSchema({
     typeDefs,
@@ -28286,13 +27735,13 @@ module.exports = schema;
 
 
 /***/ }),
-/* 243 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
-let AWS = __webpack_require__(244);
+let AWS = __webpack_require__(246);
 // const https = require("https");
 
-__webpack_require__(245).config();
+__webpack_require__(247).config();
 
 let dynamoConfig = {
     endpoint:        process.env.DYNAMODB_ENDPOINT,
@@ -28373,13 +27822,13 @@ function getProfiles(limit, cursor) {
 
 
 /***/ }),
-/* 244 */
+/* 246 */
 /***/ (function(module, exports) {
 
 module.exports = require('aws-sdk');
 
 /***/ }),
-/* 245 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28460,7 +27909,7 @@ module.exports.parse = parse
 
 
 /***/ }),
-/* 246 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28470,13 +27919,13 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(39));
-__export(__webpack_require__(268));
-__export(__webpack_require__(272));
+__export(__webpack_require__(270));
+__export(__webpack_require__(274));
 __export(__webpack_require__(131));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 247 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28559,7 +28008,7 @@ function graphqlImpl(schema, source, rootValue, contextValue, variableValues, op
 }
 
 /***/ }),
-/* 248 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28627,7 +28076,7 @@ function lpad(len, str) {
 }
 
 /***/ }),
-/* 249 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28665,7 +28114,7 @@ function formatError(error) {
    */
 
 /***/ }),
-/* 250 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28985,7 +28434,7 @@ Object.defineProperty(exports, 'TypeNameMetaFieldDef', {
 });
 
 /***/ }),
-/* 251 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29101,7 +28550,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 exports.Kind = Kind;
 
 /***/ }),
-/* 252 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29142,7 +28591,7 @@ Object.defineProperty(exports, 'getDirectiveValues', {
 });
 
 /***/ }),
-/* 253 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29152,7 +28601,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _subscribe = __webpack_require__(254);
+var _subscribe = __webpack_require__(256);
 
 Object.defineProperty(exports, 'subscribe', {
   enumerable: true,
@@ -29168,7 +28617,7 @@ Object.defineProperty(exports, 'createSourceEventStream', {
 });
 
 /***/ }),
-/* 254 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29194,7 +28643,7 @@ var _invariant = __webpack_require__(4);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _mapAsyncIterator = __webpack_require__(255);
+var _mapAsyncIterator = __webpack_require__(257);
 
 var _mapAsyncIterator2 = _interopRequireDefault(_mapAsyncIterator);
 
@@ -29337,7 +28786,7 @@ function createSourceEventStream(schema, document, rootValue, contextValue, vari
 }
 
 /***/ }),
-/* 255 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29421,7 +28870,7 @@ function iteratorResult(value) {
 }
 
 /***/ }),
-/* 256 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29690,7 +29139,7 @@ Object.defineProperty(exports, 'VariablesInAllowedPositionRule', {
 });
 
 /***/ }),
-/* 257 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29700,7 +29149,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _introspectionQuery = __webpack_require__(258);
+var _introspectionQuery = __webpack_require__(260);
 
 Object.defineProperty(exports, 'introspectionQuery', {
   enumerable: true,
@@ -29709,7 +29158,7 @@ Object.defineProperty(exports, 'introspectionQuery', {
   }
 });
 
-var _getOperationAST = __webpack_require__(259);
+var _getOperationAST = __webpack_require__(261);
 
 Object.defineProperty(exports, 'getOperationAST', {
   enumerable: true,
@@ -29718,7 +29167,7 @@ Object.defineProperty(exports, 'getOperationAST', {
   }
 });
 
-var _buildClientSchema = __webpack_require__(260);
+var _buildClientSchema = __webpack_require__(262);
 
 Object.defineProperty(exports, 'buildClientSchema', {
   enumerable: true,
@@ -29742,7 +29191,7 @@ Object.defineProperty(exports, 'buildSchema', {
   }
 });
 
-var _extendSchema = __webpack_require__(261);
+var _extendSchema = __webpack_require__(263);
 
 Object.defineProperty(exports, 'extendSchema', {
   enumerable: true,
@@ -29751,7 +29200,7 @@ Object.defineProperty(exports, 'extendSchema', {
   }
 });
 
-var _schemaPrinter = __webpack_require__(262);
+var _schemaPrinter = __webpack_require__(264);
 
 Object.defineProperty(exports, 'printSchema', {
   enumerable: true,
@@ -29826,7 +29275,7 @@ Object.defineProperty(exports, 'isValidLiteralValue', {
   }
 });
 
-var _concatAST = __webpack_require__(263);
+var _concatAST = __webpack_require__(265);
 
 Object.defineProperty(exports, 'concatAST', {
   enumerable: true,
@@ -29835,7 +29284,7 @@ Object.defineProperty(exports, 'concatAST', {
   }
 });
 
-var _separateOperations = __webpack_require__(264);
+var _separateOperations = __webpack_require__(266);
 
 Object.defineProperty(exports, 'separateOperations', {
   enumerable: true,
@@ -29874,7 +29323,7 @@ Object.defineProperty(exports, 'assertValidName', {
   }
 });
 
-var _findBreakingChanges = __webpack_require__(265);
+var _findBreakingChanges = __webpack_require__(267);
 
 Object.defineProperty(exports, 'BreakingChangeType', {
   enumerable: true,
@@ -29901,7 +29350,7 @@ Object.defineProperty(exports, 'findDangerousChanges', {
   }
 });
 
-var _findDeprecatedUsages = __webpack_require__(266);
+var _findDeprecatedUsages = __webpack_require__(268);
 
 Object.defineProperty(exports, 'findDeprecatedUsages', {
   enumerable: true,
@@ -29911,7 +29360,7 @@ Object.defineProperty(exports, 'findDeprecatedUsages', {
 });
 
 /***/ }),
-/* 258 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29930,7 +29379,7 @@ var introspectionQuery = exports.introspectionQuery = '\n  query IntrospectionQu
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              */
 
 /***/ }),
-/* 259 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29977,7 +29426,7 @@ function getOperationAST(documentAST, operationName) {
    */
 
 /***/ }),
-/* 260 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30291,7 +29740,7 @@ function cannotExecuteClientSchema() {
 }
 
 /***/ }),
-/* 261 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30854,7 +30303,7 @@ function cannotExecuteExtendedSchema() {
 }
 
 /***/ }),
-/* 262 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31144,7 +30593,7 @@ function breakLine(line, len) {
 }
 
 /***/ }),
-/* 263 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31183,7 +30632,7 @@ function concatAST(asts) {
    */
 
 /***/ }),
-/* 264 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31282,7 +30731,7 @@ function collectTransitiveDependencies(collected, depGraph, fromName) {
 }
 
 /***/ }),
-/* 265 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31790,7 +31239,7 @@ function findInterfacesRemovedFromObjectTypes(oldSchema, newSchema) {
 }
 
 /***/ }),
-/* 266 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31854,7 +31303,7 @@ function findDeprecatedUsages(schema, ast) {
    */
 
 /***/ }),
-/* 267 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32030,7 +31479,7 @@ exports.default = deprecated;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 268 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32038,7 +31487,7 @@ exports.default = deprecated;
 Object.defineProperty(exports, "__esModule", { value: true });
 var graphql_1 = __webpack_require__(8);
 var graphql_2 = __webpack_require__(8);
-var uuid = __webpack_require__(269);
+var uuid = __webpack_require__(271);
 var schemaGenerator_1 = __webpack_require__(39);
 // This function wraps addMockFunctionsToSchema for more convenience
 function mockServer(schema, mocks, preserveResolvers) {
@@ -32348,11 +31797,11 @@ exports.MockList = MockList;
 //# sourceMappingURL=mock.js.map
 
 /***/ }),
-/* 269 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var v1 = __webpack_require__(270);
-var v4 = __webpack_require__(271);
+var v1 = __webpack_require__(272);
+var v4 = __webpack_require__(273);
 
 var uuid = v4;
 uuid.v1 = v1;
@@ -32362,7 +31811,7 @@ module.exports = uuid;
 
 
 /***/ }),
-/* 270 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rng = __webpack_require__(133);
@@ -32373,20 +31822,12 @@ var bytesToUuid = __webpack_require__(135);
 // Inspired by https://github.com/LiosK/UUID.js
 // and http://docs.python.org/library/uuid.html
 
-// random #'s we need to init node and clockseq
-var _seedBytes = rng();
-
-// Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
-var _nodeId = [
-  _seedBytes[0] | 0x01,
-  _seedBytes[1], _seedBytes[2], _seedBytes[3], _seedBytes[4], _seedBytes[5]
-];
-
-// Per 4.2.2, randomize (14 bit) clockseq
-var _clockseq = (_seedBytes[6] << 8 | _seedBytes[7]) & 0x3fff;
+var _nodeId;
+var _clockseq;
 
 // Previous uuid creation time
-var _lastMSecs = 0, _lastNSecs = 0;
+var _lastMSecs = 0;
+var _lastNSecs = 0;
 
 // See https://github.com/broofa/node-uuid for API details
 function v1(options, buf, offset) {
@@ -32394,8 +31835,26 @@ function v1(options, buf, offset) {
   var b = buf || [];
 
   options = options || {};
-
+  var node = options.node || _nodeId;
   var clockseq = options.clockseq !== undefined ? options.clockseq : _clockseq;
+
+  // node and clockseq need to be initialized to random values if they're not
+  // specified.  We do this lazily to minimize issues related to insufficient
+  // system entropy.  See #189
+  if (node == null || clockseq == null) {
+    var seedBytes = rng();
+    if (node == null) {
+      // Per 4.5, create and 48-bit node id, (47 random bits + multicast bit = 1)
+      node = _nodeId = [
+        seedBytes[0] | 0x01,
+        seedBytes[1], seedBytes[2], seedBytes[3], seedBytes[4], seedBytes[5]
+      ];
+    }
+    if (clockseq == null) {
+      // Per 4.2.2, randomize (14 bit) clockseq
+      clockseq = _clockseq = (seedBytes[6] << 8 | seedBytes[7]) & 0x3fff;
+    }
+  }
 
   // UUID timestamps are 100 nano-second units since the Gregorian epoch,
   // (1582-10-15 00:00).  JSNumbers aren't precise enough for this, so
@@ -32456,7 +31915,6 @@ function v1(options, buf, offset) {
   b[i++] = clockseq & 0xff;
 
   // `node`
-  var node = options.node || _nodeId;
   for (var n = 0; n < 6; ++n) {
     b[i + n] = node[n];
   }
@@ -32468,7 +31926,7 @@ module.exports = v1;
 
 
 /***/ }),
-/* 271 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var rng = __webpack_require__(133);
@@ -32478,7 +31936,7 @@ function v4(options, buf, offset) {
   var i = buf && offset || 0;
 
   if (typeof(options) == 'string') {
-    buf = options == 'binary' ? new Array(16) : null;
+    buf = options === 'binary' ? new Array(16) : null;
     options = null;
   }
   options = options || {};
@@ -32503,17 +31961,17 @@ module.exports = v4;
 
 
 /***/ }),
-/* 272 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var makeRemoteExecutableSchema_1 = __webpack_require__(273);
+var makeRemoteExecutableSchema_1 = __webpack_require__(275);
 exports.makeRemoteExecutableSchema = makeRemoteExecutableSchema_1.default;
-var introspectSchema_1 = __webpack_require__(275);
+var introspectSchema_1 = __webpack_require__(277);
 exports.introspectSchema = introspectSchema_1.default;
-var mergeSchemas_1 = __webpack_require__(276);
+var mergeSchemas_1 = __webpack_require__(278);
 exports.mergeSchemas = mergeSchemas_1.default;
 var delegateToSchema_1 = __webpack_require__(138);
 exports.delegateToSchema = delegateToSchema_1.default;
@@ -32523,7 +31981,7 @@ exports.defaultMergedResolver = defaultMergedResolver_1.default;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 273 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32571,7 +32029,7 @@ var schemaGenerator_1 = __webpack_require__(39);
 var resolveFromParentTypename_1 = __webpack_require__(66);
 var defaultMergedResolver_1 = __webpack_require__(67);
 var errors_1 = __webpack_require__(68);
-var observableToAsyncIterable_1 = __webpack_require__(274);
+var observableToAsyncIterable_1 = __webpack_require__(276);
 function makeRemoteExecutableSchema(_a) {
     var schema = _a.schema, link = _a.link, fetcher = _a.fetcher;
     if (!fetcher && link) {
@@ -32746,7 +32204,7 @@ function parseLiteral(ast) {
 //# sourceMappingURL=makeRemoteExecutableSchema.js.map
 
 /***/ }),
-/* 274 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32873,7 +32331,7 @@ exports.observableToAsyncIterable = observableToAsyncIterable;
 //# sourceMappingURL=observableToAsyncIterable.js.map
 
 /***/ }),
-/* 275 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32950,7 +32408,7 @@ exports.default = introspectSchema;
 //# sourceMappingURL=introspectSchema.js.map
 
 /***/ }),
-/* 276 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32965,13 +32423,13 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var graphql_1 = __webpack_require__(8);
-var TypeRegistry_1 = __webpack_require__(277);
+var TypeRegistry_1 = __webpack_require__(279);
 var isEmptyObject_1 = __webpack_require__(137);
 var mergeDeep_1 = __webpack_require__(132);
 var schemaGenerator_1 = __webpack_require__(39);
-var schemaRecreation_1 = __webpack_require__(278);
+var schemaRecreation_1 = __webpack_require__(280);
 var delegateToSchema_1 = __webpack_require__(138);
-var typeFromAST_1 = __webpack_require__(279);
+var typeFromAST_1 = __webpack_require__(281);
 var backcompatOptions = { commentDescriptions: true };
 function mergeSchemas(_a) {
     var schemas = _a.schemas, onTypeConflict = _a.onTypeConflict, resolvers = _a.resolvers;
@@ -33175,7 +32633,7 @@ function forEachField(schema, fn) {
 //# sourceMappingURL=mergeSchemas.js.map
 
 /***/ }),
-/* 277 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33280,7 +32738,7 @@ function parseFragmentToInlineFragment(definitions) {
 //# sourceMappingURL=TypeRegistry.js.map
 
 /***/ }),
-/* 278 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33493,7 +32951,7 @@ function inputFieldToFieldConfig(field, resolveType) {
 //# sourceMappingURL=schemaRecreation.js.map
 
 /***/ }),
-/* 279 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33722,7 +33180,7 @@ function isBlank(str) {
 //# sourceMappingURL=typeFromAST.js.map
 
 /***/ }),
-/* 280 */
+/* 282 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33768,7 +33226,7 @@ class LocalLink extends __WEBPACK_IMPORTED_MODULE_0_apollo_link__["ApolloLink"] 
 
 
 /***/ }),
-/* 281 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parser = __webpack_require__(29);
@@ -33954,7 +33412,7 @@ module.exports = gql;
 
 
 /***/ }),
-/* 282 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33962,7 +33420,7 @@ module.exports = gql;
 
 
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_classList = marko_helpers.cl,
     marko_component = ({
     onCreate: function () {
@@ -33996,7 +33454,7 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-progressive-image/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-progressive-image/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
@@ -34088,7 +33546,7 @@ marko_template.meta = {
 /* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ }),
-/* 283 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34128,7 +33586,7 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-on-scroll-to-view/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-on-scroll-to-view/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
@@ -34160,7 +33618,7 @@ marko_template.meta = {
 /* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ }),
-/* 284 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34239,13 +33697,13 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/login-example/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/login-example/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
     marko_keyAttr = __webpack_require__(19),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_attr = marko_helpers.a,
     hasRenderBodyKey = Symbol.for("hasRenderBody"),
     awly_button_template = __webpack_require__(139),
@@ -34378,7 +33836,7 @@ marko_template.meta = {
 /* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ }),
-/* 285 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module*/
@@ -34462,7 +33920,7 @@ module.exports = SignStream;
 
 
 /***/ }),
-/* 286 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34510,7 +33968,7 @@ bufferEq.restore = function() {
 
 
 /***/ }),
-/* 287 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34518,7 +33976,7 @@ bufferEq.restore = function() {
 
 var Buffer = __webpack_require__(32).Buffer;
 
-var getParamBytesForAlg = __webpack_require__(288);
+var getParamBytesForAlg = __webpack_require__(290);
 
 var MAX_OCTET = 0x80,
 	CLASS_UNIVERSAL = 0,
@@ -34704,7 +34162,7 @@ module.exports = {
 
 
 /***/ }),
-/* 288 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34734,7 +34192,7 @@ module.exports = getParamBytesForAlg;
 
 
 /***/ }),
-/* 289 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module*/
@@ -34860,7 +34318,7 @@ module.exports = VerifyStream;
 
 
 /***/ }),
-/* 290 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var JsonWebTokenError = __webpack_require__(45);
@@ -35064,7 +34522,7 @@ module.exports = function (jwtString, secretOrPublicKey, options, callback) {
 
 
 /***/ }),
-/* 291 */
+/* 293 */
 /***/ (function(module, exports) {
 
 /**
@@ -35232,18 +34690,18 @@ function plural(ms, msAbs, n, name) {
 
 
 /***/ }),
-/* 292 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var timespan = __webpack_require__(148);
 var jws = __webpack_require__(69);
-var includes = __webpack_require__(293);
-var isBoolean = __webpack_require__(294);
-var isInteger = __webpack_require__(295);
-var isNumber = __webpack_require__(296);
-var isPlainObject = __webpack_require__(297);
-var isString = __webpack_require__(298);
-var once = __webpack_require__(299);
+var includes = __webpack_require__(295);
+var isBoolean = __webpack_require__(296);
+var isInteger = __webpack_require__(297);
+var isNumber = __webpack_require__(298);
+var isPlainObject = __webpack_require__(299);
+var isString = __webpack_require__(300);
+var once = __webpack_require__(301);
 
 var sign_options_schema = {
   expiresIn: { isValid: function(value) { return isInteger(value) || isString(value); }, message: '"expiresIn" should be a number of seconds or string representing a timespan' },
@@ -35428,7 +34886,7 @@ module.exports = function (payload, secretOrPrivateKey, options, callback) {
 
 
 /***/ }),
-/* 293 */
+/* 295 */
 /***/ (function(module, exports) {
 
 /**
@@ -36179,7 +35637,7 @@ module.exports = includes;
 
 
 /***/ }),
-/* 294 */
+/* 296 */
 /***/ (function(module, exports) {
 
 /**
@@ -36255,7 +35713,7 @@ module.exports = isBoolean;
 
 
 /***/ }),
-/* 295 */
+/* 297 */
 /***/ (function(module, exports) {
 
 /**
@@ -36526,7 +35984,7 @@ module.exports = isInteger;
 
 
 /***/ }),
-/* 296 */
+/* 298 */
 /***/ (function(module, exports) {
 
 /**
@@ -36611,7 +36069,7 @@ module.exports = isNumber;
 
 
 /***/ }),
-/* 297 */
+/* 299 */
 /***/ (function(module, exports) {
 
 /**
@@ -36756,7 +36214,7 @@ module.exports = isPlainObject;
 
 
 /***/ }),
-/* 298 */
+/* 300 */
 /***/ (function(module, exports) {
 
 /**
@@ -36857,7 +36315,7 @@ module.exports = isString;
 
 
 /***/ }),
-/* 299 */
+/* 301 */
 /***/ (function(module, exports) {
 
 /**
@@ -37157,7 +36615,7 @@ module.exports = once;
 
 
 /***/ }),
-/* 300 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37200,13 +36658,13 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-user-badge/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-user-badge/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
     marko_keyAttr = __webpack_require__(19),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_attr = marko_helpers.a,
     marko_escapeXml = marko_helpers.x;
 
@@ -37298,7 +36756,7 @@ marko_template.meta = {
 /* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ }),
-/* 301 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37347,13 +36805,13 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-input/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-input/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
     marko_defineComponent = components_helpers.c,
     marko_keyAttr = __webpack_require__(19),
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_attr = marko_helpers.a,
     marko_escapeXml = marko_helpers.x;
 
@@ -37419,7 +36877,7 @@ marko_template.meta = {
 /* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ }),
-/* 302 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37466,7 +36924,7 @@ exports.ValidationSchemaToMetadataTransformer = ValidationSchemaToMetadataTransf
 
 
 /***/ }),
-/* 303 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37476,7 +36934,7 @@ var ValidationError_1 = __webpack_require__(150);
 var MetadataStorage_1 = __webpack_require__(33);
 var container_1 = __webpack_require__(24);
 var ValidationTypes_1 = __webpack_require__(23);
-var ValidationUtils_1 = __webpack_require__(304);
+var ValidationUtils_1 = __webpack_require__(306);
 /**
  * Executes validation over given object.
  */
@@ -37726,7 +37184,7 @@ exports.ValidationExecutor = ValidationExecutor;
 
 
 /***/ }),
-/* 304 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37764,7 +37222,7 @@ exports.ValidationUtils = ValidationUtils;
 
 
 /***/ }),
-/* 305 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37782,35 +37240,35 @@ var _toFloat = __webpack_require__(151);
 
 var _toFloat2 = _interopRequireDefault(_toFloat);
 
-var _toInt = __webpack_require__(306);
+var _toInt = __webpack_require__(308);
 
 var _toInt2 = _interopRequireDefault(_toInt);
 
-var _toBoolean = __webpack_require__(307);
+var _toBoolean = __webpack_require__(309);
 
 var _toBoolean2 = _interopRequireDefault(_toBoolean);
 
-var _equals = __webpack_require__(308);
+var _equals = __webpack_require__(310);
 
 var _equals2 = _interopRequireDefault(_equals);
 
-var _contains = __webpack_require__(309);
+var _contains = __webpack_require__(311);
 
 var _contains2 = _interopRequireDefault(_contains);
 
-var _matches = __webpack_require__(310);
+var _matches = __webpack_require__(312);
 
 var _matches2 = _interopRequireDefault(_matches);
 
-var _isEmail = __webpack_require__(311);
+var _isEmail = __webpack_require__(313);
 
 var _isEmail2 = _interopRequireDefault(_isEmail);
 
-var _isURL = __webpack_require__(312);
+var _isURL = __webpack_require__(314);
 
 var _isURL2 = _interopRequireDefault(_isURL);
 
-var _isMACAddress = __webpack_require__(313);
+var _isMACAddress = __webpack_require__(315);
 
 var _isMACAddress2 = _interopRequireDefault(_isMACAddress);
 
@@ -37822,35 +37280,35 @@ var _isFQDN = __webpack_require__(74);
 
 var _isFQDN2 = _interopRequireDefault(_isFQDN);
 
-var _isBoolean = __webpack_require__(314);
+var _isBoolean = __webpack_require__(316);
 
 var _isBoolean2 = _interopRequireDefault(_isBoolean);
 
-var _isAlpha = __webpack_require__(315);
+var _isAlpha = __webpack_require__(317);
 
 var _isAlpha2 = _interopRequireDefault(_isAlpha);
 
-var _isAlphanumeric = __webpack_require__(316);
+var _isAlphanumeric = __webpack_require__(318);
 
 var _isAlphanumeric2 = _interopRequireDefault(_isAlphanumeric);
 
-var _isNumeric = __webpack_require__(317);
+var _isNumeric = __webpack_require__(319);
 
 var _isNumeric2 = _interopRequireDefault(_isNumeric);
 
-var _isPort = __webpack_require__(318);
+var _isPort = __webpack_require__(320);
 
 var _isPort2 = _interopRequireDefault(_isPort);
 
-var _isLowercase = __webpack_require__(319);
+var _isLowercase = __webpack_require__(321);
 
 var _isLowercase2 = _interopRequireDefault(_isLowercase);
 
-var _isUppercase = __webpack_require__(320);
+var _isUppercase = __webpack_require__(322);
 
 var _isUppercase2 = _interopRequireDefault(_isUppercase);
 
-var _isAscii = __webpack_require__(321);
+var _isAscii = __webpack_require__(323);
 
 var _isAscii2 = _interopRequireDefault(_isAscii);
 
@@ -37862,15 +37320,15 @@ var _isHalfWidth = __webpack_require__(156);
 
 var _isHalfWidth2 = _interopRequireDefault(_isHalfWidth);
 
-var _isVariableWidth = __webpack_require__(322);
+var _isVariableWidth = __webpack_require__(324);
 
 var _isVariableWidth2 = _interopRequireDefault(_isVariableWidth);
 
-var _isMultibyte = __webpack_require__(323);
+var _isMultibyte = __webpack_require__(325);
 
 var _isMultibyte2 = _interopRequireDefault(_isMultibyte);
 
-var _isSurrogatePair = __webpack_require__(324);
+var _isSurrogatePair = __webpack_require__(326);
 
 var _isSurrogatePair2 = _interopRequireDefault(_isSurrogatePair);
 
@@ -37878,11 +37336,11 @@ var _isInt = __webpack_require__(154);
 
 var _isInt2 = _interopRequireDefault(_isInt);
 
-var _isFloat = __webpack_require__(325);
+var _isFloat = __webpack_require__(327);
 
 var _isFloat2 = _interopRequireDefault(_isFloat);
 
-var _isDecimal = __webpack_require__(326);
+var _isDecimal = __webpack_require__(328);
 
 var _isDecimal2 = _interopRequireDefault(_isDecimal);
 
@@ -37890,35 +37348,35 @@ var _isHexadecimal = __webpack_require__(157);
 
 var _isHexadecimal2 = _interopRequireDefault(_isHexadecimal);
 
-var _isDivisibleBy = __webpack_require__(327);
+var _isDivisibleBy = __webpack_require__(329);
 
 var _isDivisibleBy2 = _interopRequireDefault(_isDivisibleBy);
 
-var _isHexColor = __webpack_require__(328);
+var _isHexColor = __webpack_require__(330);
 
 var _isHexColor2 = _interopRequireDefault(_isHexColor);
 
-var _isISRC = __webpack_require__(329);
+var _isISRC = __webpack_require__(331);
 
 var _isISRC2 = _interopRequireDefault(_isISRC);
 
-var _isMD = __webpack_require__(330);
+var _isMD = __webpack_require__(332);
 
 var _isMD2 = _interopRequireDefault(_isMD);
 
-var _isHash = __webpack_require__(331);
+var _isHash = __webpack_require__(333);
 
 var _isHash2 = _interopRequireDefault(_isHash);
 
-var _isJSON = __webpack_require__(332);
+var _isJSON = __webpack_require__(334);
 
 var _isJSON2 = _interopRequireDefault(_isJSON);
 
-var _isEmpty = __webpack_require__(333);
+var _isEmpty = __webpack_require__(335);
 
 var _isEmpty2 = _interopRequireDefault(_isEmpty);
 
-var _isLength = __webpack_require__(334);
+var _isLength = __webpack_require__(336);
 
 var _isLength2 = _interopRequireDefault(_isLength);
 
@@ -37926,75 +37384,75 @@ var _isByteLength = __webpack_require__(152);
 
 var _isByteLength2 = _interopRequireDefault(_isByteLength);
 
-var _isUUID = __webpack_require__(335);
+var _isUUID = __webpack_require__(337);
 
 var _isUUID2 = _interopRequireDefault(_isUUID);
 
-var _isMongoId = __webpack_require__(336);
+var _isMongoId = __webpack_require__(338);
 
 var _isMongoId2 = _interopRequireDefault(_isMongoId);
 
-var _isAfter = __webpack_require__(337);
+var _isAfter = __webpack_require__(339);
 
 var _isAfter2 = _interopRequireDefault(_isAfter);
 
-var _isBefore = __webpack_require__(338);
+var _isBefore = __webpack_require__(340);
 
 var _isBefore2 = _interopRequireDefault(_isBefore);
 
-var _isIn = __webpack_require__(339);
+var _isIn = __webpack_require__(341);
 
 var _isIn2 = _interopRequireDefault(_isIn);
 
-var _isCreditCard = __webpack_require__(340);
+var _isCreditCard = __webpack_require__(342);
 
 var _isCreditCard2 = _interopRequireDefault(_isCreditCard);
 
-var _isISIN = __webpack_require__(341);
+var _isISIN = __webpack_require__(343);
 
 var _isISIN2 = _interopRequireDefault(_isISIN);
 
-var _isISBN = __webpack_require__(342);
+var _isISBN = __webpack_require__(344);
 
 var _isISBN2 = _interopRequireDefault(_isISBN);
 
-var _isISSN = __webpack_require__(343);
+var _isISSN = __webpack_require__(345);
 
 var _isISSN2 = _interopRequireDefault(_isISSN);
 
-var _isMobilePhone = __webpack_require__(344);
+var _isMobilePhone = __webpack_require__(346);
 
 var _isMobilePhone2 = _interopRequireDefault(_isMobilePhone);
 
-var _isCurrency = __webpack_require__(345);
+var _isCurrency = __webpack_require__(347);
 
 var _isCurrency2 = _interopRequireDefault(_isCurrency);
 
-var _isISO = __webpack_require__(346);
+var _isISO = __webpack_require__(348);
 
 var _isISO2 = _interopRequireDefault(_isISO);
 
-var _isISO31661Alpha = __webpack_require__(347);
+var _isISO31661Alpha = __webpack_require__(349);
 
 var _isISO31661Alpha2 = _interopRequireDefault(_isISO31661Alpha);
 
-var _isBase = __webpack_require__(348);
+var _isBase = __webpack_require__(350);
 
 var _isBase2 = _interopRequireDefault(_isBase);
 
-var _isDataURI = __webpack_require__(349);
+var _isDataURI = __webpack_require__(351);
 
 var _isDataURI2 = _interopRequireDefault(_isDataURI);
 
-var _isMimeType = __webpack_require__(350);
+var _isMimeType = __webpack_require__(352);
 
 var _isMimeType2 = _interopRequireDefault(_isMimeType);
 
-var _isLatLong = __webpack_require__(351);
+var _isLatLong = __webpack_require__(353);
 
 var _isLatLong2 = _interopRequireDefault(_isLatLong);
 
-var _isPostalCode = __webpack_require__(352);
+var _isPostalCode = __webpack_require__(354);
 
 var _isPostalCode2 = _interopRequireDefault(_isPostalCode);
 
@@ -38006,23 +37464,23 @@ var _rtrim = __webpack_require__(159);
 
 var _rtrim2 = _interopRequireDefault(_rtrim);
 
-var _trim = __webpack_require__(353);
+var _trim = __webpack_require__(355);
 
 var _trim2 = _interopRequireDefault(_trim);
 
-var _escape = __webpack_require__(354);
+var _escape = __webpack_require__(356);
 
 var _escape2 = _interopRequireDefault(_escape);
 
-var _unescape = __webpack_require__(355);
+var _unescape = __webpack_require__(357);
 
 var _unescape2 = _interopRequireDefault(_unescape);
 
-var _stripLow = __webpack_require__(356);
+var _stripLow = __webpack_require__(358);
 
 var _stripLow2 = _interopRequireDefault(_stripLow);
 
-var _whitelist = __webpack_require__(357);
+var _whitelist = __webpack_require__(359);
 
 var _whitelist2 = _interopRequireDefault(_whitelist);
 
@@ -38030,11 +37488,11 @@ var _blacklist = __webpack_require__(160);
 
 var _blacklist2 = _interopRequireDefault(_blacklist);
 
-var _isWhitelisted = __webpack_require__(358);
+var _isWhitelisted = __webpack_require__(360);
 
 var _isWhitelisted2 = _interopRequireDefault(_isWhitelisted);
 
-var _normalizeEmail = __webpack_require__(359);
+var _normalizeEmail = __webpack_require__(361);
 
 var _normalizeEmail2 = _interopRequireDefault(_normalizeEmail);
 
@@ -38121,7 +37579,7 @@ exports.default = validator;
 module.exports = exports['default'];
 
 /***/ }),
-/* 306 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38145,7 +37603,7 @@ function toInt(str, radix) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 307 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38172,7 +37630,7 @@ function toBoolean(str, strict) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 308 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38196,7 +37654,7 @@ function equals(str, comparison) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 309 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38224,7 +37682,7 @@ function contains(str, elem) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 310 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38251,7 +37709,7 @@ function matches(str, pattern, modifiers) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 311 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38346,7 +37804,7 @@ function isEmail(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 312 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38499,7 +37957,7 @@ function isURL(url, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 313 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38525,7 +37983,7 @@ function isMACAddress(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 314 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38549,7 +38007,7 @@ function isBoolean(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 315 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38580,7 +38038,7 @@ function isAlpha(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 316 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38611,7 +38069,7 @@ function isAlphanumeric(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 317 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38637,7 +38095,7 @@ function isNumeric(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 318 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38660,7 +38118,7 @@ function isPort(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 319 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38684,7 +38142,7 @@ function isLowercase(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 320 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38708,7 +38166,7 @@ function isUppercase(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 321 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38736,7 +38194,7 @@ function isAscii(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 322 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38764,7 +38222,7 @@ function isVariableWidth(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 323 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38792,7 +38250,7 @@ function isMultibyte(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 324 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38818,7 +38276,7 @@ function isSurrogatePair(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 325 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38849,7 +38307,7 @@ function isFloat(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 326 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38896,7 +38354,7 @@ function isDecimal(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 327 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38924,7 +38382,7 @@ function isDivisibleBy(str, num) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 328 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38950,7 +38408,7 @@ function isHexColor(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 329 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38977,7 +38435,7 @@ function isISRC(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 330 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39003,7 +38461,7 @@ function isMD5(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 331 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39044,7 +38502,7 @@ function isHash(str, algorithm) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 332 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39075,7 +38533,7 @@ function isJSON(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 333 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39099,7 +38557,7 @@ function isEmpty(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 334 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39139,7 +38597,7 @@ function isLength(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 335 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39173,7 +38631,7 @@ function isUUID(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 336 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39201,7 +38659,7 @@ function isMongoId(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 337 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39233,7 +38691,7 @@ function isAfter(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 338 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39265,7 +38723,7 @@ function isBefore(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 339 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39310,7 +38768,7 @@ function isIn(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 340 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39361,7 +38819,7 @@ function isCreditCard(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 341 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39415,7 +38873,7 @@ function isISIN(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 342 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39478,7 +38936,7 @@ function isISBN(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 343 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39542,7 +39000,7 @@ function isISSN(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 344 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39644,7 +39102,7 @@ function isMobilePhone(str, locale) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 345 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39742,7 +39200,7 @@ function isCurrency(str, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 346 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39771,7 +39229,7 @@ function isISO8601(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 347 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39798,7 +39256,7 @@ function isISO31661Alpha2(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 348 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39829,7 +39287,7 @@ function isBase64(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 349 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39855,7 +39313,7 @@ function isDataURI(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 350 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39913,7 +39371,7 @@ function isMimeType(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 351 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39942,7 +39400,7 @@ var long = /^\s?[+-]?(180(\.0+)?|1[0-7]\d(\.\d+)?|\d{1,2}(\.\d+)?)\)?$/;
 module.exports = exports['default'];
 
 /***/ }),
-/* 352 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40023,7 +39481,7 @@ var patterns = {
 var locales = exports.locales = Object.keys(patterns);
 
 /***/ }),
-/* 353 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40050,7 +39508,7 @@ function trim(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 354 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40074,7 +39532,7 @@ function escape(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 355 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40098,7 +39556,7 @@ function unescape(str) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 356 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40127,7 +39585,7 @@ function stripLow(str, keep_new_lines) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 357 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40151,7 +39609,7 @@ function whitelist(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 358 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40180,7 +39638,7 @@ function isWhitelisted(str, chars) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 359 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40315,7 +39773,7 @@ function normalizeEmail(email, options) {
 module.exports = exports['default'];
 
 /***/ }),
-/* 360 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41459,7 +40917,7 @@ exports.IsInstance = IsInstance;
 
 
 /***/ }),
-/* 361 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41512,7 +40970,7 @@ exports.registerDecorator = registerDecorator;
 
 
 /***/ }),
-/* 362 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41559,7 +41017,7 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
 }),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/vendor/awly/awly-textarea/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/vendor/awly/awly-textarea/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,
@@ -41569,7 +41027,7 @@ var marko_template = module.exports = __webpack_require__(2).t(__filename),
     classValidator_module = module_classValidator_module.default || module_classValidator_module,
     registerSchema = module_classValidator_module.registerSchema,
     validate = module_classValidator_module.validate,
-    marko_helpers = __webpack_require__(10),
+    marko_helpers = __webpack_require__(9),
     marko_escapeXml = marko_helpers.x,
     marko_attr = marko_helpers.a;
 
@@ -41626,7 +41084,7 @@ marko_template.meta = {
 /* WEBPACK VAR INJECTION */}.call(exports, "/index.js"))
 
 /***/ }),
-/* 363 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41636,7 +41094,7 @@ marko_template.meta = {
 var marko_template = module.exports = __webpack_require__(2).t(__filename),
     components_helpers = __webpack_require__(6),
     marko_registerComponent = components_helpers.rc,
-    marko_componentType = marko_registerComponent("/awly$1.0.0/src/components/own/t2-specific/footer/index.marko", function() {
+    marko_componentType = marko_registerComponent("/awly.io$1.0.0/src/components/own/t2-specific/footer/index.marko", function() {
       return module.exports;
     }),
     marko_renderer = components_helpers.r,

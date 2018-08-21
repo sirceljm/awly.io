@@ -15,8 +15,8 @@
   },
   "homepage": "https://awly.io",
   "dependencies": {
-    "apollo-cache-inmemory": "^1.1.9",
-    "apollo-client": "^2.4.0",
+    "apollo-cache-inmemory": "1.1.3",
+    "apollo-client": "2.2.0",
     "apollo-link-http": "^1.5.1",
     "apollo-link-local": "^1.0.3",
     "class-transformer": "^0.1.9",

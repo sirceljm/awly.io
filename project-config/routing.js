@@ -3,6 +3,18 @@ module.exports = {
         "type": "lambda",
         "localEndpoint": "src/pages/home"
     },
+    "/api/auth/example-login": {
+        "type": "lambda",
+        "localEndpoint": "src/api/vendor/awly/auth/example-login.js"
+    },
+    "/api/auth/example-logout": {
+        "type": "lambda",
+        "localEndpoint": "src/api/vendor/awly/auth/example-logout.js"
+    },
+    "/contact": {
+        "type": "lambda",
+        "localEndpoint": "src/pages/contact"
+    },
     "/docs": {
         "type": "lambda",
         "localEndpoint": "src/pages/docs"
@@ -23,20 +35,12 @@ module.exports = {
         "type": "lambda",
         "localEndpoint": "src/pages/getting-started"
     },
-    "/logo": {
-        "type": "lambda",
-        "localEndpoint": "src/pages/logo"
-    },
     "/gql": {
         "type": "lambda",
         "localEndpoint": "src/api/vendor/awly/gql/index.js"
     },
-    "/api/auth/example-login": {
+    "/logo": {
         "type": "lambda",
-        "localEndpoint": "src/api/vendor/awly/auth/example-login.js"
-    },
-    "/api/auth/example-logout": {
-        "type": "lambda",
-        "localEndpoint": "src/api/vendor/awly/auth/example-logout.js"
+        "localEndpoint": "src/pages/logo"
     }
 };

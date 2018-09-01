@@ -15,10 +15,13 @@
         <examples-menu />
     </@sideBar>
     <@body>
-        <a#awly-load-more-list.anchor>
+        <div#awly-load-more-list.anchor>
           <div.hash>#</div>
           <div.comp-title>&#x3C;awly-list&#x3E;</div>
-        </a>
+          <span.source-code-link>
+            [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-list/index.marko">code</a>]
+          </span>
+        </div>
 
         <div.example-desc>
           <p>
@@ -29,10 +32,13 @@
           <awly-list />
         </div>
 
-        <a#awly-progressive-images.anchor>
+        <div#awly-progressive-images.anchor>
           <div.hash>#</div>
           <div.comp-title>&#x3C;awly-progressive-image&#x3E;</div>
-        </a>
+          <span.source-code-link>
+            [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-progressive-image/index.marko">code</a>]
+          </span>
+        </div>
 
         <div.example-desc>
           <p>This component renders the image progressively. This means that it first displays the blurred placeholder image that is
@@ -55,10 +61,13 @@
           </div>
         </div>
 
-        <a#awly-on-scroll-to-view.anchor>
+        <div#awly-on-scroll-to-view.anchor>
           <div.hash>#</div>
           <div.comp-title>&#x3C;awly-on-scroll-to-view&#x3E;</div>
-        </a>
+          <span.source-code-link>
+            [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-on-scroll-to-view/index.marko">code</a>]
+          </span>
+        </div>
 
         <div.example-desc>
             <p>
@@ -80,10 +89,13 @@
             </div>
         </div>
 
-        <a#awly-user-badge.anchor>
+        <div#awly-user-badge.anchor>
           <div.hash>#</div>
           <div.comp-title>&#x3C;awly-user-badge&#x3E;</div>
-        </a>
+          <span.source-code-link>
+            [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-user-badge/index.marko">code</a>]
+          </span>
+        </div>
 
         <div.example-desc>
             <p>
@@ -110,10 +122,13 @@
         </a>
         <awly-highlightjs /> -->
 
-      <a#awly-button.anchor>
+      <div#awly-button.anchor>
         <div.hash>#</div>
         <div.comp-title>&#x3C;awly-button&#x3E;</div>
-      </a>
+        <span.source-code-link>
+          [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-button/index.marko">code</a>]
+        </span>
+      </div>
       <div.example-desc>
         <div.buttons.flex.space-between>
             <awly-button color="blue">
@@ -169,10 +184,13 @@
       <br />
       <br />
 
-      <a#awly-input.anchor>
+      <div#awly-input.anchor>
         <div.hash>#</div>
         <div.comp-title>&#x3C;awly-input&#x3E;</div>
-      </a>
+        <span.source-code-link>
+          [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-input/index.marko">code</a>]
+        </span>
+      </div>
       <div.example-desc>
         <div.flex>
           <div.flex-center>
@@ -186,10 +204,13 @@
         <div.comp-title>&#x3C;awly-form-field-error&#x3E;</div>
       </a> -->
 
-      <a#awly-textarea.anchor>
+      <div#awly-textarea.anchor>
         <div.hash>#</div>
         <div.comp-title>&#x3C;awly-textarea&#x3E;</div>
-      </a>
+        <span.source-code-link>
+          [<a target="_blank" href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-textarea/index.marko">code</a>]
+        </span>
+      </div>
       <div.example-desc>
         <div.flex>
           <div.flex-center>
@@ -232,6 +253,11 @@ style.scss {
           font-size: 24px;
           color: #2e333e;
           display: inline-block;
+          flex: 1;
+        }
+
+        .source-code-link {
+          margin-right: 10px;
         }
     }
 

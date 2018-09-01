@@ -61,7 +61,7 @@ typings/
 /static
 /.cache
 /certs
-/data/dynalite/*
+/data/dynalite
 /project-config/cloudfront/cloudfront-distribution.config.js
 /project-config/iam
 /project-config/main.config.js

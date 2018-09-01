@@ -1,0 +1,45 @@
+
+class {
+    onCreate(){
+        this.state = {};
+        this.state.ribbons = {
+            left: {
+                red: "forkme_left_red_aa0000.png",
+                green: "forkme_left_green_007200.png",
+                darkblue: "forkme_left_darkblue_121621.png",
+                orange: "forkme_left_orange_ff7600.png",
+                gray: "forkme_left_gray_6d6d6d.png",
+                white: "forkme_left_white_ffffff.png",
+            },
+
+            right: {
+                red: "forkme_right_red_aa0000.png",
+                green: "forkme_right_green_007200.png",
+                darkblue: "forkme_right_darkblue_121621.png",
+                orange: "forkme_right_orange_ff7600.png",
+                gray: "forkme_right_gray_6d6d6d.png",
+                white: "forkme_right_white_ffffff.png",
+            }
+        }
+    }
+}
+
+<a href="https://github.com/${data.repoUrl}" target="_blank">
+  <img class=(data.position === 'right' ? "topRight" : "topLeft") src="https://s3.amazonaws.com/github/ribbons/${state.ribbons[data.position][data.color]}" alt="Fork me on GitHub" />
+</a>
+
+style.scss {
+  .topLeft {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 0;
+  }
+
+  .topRight {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 0;
+  }
+}

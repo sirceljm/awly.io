@@ -1,6 +1,5 @@
 class {
     onCreate(){
-      // TODO get header height form input
       this.state = {
         examplesMenuMarginTop: null,
         examplesMenuHeight: null,
@@ -11,24 +10,6 @@ class {
       }
     }
     onMount(){
-        // this.previousMarginTop = 180;
-        // this.previousMarginBottom = 0;
-        // this.previousScrollTop = this.getDocumentScrollTopPos();
-        // this.count = 0;
-        //
-        // const rect = this.getEl().getBoundingClientRect();
-        // const docHeight = (window.innerHeight || document.documentElement.clientHeight);
-        // // console.log(rect, docHeight, (docHeight - rect.bottom), (rect.top - (docHeight - rect.bottom)));
-        //
-        // // let adjustHeight = (-rect.top + (docHeight - rect.bottom));
-        // let adjustHeight = -rect.top;
-        //
-        // this.state.examplesMenuMarginTop = adjustHeight + "px";
-        // this.state.examplesMenuHeight = "calc(" + adjustHeight + "px + 100vh)";
-        //
-        // this.subscribeTo(window).on('scroll', (event) => {
-        //     this.adjustSidebarHeight();
-        // });
     }
 
     getDocumentScrollTopPos(){
@@ -68,15 +49,19 @@ class {
 }
 
 <div.get-started-menu style={ height: state.examplesMenuHeight }>
-  <!-- <h2>What is Awly?</h2>
-  <div.group>
-    <a href="/getting-started#about">About Awly framework</a>
-    <a.not-done href="/getting-started#why">Why use it?</a>
-  </div> -->
-
   <h2>Getting started</h2>
   <div.group>
-    <a href="/getting-started#start-project">Start your local project</a>
+    <a href="/getting-started#install">Install & start local server</a>
+  </div>
+
+  <h2>Develop web pages with awly</h2>
+  <div.group>
+    <a href="/getting-started#code-editor">Code editor</a>
+    <a href="/getting-started#folder-structure">Project folder structure</a>
+    <a href="/getting-started#create-page">Create a new page with the Awly CLI</a>
+    <a href="/getting-started#static-page">Make a static HTML page with MarkoJS templating engine</a>
+    <a href="/getting-started#dynamic-page">Working with dynamic data</a>
+    <a href="/getting-started#feedback">Feedback welcome</a>
   </div>
 </div>
 
@@ -91,7 +76,7 @@ style.scss {
     .get-started-menu {
       box-sizing: border-box;
       color: #2e333e;
-      min-height: calc(100vh - 280px);
+      min-height: calc(100vh - 150px);
       overflow: auto;
       // position: sticky;
       padding: 0px 10px 60px 10px;
@@ -123,8 +108,8 @@ style.scss {
           padding-left: 10px;
           color: #2e333e;
           text-decoration: none;
-          width: 100%;
-          line-height: 30px;
+          line-height: 20px;
+          margin-bottom: 20px;
 
           /*&:before {
               width: 10px;

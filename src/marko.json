@@ -31,6 +31,6 @@
         "transformer": "./hooks/repeat-transformer.js"
     },
     "<*>": {
-        "transformer": "./hooks/show-only-in-env-transformer.js"
+        "transformer": "./hooks/show-only-in-stage-transformer.js"
     }
 }

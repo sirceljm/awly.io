@@ -13,7 +13,9 @@
     $!{out.global.injectCSS}
 </head>
 <body.grid-layout>
-    <awly-github-ribbon repo-url="sirceljm/awly" position="right" color="orange"></awly-github-ribbon>
+    <div.ribbon>
+      <awly-github-ribbon repo-url="sirceljm/awly" position="right" color="orange"></awly-github-ribbon>
+    </div>
     <div.header-bg></div>
     <div.title-bg></div>
     <div.footer-bg></div>
@@ -134,5 +136,11 @@ style.scss {
 
     .footer {
         grid-area: footer;
+    }
+
+    .ribbon {
+        @media (max-width: 899px){
+            display: none;
+        }
     }
 }

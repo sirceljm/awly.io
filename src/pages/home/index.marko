@@ -25,7 +25,7 @@
             </div>
 
             <div.fastImg>
-                <img.circleImg src="/assets/img/awly-performance.png" />
+                <img.circleImg src="/assets/img/awly-performance.jpg" />
             </div>
 
             <div.fast.awly-feature>
@@ -53,7 +53,7 @@
             </div>
 
             <div.isoImg>
-                <img.circleImg src="/assets/img/awly-isomorphic.png" />
+                <img.circleImg src="/assets/img/awly-isomorphic.jpg" />
             </div>
         </div>
     </@body>
@@ -67,6 +67,29 @@ style.scss {
         display: grid;
         grid-column-gap: 40px;
         grid-row-gap: 100px;
+
+        @media (max-width: 899px){
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto auto auto;
+            grid-template-areas:
+                "."
+                "fun"
+                "fast-img"
+                "fast"
+                "iso-img"
+                "iso"
+                ".";
+
+            text-align: center;
+
+            img {
+                max-width: 300px;
+            }
+
+            .iso {
+                text-align: center !important;
+            }
+        }
 
         @media (min-width: 900px){
             grid-template-columns: 1fr 1fr;

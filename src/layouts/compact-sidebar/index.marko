@@ -13,7 +13,9 @@
     $!{out.global.injectCSS}
 </head>
 <body.grid-layout>
-    <awly-github-ribbon repo-url="sirceljm/awly" position="right" color="orange"></awly-github-ribbon>
+    <div.ribbon>
+      <awly-github-ribbon repo-url="sirceljm/awly" position="right" color="orange"></awly-github-ribbon>
+    </div>
     <div.header-bg></div>
     <div.title-bg></div>
     <div.footer-bg></div>
@@ -43,11 +45,10 @@ style.scss {
         display: grid;
         min-height: 100vh;
         grid-template-columns: 10px 1fr 10px;
-        grid-template-rows: 100px auto auto 50px;
+        grid-template-rows: auto 1fr 50px;
         grid-template-areas:
             ". nav ."
             "body body body"
-            ". sideBar ."
             ". footer .";
     }
 
@@ -105,6 +106,8 @@ style.scss {
         grid-area: nav;
         display: flex;
         align-items: center;
+
+        margin: 20px 0px;
     }
 
     @media (min-width: 900px){
@@ -128,5 +131,11 @@ style.scss {
 
     .footer {
         grid-area: footer;
+    }
+
+    .ribbon {
+        @media (max-width: 899px){
+            display: none;
+        }
     }
 }

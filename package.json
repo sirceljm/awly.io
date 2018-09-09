@@ -22,6 +22,7 @@
     "class-transformer": "^0.1.9",
     "class-transformer-validator": "^0.5.0",
     "class-validator": "^0.8.5",
+    "cookieconsent": "^3.1.0",
     "dynalite": "^2.0.0",
     "graphql": "^0.11.7",
     "graphql-custom-types": "^1.2.0",

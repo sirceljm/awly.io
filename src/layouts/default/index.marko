@@ -1,7 +1,14 @@
 <!doctype html>
 <html>
 <head>
-    <google-analytics tracking-id="UA-115954060-1" show-only-in-stage("prod") />
+    <google-analytics tracking-id="UA-115954060-1"
+                      cookie-consent-trigger="cookieConsent"
+                      show-only-in-stage("prod")
+    />
+    <google-analytics tracking-id="UA-115954060-2"
+                      cookie-consent-trigger="cookieConsent"
+                      show-only-in-stage("dev")
+    />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,6 +21,8 @@
     $!{out.global.injectCSS}
 </head>
 <body.grid-layout>
+    <insites-cookie-consent waitFor="gaLoaded" />
+
     <div.ribbon>
         <awly-github-ribbon repo-url="sirceljm/awly" position="right" color="orange"></awly-github-ribbon>
     </div>

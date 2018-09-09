@@ -35,6 +35,18 @@ module.exports = {
         "type": "lambda",
         "localEndpoint": "src/pages/getting-started"
     },
+    "/privacy-policy": {
+        "type": "lambda",
+        "localEndpoint": "src/pages/privacy-policy"
+    },
+    "/terms": {
+        "type": "lambda",
+        "localEndpoint": "src/pages/terms"
+    },
+    "/cookie-policy": {
+        "type": "lambda",
+        "localEndpoint": "src/pages/cookie-policy"
+    },
     "/gql": {
         "type": "lambda",
         "localEndpoint": "src/api/vendor/awly/gql/index.js"

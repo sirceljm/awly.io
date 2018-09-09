@@ -1,9 +1,47 @@
+class {
+    onCreate() {
+        this.state = {
+            trackingId: null,
+            cookieConsentTrigger: null,
+            currentConsent: false
+        }
+    }
+
+    onInput(input) {
+        this.state.trackingId = input.trackingId;
+        this.state.cookieConsentTrigger = input.cookieConsentTrigger;
+    }
+
+    onMount() {
+        if (this.state.cookieConsentTrigger) {
+            this.subscribeTo(document).on('cookieConsent', (event) => {
+                if (event.detail != this.state.currentConsent){
+                    this.onConsentChange(event.detail);
+                }
+            });
+        } else {
+            this.state.currentConsent = true;
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', this.state.trackingId);
+        }
+
+        document.gaLoaded = true;
+        document.dispatchEvent(new CustomEvent('gaLoaded'));
+    }
+
+    onConsentChange(newConsentStatus) {
+        this.state.currentConsent = newConsentStatus;
+
+        window[`ga-disable-${this.state.trackingId}`] = (this.state.currentConsent === false ? true : false);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', this.state.trackingId);
+    }
+}
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id="+data.trackingId></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '${data.trackingId}');
-</script>

@@ -1,5 +1,12 @@
 <div.awly-footer>
-    © awly.io
+    <div.awly-footer__left>© awly.io</div>
+    <div.awly-footer__right>
+        <a href="/cookie-policy">Cookie Policy</a>
+        |
+        <a href="/terms">Terms & Conditions</a>
+        |
+        <a href="/privacy-policy">Privacy Policy</a>
+    </div>
 </div>
 
 style.scss {
@@ -8,5 +15,21 @@ style.scss {
         display: flex;
         height: 100%;
         align-items: center;
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        &__left {
+            white-space: nowrap;
+            flex: 1 0;
+        }
+
+        &__right {
+            white-space: nowrap;
+            flex:  0 0;
+            text-align: right;
+        }
     }
 }

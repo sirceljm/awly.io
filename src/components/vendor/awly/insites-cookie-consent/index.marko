@@ -1,0 +1,63 @@
+class {
+    onMount() {
+        if (document['gaLoaded']) {
+            this.onScriptsThatRequireCookieConsentsLoaded();
+        } else {
+            this.subscribeTo(document).on('gaLoaded', () => {
+                this.onScriptsThatRequireCookieConsentsLoaded();
+            });
+        }
+
+    }
+
+    onScriptsThatRequireCookieConsentsLoaded(){
+        window.cookieconsent.initialise({
+          //container: document.getElementById("content"),
+          type: "opt-out",
+          "palette": {
+            "popup": {
+              "background": "hsla(289, 61%, 17%, 0.9)"
+            },
+            "button": {
+              "background": "#EAAF00",
+              "text": "white"
+            }
+          },
+          "theme": "classic",
+          revokable:true,
+          law: {
+            regionalLaw: false,
+          },
+          "position": "bottom-right",
+          "content": {
+              "href": "https://awly.io/cookie-policy"
+          },
+          // location: true,
+
+          onPopupOpen: function() {
+              document.dispatchEvent(new CustomEvent('cookieConsent', {detail: true}));
+          },
+
+          onInitialise: function (status) {
+              document.dispatchEvent(new CustomEvent('cookieConsent', {detail: this.hasConsented()}));
+          },
+
+          onStatusChange: function(status) {
+              document.dispatchEvent(new CustomEvent('cookieConsent', {detail: this.hasConsented()}));
+          },
+
+          onRevokeChoice: function(status) {
+              document.dispatchEvent(new CustomEvent('cookieConsent', {detail: true}));
+          }
+        });
+    }
+}
+
+<div>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+</div>
+
+style.scss {
+
+}

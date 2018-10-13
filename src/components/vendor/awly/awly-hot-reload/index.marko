@@ -1,5 +1,6 @@
 class {
     onMount(){
+        console.log("ON MOUNT");
         var poll = () => {
             var xhr = new XMLHttpRequest();
             xhr.timeout = this.input.resetInterval || 60000;
@@ -24,4 +25,5 @@ class {
     }
 }
 
-<span id:scoped></span>
+<div></div>
+<!-- <span id:scoped></span> -->

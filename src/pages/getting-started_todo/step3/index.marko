@@ -1,0 +1,700 @@
+<div.example-desc.example-desc--flex>
+  <div.example-desc__left>
+      <div><img src="/assets/img/todo/step2.3.png" /></div>
+  </div>
+  <div.example-desc__right>
+      <p>
+          Now that we have our component MVP. Lets add some other features:
+          In this chapter we will be adding features to make the component
+          look and behave exactly like in the
+          <a href="http://http://todomvc.com/" target="_blank">TodoMVC</a>
+          examples.
+      </p>
+
+      <p>
+          Lets first start by adding the footer with the count of items on
+          the list. Add the footer element into the component HTML right
+          after the todo__list and the styles for the footer into the
+          styles.scss block inside the ".todo" selector.
+      </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+...
+<div.todo__list>
+    <for(todo in state.todos)>
+        <div>${todo}</div>
+        <div.todo__item>${todo}</div>
+    </for>
+</div>
+<div.todo__footer>
+    $ var itemsLeft = state.todos.length;
+    ${itemsLeft} ${itemsLeft === 1 ? 'item' : 'items'} left
+</div>
+...
+
+style.scss {
+    ...
+
+    .todo {
+        ...
+
+        &__footer {
+           padding: 10px 15px;
+           background-color: white;
+           font-size: 14px;
+           border-top: 1px solid $color-light-gray;
+        }
+    }
+}
+</@code></highlightjs-xml>
+
+        <p>
+            Next lets make a chackbox on the left side for each of the added todos.
+            This checkbox will serve the purpose of marking the todo as completed.
+        </p>
+
+        <p>
+            Now we have added more logic to our component as todos have now two
+            different states. We will meet this requirement by changing the definition
+            of the todos array in state. Right now we have the array of strings and
+            we will change it to the array of objects. We will also add toggleTodoStatus
+            function to our class definition and fix the "addTodoOnEnter" function
+            to add the todo object to the array instead of string.
+        </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    onCreate(){
+        this.state = {
+            todos: [{
+                text: 'Buy milk',
+                completed: true
+            },{
+                text: 'Clean the house',
+                completed: false
+            },{
+                text: 'Walk the dog',
+                completed: false
+            }]
+        };
+    }
+
+    ...
+
+    addTodoOnEnter(event, input){
+        if(event.keyCode === 13){
+            this.state.todos = this.state.todos.concat(input.value);
+            this.state.todos = this.state.todos.concat({
+                text: input.value,
+                completed: false
+            });
+            input.value = "";
+        }
+    }
+
+    ...
+
+    toggleTodoStatus(todo, event, input){
+        todo.completed = input.checked;
+        this.setStateDirty('todos');
+    }
+
+    ...
+</@code></highlightjs-xml>
+
+    <p>
+        Now that we have done that out HTML templat will not work anymore
+        because we are calling for the todo text directly from the array.
+        Lets change that as well and also add the markup for the checkbox.
+    </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<for(todo in state.todos)>
+    <div.todo__item
+        class="${todo.completed ? 'todo__item--completed' : ''}">
+       <label.todo__item-checkbox>
+           <input type="checkbox"
+                  checked=todo.completed
+                  on-change("toggleTodoStatus", todo) />
+       </label>
+       <span>${todo.text}</span>
+    </div>
+</for>
+</@code></highlightjs-xml>
+
+    <p>
+        And also the styles for the checkboxes.
+    </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+style.scss {
+    .todo {
+        ...
+
+        &__item {
+            ...
+            &--completed {
+                text-decoration: line-through;
+                color: $color-light-gray;
+
+                .todo__item-checkbox {
+                    background-image:
+                        url('/assets/svg/todo-complete.svg');
+                }
+            }
+        }
+
+        &__item-checkbox {
+            width: 40px;
+            margin-left: -55px;
+            height: 40px;
+            display: inline-block;
+            margin-right: 15px;
+            vertical-align: middle;
+            cursor: pointer;
+            background-image:
+                url('/assets/svg/todo-incomplete.svg');
+
+            input {
+                display: none;
+            }
+        }
+    }
+}
+</@code></highlightjs-xml>
+
+    <p>
+        As you can see the CSS  above uses the SVG assets so you can download them
+        here and include them into <b>"assets/svg"</b> folder:
+    </p>
+
+
+    <span><img src="/assets/svg/todo-complete.svg" style="width: 40px;" /></span>
+    <span><img src="/assets/svg/todo-incomplete.svg" style="width: 40px;" /></span>
+
+    <p>
+        Now that we have our active/completed checkboxes and logic lets also add
+        the filters to the footer so we can swithc between the states and filter our
+        todos. We will be adding  filters for 3 states: All, Active and Completed.
+    </p>
+
+    <p>
+        Lets first add the template markup and deal with the logic later.
+    </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+...
+<div.todo__footer>
+    $ var itemsLeft = state.todos.length;
+    <div.todo__count>
+        ${itemsLeft} ${itemsLeft === 1 ? 'item' : 'items'} left
+    </div>
+    <div.todo__filters>
+        $ var todoState = state.showTodosState;
+       <span.todo__filter-btn
+            class=(todoState === "all" ? "active-filter" : "")
+            on-click("setShowTodosState", "all")>All</span>
+       <span.todo__filter-btn
+            class=(todoState === "active" ? "active-filter" : "")
+            on-click("setShowTodosState", "active")>Active</span>
+       <span.todo__filter-btn
+            class=(todoState === "completed" ? "active-filter" : "")
+            on-click("setShowTodosState", "completed")>Completed</span>
+    </div>
+</div>
+
+style.scss {
+    ...
+
+    .todo {
+        ...
+
+        &__count {
+            float: left;
+        }
+
+        &__filters {
+            position: absolute;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        &__filter-btn {
+            border-radius: 4px;
+            margin: 3px;
+            padding: 3px 7px;
+            font-size: 14px;
+            box-sizing: border-box;
+
+            &:hover {
+               border: 1px solid rgba(175, 47, 47, 0.1);
+               margin-left: 2px;
+               margin-right: 2px;
+            }
+
+            &.active-filter {
+               border: 1px solid rgba(175, 47, 47, 0.2);
+               margin-left: 2px;
+               margin-right: 2px;
+            }
+        }
+
+        &__footer {
+            position: relative;
+            height: 20px;
+            padding: 10px 15px;
+            background-color: white;
+            font-size: 14px;
+            color: $color-dark-gray;
+            border-top: 1px solid $color-light-gray;
+            line-height: 1.5;
+        }
+    }
+}
+</@code></highlightjs-xml>
+
+    <p>
+        As you can see we are invoking the <b>"setShowTodosState"</b> whenever
+        user clicks on one of the filter buttons. Lets make this function right now.
+        This function will set the variable in component state to keep track of
+        which todo state is selected. We also have to introduce this variable in
+        the state object.
+    </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    onCreate() {
+        this.state = {
+            todos: [{
+                text: 'Buy milk',
+                completed: true
+            },{
+                text: 'Clean the house',
+                completed: false
+            },{
+                text: 'Walk the dog',
+                completed: false
+            }],
+            showTodosState: 'all'
+        };
+    }
+    ...
+
+    setShowTodosState(todoState, event){
+        this.state.showTodosState = todoState;
+    }
+}
+    </@code></highlightjs-xml>
+
+    <p>
+        It is actually quite easy to change the component to display only the
+        todos for the selected state. All we have to do is make the function that
+        will filter the todos array and return only todos with the state that we
+        want to see. Then we just wrap our todos array with this function in the
+        HTML template.
+    </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    ...
+
+    filterTodos(todos, todoState){
+        if (todoState === 'active') {
+            return todos.filter(todo => todo.completed === false);
+        } else if (todoState === 'completed') {
+            return todos.filter(todo => todo.completed === true);
+        } else {
+            return todos;
+        }
+    }
+}
+
+...
+    <for(todo in
+        component.filterTodos(state.todos, state.showTodosState))>
+        ...
+    </for>
+...
+</@code></highlightjs-xml>
+
+    <p>
+        Now that we have implemented the filters lets also fix some things. First,
+        the text on th left side of the footer is still showing that there are
+        all todos left even if we completed something. We can easily fix this with
+        our "filterTodos" function. The other issue is that the HTML template
+        changed a bit and we need to fix the CSS.
+    </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<div.todo__footer>
+    $ var todosActive = component.filterTodos(state.todos, 'active');
+    $ var todosLeft = todosActive.length;
+    <div.todo__count>
+        ${todosLeft} ${todosLeft === 1 ? 'item' : 'items'} left
+    </div>
+    ...
+</div>
+
+style.scss {
+    ...
+    .todo {
+        ...
+
+        &__item {
+            &--completed {
+                .todo__item-text {
+                    text-decoration: line-through;
+                    color: $color-light-gray;
+                }
+            }
+        }
+    }
+}
+</@code></highlightjs-xml>
+
+        <p>
+            Now lets add the functionality for removing todos and to clear all
+            completed todos. We will first create two functions that will manipulate
+            the state.todos array. Since our component is getting quite complex
+            we will have to change the todos array again a little bit. But this
+            will be the last time.
+        </p>
+
+        <p>
+            Since we can delete a todo from any of the filtered views we cannot
+            rely on the position of the object in the state.todos array. To solve
+            this problem we will add the <b>id</b> propery to our todo objects and
+            a counter of which is the last todo id.
+        </p>
+
+    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    onCreate(){
+        this.state = {
+            todos: [{
+                id: 0,
+                text: 'Buy milk',
+                completed: true
+            },{
+                id: 1,
+                text: 'Clean the house',
+                completed: false
+            },{
+                id: 2,
+                text: 'Walk the dog',
+                completed: false
+            }],
+            lastTodoId: 2,
+            showTodosState: 'all'
+        };
+    }
+
+    addTodoOnEnter(event, input){
+        if(event.keyCode === 13){
+            this.state.todos = this.state.todos.concat({
+                id: ++this.state.lastTodoId,
+                text: input.value,
+                completed: false
+            });
+            input.value = "";
+        }
+    }
+
+    ...
+}
+</@code></highlightjs-xml>
+
+    <p>
+        Now lets add the delete and clear all functions. We will call them
+        <b>"removeTodo"</b> and <b>"clearCompleted"</b> lets add them to our class
+        definition.
+    </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    ...
+    removeTodo(todoId, event){
+        const todo = this.state.todos.find(
+            item => item.id === todoId
+        );
+
+        const todoPos = this.state.todos.indexOf(todo);
+        this.state.todos.splice(todoPos, 1);
+
+        this.setStateDirty('todos');
+    }
+
+    clearCompleted(){
+        for(let i = this.state.todos.length-1; i >= 0 ; i--){
+            if(this.state.todos[i].completed === true){
+                this.state.todos.splice(i, 1);
+            }
+        }
+        this.setStateDirty('todos');
+    }
+}
+...
+
+    <for(todo in
+        component.filterTodos(state.todos, state.showTodosState))>
+        <div.todo__item
+            class="${todo.completed ? 'todo__item--completed' : ''}">
+            ...
+            <span.todo__item-remove
+                on-click("removeTodo", todo.id)>×</span>
+        </div>
+    </for>
+
+    ...
+
+    <div.todo__footer>
+       ...
+       <div.todo__clear on-click("clearCompleted")>Clear completed</div>
+    </div>
+
+   ...
+</@code></highlightjs-xml>
+
+    <p>
+        Now we have just a complete all button and editing of todos on
+        double click left. Lets first do the complete all button and leave the
+        more complex task for last.
+    </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    ...
+
+    completeAll(){
+       for(let i = 0; i < this.state.todos.length; i++){
+           this.state.todos[i].completed = true;
+       }
+       this.setStateDirty('todos');
+    }
+}
+
+<div.todo>
+    <div.todo__input>
+        <div.todo__selectAll on-click("completeAll")>❯</div>
+        ...
+    </div>
+</div>
+
+style.scss {
+    ...
+    .todo {
+        ...
+        &__input {
+            ...
+            position: relative;
+            ...
+        }
+
+        &__selectAll {
+            display: inline-block;
+            position: absolute;
+            width: 20px;
+            top: 9px;
+            padding: 10px 20px;
+            left: 0px;
+            transform: rotate(90deg);
+            cursor: pointer;
+            color: $color-light-gray;;
+        }
+
+        ...
+    }
+
+}
+</@code></highlightjs-xml>
+
+    <p>
+        To finish this part of the tutorial we need to do only one more thing,
+        which is to display an edit box if the user double-clicks on the todo text.
+    </p>
+
+    <p>
+        Lets add another property to the component state object that will keep track
+        of which todo we are editing.
+    </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>class {
+    onCreate(){
+        this.state = {
+            ...
+            showTodosState: 'all',
+            editingTodo: null
+        };
+    }
+    ...
+}
+</@code></highlightjs-xml>
+
+    <p>
+        Editing the todo in place will require quite a lot more logic in the HTML
+        template than before so lets replace the todo item block altogether.
+    </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+...
+<div.todo__list>
+    <for(todo in
+        component.filterTodos(state.todos, state.showTodosState))>
+        <div.todo__item
+            class="${todo.completed ? 'todo__item--completed' : ''}"
+            on-dblclick("showEditTextbox", todo.id)
+        >
+            <label.todo__item-checkbox
+                class="${state.editingTodo === todo.id ? 'hidden' : ''}"
+            >
+                <input type="checkbox"
+                       checked=todo.completed
+                       on-change("toggleTodoStatus", todo) />
+            </label>
+            <if(state.editingTodo === todo.id)>
+                <span.clickzone on-click("finishEditing")></span>
+                <span.todo__edit-input>
+                    <input value=todo.text
+                           key='editInput_'+todo.id
+                           on-focus("putCursorOnEnd")
+                           on-keypress("editTodoOnEnter", todo.id) />
+                </span>
+            </if>
+            <else>
+                <span.todo__item-text>${todo.text}</span>
+            </else>
+
+            <span.todo__item-remove
+                class="${state.editingTodo === todo.id ? 'hidden' : ''}"
+                on-click("removeTodo", todo.id)>×</span>
+        </div>
+    </for>
+</div>
+...
+</@code></highlightjs-xml>
+
+<p>
+    More CSS rules will be required as well to display the edit box propperly.
+</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+style.scss {
+    ...
+    .hidden {
+        display: none !important;
+    }
+
+    .todo {
+        ...
+        &__edit-input {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            box-sizing: border-box;
+            border: 1px solid $color-gray;
+            box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+            padding: 0px 10px;
+            margin-left: -10px;
+            width: calc(100% - 50px);
+            z-index: 1;
+
+            input {
+                height: 100%;
+                border: none;
+                box-sizing: border-box;
+                width: 100%;
+                margin-left: -1px;
+                margin-top: -2px;
+                background-color: transparent;
+                color: $color-gray;
+
+                &:focus {
+                    outline-width: 0;
+                }
+            }
+        }
+
+        &__item {
+            height: 40px;
+            ...
+        }
+    }
+    ...
+    .clickzone {
+        // background-color: rgba(255, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+}
+</@code></highlightjs-xml>
+
+    <p>
+        For the finish we need to add the functions into our code for:
+    </p>
+    <ul>
+        <li>Saving the edited TODO on enter key</li>
+        <li>Showing the showing the textbox on doubleclick</li>
+        <li>Putting text cursor on the end of TODO when user starts editing</li>
+        <li>Disabling the editing when user clicks outside textbox</li>
+    </ul>
+    <p>
+        All we need to do is to add those functions to the class definition
+    </p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    ...
+    editTodoOnEnter(todoId, event, input){
+        if(event.keyCode === 13){
+            this.state.editingTodo = null;
+            return;
+        }
+
+        const todo = this.state.todos.find(
+            item => item.id === todoId
+        );
+
+        todo.text = input.value + event.key;
+    }
+
+
+    showEditTextbox(todoId){
+        this.state.editingTodo = todoId;
+
+        setTimeout(() => { // wait for state to rerender the view
+           this.getEl('editInput_'+todoId).focus();
+        });
+    }
+
+    putCursorOnEnd(event, input){
+        let tmp = input.value;
+        input.value = "";
+        input.value = tmp;
+    }
+
+    finishEditing(event){
+        this.state.editingTodo = null;
+    }
+}
+</@code></highlightjs-xml>
+
+    <div.success-block>
+        <p><b>Congratulations!</b></p>
+        <p>
+            This is it! You completed the first chapter of the tutorial on how to
+            develop a todo app with awly.io and MarkoJS templating language.
+        </p>
+        <p>
+            Although we covered alot, we only scraped the surface of awly.io
+            possibilities. We only covered the development of the frontend
+            part. Stay tuned for further todo app tutorial chapters on
+            <b>deploying your app to AWS cloud and making use of backend
+            services like DynamoDB for data storage and authentication</b>.
+            They will be coming shortly.
+        </p>
+    </div>
+  </div>
+</div>

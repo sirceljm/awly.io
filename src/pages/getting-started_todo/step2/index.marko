@@ -1,0 +1,288 @@
+<div.example-desc.example-desc--flex>
+  <div.example-desc__left>
+      <div><img src="/assets/img/todo/step2-component.png" /></div>
+  </div>
+  <div.example-desc__right>
+      <p>
+          To make a new component all you have to do, is a new folder
+          in <b>src/components</b> directory with <b>index.marko</b> file inside.
+      </p>
+
+      <div.info-block>
+          <p>
+              The paths for components folders are actually configuarbale and
+              can be configured in the <b>src/marko.json</b> file.
+          </p>
+      </div>
+      <p>
+          So lets make a new <b>todo</b> folder in <b>src/components/own</b> and put the
+          index.marko template file inside. So that the component will not be empty lets
+          put some placeholder markup inside for now:
+      </p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<div>This is a todo component</div>
+</@code></highlightjs-xml>
+      <p>
+          <i><b>Currently you have to restart the awly server when you create new components.
+              Otherwist they wont get picked up</b></i>
+      </p>
+
+      <p>Now lets include the component into our page - src/pages/home/index.marko.</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<@body>
+    <div.page-center>
+        <div.todo-title>todos</div>
+        <todo />
+    </div>
+</@body>
+</@code></highlightjs-xml>
+      <div.info-block>
+          <p>
+              The name of the component will be the same as the name of the component folder.
+              As two folders can have the same names in this configuration, make sure that
+              components have unique names.
+          </p>
+      </div>
+      <p>
+          Now that we got our componet displaying on the page lets start developing
+          the actual functionality for the todo component.
+      </p>
+
+      <p>
+          Lets replace the current compoent HTML with the one that will display a
+          textbox for out todo input.
+      </p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<div.todo>
+    <div.todo__input>
+        <input type="text" placeholder="What needs to be done?" />
+    </div>
+</div>
+</@code></highlightjs-xml>
+        <p>
+            We wont start styling the input box yet but let first make the JS logic
+            for listening to the ENTER key and getting the value from the input box.
+        </p>
+        <p>
+            To add JS logic to our component we first need to include the <b>"class"</b>
+            block. Inside that block we can define our functions. For out case we for now
+            only need the "addTodoOnEnter" function which we will invoke with the
+            <b>"on-keypress"</b> attribute on input field.
+        </p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+   addTodoOnEnter(event, input){
+       if(event.keyCode === 13){ // ENTER key
+           console.log("add todo", event, input.value);
+       }
+   }
+}
+
+<div.todo>
+    <div.todo__input>
+        <input type="text"
+               placeholder="What needs to be done?"
+               on-keypress("addTodoOnEnter") />
+    </div>
+</div>
+</@code></highlightjs-xml>
+        <p>
+            Now you should see the output in the browser console whenever you press the enter key.
+        </p>
+
+        <div.info-block>
+            <p>
+                <b>"class"</b> is the main section for defining JS code in your components. Awly
+                introduces some new blocks like "server" and "server-static" for the purpose of
+                more powerful server side rendering. There is more in-depth guide for those blocks
+                later in the tutorial.
+            </p>
+            <hr />
+            <p>
+                Like in every component based library there are lifecycle methods. Most important
+                are:
+            </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+   onCreate(){ ... }
+   onInput(input){ ... }
+   onMount(){ ... }
+}
+</@code></highlightjs-xml>
+
+            <p>
+                We will go into detail about this methods in this tutorial.
+            </p>
+        </div>
+
+        <p>
+            Right now we get the output to the console but we dont do anything with it. We want
+            to store the todos as an array of strings. For that we will use the component state.
+        </p>
+
+        <div.info-block>
+            <p>
+                The componet state is a simple JS object which we can access in the component HTML
+                markup through <b>"state"</b> variable.
+            </p>
+        </div>
+
+        <p>
+            Lets define our state in the onCreate lifecycle hook and include the for loop tag in
+            our HTML. For now lets define some default todos. Our componet should look like this:
+        </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    onCreate(){
+        this.state = {
+            todos: ['Buy milk', 'Clean the house', 'Walk the dog']
+        };
+    }
+
+    addTodoOnEnter(event, input){
+        if(event.keyCode === 13){
+            console.log("add todo", event, input.value);
+        }
+    }
+}
+
+<div.todo>
+    <div.todo__input>
+        <input type="text"
+               placeholder="What needs to be done?"
+               on-keypress("addTodoOnEnter") />
+    </div>
+
+    <div.todo__list>
+        <for(todo in state.todos)>
+            <div.todo__item>${todo}</div>
+        </for>
+    </div>
+</div>
+</@code></highlightjs-xml>
+
+        <p>
+            Our todos are displaying in the list but we still cannot add the todo
+            from the input box. To make it work we now need to push the todo to the
+            <b>"state.todos"</b> array. For this we need a small modification to our
+            <b>"addTodoOnEnter()"</b> function:
+        </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+addTodoOnEnter(event, input){
+    if(event.keyCode === 13){
+        this.state.todos = this.state.todos.concat(input.value);
+        input.value = "";
+    }
+}
+</@code></highlightjs-xml>
+
+        <p>
+            Now that the basic functionality of the component is working lets just
+            add the styling to make it preety. The whole component template file should look
+            something like this in the end:
+        </p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+    onCreate(){
+        this.state = {
+            todos: ['Buy milk', 'Clean the house', 'Walk the dog']
+        };
+    }
+
+    addTodoOnEnter(event, input){
+        if(event.keyCode === 13){
+            this.state.todos = this.state.todos.concat(input.value);
+            input.value = "";
+        }
+    }
+}
+
+<div.todo>
+    <div.todo__input>
+        <input type="text"
+               placeholder="What needs to be done?"
+               on-keypress("addTodoOnEnter") />
+    </div>
+
+    <div.todo__list>
+        <for(todo in state.todos)>
+            <div.todo__item>${todo}</div>
+        </for>
+    </div>
+</div>
+
+style.scss {
+    $color-gray: #4d4d4d;
+    $color-light-gray: #e6e6e6;
+
+    .todo {
+        width: 100%;
+        max-width: 550px;
+        margin-bottom: 20px;
+
+        background: #ffffff;
+        color: $color-gray;
+
+        box-shadow:
+            0 25px 46px 0 rgba(97, 97, 97, 0.1),
+            0 1px 1px rgba(0, 0, 0, 0.2),
+            0 8px 0 -3px #fbfbfb,
+            0 9px 1px -3px rgba(0, 0, 0, 0.2),
+            0 16px 0 -6px #f6f6f6,
+            0 17px 2px -6px rgba(0, 0, 0, 0.2);
+
+        &__input {
+            margin: 0;
+            padding: 16px 16px 16px 60px;
+            box-sizing: border-box;
+
+            background-color: white;
+            box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+
+            font-size: 24px;
+            line-height: 1.4em;
+
+            input {
+                border: none;
+                width: 100%;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            & ::placeholder {
+                font-style: italic;
+                font-weight: 300;
+                color: $color-light-gray;
+                opacity: 1;
+            }
+
+            & :-ms-input-placeholder {
+                font-style: italic;
+                font-weight: 300;
+                color: $color-light-gray;
+            }
+
+            & ::-ms-input-placeholder {
+                font-style: italic;
+                font-weight: 300;
+                color: $color-light-gray;
+            }
+        }
+
+        &__item {
+            padding: 16px 16px 16px 60px;
+            background-color: white;
+            font-size: 24px;
+            border-top: 1px solid $color-light-gray;
+        }
+    }
+}
+</@code></highlightjs-xml>
+  </div>
+</div>

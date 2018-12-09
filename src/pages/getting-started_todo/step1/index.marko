@@ -1,0 +1,141 @@
+<div.example-desc.example-desc--flex>
+    <div.example-desc__left>
+        <div><img src="/assets/img/todo/step1-initial-page.png" /></div>
+    </div>
+    <div.example-desc__right>
+        <p>
+            First, lets edit the landing page and make it display the title and background.
+            In this task you will learn how the basic page is constructed and how to apply CSS
+            to it.
+        </p>
+        <p>
+            You can find the page in <b>/src/pages/home/index.marko</b>. We will be mostly editing this file for now.
+        </p>
+        <p>
+            The templating language awly.io uses is MarkoJS. You can read about its syntax in the official docs.
+        </p>
+        <h3>Making our first page:</h3>
+        <p>
+            Your body section in the template will look like this:
+        </p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<include("src/layouts/vendor/awly/blank")>
+    <@title>
+        Awly.io
+    </@title>
+    <@body>
+        <div>Hello world!</div>
+    </@body>
+</include>
+</@code></highlightjs-xml>
+      <p>Lets add markup for the "todos" title. Replace the <b>&#x3C;@body&#x3E;</b> contents with the code below.</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<@body>
+    <div.page-center>
+        <div.todo-title>todos</div>
+    </div>
+</@body>
+</@code></highlightjs-xml>
+          <div.info-block>
+          <p>MarkoJS syntax alows for html class and id shorthands like you can see above.
+          The same code written in pure HTML would be:</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<div class="page-center">
+    <div class="todo-title">todos</div>
+</div>
+</@code></highlightjs-xml>
+      <p>You can read more about this syntax here: TODO</p>
+      </div>
+      <br />
+      <p>Lets also change the title while we are at it.</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<@title>
+    Awly todo app
+</@title>
+</@code></highlightjs-xml>
+
+<div.info-block>
+<p>
+Notice that the title for the page changed and
+this text does not appear anywhere on the page body. This
+is because the page uses the template from <b>src/layouts/vendor/awly/blank/index.marko</b>
+and <b>&#x3C;@title&#x3E;</b> and <b>&#x3C;@body&#x3E;</b>
+are just placeholders. The way the layout gets included is with the include tag:
+</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<include("src/layouts/vendor/awly/blank")>
+    ...
+</include>
+</@code></highlightjs-xml>
+</div>
+<h3>Working with styles</h3>
+<p>
+Now lets start adding styles. Styles can be added to pages, layouts and components and there are 3 posibilities:
+<ul>
+<li>plain CSS</li>
+<li>SASS</li>
+<li>LESS</li>
+</ul>
+</p>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    style {
+        ...
+    }
+
+    style.scss {
+        ...
+    }
+
+    style.less {
+        ...
+    }
+</@code></highlightjs-xml>
+<p>You can use either one of the blocks or all of them.</p>
+<p>Lets add SCSS block to our page</p>
+
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+style.scss {
+    body {
+        background-color: #f5f5f5;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page-center {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-title {
+        font-size: 100px;
+        font-weight: 100;
+        text-align: center;
+        color: rgba(175, 47, 47, 0.15);
+    }
+}
+</@code></highlightjs-xml>
+
+      <div.info-block>
+          <p>
+              Notice that we included the rules for the <b>body</b>
+              tag in the page tamplate although it is defined in the
+              layout template. The rules get applied because <b>Awly does
+              not scope the styles to the template</b>. This might change
+              in the future but for now it is up to you how to sctructure
+              your CSS throughout the templates.
+          </p>
+      </div>
+      <br />
+      <div.success-block>
+          <p><b>Congratulations!</b></p>
+          <p>
+              By now you should have the page looking as the one that
+              we started with on the beginning of this chapter. You can get
+              the complete page template for reference <a>here</a>.
+          </p>
+      </div>
+    </div>
+</div>

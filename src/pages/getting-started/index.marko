@@ -19,156 +19,33 @@
     </@sideBar>
     <@body>
         <div>
-          <!-- <a#about.anchor>
-            <div.hash>#</div>
-            <div.comp-title>What is Awly?</div>
-          </a>
+          <h1.gs__title>Awly.io getting started projects</h1>
 
-          <div.example-desc>
-            <p>
-                Awly is a framework for developing & creating serverless web applications. Right now you can
-                develop your web pages on your localhost machine and deploy them to AWS cloud infrastructure.
-            </p>
-          </div> -->
+          <div.gs__grid-layout>
+              <div.gs__todo-img>
+                  <img src="/assets/img/todo-600/todo-progress-animation.gif" />
+              </div>
+              <div.gs__todo-desc>
+                  <h2>MVC Todo - part 1</h2>
+                  <p>
+                      This is the first in the series of hopefully many more tutorials.
+                      It gives a good overview of what Awly.io is about and covers most
+                      of the concepts to build a serverless dynamic web page.
+                  </p>
+                  <p>You will learn:</p>
+                  <ul>
+                      <li>Starting an Awly project</li>
+                      <li>Page, layout, component structure</li>
+                      <li>MarkoJS templating language</li>
+                      <li>Component state</li>
+                      <!-- <li>Server side rendering</li>
+                      <li>Deploying Awly projects to AWS</li> -->
+                  </ul>
 
-          <a#install.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Install awly & start local server</div>
-          </a>
-
-          <div.example-desc>
-            <h2>Option 1: Run Awly with <a href="https://www.npmjs.com/package/npx">npx</a></h2>
-            <p>The easiest way to create your Awly project is to create an empty folder and inside run the command:</p>
-            <code>npx awly init</code>
-            <p>This will install the awly-cli locally with npm, download the default bootstrap awly project and start the localhost server.</p>
-            <p><i>Note that you will then have to run every <a href="/docs#cli-commands">awly cli command</a> prefixed with npx.</i></p>
-
-            <br />
-            <h2>Option 2: Install Awly as a global npm module</h2>
-            <p>To use Awly as a global npm module you have to use the <span>--unsafe-perm</span> when installing like so:</p>
-            <code>sudo npm i awly -g --unsafe-perm</code>
-            <p>This will make the awly-cli commands available without the use of npx and you can invoke them for example like this:</p>
-            <code>awly serve</code>
-            <p>To create a new awly project make an empty directory and run: <code>awly init</code> inside.</p>
+                  <a href="/getting-started/todo"><button>Get started</button></a>
+              </div>
           </div>
 
-          <br /><br /><br /><br />
-          <a#code-editor.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Code editor</div>
-          </a>
-
-          <div.example-desc>
-            <p>
-                The recomended code editor is <a href="https://atom.io/">Atom</a>
-                together with the <a href="https://github.com/marko-js/atom-language-marko">MarkoJS plugin</a>
-                which provides syntax highlighting for MarkoJS templates. To install it,
-                go to Edit -> Preferences -> Install, search for <strong>language-marko</strong> and click install.
-            </p>
-          </div>
-
-          <a#folder-structure.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Project folder structure</div>
-          </a>
-
-          <div.example-desc>
-            <p>In your project folder the structure will look like this:</p>
-            <p><img src="/assets/img/folder-structure.png" alt="Awly folder structure"/></p>
-            <p>
-                For starting out the most important folder is the <strong>"src"</strong> folder.
-                Inside this folder are all the parts to construct a web page.
-            </p>
-            <p>
-                Each web page is represented as a subfolder in the <strong>"src/pages"</strong>. Your website URLs
-                can be completely different to the folder names so the mapping is defined in the
-                <strong>"project-config/routing.js"</strong> file. <i>Both paths for normal pages as well as for
-                API endpoints are in this file.</i>
-            </p>
-          </div>
-
-          <a#create-page.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Create a new page with the Awly CLI</div>
-          </a>
-
-          <div.example-desc>
-              <p>
-                  To create a new page you can use the <strong>awly page-create</strong> CLI command for example:
-              </p>
-              <p>
-                  <strong>awly page-create contact</strong>
-              </p>
-              <p>
-                  This will create:
-                    <ul>
-                        <li>a new page folder named "contect" in the "src/pages" directory</li>
-                        <li>blank page template file named index.marko inside that folder</li>
-                        <li>a record for "/contact" in the "project-config/routing.js"</li>
-                    </ul>
-              </p>
-
-              <p>
-                  To create a page folder but have it under different URL you add the URL as the second argument to the CLI comand slike so:
-              </p>
-
-              <p>
-                  <strong>awly page-create howto /how-to</strong>
-              </p>
-              <br />
-              <p>
-                  <strong>
-                    <i>Eventhough the routing.js file gets generated by the page-create command
-                    you can still edit it by hand. To change the URLs of the pages for example.</i>
-                  </strong>
-              </p>
-          </div>
-
-          <a#static-page.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Make a static HTML page with MarkoJS templating engine</div>
-          </a>
-          <div.example-desc>
-              <p>
-                  Awly uses the <strong><a href="https://markojs.com">MarkoJS</a></strong> framework to be able to compile web components
-                  into server side part and client side part. How to work with the MarkoJS syntax please take a look at
-                  its documentation at <a href="https://markojs.com/docs/getting-started/">https://markojs.com/docs/getting-started/</a>
-              </p>
-              <p>
-                  <i>If the component is not having any backend functionality there are no differences in the component syntax.</i>
-              </p>
-          </div>
-
-          <a#dynamic-page.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Working with dynamic data</div>
-          </a>
-          <div.example-desc>
-              <p>
-                  Awly extends the MarkoJS framework in a way that it introduces two new code blocks in its component syntax:
-              </p>
-              <ul>
-                  <li>server {...}</li>
-                  <li>server-static {...}</li>
-              </ul>
-              <p>
-                  Those code blocks only get compiled on the server side. You would usually include your backend code like
-                  DB connections, cookie handling, etc. there. To get more insight into that concept you can take a look at
-                  the <b>src/components/vendor/awly/awly-list/index.marko</b> component. This component can be also found
-                  <a href="https://github.com/sirceljm/awly-base/blob/master/src/components/vendor/awly/awly-list/index.marko">here</a>.
-              </p>
-          </div>
-
-          <a#feedback.anchor>
-            <div.hash>#</div>
-            <div.comp-title>Feedback welcome</div>
-          </a>
-          <div.example-desc>
-              <p>
-                  Awly is a very young framework and still in the making. So if you have any questions or suggestions
-                  please join the <a href="https://gitter.im/awly-io/Lobby">gitter channel</a> where I will try my best to help you.
-              </p>
-          </div>
       </div>
     </@body>
     <@footer>
@@ -182,50 +59,32 @@ style.scss {
     margin: 10px 0px;
   }
 
-  code {
+  pre {
     font-size: 15px;
     background-color: #eeeeee;
     padding: 4px;
     border-radius: 4px;
   }
 
-  .anchor {
-      background-color: #f0f1f4;
-      display: block;
-      border-radius: 4px;
-
-      margin-bottom: 10px;
-
-      font-family: monospace, monospace;
-      display: flex;
-      align-items: center;
-
-      &:not(:first-child) {
-          margin-top: 45px;
+  .gs {
+      &__grid-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr;
+          grid-template-areas:
+              "gs__todo-img gs__todo-desc";
+          grid-column-gap: 10px;
       }
 
-      .hash{
-        padding-left: 10px;
-        padding-right: 10px;
-        font-size: 32px;
-        color: #dddddd;
-        display: inline-block;
+      &__todo-img {
+          img {
+              width: 100%;
+          }
       }
 
-      .comp-title {
-        font-size: 24px;
-        color: #2e333e;
-        display: inline-block;
+      &__todo-desc {
+          border-left: 1px solid #00000069;
+          padding: 0px 10px;
       }
-  }
-
-  .example-desc {
-    line-height: 1.6;
-    margin: 20px 0px 40px 0px;
-    font-size: 18px;
-    // border-left: 1px solid purple;
-    border-left: 1px dotted rgba(128, 0, 128, 0.23);
-    padding-left: 10px;
-    margin-left: 2px;
   }
 }

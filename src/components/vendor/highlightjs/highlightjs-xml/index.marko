@@ -1,14 +1,28 @@
 class {
-    onMount(){
-        let hljs = require("highlight.js/lib/highlight.js");
+    onCreate() {
+        this.state = {};
+    }
+
+    onMount() {
+        this.state = JSON.parse(this.getEl().dataset.exports);
+
+        let hljs = require("highlight.js/lib/highlight");
+        hljs.configure({
+            languages: ['markojs']
+        })
+
+        hljs.registerLanguage('css', require('highlight.js/lib/languages/css.js'));
+        hljs.registerLanguage('scss', require('highlight.js/lib/languages/scss.js'));
+        hljs.registerLanguage('less', require('highlight.js/lib/languages/less.js'));
         hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript.js'));
+        hljs.registerLanguage('markojs', require('./marko-grammar.js'));
+
         hljs.highlightBlock(this.getEl().querySelector(".hljs"));
     }
 }
 
-<div>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
-  <pre><code.js.hljs>var foo = "bar";</code></pre>
+<div.highlightjs data-exports=state>
+  <code><pre.hljs.markojs marko-preserve-whitespace><include(input.code)/></pre></code>
 </div>
 
 style {

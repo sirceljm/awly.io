@@ -4,7 +4,8 @@
         "./components/own/t1-general",
         "./components/own/t2-specific",
         "./components/vendor/awly",
-        "./components/vendor/markojs"
+        "./components/vendor/markojs",
+        "./components/vendor/highlightjs"
     ],
     "<script>": {
         "transformer": "./hooks/inline-js-transformer.js"
@@ -32,5 +33,10 @@
     },
     "<*>": {
         "transformer": "./hooks/show-only-in-stage-transformer.js"
+    },
+    "<markojs-code>": {
+        "body": "static-text",
+        "preserve-whitespace": true,
+        "transformer":"./hooks/markojs-code-transformer.js"
     }
 }

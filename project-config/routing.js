@@ -35,6 +35,10 @@ module.exports = {
         "type": "lambda",
         "localEndpoint": "src/pages/getting-started"
     },
+    "/getting-started/todo": {
+        "type": "lambda",
+        "localEndpoint": "src/pages/getting-started_todo"
+    },
     "/privacy-policy": {
         "type": "lambda",
         "localEndpoint": "src/pages/privacy-policy"

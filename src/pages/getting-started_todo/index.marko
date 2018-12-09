@@ -1,0 +1,178 @@
+<include("src/layouts/compact-sidebar")>
+    <@title>
+        Awly.io - Getting started guide
+    </@title>
+    <@meta>
+        <meta name="description" content="A getting started guide for Awly. Quickly learn how to install the framework, develop pages & deploy them to AWS.">
+    </@meta>
+    <@nav>
+        <navigation adjust-logo={scale: 0.6, marginTop: '-33px', marginLeft: '20px'} />
+    </@nav>
+    <@banner>
+        <banner />
+    </@banner>
+    <@message>
+        <message />
+    </@message>
+    <@sideBar>
+      <get-started-menu />
+    </@sideBar>
+    <@body>
+        <div>
+          <a#install.anchor>
+            <div.hash>#</div>
+            <div.comp-title>Setup</div>
+          </a>
+
+          <div.example-desc>
+            <h2>Setup your Awly project with <a href="https://www.npmjs.com/package/npx">npx</a></h2>
+            <p>The easiest way to create your Awly project is to create an empty folder and inside run the command:</p>
+            <code>npx awly init</code>
+            <p>This will install the awly-cli locally with npm, download the default bootstrap awly project and start the localhost server.</p>
+            <p><i>Note that you will then have to run every <a href="/docs#cli-commands">awly cli command</a> prefixed with npx.</i></p>
+
+            <br />
+            <h2>Code editor</h2>
+              <p>
+                  The recomended code editor is <a href="https://atom.io/">Atom</a>
+                  together with the <a href="https://github.com/marko-js/atom-language-marko">MarkoJS plugin</a>
+                  which provides syntax highlighting for MarkoJS templates. To install it,
+                  go to Edit -> Preferences -> Install, search for <strong>language-marko</strong> and click install.
+              </p>
+          </div>
+
+          <a#todo_starting-page.anchor>
+            <div.hash>#</div>
+            <div.comp-title>Starting page</div>
+          </a>
+
+          <include("../../../src/pages/getting-started_todo/step1") />
+
+          <a#todo_starting-page.anchor>
+              <div.hash>#</div>
+              <div.comp-title>Start your first component</div>
+          </a>
+
+          <include("../../../src/pages/getting-started_todo/step2") />
+
+          <a#todo_starting-page.anchor>
+              <div.hash>#</div>
+              <div.comp-title>Adding more features</div>
+          </a>
+
+          <include("../../../src/pages/getting-started_todo/step3") />
+
+      </div>
+    </@body>
+    <@footer>
+        <footer />
+    </@footer>
+</include>
+
+style.scss {
+  p {
+    font-size: 15px;
+    margin: 10px 0px;
+  }
+
+  pre {
+    font-size: 15px;
+    background-color: #eeeeee;
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  .anchor {
+      background-color: #f0f1f4;
+      display: block;
+      border-radius: 4px;
+
+      margin-bottom: 10px;
+
+      font-family: monospace, monospace;
+      display: flex;
+      align-items: center;
+
+      &:not(:first-child) {
+          margin-top: 45px;
+      }
+
+      .hash{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 32px;
+        color: #dddddd;
+        display: inline-block;
+      }
+
+      .comp-title {
+        font-size: 24px;
+        color: #2e333e;
+        display: inline-block;
+      }
+  }
+
+  .info-block {
+        background-color: #e6f2ff;
+        border: 1px solid #cee6ff;
+        border-radius: 4px;
+        padding: 10px;
+        padding-bottom: 0px;
+
+        > .highlightjs {
+            margin: 0px -11px;
+            border-radius: 0px;
+
+            pre {
+                border-radius: 0px;
+            }
+        }
+  }
+
+  .success-block {
+        background-color: #e6ffe5;
+        border: 1px solid #cdffcc;
+        border-radius: 4px;
+        padding: 0px 10px;
+
+        p {
+            font-size: 18px;
+        }
+        > .highlightjs {
+            margin: 0px -11px;
+            border-radius: 0px;
+
+            pre {
+                border-radius: 0px;
+            }
+        }
+  }
+
+  .example-desc {
+    line-height: 1.6;
+    margin: 20px 0px 40px 0px;
+    font-size: 18px;
+    // border-left: 1px solid purple;
+    border-left: 1px dotted rgba(128, 0, 128, 0.23);
+    padding-left: 10px;
+    margin-left: 2px;
+
+    &--flex {
+        display: flex;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+    &__left {
+        flex: 0 0 240px;
+        margin-right: 25px;
+    }
+
+    &__right {
+        flex: 1 0;
+    }
+  }
+}

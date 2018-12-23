@@ -62,7 +62,7 @@ class {
     }
 }
 
-<div id:scoped data-exports=(!isServer ? importExports(component) : null)>
+<div data-exports=(!isServer ? importExports(component) : null)>
   <!-- <await(exports from (isServer ? exportsPromise : state))> -->
     <span data-exports:no-update=JSON.stringify((isServer ? exportsPromise : state))></span>
     <div.progressive-image-wrap>

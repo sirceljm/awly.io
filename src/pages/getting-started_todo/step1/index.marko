@@ -4,19 +4,19 @@
     </div>
     <div.example-desc__right>
         <p>
-            First, lets edit the landing page and make it display the title and background.
-            In this task you will learn how the basic page is constructed and how to apply CSS
-            to it.
+            Let us start with creating a starting page and make it display the title and background. In this task, you will learn how to make a static page with awly and how to apply CSS to it.
         </p>
         <p>
-            You can find the page in <b>/src/pages/home/index.marko</b>. We will be mostly editing this file for now.
+            You can find the page in /src/pages/home/index.marko. We will be editing this file for the most part.
         </p>
         <p>
-            The templating language awly.io uses is MarkoJS. You can read about its syntax in the official docs.
+            The templating language in use is MarkoJS. You can read about its syntax in the official docs.
         </p>
-        <h3>Making our first page:</h3>
+        <h3>
+            Making your first page:
+        </h3>
         <p>
-            Your body section in the template will look like this:
+            Your body section in the template should look like this like this at the start:
         </p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 <include("src/layouts/vendor/awly/blank")>
@@ -28,7 +28,7 @@
     </@body>
 </include>
 </@code></highlightjs-xml>
-      <p>Lets add markup for the "todos" title. Replace the <b>&#x3C;@body&#x3E;</b> contents with the code below.</p>
+      <p>Let's add markup for the "todos" title. Replace the <b>&#x3C;@body&#x3E;</b> contents with the code below.</p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 <@body>
     <div.page-center>
@@ -37,17 +37,20 @@
 </@body>
 </@code></highlightjs-xml>
           <div.info-block>
-          <p>MarkoJS syntax alows for html class and id shorthands like you can see above.
-          The same code written in pure HTML would be:</p>
+          <p>
+              MarkoJS syntax allows for HTML class and id shorthands like you can see above. The same code written in pure HTML would be:
+          </p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 <div class="page-center">
     <div class="todo-title">todos</div>
 </div>
 </@code></highlightjs-xml>
-      <p>You can read more about this syntax here: TODO</p>
+      <p>
+        You can read more about this syntax here:
+      <a href="https://markojs.com/docs/syntax/">MarkoJS Syntax</a></p>
       </div>
       <br />
-      <p>Lets also change the title while we are at it.</p>
+      <p>Let's also change the title while we are at it.</p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 <@title>
     Awly todo app
@@ -70,7 +73,7 @@ are just placeholders. The way the layout gets included is with the include tag:
 </div>
 <h3>Working with styles</h3>
 <p>
-Now lets start adding styles. Styles can be added to pages, layouts and components and there are 3 posibilities:
+Styles can be added to pages, layouts, and components and there are 3 possibilities:
 <ul>
 <li>plain CSS</li>
 <li>SASS</li>
@@ -91,7 +94,7 @@ Now lets start adding styles. Styles can be added to pages, layouts and componen
     }
 </@code></highlightjs-xml>
 <p>You can use either one of the blocks or all of them.</p>
-<p>Lets add SCSS block to our page</p>
+<p>Let's add SCSS block to our page.</p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 style.scss {
@@ -121,10 +124,10 @@ style.scss {
       <div.info-block>
           <p>
               Notice that we included the rules for the <b>body</b>
-              tag in the page tamplate although it is defined in the
+              tag in the page template although we have it defined in the
               layout template. The rules get applied because <b>Awly does
               not scope the styles to the template</b>. This might change
-              in the future but for now it is up to you how to sctructure
+              in the future, but for now, it is up to you how to structure
               your CSS throughout the templates.
           </p>
       </div>
@@ -132,8 +135,8 @@ style.scss {
       <div.success-block>
           <p><b>Congratulations!</b></p>
           <p>
-              By now you should have the page looking as the one that
-              we started with on the beginning of this chapter. You can get
+              By now you should have the page looking like the one that
+              we started with at the beginning of this chapter. You can get
               the complete page template for reference <a>here</a>.
           </p>
       </div>

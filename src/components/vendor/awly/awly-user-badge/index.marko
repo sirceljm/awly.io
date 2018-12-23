@@ -77,7 +77,7 @@ class {
   }
 }
 
-<div.awly-user-badge id:scoped data-exports=(!isServer ? importExports(component) : null)>
+<div.awly-user-badge data-exports=(!isServer ? importExports(component) : null)>
   <span data-exports:no-update=JSON.stringify((isServer ? exportsPromise : state))></span>
   <span>
     <if(state.firstName || state.lastName)>

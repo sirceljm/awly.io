@@ -52,7 +52,7 @@ class {
     }
 }
 
-<div id:scoped data-exports=(exportsJSON ? exportsJSON : importExports(component))> <!-- data-exports <- import data from server rendered component -->
+<div data-exports=(exportsJSON ? exportsJSON : importExports(component))> <!-- data-exports <- import data from server rendered component -->
     <await(posts from postsPromise)>
         <for(post in posts)>
             <div>${post.text}</div>

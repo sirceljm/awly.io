@@ -134,20 +134,16 @@ module.exports = function(hljs) {
             },
             {
                 begin: /class\s*\{/, end: /\}/,
-                keywords: "class",
-                contains: [
-                    {
-                        begin: /[A-Za-z$_][0-9A-Za-z$_]*\(\)/,
-                        keywords: "onCreate onMount",
-                        end: /\}/,
-                        relevance: 0,
-                        contains: [{
-                            begin: /\{/, end: /\}/,
-                            relevance: 0,
-                            contains: js.contains.concat("self")
-                        }]
-                    }
-                ]
+                // keywords: "class",
+                contains: [{
+                    className: "selector-class",
+                    begin: /\s*[A-Za-z]*\([A-Za-z\,\.\s]*\)\s*\{/, end: /\}/,
+                    returnBegin: true,
+                    contains: [{
+                        begin: /\{/, end: /\}/,
+                        className: "selector-id", relevance: 0, contains: js.contains.concat("self")
+                    }].concat(js.contains)
+                }]
 
                 // contains:[createBlock({
                 //     begin: /[A-Za-z$_][0-9A-Za-z$_]*\(\)\s*\{/, end: /\}/,

@@ -3,11 +3,10 @@
       <div><img src="/assets/img/todo/step2.3.png" /></div>
   </div>
   <div.example-desc__right>
-      <p>
-          Now that we have our component MVP. Lets add some other features:
-          In this chapter we will be adding features to make the component
+      <!--<p>
+          Our component MVP is ready. We will be adding features to make the component
           look and behave exactly like in the
-          <a href="http://http://todomvc.com/" target="_blank">TodoMVC</a>
+          <a href="http://todomvc.com/" target="_blank">TodoMVC</a>
           examples.
       </p>
 
@@ -49,17 +48,17 @@ style.scss {
 </@code></highlightjs-xml>
 
         <p>
-            Next lets make a chackbox on the left side for each of the added todos.
-            This checkbox will serve the purpose of marking the todo as completed.
+            The checkbox on the left side for each of the added todos will
+            serve the purpose of marking the todo as completed.
         </p>
 
         <p>
-            Now we have added more logic to our component as todos have now two
-            different states. We will meet this requirement by changing the definition
-            of the todos array in state. Right now we have the array of strings and
-            we will change it to the array of objects. We will also add toggleTodoStatus
-            function to our class definition and fix the "addTodoOnEnter" function
-            to add the todo object to the array instead of string.
+            Now we have added more logic to our component as todos have now
+            two different states. Change the definition of the todos array
+            in the component state to meet this requirement. Let's make it
+            an array of objects instead. Also, let's add toggleTodoStatus
+            function to our class definition and fix the "addTodoOnEnter"
+            function to add the todo object to the array instead of a string.
         </p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -103,9 +102,9 @@ class {
 </@code></highlightjs-xml>
 
     <p>
-        Now that we have done that out HTML templat will not work anymore
-        because we are calling for the todo text directly from the array.
-        Lets change that as well and also add the markup for the checkbox.
+      Now that we have done that out HTML template does not work anymore
+      because we are calling for the todo text directly from the array.
+      Let's change that as well and also add the markup for the checkbox.
     </p>
 
     <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -164,8 +163,8 @@ style.scss {
 </@code></highlightjs-xml>
 
     <p>
-        As you can see the CSS  above uses the SVG assets so you can download them
-        here and include them into <b>"assets/svg"</b> folder:
+        As you can see the CSS  above uses the SVG assets which you can
+        download here and include them into <b>"assets/svg"</b> folder:
     </p>
 
 
@@ -173,9 +172,10 @@ style.scss {
     <span><img src="/assets/svg/todo-incomplete.svg" style="width: 40px;" /></span>
 
     <p>
-        Now that we have our active/completed checkboxes and logic lets also add
-        the filters to the footer so we can swithc between the states and filter our
-        todos. We will be adding  filters for 3 states: All, Active and Completed.
+        Now that we have our active/completed checkboxes and logic lets
+        also add the filters to the footer so we can switch between the
+        states and filter our todos. We will be adding filters for 3
+        states: All, Active and Completed.
     </p>
 
     <p>
@@ -255,11 +255,11 @@ style.scss {
 </@code></highlightjs-xml>
 
     <p>
-        As you can see we are invoking the <b>"setShowTodosState"</b> whenever
-        user clicks on one of the filter buttons. Lets make this function right now.
-        This function will set the variable in component state to keep track of
-        which todo state is selected. We also have to introduce this variable in
-        the state object.
+      As you can see we are invoking the <b>"setShowTodosState"</b> whenever
+      a user clicks on one of the filter buttons. Let's make this function right now.
+      This function sets the variable in the component state to keep track of
+      which todo state is selected. We also have to introduce this variable
+      in the state object.
     </p>
 
     <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -288,11 +288,11 @@ class {
     </@code></highlightjs-xml>
 
     <p>
-        It is actually quite easy to change the component to display only the
-        todos for the selected state. All we have to do is make the function that
-        will filter the todos array and return only todos with the state that we
-        want to see. Then we just wrap our todos array with this function in the
-        HTML template.
+      It is quite easy to change the component to display only the
+      todos for the selected state. All we have to do is make the
+      function that will filter the todos array and return only todos
+      with the state that we want to see. Then we wrap our todos
+      array with this function in the HTML template.
     </p>
 
     <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -319,11 +319,11 @@ class {
 </@code></highlightjs-xml>
 
     <p>
-        Now that we have implemented the filters lets also fix some things. First,
-        the text on th left side of the footer is still showing that there are
-        all todos left even if we completed something. We can easily fix this with
-        our "filterTodos" function. The other issue is that the HTML template
-        changed a bit and we need to fix the CSS.
+      Now that we have implemented the filters lets also fix some things. First,
+      the text on the left side of the footer is still showing that there are
+      all todos left even if we completed something. We can quickly fix this
+      with our "filterTodos" function. The other issue is that the HTML template
+      changed a bit and we need to fix the CSS.
     </p>
 
     <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -354,18 +354,18 @@ style.scss {
 </@code></highlightjs-xml>
 
         <p>
-            Now lets add the functionality for removing todos and to clear all
-            completed todos. We will first create two functions that will manipulate
-            the state.todos array. Since our component is getting quite complex
-            we will have to change the todos array again a little bit. But this
-            will be the last time.
+          To add the functionality for removing todos and clearing all
+          the completed todos, we create two functions that manipulate
+          the state.todos array. Since our component is getting quite
+          complex, we have to change the todos array again a little bit.
+          However, this is the last time in this tutorial.
         </p>
 
         <p>
-            Since we can delete a todo from any of the filtered views we cannot
-            rely on the position of the object in the state.todos array. To solve
-            this problem we will add the <b>id</b> propery to our todo objects and
-            a counter of which is the last todo id.
+          Since we can delete a todo from any of the filtered views, we cannot
+          rely on the position of the object in the state.todos array. To solve
+          this problem, we add the <b>id</b> property to our todo objects and
+          the counter of which is the last todo id.
         </p>
 
     <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -406,9 +406,9 @@ class {
 </@code></highlightjs-xml>
 
     <p>
-        Now lets add the delete and clear all functions. We will call them
-        <b>"removeTodo"</b> and <b>"clearCompleted"</b> lets add them to our class
-        definition.
+      Now let's add the delete and clear all functions called
+      <b>"removeTodo"</b> and <b>"clearCompleted"</b> lets add them to our class
+      definition.
     </p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -457,9 +457,9 @@ class {
 </@code></highlightjs-xml>
 
     <p>
-        Now we have just a complete all button and editing of todos on
-        double click left. Lets first do the complete all button and leave the
-        more complex task for last.
+      We left the "complete all" button and editing of todos on double
+      click for last. Let's first do the complete all button and leave
+      the more complex task for last.
     </p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -515,8 +515,8 @@ style.scss {
     </p>
 
     <p>
-        Lets add another property to the component state object that will keep track
-        of which todo we are editing.
+      Let's add another property to the component state object to keep track
+      of which todo we are editing.
     </p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>class {
@@ -532,8 +532,8 @@ style.scss {
 </@code></highlightjs-xml>
 
     <p>
-        Editing the todo in place will require quite a lot more logic in the HTML
-        template than before so lets replace the todo item block altogether.
+        Editing the todo in place requires quite a lot more logic in the HTML
+        template than before. Replace the todo item block altogether.
     </p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -575,7 +575,7 @@ style.scss {
 </@code></highlightjs-xml>
 
 <p>
-    More CSS rules will be required as well to display the edit box propperly.
+    More CSS rules are required as well to display the edit box correctly.
 </p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 style.scss {
@@ -636,17 +636,41 @@ style.scss {
         For the finish we need to add the functions into our code for:
     </p>
     <ul>
-        <li>Saving the edited TODO on enter key</li>
-        <li>Showing the showing the textbox on doubleclick</li>
-        <li>Putting text cursor on the end of TODO when user starts editing</li>
-        <li>Disabling the editing when user clicks outside textbox</li>
+        <li>Saving the edited TODO on the enter key</li>
+        <li>Showing the showing the textbox on double-click</li>
+        <li>Putting text cursor on the end of TODO when the user starts editing</li>
+        <li>Disabling the editing when the user clicks outside the textbox</li>
     </ul>
     <p>
         All we need to do is to add those functions to the class definition
-    </p>
+    </p> -->
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 class {
-    ...
+    onCreate() {
+        this.state = {
+            todos: [{
+                text: 'Buy milk',
+                completed: true
+            },{
+                text: 'Clean the house',
+                completed: false
+            },{
+                text: 'Walk the dog',
+                completed: false
+            }],
+            showTodosState: 'all'
+        };
+    }
+  }
+}}}}}
+    </@code>
+</highlightjs-xml>
+<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+class {
+  onCreate(){
+    var i = 0;
+  }
+
     editTodoOnEnter(todoId, event, input){
         if(event.keyCode === 13){
             this.state.editingTodo = null;
@@ -678,17 +702,17 @@ class {
     finishEditing(event){
         this.state.editingTodo = null;
     }
-}
+}}}}}}
 </@code></highlightjs-xml>
 
     <div.success-block>
         <p><b>Congratulations!</b></p>
         <p>
-            This is it! You completed the first chapter of the tutorial on how to
-            develop a todo app with awly.io and MarkoJS templating language.
+            This is it! You completed the first chapter of the tutorial on
+            how to develop a todo app with awly.io and MarkoJS templating language.
         </p>
         <p>
-            Although we covered alot, we only scraped the surface of awly.io
+            Although we covered a lot, we only scraped the surface of awly.io
             possibilities. We only covered the development of the frontend
             part. Stay tuned for further todo app tutorial chapters on
             <b>deploying your app to AWS cloud and making use of backend

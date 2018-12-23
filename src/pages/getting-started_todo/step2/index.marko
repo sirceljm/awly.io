@@ -10,21 +10,20 @@
 
       <div.info-block>
           <p>
-              The paths for components folders are actually configuarbale and
-              can be configured in the <b>src/marko.json</b> file.
+              The paths for components folders are configurable.
+              You can change the configuration in the <b>src/marko.json</b> file.
           </p>
       </div>
       <p>
-          So lets make a new <b>todo</b> folder in <b>src/components/own</b> and put the
-          index.marko template file inside. So that the component will not be empty lets
-          put some placeholder markup inside for now:
+          Let's make a new <b>todo</b> folder in <b>src/components/own</b> and put the
+          index.marko template file inside. For now, put just a placeholder markup inside:
       </p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 <div>This is a todo component</div>
 </@code></highlightjs-xml>
       <p>
-          <i><b>Currently you have to restart the awly server when you create new components.
-              Otherwist they wont get picked up</b></i>
+          <i><b>Currently, you have to restart the awly server when you create new components.
+              Otherwise they won't get picked up</b></i>
       </p>
 
       <p>Now lets include the component into our page - src/pages/home/index.marko.</p>
@@ -38,18 +37,18 @@
 </@code></highlightjs-xml>
       <div.info-block>
           <p>
-              The name of the component will be the same as the name of the component folder.
+              The name of the component folder translates to the name of the component in the HTML.
               As two folders can have the same names in this configuration, make sure that
               components have unique names.
           </p>
       </div>
       <p>
-          Now that we got our componet displaying on the page lets start developing
+          Now that we got our component displaying on the page lets start developing
           the actual functionality for the todo component.
       </p>
 
       <p>
-          Lets replace the current compoent HTML with the one that will display a
+          Let's replace the current component HTML with the one with a
           textbox for out todo input.
       </p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -60,14 +59,14 @@
 </div>
 </@code></highlightjs-xml>
         <p>
-            We wont start styling the input box yet but let first make the JS logic
+            We won't start styling the input box yet but let first make the JS logic
             for listening to the ENTER key and getting the value from the input box.
         </p>
         <p>
             To add JS logic to our component we first need to include the <b>"class"</b>
-            block. Inside that block we can define our functions. For out case we for now
-            only need the "addTodoOnEnter" function which we will invoke with the
-            <b>"on-keypress"</b> attribute on input field.
+            block. Inside that block, we can define our functions. For our case, we for now
+            only need the "addTodoOnEnter" function which gets called on the
+            <b>"on-keypress"</b> event on the input field.
         </p>
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
 class {
@@ -93,8 +92,8 @@ class {
         <div.info-block>
             <p>
                 <b>"class"</b> is the main section for defining JS code in your components. Awly
-                introduces some new blocks like "server" and "server-static" for the purpose of
-                more powerful server side rendering. There is more in-depth guide for those blocks
+                introduces some new blocks like "server" and "server-static" for
+                more powerful server-side rendering. There is a more in-depth guide for those blocks
                 later in the tutorial.
             </p>
             <hr />
@@ -112,25 +111,25 @@ class {
 </@code></highlightjs-xml>
 
             <p>
-                We will go into detail about this methods in this tutorial.
+                We will go into detail about these methods in this tutorial.
             </p>
         </div>
 
         <p>
-            Right now we get the output to the console but we dont do anything with it. We want
-            to store the todos as an array of strings. For that we will use the component state.
+            Right now we get the output to the console, but we dont do anything with it. We want
+            to store the todos as an array of strings. For that, let's use the component state.
         </p>
 
         <div.info-block>
             <p>
-                The componet state is a simple JS object which we can access in the component HTML
+                The component state is a simple JS object which we can access in the component HTML
                 markup through <b>"state"</b> variable.
             </p>
         </div>
 
         <p>
-            Lets define our state in the onCreate lifecycle hook and include the for loop tag in
-            our HTML. For now lets define some default todos. Our componet should look like this:
+            Let's define our state in the onCreate lifecycle hook and include the for loop tag in
+            our HTML, and define some default todos. Our component should look like this:
         </p>
 
 <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
@@ -164,8 +163,8 @@ class {
 </@code></highlightjs-xml>
 
         <p>
-            Our todos are displaying in the list but we still cannot add the todo
-            from the input box. To make it work we now need to push the todo to the
+            Our todos are displaying in the list, but we still cannot add the todo
+            from the input box. To make it work, we now need to push the todo to the
             <b>"state.todos"</b> array. For this we need a small modification to our
             <b>"addTodoOnEnter()"</b> function:
         </p>
@@ -180,8 +179,8 @@ addTodoOnEnter(event, input){
 </@code></highlightjs-xml>
 
         <p>
-            Now that the basic functionality of the component is working lets just
-            add the styling to make it preety. The whole component template file should look
+            Now that the basic functionality of the component is working it is time to
+            add the styling to it. The whole component template file should look
             something like this in the end:
         </p>
 

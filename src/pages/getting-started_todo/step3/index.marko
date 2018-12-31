@@ -3,7 +3,7 @@
       <div><img src="/assets/img/todo/step2.3.png" /></div>
   </div>
   <div.example-desc__right>
-      <!--<p>
+      <p>
           Our component MVP is ready. We will be adding features to make the component
           look and behave exactly like in the
           <a href="http://todomvc.com/" target="_blank">TodoMVC</a>
@@ -17,7 +17,7 @@
           styles.scss block inside the ".todo" selector.
       </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 ...
 <div.todo__list>
     <for(todo in state.todos)>
@@ -45,7 +45,7 @@ style.scss {
         }
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
         <p>
             The checkbox on the left side for each of the added todos will
@@ -61,7 +61,7 @@ style.scss {
             function to add the todo object to the array instead of a string.
         </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
     onCreate(){
         this.state = {
@@ -99,7 +99,7 @@ class {
     }
 
     ...
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
       Now that we have done that out HTML template does not work anymore
@@ -107,7 +107,7 @@ class {
       Let's change that as well and also add the markup for the checkbox.
     </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 <for(todo in state.todos)>
     <div.todo__item
         class="${todo.completed ? 'todo__item--completed' : ''}">
@@ -119,13 +119,13 @@ class {
        <span>${todo.text}</span>
     </div>
 </for>
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
         And also the styles for the checkboxes.
     </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 style.scss {
     .todo {
         ...
@@ -160,7 +160,7 @@ style.scss {
         }
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
         As you can see the CSS  above uses the SVG assets which you can
@@ -182,7 +182,7 @@ style.scss {
         Lets first add the template markup and deal with the logic later.
     </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 ...
 <div.todo__footer>
     $ var itemsLeft = state.todos.length;
@@ -252,7 +252,7 @@ style.scss {
         }
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
       As you can see we are invoking the <b>"setShowTodosState"</b> whenever
@@ -262,7 +262,7 @@ style.scss {
       in the state object.
     </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 class {
     onCreate() {
         this.state = {
@@ -285,7 +285,7 @@ class {
         this.state.showTodosState = todoState;
     }
 }
-    </@code></highlightjs-xml>
+    </markojs-code>
 
     <p>
       It is quite easy to change the component to display only the
@@ -295,7 +295,7 @@ class {
       array with this function in the HTML template.
     </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 class {
     ...
 
@@ -316,7 +316,7 @@ class {
         ...
     </for>
 ...
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
       Now that we have implemented the filters lets also fix some things. First,
@@ -326,7 +326,7 @@ class {
       changed a bit and we need to fix the CSS.
     </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 <div.todo__footer>
     $ var todosActive = component.filterTodos(state.todos, 'active');
     $ var todosLeft = todosActive.length;
@@ -351,7 +351,7 @@ style.scss {
         }
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
         <p>
           To add the functionality for removing todos and clearing all
@@ -368,7 +368,7 @@ style.scss {
           the counter of which is the last todo id.
         </p>
 
-    <highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+    <markojs-code>
 class {
     onCreate(){
         this.state = {
@@ -403,7 +403,7 @@ class {
 
     ...
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
       Now let's add the delete and clear all functions called
@@ -411,7 +411,7 @@ class {
       definition.
     </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
     ...
     removeTodo(todoId, event){
@@ -454,7 +454,7 @@ class {
     </div>
 
    ...
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
       We left the "complete all" button and editing of todos on double
@@ -462,7 +462,7 @@ class {
       the more complex task for last.
     </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
     ...
 
@@ -507,7 +507,7 @@ style.scss {
     }
 
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
         To finish this part of the tutorial we need to do only one more thing,
@@ -519,7 +519,7 @@ style.scss {
       of which todo we are editing.
     </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>class {
+<markojs-code>class {
     onCreate(){
         this.state = {
             ...
@@ -529,14 +529,14 @@ style.scss {
     }
     ...
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
         Editing the todo in place requires quite a lot more logic in the HTML
         template than before. Replace the todo item block altogether.
     </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 ...
 <div.todo__list>
     <for(todo in
@@ -572,12 +572,12 @@ style.scss {
     </for>
 </div>
 ...
-</@code></highlightjs-xml>
+</markojs-code>
 
 <p>
     More CSS rules are required as well to display the edit box correctly.
 </p>
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 style.scss {
     ...
     .hidden {
@@ -630,7 +630,7 @@ style.scss {
         z-index: 1;
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
     <p>
         For the finish we need to add the functions into our code for:
@@ -643,9 +643,9 @@ style.scss {
     </ul>
     <p>
         All we need to do is to add those functions to the class definition
-    </p> -->
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
-class {
+    </p>
+<markojs-code>
+
     onCreate() {
         this.state = {
             todos: [{
@@ -661,11 +661,8 @@ class {
             showTodosState: 'all'
         };
     }
-  }
-}}}}}
-    </@code>
-</highlightjs-xml>
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+</markojs-code>
+<markojs-code>
 class {
   onCreate(){
     var i = 0;
@@ -702,9 +699,7 @@ class {
     finishEditing(event){
         this.state.editingTodo = null;
     }
-}}}}}}
-</@code></highlightjs-xml>
-
+</markojs-code>
     <div.success-block>
         <p><b>Congratulations!</b></p>
         <p>

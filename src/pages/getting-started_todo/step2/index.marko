@@ -18,23 +18,23 @@
           Let's make a new <b>todo</b> folder in <b>src/components/own</b> and put the
           index.marko template file inside. For now, put just a placeholder markup inside:
       </p>
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 <div>This is a todo component</div>
-</@code></highlightjs-xml>
+</markojs-code>
       <p>
           <i><b>Currently, you have to restart the awly server when you create new components.
               Otherwise they won't get picked up</b></i>
       </p>
 
       <p>Now lets include the component into our page - src/pages/home/index.marko.</p>
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 <@body>
     <div.page-center>
         <div.todo-title>todos</div>
         <todo />
     </div>
 </@body>
-</@code></highlightjs-xml>
+</markojs-code>
       <div.info-block>
           <p>
               The name of the component folder translates to the name of the component in the HTML.
@@ -51,13 +51,13 @@
           Let's replace the current component HTML with the one with a
           textbox for out todo input.
       </p>
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 <div.todo>
     <div.todo__input>
         <input type="text" placeholder="What needs to be done?" />
     </div>
 </div>
-</@code></highlightjs-xml>
+</markojs-code>
         <p>
             We won't start styling the input box yet but let first make the JS logic
             for listening to the ENTER key and getting the value from the input box.
@@ -68,7 +68,7 @@
             only need the "addTodoOnEnter" function which gets called on the
             <b>"on-keypress"</b> event on the input field.
         </p>
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
    addTodoOnEnter(event, input){
        if(event.keyCode === 13){ // ENTER key
@@ -84,7 +84,7 @@ class {
                on-keypress("addTodoOnEnter") />
     </div>
 </div>
-</@code></highlightjs-xml>
+</markojs-code>
         <p>
             Now you should see the output in the browser console whenever you press the enter key.
         </p>
@@ -102,13 +102,13 @@ class {
                 are:
             </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
    onCreate(){ ... }
    onInput(input){ ... }
    onMount(){ ... }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
             <p>
                 We will go into detail about these methods in this tutorial.
@@ -132,7 +132,7 @@ class {
             our HTML, and define some default todos. Our component should look like this:
         </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
     onCreate(){
         this.state = {
@@ -160,7 +160,7 @@ class {
         </for>
     </div>
 </div>
-</@code></highlightjs-xml>
+</markojs-code>
 
         <p>
             Our todos are displaying in the list, but we still cannot add the todo
@@ -169,14 +169,14 @@ class {
             <b>"addTodoOnEnter()"</b> function:
         </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 addTodoOnEnter(event, input){
     if(event.keyCode === 13){
         this.state.todos = this.state.todos.concat(input.value);
         input.value = "";
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
 
         <p>
             Now that the basic functionality of the component is working it is time to
@@ -184,7 +184,7 @@ addTodoOnEnter(event, input){
             something like this in the end:
         </p>
 
-<highlightjs-xml><@code marko-body="static-text"  marko-preserve-whitespace>
+<markojs-code>
 class {
     onCreate(){
         this.state = {
@@ -282,6 +282,6 @@ style.scss {
         }
     }
 }
-</@code></highlightjs-xml>
+</markojs-code>
   </div>
 </div>

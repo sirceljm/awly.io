@@ -1,0 +1,41 @@
+.marko-code-block {
+    width:100%;
+    position:relative;
+}
+
+.marko-code-block .code {
+    width:100%;
+}
+
+.marko-code-block .code.html,
+body.concise .marko-code-block .code.concise {
+    display:block;
+}
+
+.marko-code-block .code.concise,
+body.concise .marko-code-block .code.html {
+    display:none;
+}
+
+.marko-code-block .switch-syntax {
+    font-size: 0.8em;
+    position:absolute;
+    top:0.4em;
+    right:0.4em;
+    padding:0.9em;
+    border:0;
+    background-color:rgba(78,80,82,0.8);
+    color:#eceef0;
+    cursor:pointer;
+    outline:0;
+}
+
+.marko-code-block .switch-syntax:hover {
+    background-color:rgba(98,100,102,0.9);
+    color:#fff;
+}
+
+.marko-code-block pre .line:first-child:after {
+    content:' ';
+    margin-right:8em;
+}

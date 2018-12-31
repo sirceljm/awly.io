@@ -1,3 +1,6 @@
+.idea
+.lambdas
+
 # Logs
 logs
 *.log

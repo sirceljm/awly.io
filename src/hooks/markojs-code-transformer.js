@@ -1,35 +1,27 @@
 var fs = require("fs");
-var Highlights = require("highlights");
-var prettyprint = require("marko-prettyprint");
+var Highlights = require("awly-code-highlighter");
+// var prettyprint = require("marko-prettyprint");
 var resolveFrom = require("resolve-from");
 var redent = require("redent");
-const localStorageUtil = require("~/util/localstorage");
+// const localStorageUtil = require("~/util/localstorage");
 const syntaxSwitchEnabled = true;
 
 var highlighter = new Highlights();
 
-highlighter.requireGrammarsSync({
-    modulePath: require.resolve("language-css/package.json")
-});
-
-highlighter.requireGrammarsSync({
-    modulePath: require.resolve("language-javascript/package.json")
-});
-
-highlighter.requireGrammarsSync({
-    modulePath: require.resolve("language-html/package.json")
-});
+// highlighter.requireGrammarsSync({
+//     modulePath: require.resolve("language-css/package.json")
+// });
+//
+// highlighter.requireGrammarsSync({
+//     modulePath: require.resolve("language-javascript/package.json")
+// });
+//
+// highlighter.requireGrammarsSync({
+//     modulePath: require.resolve("language-html/package.json")
+// });
 
 highlighter.requireGrammarsSync({
     modulePath: require.resolve("language-marko/package.json")
-});
-
-highlighter.requireGrammarsSync({
-    modulePath: require.resolve("react/package.json")
-});
-
-highlighter.requireGrammarsSync({
-    modulePath: require.resolve("language-shellscript/package.json")
 });
 
 module.exports = function(el, context) {
@@ -47,8 +39,8 @@ module.exports = function(el, context) {
         code = fs.readFileSync(file, "utf-8");
         lang = file.slice(file.lastIndexOf(".") + 1);
     } else {
-        code = el.body.firstChild.argument.value;
-        lang = el.getAttributeValue("lang").value;
+        code = el.body.array[0].argument.value;
+        lang = "marko";
     }
 
     if (lang === "js" || lang === "javascript" || lang === "json") {
@@ -89,7 +81,7 @@ module.exports = function(el, context) {
         });
     }
 
-    context.addDependency(require.resolve("~/global-style/syntax.css"));
+    // context.addDependency(require.resolve("~/global-style/syntax.css"));
 
     var prev = getPreviousNonWhitespaceNode(el);
     var prevIsParagraph = prev && prev.tagName === "p";
@@ -111,19 +103,19 @@ module.exports = function(el, context) {
         prev.replaceWith(fileNameDiv);
     }
 
-    if (syntaxSwitchEnabled && !context.data.markoSyntaxScriptAdded) {
-        const key = localStorageUtil.getMarkoWebsiteKey("syntax");
-        el.insertSiblingBefore(
-            builder.html(
-                builder.literal(`<script>
-            if(localStorage.getItem('${key}') === 'concise') {
-                document.body.classList.add('concise');
-            }
-        </script>`)
-            )
-        );
-        context.data.markoSyntaxScriptAdded = true;
-    }
+    // if (syntaxSwitchEnabled && !context.data.markoSyntaxScriptAdded) {
+    //     const key = localStorageUtil.getMarkoWebsiteKey("syntax");
+    //     el.insertSiblingBefore(
+    //         builder.html(
+    //             builder.literal(`<script>
+    //         if(localStorage.getItem('${key}') === 'concise') {
+    //             document.body.classList.add('concise');
+    //         }
+    //     </script>`)
+    //         )
+    //     );
+    //     context.data.markoSyntaxScriptAdded = true;
+    // }
 
     function getPreviousNonWhitespaceNode(node) {
         var prev = node.container.getPreviousSibling(node);
@@ -170,10 +162,7 @@ module.exports = function(el, context) {
                 next.detach();
             } else {
                 concise = highlighter.highlightSync({
-                    fileContents: prettyprint(code, {
-                        filename: "template.marko",
-                        syntax: "concise"
-                    }),
+                    fileContents: code,
                     scopeName: scopeName
                 });
             }

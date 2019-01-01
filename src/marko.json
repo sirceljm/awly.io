@@ -4,8 +4,7 @@
         "./components/own/t1-general",
         "./components/own/t2-specific",
         "./components/vendor/awly",
-        "./components/vendor/markojs",
-        "./components/vendor/highlightjs"
+        "./components/vendor/markojs"
     ],
     "<script>": {
         "transformer": "./hooks/inline-js-transformer.js"

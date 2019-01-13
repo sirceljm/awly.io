@@ -1,0 +1,23 @@
+<include("src/layouts/blank")>
+    <@title>
+      Error
+    </@title>
+    <@body>
+      <div.error>
+        <awly-logo />
+        <div>Something went wrong</div>
+      </div>
+    </@body>
+</include>
+
+style.scss {
+  body {
+    background-color: #19114a;
+  }
+  .error {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+  }
+}

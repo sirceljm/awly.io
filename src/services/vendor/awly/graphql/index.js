@@ -14,7 +14,7 @@ function runGraphQL(query, cb) {
             return cb(null, result);
         })
         .catch( function(error) {
-            console.log(error);
+            console.log("GRAPHQL ERROR:", error);
             return {error: error};
         });
 }

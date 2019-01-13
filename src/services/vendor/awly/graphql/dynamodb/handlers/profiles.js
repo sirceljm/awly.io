@@ -68,14 +68,13 @@ function getProfiles(limit, cursor) {
 
         docClient.scan(params, (err, data) => {
             if (err){
-                console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
                 reject(err);
+            }else{
+                resolve({
+                    lastCursor: data.LastEvaluatedKey ? data.LastEvaluatedKey.profileId : null,
+                    items: data["Items"]
+                });
             }
-
-            resolve({
-                lastCursor: data.LastEvaluatedKey ? data.LastEvaluatedKey.profileId : null,
-                items: data["Items"]
-            });
         });
     });
 }
